@@ -42,3 +42,8 @@
               link: docs/english/payments/3-1-request-types.md
             - title: Tokenization
               link: docs/english/payments/3-12-tokenisation.md
+- sections:
+    - title: Related Links
+      link: docs/english/related-links.md
+    - title: Release Notes
+      link: docs/release-notes/2023/english.md
