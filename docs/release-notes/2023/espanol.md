@@ -6,7 +6,7 @@ tags: [Release Notes, Enero, Febrero]
 
 ## Marzo de 2023
 
-Qué hay de nuevo
+Que hay de nuevo
 
 - Puntos finales relacionados con: información de la orden de servicio (cancellationReasonRMP, consultationPartnerEstablishment, contractStatus, geoLocation, modalConsultation)
 - Puntos finales relacionados con: Información de ventas (salesTracking)
@@ -18,7 +18,7 @@ Mejoras
 
 Arreglos
 
-- **BANWORKS** ahora se llama **Soluciones digitales**
+- BANWORKS ahora se llama Soluciones digitales
 
 Problemas conocidos
 
@@ -30,9 +30,9 @@ Obsoleto
 
 ## Febrero 2023
 
-Qué hay de nuevo
+Que hay de nuevo
 
-**BANWORKS**
+BANWORKS
 
 - Authentication Endpoints
 - Device Information Endpoints
