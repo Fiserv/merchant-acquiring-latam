@@ -10,10 +10,8 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0
   version: '1.1'
-x-header-api-key: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
 x-config:
   tryItOut: true
-x-header-api-secret: N93nmFmoY0NzSMC5
 x-production-url: https://prod.api.firstdata.com
 servers:
   - url: https://cat.api.firstdata.com
