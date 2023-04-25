@@ -6,10 +6,10 @@ tags: [Release Notes, Enero, Febrero]
 
 ## Marzo de 2023
 
-Qué hay de nuevo
+Que hay de nuevo
 
-- Puntos finales relacionados con: información de la orden de servicio (cancellationReasonRMP, consultationPartnerEstablishment, contractStatus, geoLocation, modalConsultation)
-- Puntos finales relacionados con: Información de ventas (salesTracking)
+- Puntos finales relacionados con: informacion de la orden de servicio (cancellationReasonRMP, consultationPartnerEstablishment, contractStatus, geoLocation, modalConsultation)
+- Puntos finales relacionados con: Informacion de ventas (salesTracking)
 - Puntos finales relacionados con: Pago y prepago (cashflow, paymentsMade, releasedPayments, anticipationsRealized)
 
 Mejoras
@@ -18,7 +18,7 @@ Mejoras
 
 Arreglos
 
-- **BANWORKS** ahora se llama **Soluciones digitales**
+- BANWORKS ahora se llama Soluciones digitales
 
 Problemas conocidos
 
@@ -26,13 +26,13 @@ Problemas conocidos
 
 Obsoleto
 
-- Dispositivos del comerciante - Información de la batería - Apagado
+- Dispositivos del comerciante - Informacion de la bateria - Apagado
 
 ## Febrero 2023
 
-Qué hay de nuevo
+Que hay de nuevo
 
-**BANWORKS**
+BANWORKS
 
 - Authentication Endpoints
 - Device Information Endpoints
@@ -60,15 +60,15 @@ Obsoleto
 
 Enero 2023
 
-v1.0.0 (la versión del documento openAPI que define una API que contiene el cambio)
+v1.0.0 (la version del documento openAPI que define una API que contiene el cambio)
 
-Qué hay de nuevo
+Que hay de nuevo
 
-- Migración a nuevo portal
+- Migracion a nuevo portal
 
 Mejoras
 
-- Códigos de error, manejo de errores y notificaciones.
+- Codigos de error, manejo de errores y notificaciones.
 
 Arreglos
 
