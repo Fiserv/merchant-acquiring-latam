@@ -34,7 +34,6 @@
             "digitalSolutions/OnlineBoarding/onlineBoarding2",
             "digitalSolutions/DevicesInformation/deviceAvailability",
             "digitalSolutions/DevicesInformation/devicesFees",
-            "digitalSolutions/DevicesInformation/batteryInformation",
             "digitalSolutions/DevicesInformation/deviceBillingHistory",
             "digitalSolutions/DevicesInformation/devicePaperRoll",
             "digitalSolutions/DevicesInformation/dailyPass",
