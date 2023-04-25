@@ -129,19 +129,19 @@
    "supportConfig":[
       {
          "bug":{
-            "label":"",
-            "template":"",
-            "assignees":""
+            "label":"bug,MerchantAcquiringLATAM",
+            "template":"bug.md",
+            "assignees":"CinthyaRivera"
          },
          "feedback":{
-            "label":"",
-            "template":"",
-            "assignees":""
+            "label":"feedback,MerchantAcquiringLATAM",
+            "template":"feedback.md",
+            "assignees":"CinthyaRivera"
          },
          "enhancement":{
-            "label":"",
-            "template":"",
-            "assignees":""
+            "label":"enhancement,MerchantAcquiringLATAM",
+            "template":"feature.md",
+            "assignees":"CinthyaRivera"
          }
       }
    ]
