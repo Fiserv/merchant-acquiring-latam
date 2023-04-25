@@ -12,8 +12,6 @@ info:
     url: https://www.firstdata.com/pt_br/home.html
 servers:
   - url: https://cat.api.firstdata.com
-x-header-api-key: 'X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB'
-x-header-api-secret: 'N93nmFmoY0NzSMC5'
 x-production-url: prod.api.firstdata.com
 x-config:
   tryItOut: true
