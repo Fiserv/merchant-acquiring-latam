@@ -196,7 +196,7 @@ paths:
         - Bearer: []
       deprecated: false
       
-  "/api/proposal1/{proposalNumber}":
+  "/api/proposal2/{proposalNumber}":
     get:
       tags:
         - Online Boarding Process
