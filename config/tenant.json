@@ -1,123 +1,148 @@
 {
-  "title": "Merchant Acquiring - LATAM",
-  "name": "MerchantAcquiringLATAM",
-  "brand": "Fiserv",
-  "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
-  "solution": [
-    "merchants"
-  ],
-  "brandDescription": "REPLACE ME > Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
-  "categories": [
-    {
-      "name": "businessTypes",
-      "value": "Business Types",
-      "subcategories": [
-        {
-          "name": "valueAddedServices",
-          "value": "Value Added Services"
-        }
-      ]
-    }
-  ],
-  "apiVersions": [
-    {
-      "version": "1.0.0",
-      "versionType": "major",
-      "releaseNotesPath": "docs/release-notes/2023/english.md",
-      "apiSpecFileNames": [
-        "Boarding","payments","logistics",
-
-        "digitalSolutions/Authentication/tokenAccess",
-
-        "digitalSolutions/OnlineBoarding/statusProposal", "digitalSolutions/OnlineBoarding/onlineBoarding",
-        "digitalSolutions/OnlineBoarding/onlineBoarding2",
-
-        "digitalSolutions/DevicesInformation/deviceAvailability", "digitalSolutions/DevicesInformation/devicesFees",
-        "digitalSolutions/DevicesInformation/batteryInformation", "digitalSolutions/DevicesInformation/deviceBillingHistory",
-        "digitalSolutions/DevicesInformation/devicePaperRoll", "digitalSolutions/DevicesInformation/dailyPass",
-
-        "digitalSolutions/MerchantInformationCases/accountDebits", "digitalSolutions/MerchantInformationCases/merchantRegistrationChangesHistory",
-        "digitalSolutions/MerchantInformationCases/updateMerchantPartnetInformation", "digitalSolutions/MerchantInformationCases/contractedServices",
-        "digitalSolutions/MerchantInformationCases/dirfConsult", "digitalSolutions/MerchantInformationCases/monthlyPresumedBilling",
-        "digitalSolutions/MerchantInformationCases/receivableRegister", "digitalSolutions/MerchantInformationCases/requestOpening",
-        "digitalSolutions/MerchantInformationCases/paymentHierarchy", "digitalSolutions/MerchantInformationCases/mdrFees",
-        "digitalSolutions/MerchantInformationCases/customerValidation", "digitalSolutions/MerchantInformationCases/updateAddress",
-        "digitalSolutions/MerchantInformationCases/updateTradeName", "digitalSolutions/MerchantInformationCases/updateWorkingHours",
-        "digitalSolutions/MerchantInformationCases/merchantContractStatus", "digitalSolutions/MerchantInformationCases/merchantCustomerInformation",
-        "digitalSolutions/MerchantInformationCases/chargeback","digitalSolutions/MerchantInformationCases/searchMerchantServices",
-        "digitalSolutions/MerchantInformationCases/searchCasesOpenedSalesforce", "digitalSolutions/MerchantInformationCases/relationshipHierarchy",
-        "digitalSolutions/MerchantInformationCases/logisticInformation", "digitalSolutions/MerchantInformationCases/historicContract",
-        "digitalSolutions/MerchantInformationCases/updateContactInformation",
-
-        "digitalSolutions/PaymentPrepaymentInformation/paymentAccountInfo", "digitalSolutions/PaymentPrepaymentInformation/accountPaymentInformationValidation",
-        "digitalSolutions/PaymentPrepaymentInformation/paymentsInformation", "digitalSolutions/PaymentPrepaymentInformation/prepaymentFlagUpdate",
-        "digitalSolutions/PaymentPrepaymentInformation/prepaymentInformation", "digitalSolutions/PaymentPrepaymentInformation/historyFeesConsult",
-        "digitalSolutions/PaymentPrepaymentInformation/automaticPrepayment", "digitalSolutions/PaymentPrepaymentInformation/anticipationsRealized",
-        "digitalSolutions/PaymentPrepaymentInformation/walletPix", "digitalSolutions/PaymentPrepaymentInformation/cashflow",
-        "digitalSolutions/PaymentPrepaymentInformation/paymentsMade", "digitalSolutions/PaymentPrepaymentInformation/releasedPayments",
-
-        "digitalSolutions/SalesInformation/merchantSales", "digitalSolutions/SalesInformation/processConsultOperation",
-        "digitalSolutions/SalesInformation/keyedConsultTransaction", "digitalSolutions/SalesInformation/suspendedConsultTransaction",
-        "digitalSolutions/SalesInformation/merchantAuthorizations", "digitalSolutions/SalesInformation/authorizationsHistoryBW",
-        "digitalSolutions/SalesInformation/chargebackExternal", "digitalSolutions/SalesInformation/salesTracking",
-
-        "digitalSolutions/ServiceOrderInformation/devicesMaintenance", "digitalSolutions/ServiceOrderInformation/serviceOrderCancelling",
-        "digitalSolutions/ServiceOrderInformation/serviceOrderSearch", "digitalSolutions/ServiceOrderInformation/zipcodeConsult",
-        "digitalSolutions/ServiceOrderInformation/cpfConsult", "digitalSolutions/ServiceOrderInformation/cnpjConsult",
-        "digitalSolutions/ServiceOrderInformation/microservices", "digitalSolutions/ServiceOrderInformation/remoteTransaction",
-        "digitalSolutions/ServiceOrderInformation/cancellationReasonTmp", "digitalSolutions/ServiceOrderInformation/consultationPartnerEstablishment",
-        "digitalSolutions/ServiceOrderInformation/contractStatus", "digitalSolutions/ServiceOrderInformation/geoLocation",
-        "digitalSolutions/ServiceOrderInformation/modalConsultation"
-      ]
-    }
-  ],
-  "product": {
-    "featured": true,
-    "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "Expand your business’ reach by taking the acceptance process to a different level. Merchants will expand their service and provide different experiences to their clients by leveraging new features and services at the point-of-sale, in real-time to increase their billing and usage.",
-    "longDescription": "Expand your business’ reach by taking the acceptance process to a different level. Merchants will expand their service and provide different experiences to their clients by leveraging new features and services at the point-of-sale, in real-time to increase their billing and usage.",
-    "apiSpecification": "/v1/apis/MerchantAcquiringLATAM",
-    "layout": "/v1/layouts/MerchantAcquiringLATAM",
-    "documentation": "/v1/docs/MerchantAcquiringLATAM",
-    "documenttree": "/v1/docs/MerchantAcquiringLATAM",
-    "documenttreeV2": "/v2/docs/MerchantAcquiringLATAM",
-    "sandbox": "/v1/sandboxrun/MerchantAcquiringLATAM",
-    "feature": [
+   "title":"Merchant Acquiring - LATAM",
+   "name":"MerchantAcquiringLATAM",
+   "brand":"Fiserv",
+   "brandLogoURL":"https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
+   "solution":[
+      "merchants"
+   ],
+   "brandDescription":"REPLACE ME > Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
+   "categories":[
       {
-        "name": "sandBox",
-        "value": true
-      },
-      {
-        "name": "plugins",
-        "value": false
-      },
-      {
-        "name": "industryOptionsAPIExplorer",
-        "value": false
-      },
-      {
-        "name": "editParameterAPIExplorer",
-        "value": false
+         "name":"businessTypes",
+         "value":"Business Types",
+         "subcategories":[
+            {
+               "name":"valueAddedServices",
+               "value":"Value Added Services"
+            }
+         ]
       }
-    ]
-  },
-  "supportConfig": [
-    {
-      "bug": {
-        "label": "",
-        "template": "",
-        "assignees": ""
-      },
-      "feedback": {
-        "label": "",
-        "template": "",
-        "assignees": ""
-      },
-      "enhancement": {
-        "label": "",
-        "template": "",
-        "assignees": ""
+   ],
+   "apiVersions":[
+      {
+         "version":"1.0.0",
+         "versionType":"major",
+         "releaseNotesPath":"docs/release-notes/2023/english.md",
+         "apiSpecFileNames":[
+            "Boarding",
+            "payments",
+            "logistics",
+            "digitalSolutions/Authentication/tokenAccess",
+            "digitalSolutions/OnlineBoarding/statusProposal",
+            "digitalSolutions/OnlineBoarding/onlineBoarding",
+            "digitalSolutions/OnlineBoarding/onlineBoarding2",
+            "digitalSolutions/DevicesInformation/deviceAvailability",
+            "digitalSolutions/DevicesInformation/devicesFees",
+            "digitalSolutions/DevicesInformation/deviceBillingHistory",
+            "digitalSolutions/DevicesInformation/devicePaperRoll",
+            "digitalSolutions/DevicesInformation/dailyPass",
+            "digitalSolutions/MerchantInformationCases/accountDebits",
+            "digitalSolutions/MerchantInformationCases/merchantRegistrationChangesHistory",
+            "digitalSolutions/MerchantInformationCases/updateMerchantPartnetInformation",
+            "digitalSolutions/MerchantInformationCases/contractedServices",
+            "digitalSolutions/MerchantInformationCases/dirfConsult",
+            "digitalSolutions/MerchantInformationCases/monthlyPresumedBilling",
+            "digitalSolutions/MerchantInformationCases/receivableRegister",
+            "digitalSolutions/MerchantInformationCases/requestOpening",
+            "digitalSolutions/MerchantInformationCases/paymentHierarchy",
+            "digitalSolutions/MerchantInformationCases/mdrFees",
+            "digitalSolutions/MerchantInformationCases/customerValidation",
+            "digitalSolutions/MerchantInformationCases/updateAddress",
+            "digitalSolutions/MerchantInformationCases/updateTradeName",
+            "digitalSolutions/MerchantInformationCases/updateWorkingHours",
+            "digitalSolutions/MerchantInformationCases/merchantContractStatus",
+            "digitalSolutions/MerchantInformationCases/merchantCustomerInformation",
+            "digitalSolutions/MerchantInformationCases/chargeback",
+            "digitalSolutions/MerchantInformationCases/searchMerchantServices",
+            "digitalSolutions/MerchantInformationCases/searchCasesOpenedSalesforce",
+            "digitalSolutions/MerchantInformationCases/relationshipHierarchy",
+            "digitalSolutions/MerchantInformationCases/logisticInformation",
+            "digitalSolutions/MerchantInformationCases/historicContract",
+            "digitalSolutions/MerchantInformationCases/updateContactInformation",
+            "digitalSolutions/PaymentPrepaymentInformation/paymentAccountInfo",
+            "digitalSolutions/PaymentPrepaymentInformation/accountPaymentInformationValidation",
+            "digitalSolutions/PaymentPrepaymentInformation/paymentsInformation",
+            "digitalSolutions/PaymentPrepaymentInformation/prepaymentFlagUpdate",
+            "digitalSolutions/PaymentPrepaymentInformation/prepaymentInformation",
+            "digitalSolutions/PaymentPrepaymentInformation/historyFeesConsult",
+            "digitalSolutions/PaymentPrepaymentInformation/automaticPrepayment",
+            "digitalSolutions/PaymentPrepaymentInformation/anticipationsRealized",
+            "digitalSolutions/PaymentPrepaymentInformation/walletPix",
+            "digitalSolutions/PaymentPrepaymentInformation/cashflow",
+            "digitalSolutions/PaymentPrepaymentInformation/paymentsMade",
+            "digitalSolutions/PaymentPrepaymentInformation/releasedPayments",
+            "digitalSolutions/SalesInformation/merchantSales",
+            "digitalSolutions/SalesInformation/processConsultOperation",
+            "digitalSolutions/SalesInformation/keyedConsultTransaction",
+            "digitalSolutions/SalesInformation/suspendedConsultTransaction",
+            "digitalSolutions/SalesInformation/merchantAuthorizations",
+            "digitalSolutions/SalesInformation/authorizationsHistoryBW",
+            "digitalSolutions/SalesInformation/chargebackExternal",
+            "digitalSolutions/SalesInformation/salesTracking",
+            "digitalSolutions/ServiceOrderInformation/devicesMaintenance",
+            "digitalSolutions/ServiceOrderInformation/serviceOrderCancelling",
+            "digitalSolutions/ServiceOrderInformation/serviceOrderSearch",
+            "digitalSolutions/ServiceOrderInformation/zipcodeConsult",
+            "digitalSolutions/ServiceOrderInformation/cpfConsult",
+            "digitalSolutions/ServiceOrderInformation/cnpjConsult",
+            "digitalSolutions/ServiceOrderInformation/microservices",
+            "digitalSolutions/ServiceOrderInformation/remoteTransaction",
+            "digitalSolutions/ServiceOrderInformation/cancellationReasonTmp",
+            "digitalSolutions/ServiceOrderInformation/consultationPartnerEstablishment",
+            "digitalSolutions/ServiceOrderInformation/contractStatus",
+            "digitalSolutions/ServiceOrderInformation/geoLocation",
+            "digitalSolutions/ServiceOrderInformation/modalConsultation"
+         ]
       }
-    }
-  ]
+   ],
+   "product":{
+      "featured":true,
+      "logoURL":"https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
+      "description":"Expand your business’ reach by taking the acceptance process to a different level. Merchants will expand their service and provide different experiences to their clients by leveraging new features and services at the point-of-sale, in real-time to increase their billing and usage.",
+      "longDescription":"Expand your business’ reach by taking the acceptance process to a different level. Merchants will expand their service and provide different experiences to their clients by leveraging new features and services at the point-of-sale, in real-time to increase their billing and usage.",
+      "apiSpecification":"/v1/apis/MerchantAcquiringLATAM",
+      "layout":"/v1/layouts/MerchantAcquiringLATAM",
+      "documentation":"/v1/docs/MerchantAcquiringLATAM",
+      "documenttree":"/v1/docs/MerchantAcquiringLATAM",
+      "documenttreeV2":"/v2/docs/MerchantAcquiringLATAM",
+      "sandbox":"/v1/sandboxrun/MerchantAcquiringLATAM",
+      "feature":[
+         {
+            "name":"sandBox",
+            "value":true
+         },
+         {
+            "name":"plugins",
+            "value":false
+         },
+         {
+            "name":"industryOptionsAPIExplorer",
+            "value":false
+         },
+         {
+            "name":"editParameterAPIExplorer",
+            "value":false
+         }
+      ]
+   },
+   "supportConfig":[
+      {
+         "bug":{
+            "label":"bug,MerchantAcquiringLATAM",
+            "template":"bug.md",
+            "assignees":"CinthyaRivera"
+         },
+         "feedback":{
+            "label":"feedback,MerchantAcquiringLATAM",
+            "template":"feedback.md",
+            "assignees":"CinthyaRivera"
+         },
+         "enhancement":{
+            "label":"enhancement,MerchantAcquiringLATAM",
+            "template":"feature.md",
+            "assignees":"CinthyaRivera"
+         }
+      }
+   ]
 }
