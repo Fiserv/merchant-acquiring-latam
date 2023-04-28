@@ -90,7 +90,7 @@ Below you can check each link to access the detailed document for each Web-servi
 
 [List of Campaign Setup -  Return the JSON with a model of Fees to be sent](../api/?type=post&path=/config/proposal/build-fees)
 
-[List of Setup to Send Proposal - Get the Proposal Status](../api/?type=get&path=/config/proposal/status:)
+[List of Setup to Send Proposal - Get the Proposal Status](../api/?type=get&path=/config/proposal/status)
 
 [List of Setup to Send Proposal -  Return the JSON with a model of Fees to be sent](../api/?type=post&path=/config/proposal/build-fees/v2)
 

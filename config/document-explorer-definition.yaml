@@ -53,6 +53,8 @@
               link: docs/english/digitalSolutions/APIs-Introduction.md
             - title: Backoffice
               link: docs/english/digitalSolutions/BackofficeInformation.md
+            - title: Online Boarding
+              link: docs/english/digitalSolutions/BoardingInformation.md
             - title: Logistic & Devices
               link: docs/english/digitalSolutions/LogisticAndDevicesInformation.md
             - title: Sales & Payments
