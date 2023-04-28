@@ -1,45 +1,66 @@
 openapi: 3.0.0
+x-stoplight:
+  id: b6gagtqqp4uy4
 info:
   description: Online Boarding Process
-  version: "1.0"
+  version: '1.0'
   title: Online Boarding Process
-  termsOfService: urn:tos
+  termsOfService: 'urn:tos'
   contact: {}
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0'
 servers:
-  - url: https://cat.api.firstdata.com
+  - url: 'https://cat.api.firstdata.com'
 x-production-url: prod.api.firstdata.com
 x-config:
   tryItOut: true
 tags:
   - name: Boarding New Proposals
+    description: Boarding New Proposals
   - name: Check Proposal Status
+    description: Check Proposal Status
   - name: Declare Payment
+    description: Declare Payment
   - name: Verify Tax ID (CPF for individual | CNPJ for company) at SERPRO
+    description: Verify Tax ID (CPF for individual | CNPJ for company) at SERPRO
   - name: Service Contract Parameters
+    description: Service Contract Parameters
   - name: Account Fees for Required Service Parameters (accountFees)
+    description: Account Fees for Required Service Parameters (accountFees)
   - name: Associations/Schemas Product Code for Settlement Parameters
+    description: Associations/Schemas Product Code for Settlement Parameters
   - name: List of Banks for Settlement
+    description: List of Banks for Settlement
   - name: List of CNAEs Parameter
+    description: List of CNAEs Parameter
   - name: Professional License Status
+    description: Professional License Status
   - name: Restricted/Unwanted CNAEs
-  - name: MDR Service Fees Parameters (Standard Fees, for reference only)
+    description: Restricted/Unwanted CNAEs
+  - name: 'MDR Service Fees Parameters (Standard Fees, for reference only)'
+    description: 'MDR Service Fees Parameters (Standard Fees, for reference only)'
   - name: Associations/Schemas List
+    description: Associations/Schemas List
   - name: Additional Services Parameters
+    description: Additional Services Parameters
   - name: Frequency Cycles for Additional Services
+    description: Frequency Cycles for Additional Services
   - name: Capture Solutions Parameters
+    description: Capture Solutions Parameters
   - name: Phone Operators Parameters
+    description: Phone Operators Parameters
   - name: Merchant - Compliance
+    description: Merchant - Compliance
   - name: List of Campaign Setup
+    description: List of Campaign Setup
   - name: List of Setup to Send Proposal
+    description: List of Setup to Send Proposal
   - name: MCC
+    description: MCC
 paths:
-  "/config/compliance/merchantId/{merchantId}":
+  '/config/compliance/merchantId/{merchantId}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: Merchant - Compliance (Not Available)
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -65,14 +86,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -85,29 +106,27 @@ paths:
         - name: merchantId
           in: path
           description: Merchant Code
-          example: "91002806"
+          example: 91002806
           required: true
           schema:
             type: integer
             format: int64
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 type: object
-        "401":
+        '401':
           description: Unauthorized
-        "403":
+        '403':
           description: Forbidden
-        "404":
+        '404':
           description: Not Found
       deprecated: false
-  "/config/campaigns/simulator":
+  /config/campaigns/simulator:
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -142,7 +161,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -167,11 +186,11 @@ paths:
             format: int64
         - name: type-person
           in: query
-          description: Type of Person, Legal or Physical
+          description: 'Type of Person, Legal or Physical'
           required: true
           schema:
             type: string
-          example: "L"
+          example: L
         - name: mcc
           in: query
           description: Merchant Category Code
@@ -180,35 +199,33 @@ paths:
             type: integer
             format: int32
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResultOfListOfCampaingSimulatorDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
       deprecated: false
-  "/config/campaigns/billing-range/id-campaign/{id-campaign}":
+  '/config/campaigns/billing-range/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: Range of Revenue for the Campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -243,7 +260,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -254,7 +271,7 @@ paths:
           in: path
           description: Campaign ID
           required: true
-          example: "1"
+          example: 1
           schema:
             type: integer
             format: int64
@@ -282,25 +299,25 @@ paths:
             format: int32
             default: 50
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfBillingRangeDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -309,10 +326,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/factor-flex/id-campaign/{id-campaign}":
+  '/config/campaigns/factor-flex/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -347,7 +362,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -407,25 +422,25 @@ paths:
             type: integer
             format: int64
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfFactorFlexRateDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -434,10 +449,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/factor-flex/billing-value/id-campaign/{id-campaign}":
+  '/config/campaigns/factor-flex/billing-value/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the Factor fees for MDR Flex associated to a campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -472,7 +485,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -531,25 +544,25 @@ paths:
             type: integer
             format: int64
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfFactorFlexRateDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -558,10 +571,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/mdr-flex/id-campaign/{id-campaign}":
+  '/config/campaigns/mdr-flex/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -596,7 +607,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -657,7 +668,7 @@ paths:
         - name: person-type
           in: query
           description: Person type. P for physical person and L for legal person
-          example: "P"
+          example: P
           schema:
             type: string
             enum:
@@ -666,7 +677,7 @@ paths:
         - name: uf
           in: query
           description: State Abbreviation
-          example: "SP"
+          example: SP
           schema:
             type: string
             enum:
@@ -698,25 +709,25 @@ paths:
               - SE
               - TO
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfMdrFlexRateDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -725,10 +736,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/mdr-flex/billing-value/id-campaign/{id-campaign}":
+  '/config/campaigns/mdr-flex/billing-value/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign - Billing Value
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -763,7 +772,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -823,7 +832,7 @@ paths:
         - name: person-type
           in: query
           description: Person type. P for physical person and L for legal person
-          example: "P"
+          example: P
           schema:
             type: string
             enum:
@@ -832,7 +841,7 @@ paths:
         - name: uf
           in: query
           description: State Abbreviation
-          example: "SP"
+          example: SP
           schema:
             type: string
             enum:
@@ -864,25 +873,25 @@ paths:
               - SE
               - TO
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfMdrFlexRateDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -891,10 +900,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/mdr/id-campaign/{id-campaign}":
+  '/config/campaigns/mdr/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get MDR Fees for a given campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -929,7 +936,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -991,7 +998,7 @@ paths:
         - name: person-type
           in: query
           description: Person type. P for physical person and L for legal person
-          example: "P"
+          example: P
           schema:
             type: string
             enum:
@@ -1000,7 +1007,7 @@ paths:
         - name: uf
           in: query
           description: State Abbreviation
-          example: "SP"
+          example: SP
           schema:
             type: string
             enum:
@@ -1032,25 +1039,25 @@ paths:
               - SE
               - TO
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfMdrRatesDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1059,10 +1066,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/mdr/billing-value/id-campaign/{id-campaign}":
+  '/config/campaigns/mdr/billing-value/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the MDR Fees associated to a campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -1097,7 +1102,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -1158,7 +1163,7 @@ paths:
         - name: person-type
           in: query
           description: Person type. P for physical person and L for legal person
-          example: "P"
+          example: P
           schema:
             type: string
             enum:
@@ -1167,7 +1172,7 @@ paths:
         - name: uf
           in: query
           description: State Abbreviation
-          example: "SP"
+          example: SP
           schema:
             type: string
             enum:
@@ -1199,25 +1204,25 @@ paths:
               - SE
               - TO
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfMdrRatesDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1226,10 +1231,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/current-approvers/id-campaign/{id-campaign}":
+  '/config/campaigns/current-approvers/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the current campaign approvers
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -1264,7 +1267,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -1280,7 +1283,7 @@ paths:
             type: integer
             format: int64
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
@@ -1288,19 +1291,19 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ApproversCampaignDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1309,10 +1312,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/approvers/service-contract/{service-contract}":
+  '/config/campaigns/approvers/service-contract/{service-contract}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get possible approvers for a campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -1347,7 +1348,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -1363,7 +1364,7 @@ paths:
             type: integer
             format: int64
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
@@ -1371,19 +1372,19 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ApproversDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1392,10 +1393,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/business-point/billing-value/id-campaign/{id-campaign}":
+  '/config/campaigns/business-point/billing-value/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the Business Point associated to a campaign - Billing value
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -1430,7 +1429,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -1479,25 +1478,25 @@ paths:
             format: int32
             default: 50
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfBusinessPoint'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1506,10 +1505,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/business-point/id-campaign/{id-campaign}":
+  '/config/campaigns/business-point/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the Business Point associated to a campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -1544,7 +1541,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -1593,25 +1590,25 @@ paths:
             format: int32
             default: 50
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfBusinessPoint'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1620,10 +1617,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/technology-price-discount-fee/billing-value/id-campaign/{id-campaign}":
+  '/config/campaigns/technology-price-discount-fee/billing-value/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the technology price discount fee associated to a campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -1658,7 +1653,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -1707,25 +1702,25 @@ paths:
             format: int32
             default: 50
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfCampaignTechnologyPriceDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1734,10 +1729,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/premium-uf/service-contract/{service-contract}":
+  '/config/campaigns/premium-uf/service-contract/{service-contract}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the Premium Rate according to the State/Servicecontract
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -1772,7 +1765,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -1790,7 +1783,7 @@ paths:
         - name: uf
           in: query
           description: State Abbreviation
-          example: "SP"
+          example: SP
           schema:
             type: string
             enum:
@@ -1822,7 +1815,7 @@ paths:
               - SE
               - TO
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
@@ -1830,19 +1823,19 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/PremiumUfDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1851,10 +1844,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/prepayment/id-campaign/{id-campaign}":
+  '/config/campaigns/prepayment/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get PrePayment Fees for Campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -1889,7 +1880,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -1942,25 +1933,25 @@ paths:
             format: int32
             default: 50
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfPrepaymentRateDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -1969,10 +1960,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/prepayment/billing-value/id-campaign/{id-campaign}":
+  '/config/campaigns/prepayment/billing-value/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get PrePayment Fees for Campaign V2
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -2007,7 +1996,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -2059,25 +2048,25 @@ paths:
             format: int32
             default: 50
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfPrepaymentRateDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -2086,10 +2075,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/pricing-technology/id-campaign/{id-campaign}":
+  '/config/campaigns/pricing-technology/id-campaign/{id-campaign}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get Device Prices associated to a Campaign
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -2124,7 +2111,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -2142,7 +2129,7 @@ paths:
         - name: id-service
           in: query
           description: Service ID
-          example: "300"
+          example: '300'
           schema:
             type: string
         - name: page
@@ -2164,7 +2151,7 @@ paths:
         - name: billing-value
           in: query
           description: Anual Billing Card Value (if id-range is not null this field will be ignored)
-          example: 500.30
+          example: 500.3
           schema:
             type: number
             format: double
@@ -2185,25 +2172,25 @@ paths:
               - P
               - L
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PageableDTOOfPriceTechnologyCampaignDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -2212,10 +2199,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/campaigns/service-contract/{service-contract}":
+  '/config/campaigns/service-contract/{service-contract}':
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup - Get the Available Campaigns
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -2250,11 +2235,11 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: agent-id
           in: query
           description: Agent ID
-          example: "50043201"
+          example: '50043201'
           schema:
             type: string
         - name: auth
@@ -2273,7 +2258,7 @@ paths:
         - name: cnpj
           in: query
           description: Company Tax ID (CNPJ) associated to the Economic Group
-          example: "19402145000147"
+          example: '19402145000147'
           schema:
             type: string
         - name: has-economic-group
@@ -2292,8 +2277,7 @@ paths:
             format: int64
         - name: service-contract
           in: path
-          description: Service Contract code. Please Check with Fiserv Representative
-            junto a FISERV.
+          description: Service Contract code. Please Check with Fiserv Representative junto a FISERV.
           required: true
           example: 101
           schema:
@@ -2302,7 +2286,7 @@ paths:
         - name: sub-channel
           in: query
           description: Sub Channel Code
-          example: "00001"
+          example: '00001'
           schema:
             type: string
         - name: uf
@@ -2312,7 +2296,7 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
@@ -2320,19 +2304,19 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/CampaignDTO'
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -2341,10 +2325,8 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/proposal/build-fees":
+  /config/proposal/build-fees:
     post:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Campaign Setup -  Return the JSON with a model of Fees to be sent
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -2379,7 +2361,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -2394,28 +2376,28 @@ paths:
               $ref: '#/components/schemas/SetUpFees'
         required: true
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FeeDTO'
-        201:
+        '201':
           description: Created
           content: {}
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -2425,10 +2407,8 @@ paths:
       security:
         - Bearer: []
       x-codegen-request-body-name: setUpFeesDTO
-  "/config/proposal/status":
+  /config/proposal/status:
     get:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Setup to Send Proposal - Get the Proposal Status
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
@@ -2463,7 +2443,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -2471,7 +2451,7 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
@@ -2503,19 +2483,19 @@ paths:
                     - REJECTED_BLACK_LIST
                     - REJECTED_SERPRO_BY_PARTNER
                     - REJECTED_SERPRO_BY_BIRTH_DATE
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -2524,16 +2504,13 @@ paths:
       deprecated: false
       security:
         - Bearer: []
-  "/config/proposal/build-fees/v2":
+  /config/proposal/build-fees/v2:
     post:
-      tags:
-        - Online Boarding Process
       x-proxy-name: List of Setup to Send Proposal -  Return the JSON with a model of Fees to be sent
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions
       description: Return the JSON with a model of Fees to be sent
-      summary: Return the JSON with a model of Fees to be sent
-        Takes a slight difference that the default route (/config/proposal/build-fees/v2)
+      summary: Return the JSON with a model of Fees to be sent Takes a slight difference that the default route (/config/proposal/build-fees/v2)
       operationId: getJsonModelFeesToSent1
       parameters:
         - name: Api-Key
@@ -2563,7 +2540,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1563309156733
+          example: '1563309156733'
         - name: auth
           in: header
           description: Oauth Key
@@ -2578,28 +2555,28 @@ paths:
               $ref: '#/components/schemas/SetUpFees'
         required: true
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FeeDTO'
-        201:
+        '201':
           description: Created
           content: {}
-        401:
+        '401':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        403:
+        '403':
           description: Access denied
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResult'
-        404:
+        '404':
           description: Item not found
           content:
             application/json:
@@ -2623,34 +2600,38 @@ components:
         data:
           type: array
           items:
-            $ref: "#/components/schemas/CampaingSimulatorDTO"
+            $ref: '#/components/schemas/CampaingSimulatorDTO'
         error:
           type: boolean
           description: Return Code
           example: true
           enum:
-            - True
-            - False
+            - true
+            - false
         message:
           type: string
           description: Return Message
-          example: "Return Message Text"
+          example: Return Message Text
       title: ResultOfListOfCampaingSimulatorDTO
+      x-stoplight:
+        id: xuhtzbtohbohh
     ApiResult:
       type: object
       properties:
         error:
           type: boolean
           description: Return Code
-          example: True
+          example: true
           enum:
-            - True
-            - False
+            - true
+            - false
         message:
           type: string
           description: Return Message
-          example: "Return Message Text"
+          example: Return Message Text
       title: ApiResult
+      x-stoplight:
+        id: pm2poj2ob6zx4
     ProposalQuery:
       type: object
       description: Check the status of Boarding Process
@@ -2658,11 +2639,11 @@ components:
         merchantId:
           type: string
           description: Merchant Identification Code
-          example: "91002806"
+          example: '91002806'
         paymentStatus:
           type: string
           description: Payment Status
-          example: APPROVED.
+          example: APPROVED
           enum:
             - APPROVED
             - PENDING
@@ -2722,7 +2703,7 @@ components:
           type: array
           description: Service Order Related to the Boarding Proposal
           items:
-            $ref: "#/components/schemas/ServiceOrder"
+            $ref: '#/components/schemas/ServiceOrder'
         warning:
           type: string
           description: Mandatory stop maintenance message. This field is only returned if a mandatory stop is enabled
@@ -2730,11 +2711,13 @@ components:
             - Scheduled Maintenance
           example: Scheduled Maintenance
       title: ProposalQuery
+      x-stoplight:
+        id: h2lbfc1mtrdmb
     ServiceOrder:
       title: ServiceOrder
       description: Delivery Service Order Information (delivery from Fiserv > Merchant)
       allOf:
-        - $ref: "#/components/schemas/ProposalQuery"
+        - $ref: '#/components/schemas/ProposalQuery'
         - type: object
           properties:
             logicNumber:
@@ -2744,12 +2727,14 @@ components:
             rnid:
               type: string
               description: Device RNID Number
-              example: 600000063431
+              example: '600000063431'
             serviceId:
               type: string
               description: Service ID related to the terminal that was contracted
-              example: 301
+              example: '301'
           title: ServiceOrder
+      x-stoplight:
+        id: he9m4ltlocewv
     CampaingSimulatorDTO:
       title: CampaingSimulatorDTO
       type: object
@@ -2762,11 +2747,11 @@ components:
         camapingCode:
           type: string
           description: Campaign Code
-          example: "10"
+          example: '10'
         description:
           type: string
           description: Campaign description
-          example: "MDR 10k - 30k D+30"
+          example: MDR 10k - 30k D+30
         hasMdrFlex:
           type: boolean
           description: Inform if the campaing has mdr flex fees
@@ -2790,6 +2775,8 @@ components:
           format: double
           example: 360000
       description: Campaign Information for Simulator Project
+      x-stoplight:
+        id: 0pddbd54uu09w
     BillingRangeDTO:
       title: BillingRangeDTO
       type: object
@@ -2807,12 +2794,14 @@ components:
         maxAnnualBilling:
           type: number
           description: Revenue Range Max Amount
-          example: 1000.00
+          example: 1000
         minAnnualBilling:
           type: number
           description: Revenu Range Min Amount
-          example: 100.00
+          example: 100
       description: Revenu Range Information
+      x-stoplight:
+        id: dz09s1n0itx3o
     Brand:
       title: Brand
       type: object
@@ -2835,6 +2824,8 @@ components:
           items:
             $ref: '#/components/schemas/Rate'
       description: Association/Schema Information
+      x-stoplight:
+        id: roe1hdbtjs7fx
     CampaignDTO:
       title: CampaignDTO
       type: object
@@ -2860,7 +2851,7 @@ components:
           type: string
           description: Campaign Expire Date
           format: date
-          example: 2022-05-21
+          example: '2022-05-21'
         id:
           type: integer
           description: Campaign ID
@@ -2873,17 +2864,17 @@ components:
         idInstitution:
           type: string
           description: Merchant Institution Number
-          example: "00000006"
+          example: '00000006'
         initialDate:
           type: string
           description: Campaign Start Date
           format: date
-          example: 2020-05-21
+          example: '2020-05-21'
         lastModifiedDate:
           type: string
           description: Last Campaign Modification
-          format: date
-          example: 18/11/2020 20:13:40
+          format: string
+          example: '18/11/2020 20:13:40'
         enablePriceQueue:
           type: boolean
           description: Price Queue Flag
@@ -2894,6 +2885,8 @@ components:
           format: int32
           example: 101
       description: Campaign Information
+      x-stoplight:
+        id: oppqoxne8lf2h
     FactorFlexRateDTO:
       title: FactorFlexRateDTO
       type: object
@@ -2915,19 +2908,19 @@ components:
           example: 6021
         minFactorRate1:
           type: number
-          description: "Factor #1 - Minimum Fee"
-          example: 1.0
+          description: 'Factor #1 - Minimum Fee'
+          example: 1
         minFactorRate2:
           type: number
-          description: "Factor #2 - Minimum Fee"
-          example: 2.0
+          description: 'Factor #2 - Minimum Fee'
+          example: 2
         suggestedFactorRate1:
           type: number
-          description: "Factor #1 - Suggested Fee"
+          description: 'Factor #1 - Suggested Fee'
           example: 1.5
         suggestedFactorRate2:
           type: number
-          description: "Factor #2 - Suggested Fee"
+          description: 'Factor #2 - Suggested Fee'
           example: 2.5
         receivingDeadline:
           type: integer
@@ -2935,6 +2928,8 @@ components:
           format: int64
           example: 14
       description: MDR Flex Factors Information
+      x-stoplight:
+        id: m2kacd9ehzxnb
     MdrFlexRateDTO:
       title: MdrFlexRateDTO
       type: object
@@ -2958,6 +2953,8 @@ components:
           description: Percentual da taxa premium
           example: 5.5
       description: MDR FLEX Fee Information
+      x-stoplight:
+        id: inv05svjb19n5
     MdrRatesDTO:
       title: MdrRatesDTO
       type: object
@@ -2982,6 +2979,8 @@ components:
           description: Permium Share Percentage
           example: 5.5
       description: MDR Fee Information
+      x-stoplight:
+        id: u9y97u6p03ozm
     PageableDTOOfBillingRangeDTO:
       title: PageableDTOOfBillingRangeDTO
       type: object
@@ -3012,6 +3011,8 @@ components:
           format: int32
           example: 5
       description: Retorno paginado das informações de range de faturamento.
+      x-stoplight:
+        id: q1piantx7gtaf
     PageableDTOOfFactorFlexRateDTO:
       title: PageableDTOOfFactorFlexRateDTO
       type: object
@@ -3042,6 +3043,8 @@ components:
           format: int32
           example: 5
       description: Retorno paginado das informações de fator de taxa MDR Flex.
+      x-stoplight:
+        id: s7c5gkif4p75r
     PageableDTOOfMdrFlexRateDTO:
       title: PageableDTOOfMdrFlexRateDTO
       type: object
@@ -3072,6 +3075,8 @@ components:
           format: int32
           example: 5
       description: Return with Page Control for MDR FLEX Fee Information
+      x-stoplight:
+        id: i40ahilwfnscp
     PageableDTOOfMdrRatesDTO:
       title: PageableDTOOfMdrRatesDTO
       type: object
@@ -3102,6 +3107,8 @@ components:
           format: int32
           example: 5
       description: Return with Page Control for MDR Fee Information
+      x-stoplight:
+        id: i4btz57snb2hb
     PageableDTOOfPrepaymentRateDTO:
       title: PageableDTOOfPrepaymentRateDTO
       type: object
@@ -3132,6 +3139,8 @@ components:
           format: int32
           example: 5
       description: Return PrepaymentFee Information (with Page Control)
+      x-stoplight:
+        id: ydjjki3h7jrq1
     PageableDTOOfPriceTechnologyCampaignDTO:
       title: PageableDTOOfPriceTechnologyCampaignDTO
       type: object
@@ -3162,6 +3171,8 @@ components:
           format: int32
           example: 5
       description: Return Technology Fee by Campaign (with Page Control)
+      x-stoplight:
+        id: kgr85xoho6wj1
     ApproversCampaignDTO:
       title: ApproversCampaignDTO
       type: object
@@ -3170,7 +3181,7 @@ components:
         cpfCnpj:
           type: string
           description: CPF/CNPJ of approver
-          example: 01234567890
+          example: '1234567890'
         idCampaignLong:
           type: integer
           description: ID Campaign
@@ -3192,9 +3203,11 @@ components:
           description: Approver type description
           example: MANAGER
           enum:
-            - "MANAGER"
-            - "DIRECTOR"
-            - "EXECUTIVE_DIRECTOR"
+            - MANAGER
+            - DIRECTOR
+            - EXECUTIVE_DIRECTOR
+      x-stoplight:
+        id: ae0kqzhdxjqp4
     ApproversDTO:
       title: ApproversDTO
       type: object
@@ -3203,7 +3216,7 @@ components:
         cpfCnpj:
           type: string
           description: CPF/CNPJ of approver
-          example: 01234567890
+          example: '1234567890'
         name:
           type: string
           description: Approver name
@@ -3212,6 +3225,8 @@ components:
           type: string
           description: Approver email
           example: joao@fiserv.com
+      x-stoplight:
+        id: s079jg9aytsve
     BusinessPointDTO:
       title: BusinessPointDTO
       type: object
@@ -3235,6 +3250,8 @@ components:
             - DIRECTOR
             - EXECUTIVE_DIRECTOR
       description: Business Point Information
+      x-stoplight:
+        id: 1lts30kl9hnal
     CampaignTechnologyPriceDTO:
       title: CampaignTechnologyPriceDTO
       type: object
@@ -3269,6 +3286,8 @@ components:
             - P
             - L
       description: Technology Price Discount Information
+      x-stoplight:
+        id: xv73j1uf21pgb
     PageableDTOOfBusinessPoint:
       title: PageableDTOOfBusinessPoint
       type: object
@@ -3299,6 +3318,8 @@ components:
           format: int32
           example: 5
       description: Return with Page Control for MDR Fee Information
+      x-stoplight:
+        id: 5c4n95wmq8f2t
     PageableDTOOfCampaignTechnologyPriceDTO:
       title: PageableDTOOfCampaignTechnologyPriceDTO
       type: object
@@ -3329,6 +3350,8 @@ components:
           format: int32
           example: 5
       description: Return with Page Control for Technology Price Fee Information
+      x-stoplight:
+        id: n80yy0othnies
     PremiumUfDTO:
       title: PremiumUfDTO
       type: object
@@ -3351,6 +3374,8 @@ components:
           description: State Abbreviation
           example: SP
       description: Premium Share Percentage Information
+      x-stoplight:
+        id: cn6kpnx7i23xw
     PrepaymentRateDTO:
       title: PrepaymentRateDTO
       type: object
@@ -3373,20 +3398,22 @@ components:
         minAutoPrepayment:
           type: number
           description: Minimum Automatic Prepayment Fee
-          example: 1.0
+          example: 1
         minManualRate:
           type: number
           description: Minimum Manual Prepayment Fee
-          example: 1.0
+          example: 1
         suggestedAutoPrepayment:
           type: number
           description: Suggested Automatic Prepayment Fee
-          example: 2.0
+          example: 2
         suggestedManualRate:
           type: number
           description: Suggested Manual Prepayment Fee
-          example: 2.0
+          example: 2
       description: Prepayment Fee Information
+      x-stoplight:
+        id: ozk64gbd00m6c
     PriceTechnologyCampaignDTO:
       title: PriceTechnologyCampaignDTO
       type: object
@@ -3399,7 +3426,7 @@ components:
         minTechPrice:
           type: number
           description: Technology Minimum Price
-          example: 20.00
+          example: 20
         name:
           type: string
           description: Campaign Name
@@ -3407,37 +3434,37 @@ components:
         serviceId:
           type: string
           description: Tecnology Code
-          example: "300"
+          example: '300 - POS ISO'
           enum:
-            - "367 - POS Auto Credenc (meaning POS Auto Boarding)"
-            - "334 - Ecommerce TEF"
-            - "330 - TEF Dedicado-conec (meaning Balance Eletronic Transfer - Dedicated)"
-            - "352 - Mobile POS"
-            - "331 - TEF IP-conec (meaning Balance Eletronic Transfer - IP)"
-            - "377 - POS Web"
-            - "378 - POS TEF Terceiros (meaning Balance Eletronic Transfer - Third Party)"
-            - "380 - POS MP5"
-            - "309 - Arquivo de lote (meaning Batch file)"
-            - "386 - POS do Futuro (meaning Future POS)"
-            - "301 - POS GPRS"
-            - "307 - TEF Discado-conec (meaning Balance Eletronic Transfer - Dial in)"
-            - "305 - POS 3 Conexões (meaning POS three Connections)"
-            - "366 - POS Wifi"
-            - "357 - POGO"
-            - "364 - POS Virtual"
-            - "395 - POS MOBY6500 Aluguel (meaning POS MOBY6500 Rent)"
-            - "365 - POS Wifi GPRS"
-            - "308 - E-Commerce Gateway 1"
-            - "391 - App Hardwareless"
-            - "356 - E-Comm IPG"
-            - "300 - POS ISO"
-            - "306 - PINPAD"
-            - "379 - Gateway WhiteLabel"
-            - "303 - POS Internet/Discado"
+            - 367 - POS Auto Credenc (meaning POS Auto Boarding)
+            - 334 - Ecommerce TEF
+            - 330 - TEF Dedicado-conec (meaning Balance Eletronic Transfer - Dedicated)
+            - 352 - Mobile POS
+            - 331 - TEF IP-conec (meaning Balance Eletronic Transfer - IP)
+            - 377 - POS Web
+            - 378 - POS TEF Terceiros (meaning Balance Eletronic Transfer - Third Party)
+            - 380 - POS MP5
+            - 309 - Arquivo de lote (meaning Batch file)
+            - 386 - POS do Futuro (meaning Future POS)
+            - 301 - POS GPRS
+            - 307 - TEF Discado-conec (meaning Balance Eletronic Transfer - Dial in)
+            - 305 - POS 3 Conexões (meaning POS three Connections)
+            - 366 - POS Wifi
+            - 357 - POGO
+            - 364 - POS Virtual
+            - 395 - POS MOBY6500 Aluguel (meaning POS MOBY6500 Rent)
+            - 365 - POS Wifi GPRS
+            - 308 - E-Commerce Gateway 1
+            - 391 - App Hardwareless
+            - 356 - E-Comm IPG
+            - 300 - POS ISO
+            - 306 - PINPAD
+            - 379 - Gateway WhiteLabel
+            - 303 - POS Internet/Discado
         suggestedTechPrice:
           type: number
           description: Technology Suggested Price
-          example: 30.00
+          example: 30
         tradeName:
           type: string
           description: Tecnology Trade name
@@ -3450,11 +3477,13 @@ components:
         personType:
           type: string
           description: Person Type
-          example: "L"
+          example: L
           enum:
-            - "P"
-            - "L"
+            - P
+            - L
       description: Technology Campaign Information
+      x-stoplight:
+        id: sosm07j78qm7f
     Rate:
       title: Rate
       type: object
@@ -3462,7 +3491,7 @@ components:
         minimumRate:
           type: number
           description: Association/Schema Min Fee
-          example: 2.00
+          example: 2
         modalityEnum:
           type: string
           description: Type of Fee
@@ -3482,10 +3511,10 @@ components:
           type: integer
           description: Transaction Type ID
           format: int32
-          example: 005
+          example: 5
           enum:
-            - 005
-            - 006
+            - 5
+            - 6
             - 115
             - 461
             - 462
@@ -3525,6 +3554,8 @@ components:
             - 496
             - 999
       description: Association/Schema Fee Information
+      x-stoplight:
+        id: tqhn49hg2av72
     FeeDTO:
       title: FeeDTO
       type: object
@@ -3551,18 +3582,20 @@ components:
           type: string
           example: TAX
       description: Service and Capture Campaign Information
+      x-stoplight:
+        id: cgc6f52wh0m2n
     ServiceDTO:
       title: ServiceDTO
       type: object
       properties:
         factor1FlexRateFee:
           type: number
-          description: "Factir #1 Value for MDR FLEX Fee"
-          example: 2.80
+          description: 'Factir #1 Value for MDR FLEX Fee'
+          example: 2.8
         factor2FlexRateFee:
           type: number
-          description: "Factir #2 Value for MDR FLEX Fee"
-          example: 2.30
+          description: 'Factir #2 Value for MDR FLEX Fee'
+          example: 2.3
         feeDetails:
           type: array
           description: Fee Details Information
@@ -3576,8 +3609,10 @@ components:
         serviceCode:
           type: string
           description: Capture Service Code
-          example: "300"
+          example: '300'
       description: Capture Information
+      x-stoplight:
+        id: myon6494al2ll
     FeeDetailsDTO:
       title: FeeDetailsDTO
       type: object
@@ -3595,17 +3630,19 @@ components:
         feeValue:
           type: number
           description: Fee Amount
-          example: 2.10
+          example: 2.1
         mdrFlexRateFee:
           type: number
           description: MDR Flex Fee
-          example: 1.10
+          example: 1.1
         transactionTypeId:
           type: integer
           description: Transaction Type Code
           format: int32
           example: 999
       description: Fees Detail Information
+      x-stoplight:
+        id: gxoyq2gshulam
     SetUpFees:
       title: SetUpFees
       required:
@@ -3657,5 +3694,7 @@ components:
         premiumPercent:
           type: number
           description: Premium Fee Percentage
-          example: 75.0
+          example: 75
       description: Fees Information
+      x-stoplight:
+        id: u4fsul2v1enx2

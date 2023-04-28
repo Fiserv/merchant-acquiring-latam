@@ -1,24 +1,26 @@
 openapi: 3.0.0
+x-stoplight:
+  id: 3nevh0d5n4ijq
 info:
   description: Search for Proposal Status
-  version: "1.0"
+  version: '1.0'
   title: Search for Proposal Status
-  termsOfService: urn:tos
+  termsOfService: 'urn:tos'
   contact:
     name: First Data
-    url: https://www.firstdata.com/pt_br/home.html
+    url: 'https://www.firstdata.com/pt_br/home.html'
   license:
     name: Licença - Open Source
-    url: https://www.firstdata.com/pt_br/home.html
+    url: 'https://www.firstdata.com/pt_br/home.html'
 servers:
-  - url: https://cat.api.firstdata.com
+  - url: 'https://cat.api.firstdata.com'
 x-production-url: prod.api.firstdata.com
 x-config:
   tryItOut: true
 tags:
   - name: Search for Proposal Status
 paths:
-  "/bwa/proposta/status/{inst}/{doc}":
+  '/bwa/proposta/status/{inst}/{doc}':
     get:
       tags:
         - Online Boarding
@@ -47,14 +49,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -73,17 +75,17 @@ paths:
         - name: inst
           in: path
           description: Merchant Institution Number
-          example: "00000003"
+          example: '00000003'
           required: true
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ObjetoStatusResponse"
+                $ref: '#/components/schemas/ObjetoStatusResponse'
       deprecated: false
 components:
   schemas:
@@ -93,33 +95,35 @@ components:
         codigoRetorno:
           type: string
           description: Returnd Code
-          example: "00"
+          example: '00 - Successfully Done'
           enum:
-            - "00 - Successfully Done"
-            - "01 - System Error"
+            - 00 - Successfully Done
+            - 01 - System Error
         descricaoRetorno:
           type: string
           description: Descrição do Retorno.
-          example: "Successfully Done"
+          example: 00 - Successfully Done
           enum:
-            - "00 - Successfully Done"
-            - "01 - System Error"
+            - 00 - Successfully Done
+            - 01 - System Error
         propostas:
           type: array
           items:
-            $ref: "#/components/schemas/Proposta"
+            $ref: '#/components/schemas/Proposta'
       title: ObjetoStatusResponse
       xml:
         name: response
         attribute: false
         wrapped: false
+      x-stoplight:
+        id: fexvnoh11f297
     Proposta:
       type: object
       properties:
         numeroProposta:
           type: string
           description: Boarding Proposal Number
-          example: "979102119213298000432"
+          example: '979102119213298000432'
         dataProposta:
           type: string
           description: Proprosal Sent Date
@@ -127,44 +131,46 @@ components:
         codigoMotivoRejeicao:
           type: string
           description: Rejection Reason Code
-          example: ""
+          example: ''
         descricaoMotivoRejeicao:
           type: string
           description: Reason Code Description
-          example: ""
+          example: ''
         numeroMerchant:
           type: string
           description: Merchant Code
-          example: "40929598"
+          example: '40929598'
         codigoCredenciador:
           type: string
           description: Boarding Code
-          example: "1"
+          example: '1'
         indicadorEcommerce:
           type: string
           description: E-Commercer Indicator
-          example: "1"
+          example: '1 - No'
           enum:
-            - "1 - No"
-            - "0 - Yes"
+            - 1 - No
+            - 0 - Yes
         statusPropostas:
           type: array
           items:
-            $ref: "#/components/schemas/StatusProposta"
+            $ref: '#/components/schemas/StatusProposta'
       title: Proposta
       xml:
         name: proposta
         attribute: false
         wrapped: false
+      x-stoplight:
+        id: 83o1t9kp66m9n
     StatusProposta:
       type: object
       properties:
         codigoStatusProposta:
           type: string
           description: Proposal Status Code. It will return only the code
-          example: "768"
+          example: '0 Affiliated'
           enum:
-            - -1 Not found
+            - '-1 Not found'
             - 0 Affiliated
             - 1 Validation Error
             - 2 Rejected Credit
@@ -219,9 +225,9 @@ components:
         descricaoStatusProposta:
           type: string
           description: Proposal Status Description
-          example: "QC Approved"
+          example: 0 Affiliated
           enum:
-            - -1 Not found
+            - '-1 Not found'
             - 0 Affiliated
             - 1 Validation Error
             - 2 Rejected Credit
@@ -282,3 +288,5 @@ components:
         name: status
         attribute: false
         wrapped: false
+      x-stoplight:
+        id: 0b4lhisn80qmn
