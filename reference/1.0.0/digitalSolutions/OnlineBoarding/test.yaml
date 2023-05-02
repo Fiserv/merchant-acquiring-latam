@@ -3398,11 +3398,11 @@ components:
             - Rejected Serpro by partner
             - Rejected Serpro
             - Rejected Terminals Validate
-        serviceOrder:
-          type: array
-          description: Service Order Related to the Boarding Proposal
-          items:
-            $ref: '#/components/schemas/ServiceOrder'
+        # serviceOrder:
+        #   type: array
+        #   description: Service Order Related to the Boarding Proposal
+        #   items:
+        #     $ref: '#/components/schemas/ServiceOrder'
         warning:
           type: string
           description: Mandatory stop maintenance message. This field is only returned if a mandatory stop is enabled
