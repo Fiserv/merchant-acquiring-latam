@@ -209,7 +209,7 @@ paths:
         - Bearer: []
       deprecated: false
 
-  '/api/proposal/{proposalNumber}':
+  /api/proposal/{proposalNumber}:
     get:
       x-proxy-name: Check Proposal Status
       x-group-name: Online Boarding
