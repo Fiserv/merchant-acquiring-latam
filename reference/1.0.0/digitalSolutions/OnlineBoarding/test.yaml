@@ -208,7 +208,6 @@ paths:
       security:
         - Bearer: []
       deprecated: false
-
   /api/proposal/{proposalNumber}:
     get:
       x-proxy-name: Check Proposal Status
