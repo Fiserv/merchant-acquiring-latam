@@ -1,17 +1,20 @@
 openapi: 3.0.0
 x-stoplight:
-  id: ox57s8kmqhbro
+  id: kbec5zo7km8si
 info:
   description: Online Boarding Process
   version: '1.0'
   title: Online Boarding Process
   termsOfService: 'urn:tos'
+  contact: {}
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0'
 servers:
-  - url: 'https://cat.api.firstdata.com'
-x-production-url: prod.api.firstdata.com
+  - url: 'https://cat.api.firstdata.com/bwa/credenciamento'
+x-header-api-key: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+x-header-api-secret: N93nmFmoY0NzSMC5
+x-production-url: prod.api.firstdata.com/bwa/credenciamento/
 x-config:
   tryItOut: true
 tags:
@@ -61,8 +64,8 @@ paths:
   /api/proposal:
     post:
       x-proxy-name: Online Boarding and Status
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: 'Boarding New Proposals. To prepare the payload area, it will be required to check some other endpoints as described in some fields'
       description: 'Importante: Each person has its respective fields to be sent. The example has 2 fullfiled obects, one for Individual (PF) and oter for Companies (PJ). Use he examples.'
       operationId: boardingNewProposals
@@ -85,7 +88,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -133,11 +136,11 @@ paths:
       security:
         - Bearer: []
       deprecated: false
-  /api/proposal1/v3:
+  /api/proposal/v3:
     post:
       x-proxy-name: Online Boarding and Status - Boarding New Proposals
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: 'Boarding New Proposals. To prepare the payload area, it will be required to check some other endpoints as described in some fields - V3'
       description: 'Importante: Each person has its respective fields to be sent. The example has 2 fullfiled obects, one for Individual (PF) and oter for Companies (PJ). Use he examples. This endpoint acts almost like the default route (api/proposal). Nevertheless, this route shows slight comportamental differences about tax and currency.'
       operationId: boardingNewProposals1
@@ -160,7 +163,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -208,12 +211,11 @@ paths:
       security:
         - Bearer: []
       deprecated: false
-
-  '/api/proposal2/{proposalNumber}':
+  '/api/proposal/{proposalNumber}':
     get:
       x-proxy-name: Check Proposal Status
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Check Proposal Status
       description: Check Proposal Status using the Proposal Number
       operationId: checkProposalStatus
@@ -236,7 +238,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -280,13 +282,12 @@ paths:
       security:
         - Bearer: []
       deprecated: false
-
   /api/payment/report:
     post:
-      x-proxy-name: Declare Payment - Used for Device Sales
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Declare Payment - Used for Device Sales
+      x-proxy-name: Declare Payment - Used for Device Sales
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Declare Payment - Used for Device Sales
       operationId: declarePayment
       parameters:
@@ -308,7 +309,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -354,10 +355,10 @@ paths:
       deprecated: false
   '/api/serpro/cnpj/{cnpj}':
     get:
-      x-proxy-name: Verify Tax ID (CNPJ for company) at SERPRO
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Verify Tax ID (CNPJ for company) at SERPRO
+      x-proxy-name: Verify Tax ID (CNPJ for company) at SERPRO
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Verify Tax ID (CNPJ for company) at SERPRO
       operationId: verifyTaxIdATSerpro
       parameters:
@@ -379,7 +380,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -425,10 +426,10 @@ paths:
       deprecated: false
   '/api/serpro/cpf/{cpf}':
     get:
-      x-proxy-name: Verify Tax ID (CPF for individual) at SERPRO
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Verify Tax ID (CPF for individual) at SERPRO
+      x-proxy-name: Verify Tax ID (CPF for individual) at SERPRO
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Verify Tax ID (CPF for individual) at SERPRO
       operationId: verifyTaxIdATSerproGET
       parameters:
@@ -450,7 +451,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -496,10 +497,10 @@ paths:
       deprecated: false
   /config/service-contract:
     get:
-      x-proxy-name: Service Contract Parameters. It is an internal code used in Fiserv to identify the Partner
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Service Contract Parameters. It is an internal code used in Fiserv to identify the Partner
+      x-proxy-name: Service Contract Parameters. It is an internal code used in Fiserv to identify the Partner
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Service Contract Parameters. It is an internal code used in Fiserv to identify the Partner
       operationId: ListOfAvailableServiceContracts
       parameters:
@@ -521,14 +522,13 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -554,12 +554,12 @@ paths:
       deprecated: false
   '/config/account-fees/{serviceContract}':
     get:
-      x-proxy-name: Acount Fees for Required Service Parameters (accountFees)
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Acount Fees for Required Service Parameters (accountFees)
+      x-proxy-name: Acount Fees for Required Service Parameters (accountFees)
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Acount Fees for Required Service Parameters (accountFees)
-      operationId: listOfAccountFeesForRequiredServicesAccountFees
+      operationId: listOfAccountFeesForRequiredServices(AccountFees)
       parameters:
         - name: Message-Signature
           in: header
@@ -579,14 +579,13 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -622,10 +621,10 @@ paths:
       deprecated: false
   '/config/bank-accounts/{serviceContract}':
     get:
-      x-proxy-name: Associations/Schemas Product Code for Settlement Parameters
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Associations/Schemas Product Code for Settlement Parameters
+      x-proxy-name: Associations/Schemas Product Code for Settlement Parameters
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Associations/Schemas Product Code for Settlement Parameters
       operationId: listOfAvailableSchemasForSettlement
       parameters:
@@ -647,7 +646,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -690,10 +689,10 @@ paths:
       deprecated: false
   '/config/bank-accounts/{serviceContract}/prepayment':
     get:
-      x-proxy-name: Associations/Schemas Product Code for Settlement Parameters with prepayment enable value
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Associations/Schemas Product Code for Settlement Parameters with prepayment enable value
+      x-proxy-name: Associations/Schemas Product Code for Settlement Parameters with prepayment enable value
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Associations/Schemas Product Code for Settlement Parameters with prepayment enable value
       operationId: listOfAvailableSchemasForSettlement1
       parameters:
@@ -715,14 +714,13 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -758,10 +756,10 @@ paths:
       deprecated: false
   /config/bank:
     get:
-      x-proxy-name: List of Banks for Settlement to be used during boarding
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: List of Banks for Settlement to be used during boarding
+      x-proxy-name: List of Banks for Settlement to be used during boarding
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: List of Banks for Settlement to be used during boarding
       operationId: listOfAvailableBanksForSettlement
       parameters:
@@ -783,14 +781,13 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -818,10 +815,10 @@ paths:
       deprecated: false
   '/config/cnae/{institution}':
     get:
-      x-proxy-name: List of CNAEs Parameter for Boarding
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: List of CNAEs Parameter for Boarding
+      x-proxy-name: List of CNAEs Parameter for Boarding
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: List of CNAEs Parameter for Boarding
       operationId: listOfAvailableCNAEForBoarding
       parameters:
@@ -843,7 +840,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -891,10 +888,10 @@ paths:
       deprecated: false
   '/config/mcc/{institution}/{cnae-number}':
     get:
-      x-proxy-name: Returns an object containing Merchant category identification code
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Returns an object containing Merchant category identification code
+      x-proxy-name: Returns an object containing Merchant category identification code
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: returns an object containing Merchant category identification code
       operationId: getMcc
       parameters:
@@ -932,10 +929,10 @@ paths:
       deprecated: false
   '/config/professional-license/{service-contract}':
     get:
-      x-proxy-name: Returns the object 'ApiResult' with the status of professional license
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Returns the object 'ApiResult' with the status of professional license
+      x-proxy-name: Returns the object 'ApiResult' with the status of professional license
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Returns the object 'ApiResult' with the status of professional license
       operationId: getProfessionalLicenseStatusByServiceContract
       parameters:
@@ -1011,10 +1008,10 @@ paths:
         - Bearer: []
   /config/restricted-cnae:
     get:
-      x-proxy-name: Restricted/Unwanted CNAEs for Boarding
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Restricted/Unwanted CNAEs for Boarding
+      x-proxy-name: Restricted/Unwanted CNAEs for Boarding
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Restricted/Unwanted CNAEs for Boarding
       operationId: ListOfRestrictedUnwantedCNAEs
       parameters:
@@ -1139,9 +1136,9 @@ paths:
   '/config/fees/{serviceContract}':
     get:
       x-proxy-name: 'MDR Service Fees Parameters (Standard Fees, for reference only)'
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
-      description: 'MDR Service Fees Parameters (Standard Fees, for reference only)'
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      description: DR Service Fees Parameters (Standard Fees, for reference only)
       summary: 'MDR Service Fees Parameters (Standard Fees, for reference only)'
       operationId: listOfAvailableMDRFeesReferenceOnly
       parameters:
@@ -1163,7 +1160,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -1221,11 +1218,11 @@ paths:
       deprecated: false
   '/config/acquisition/{serviceContract}':
     get:
-      x-proxy-name: Associations/Schemas List
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
-      summary: Associations/Schemas List
       description: Associations/Schemas List
+      x-proxy-name: Associations/Schemas List
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Associations/Schemas List
       operationId: listOfAvailableAssociations/Schemas
       parameters:
         - name: Message-Signature
@@ -1246,7 +1243,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -1289,10 +1286,10 @@ paths:
       deprecated: false
   '/config/additional-services/{serviceContract}':
     get:
-      x-proxy-name: Additional Services Parameters
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Additional Services Parameters
+      x-proxy-name: Additional Services Parameters
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Additional Services Parameters
       operationId: listOfAvailableAdditionalServices
       parameters:
@@ -1314,7 +1311,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -1357,10 +1354,10 @@ paths:
       deprecated: false
   '/config/frequencies/{serviceContract}':
     get:
-      x-proxy-name: Frequency Cycles for Additional Services
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Frequency Cycles for Additional Services
+      x-proxy-name: Frequency Cycles for Additional Services
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Frequency Cycles for Additional Services
       operationId: listOfAvailableFrequencyCycles
       parameters:
@@ -1382,7 +1379,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -1431,10 +1428,10 @@ paths:
       deprecated: false
   '/config/capture-solution/{serviceContract}':
     get:
-      x-proxy-name: Capture Solutions Parameters
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Capture Solutions Parameters
+      x-proxy-name: Capture Solutions Parameters
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Capture Solutions Parameters
       operationId: listOfAvailableCaptureSolutions
       parameters:
@@ -1456,7 +1453,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -1522,10 +1519,10 @@ paths:
       deprecated: false
   /config/mobile-operator:
     get:
-      x-proxy-name: Phone Operators Parameters
-      x-group-name: Online Boarding
-      x-child-product-name: Digital Solutions
       description: Phone Operators Parameters
+      x-proxy-name: Phone Operators Parameters
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
       summary: Phone Operators Parameters
       operationId: listOfPhoneOperatios
       parameters:
@@ -1547,7 +1544,7 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: string
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
@@ -1580,6 +1577,2533 @@ paths:
       security:
         - Bearer: []
       deprecated: false
+  '/config/compliance/merchantId/{merchantId}':
+    get:
+      description: Merchant - Compliance (Not Available)
+      x-proxy-name: Merchant - Compliance (Not Available)
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Merchant - Compliance (Not Available)
+      operationId: checkCompliance
+      parameters:
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+          schema:
+            type: string
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+          schema:
+            type: string
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          example: 'null'
+          schema:
+            type: string
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          example: '1563309156733'
+          schema:
+            type: string
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+          schema:
+            type: string
+        - name: merchantId
+          in: path
+          description: Merchant Code
+          example: 91002806
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /config/campaigns/simulator:
+    get:
+      description: List of Campaign Setup
+      x-proxy-name: List of Campaign Setup
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Return the campaings according to the reported annual income for the simulator project
+      operationId: listOfCampaingsForSimulatorProject
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: anual-billing
+          in: query
+          description: Anual Billing
+          required: true
+          example: 360000
+          schema:
+            type: number
+            format: double
+        - name: service-contract
+          in: query
+          description: Service Contract. It is an internal code used in Fiserv to identify the Partner
+          example: 103
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: type-person
+          in: query
+          description: 'Type of Person, Legal or Physical'
+          required: true
+          schema:
+            type: string
+          example: L
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultOfListOfCampaingSimulatorDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+  '/config/campaigns/billing-range/id-campaign/{id-campaign}':
+    get:
+      description: Range of Revenue for the Campaign
+      x-proxy-name: Range of Revenue for the Campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Range of Revenue for the Campaign
+      operationId: listOfRangeOfRevenueForCampaign
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: id-campaign
+          in: path
+          description: Campaign ID
+          required: true
+          example: 1
+          schema:
+            type: integer
+            format: int64
+        - name: id-range
+          in: query
+          description: Revenue Range ID
+          example: 2
+          schema:
+            type: integer
+            format: int64
+        - name: page
+          in: query
+          example: 1
+          description: Currante Page
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfBillingRangeDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/factor-flex/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup
+      x-proxy-name: List of Campaign Setup
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the Factor fees for MDR Flex associated to a campaign
+      operationId: getFactorFeesForMDRFlexByCampaign
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          example: 2391501
+          schema:
+            type: integer
+            format: int32
+        - name: id-campaign
+          in: path
+          description: Campaign Code
+          required: true
+          example: 1
+          schema:
+            type: integer
+            format: int64
+        - name: id-range
+          in: query
+          description: Revenue Range ID
+          example: 2
+          schema:
+            type: integer
+            format: int64
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Quantity of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+        - name: receiving-deadline
+          in: query
+          description: Receiving Deadline
+          example: 14
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfFactorFlexRateDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/factor-flex/billing-value/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get the Factor fees for MDR Flex associated to a campaign
+      x-proxy-name: List of Campaign Setup - Get the Factor fees for MDR Flex associated to a campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the Factor fees for MDR Flex associated to a campaign
+      operationId: getFactorFeesForMDRFlexByCampaignWithBillingValue
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          example: 2391501
+          schema:
+            type: integer
+            format: int32
+        - name: id-campaign
+          in: path
+          description: Campaign Code
+          required: true
+          example: 1
+          schema:
+            type: integer
+            format: int64
+        - name: billing-value
+          in: query
+          description: Revenue amount
+          example: 30000
+          schema:
+            type: number
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Quantity of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+        - name: receiving-deadline
+          in: query
+          description: Receiving Deadline
+          example: 14
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfFactorFlexRateDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/mdr-flex/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign
+      x-proxy-name: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the MDR Flex Fees associated to a campaign
+      operationId: getMDRFlexFeesByCampaign
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          example: 2391501
+          schema:
+            type: integer
+            format: int32
+        - name: id-campaign
+          in: path
+          description: Campaign ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: premium-uf
+          in: query
+          description: Premium Fee Percentage
+          example: 2.5
+          schema:
+            type: number
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+        - name: id-range
+          in: query
+          description: Billing range id related to the campaign
+          example: 1
+          schema:
+            type: integer
+            format: int64
+        - name: person-type
+          in: query
+          description: Person type. P for physical person and L for legal person
+          example: P
+          schema:
+            type: string
+            enum:
+              - P
+              - L
+        - name: uf
+          in: query
+          description: State Abbreviation
+          example: SP
+          schema:
+            type: string
+            enum:
+              - AC
+              - AL
+              - AP
+              - AM
+              - BA
+              - CE
+              - DF
+              - ES
+              - GO
+              - MA
+              - MT
+              - MS
+              - MG
+              - PA
+              - PB
+              - PR
+              - PE
+              - PI
+              - RJ
+              - RN
+              - RS
+              - RO
+              - RR
+              - SC
+              - SP
+              - SE
+              - TO
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfMdrFlexRateDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/mdr-flex/billing-value/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign - Billing Value
+      x-proxy-name: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign - Billing Value
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the MDR Flex Fees associated to a campaign
+      operationId: getMDRFlexFeesByCampaignWithBillingValue
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          example: 2391501
+          schema:
+            type: integer
+            format: int32
+        - name: id-campaign
+          in: path
+          description: Campaign ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: premium-uf
+          in: query
+          description: Premium Fee Percentage
+          example: 2.5
+          schema:
+            type: number
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+        - name: billing-value
+          in: query
+          description: Revenue amount
+          example: 30000
+          schema:
+            type: number
+        - name: person-type
+          in: query
+          description: Person type. P for physical person and L for legal person
+          example: P
+          schema:
+            type: string
+            enum:
+              - P
+              - L
+        - name: uf
+          in: query
+          description: State Abbreviation
+          example: SP
+          schema:
+            type: string
+            enum:
+              - AC
+              - AL
+              - AP
+              - AM
+              - BA
+              - CE
+              - DF
+              - ES
+              - GO
+              - MA
+              - MT
+              - MS
+              - MG
+              - PA
+              - PB
+              - PR
+              - PE
+              - PI
+              - RJ
+              - RN
+              - RS
+              - RO
+              - RR
+              - SC
+              - SP
+              - SE
+              - TO
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfMdrFlexRateDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/mdr/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get MDR Fees for a given campaign
+      x-proxy-name: List of Campaign Setup - Get MDR Fees for a given campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get MDR Fees for a given campaign
+      operationId: getMDRFeesByCampaign
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          allowEmptyValue: false
+          schema:
+            type: integer
+            format: int32
+          example: 4923001
+        - name: id-campaign
+          in: path
+          description: Campaing ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: premium-uf
+          in: query
+          description: Premium Rate Percentage
+          example: 2.5
+          schema:
+            type: number
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+        - name: id-range
+          in: query
+          description: Billing range id related to the campaign
+          example: 1
+          schema:
+            type: integer
+            format: int64
+        - name: person-type
+          in: query
+          description: Person type. P for physical person and L for legal person
+          example: P
+          schema:
+            type: string
+            enum:
+              - P
+              - L
+        - name: uf
+          in: query
+          description: State Abbreviation
+          example: SP
+          schema:
+            type: string
+            enum:
+              - AC
+              - AL
+              - AP
+              - AM
+              - BA
+              - CE
+              - DF
+              - ES
+              - GO
+              - MA
+              - MT
+              - MS
+              - MG
+              - PA
+              - PB
+              - PR
+              - PE
+              - PI
+              - RJ
+              - RN
+              - RS
+              - RO
+              - RR
+              - SC
+              - SP
+              - SE
+              - TO
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfMdrRatesDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/mdr/billing-value/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get the MDR Fees associated to a campaign
+      x-proxy-name: List of Campaign Setup - Get the MDR Fees associated to a campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the MDR Fees associated to a campaign
+      operationId: getMDRFeesByCampaignWithBillingValue
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          allowEmptyValue: false
+          schema:
+            type: integer
+            format: int32
+          example: 4923001
+        - name: id-campaign
+          in: path
+          description: Campaing ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: premium-uf
+          in: query
+          description: Premium Rate Percentage
+          example: 2.5
+          schema:
+            type: number
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+        - name: billing-value
+          in: query
+          description: Billing amount
+          example: 30000
+          schema:
+            type: number
+        - name: person-type
+          in: query
+          description: Person type. P for physical person and L for legal person
+          example: P
+          schema:
+            type: string
+            enum:
+              - P
+              - L
+        - name: uf
+          in: query
+          description: State Abbreviation
+          example: SP
+          schema:
+            type: string
+            enum:
+              - AC
+              - AL
+              - AP
+              - AM
+              - BA
+              - CE
+              - DF
+              - ES
+              - GO
+              - MA
+              - MT
+              - MS
+              - MG
+              - PA
+              - PB
+              - PR
+              - PE
+              - PI
+              - RJ
+              - RN
+              - RS
+              - RO
+              - RR
+              - SC
+              - SP
+              - SE
+              - TO
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfMdrRatesDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/current-approvers/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get the current campaign approvers
+      x-proxy-name: List of Campaign Setup - Get the current campaign approvers
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the current campaign approvers
+      operationId: getCurrentApprovers
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: id-campaign
+          in: path
+          description: Campaing ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApproversCampaignDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/approvers/service-contract/{service-contract}':
+    get:
+      description: List of Campaign Setup - Get possible approvers for a campaign
+      x-proxy-name: List of Campaign Setup - Get possible approvers for a campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get possible approvers for a campaign
+      operationId: getApprovers
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: service-contract
+          in: path
+          description: Service Contract
+          example: 103
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApproversDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/business-point/billing-value/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get the Business Point associated to a campaign - Billing value
+      x-proxy-name: List of Campaign Setup - Get the Business Point associated to a campaign - Billing value
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the Business Point associated to a campaign
+      operationId: getBusinessPointWithBillingValue
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: id-campaign
+          in: path
+          description: Campaing ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: billing-value
+          in: query
+          description: Billing Value
+          allowEmptyValue: false
+          schema:
+            type: number
+          example: 4923001
+        - name: approver-type
+          in: query
+          description: Approver Type
+          example: MANAGER
+          schema:
+            type: string
+            enum:
+              - MANAGER
+              - DIRECTOR
+              - EXECUTIVE_DIRECTOR
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfBusinessPoint'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/business-point/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get the Business Point associated to a campaign
+      x-proxy-name: List of Campaign Setup - Get the Business Point associated to a campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the Business Point associated to a campaign
+      operationId: getBusinessPointWithoutBillingValue
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: id-campaign
+          in: path
+          description: Campaing ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: id-range
+          in: query
+          description: Billing Value
+          allowEmptyValue: false
+          schema:
+            type: number
+          example: 4923001
+        - name: approver-type
+          in: query
+          description: Approver Type
+          example: MANAGER
+          schema:
+            type: string
+            enum:
+              - MANAGER
+              - DIRECTOR
+              - EXECUTIVE_DIRECTOR
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfBusinessPoint'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/technology-price-discount-fee/billing-value/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get the technology price discount fee associated to a campaign
+      x-proxy-name: List of Campaign Setup - Get the technology price discount fee associated to a campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the technology price discount fee associated to a campaign
+      operationId: getTechnologyPriceDiscountFee
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: id-campaign
+          in: path
+          description: Campaing ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: billing-value
+          in: query
+          description: Billing Value
+          allowEmptyValue: false
+          schema:
+            type: number
+          example: 4923001
+        - name: approver-type
+          in: query
+          description: Approver Type
+          example: MANAGER
+          schema:
+            type: string
+            enum:
+              - MANAGER
+              - DIRECTOR
+              - EXECUTIVE_DIRECTOR
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfCampaignTechnologyPriceDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/premium-uf/service-contract/{service-contract}':
+    get:
+      description: List of Campaign Setup - Get the Premium Rate according to the State/Servicecontract
+      x-proxy-name: List of Campaign Setup - Get the Premium Rate according to the State/Servicecontract
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the Premium Rate according to the State/Servicecontract
+      operationId: getPremiumRates
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: service-contract
+          in: path
+          description: Service Contract code. Please Check with Fiserv
+          required: true
+          example: 101
+          schema:
+            type: integer
+            format: int32
+        - name: uf
+          in: query
+          description: State Abbreviation
+          example: SP
+          schema:
+            type: string
+            enum:
+              - AC
+              - AL
+              - AP
+              - AM
+              - BA
+              - CE
+              - DF
+              - ES
+              - GO
+              - MA
+              - MT
+              - MS
+              - MG
+              - PA
+              - PB
+              - PR
+              - PE
+              - PI
+              - RJ
+              - RN
+              - RS
+              - RO
+              - RR
+              - SC
+              - SP
+              - SE
+              - TO
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PremiumUfDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/prepayment/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get PrePayment Fees for Campaign
+      x-proxy-name: List of Campaign Setup - Get PrePayment Fees for Campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get PrePayment Fees for Campaign
+      operationId: getPrePaymentFees
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          example: 2391501
+          schema:
+            type: integer
+            format: int32
+        - name: id-campaign
+          in: path
+          description: Campaign ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: id-range
+          in: query
+          description: Revenue Range ID
+          example: 2
+          schema:
+            type: integer
+            format: int64
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfPrepaymentRateDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/prepayment/billing-value/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get PrePayment Fees for Campaign V2
+      x-proxy-name: List of Campaign Setup - Get PrePayment Fees for Campaign V2
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get PrePayment Fees for Campaign
+      operationId: getPrePaymentFeesWithBillingValue
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          example: 2391501
+          schema:
+            type: integer
+            format: int32
+        - name: id-campaign
+          in: path
+          description: Campaign ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: billing-value
+          in: query
+          description: Revenue amount
+          example: 30000
+          schema:
+            type: number
+        - name: mcc
+          in: query
+          description: Merchant Category Code
+          example: 6012
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfPrepaymentRateDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/pricing-technology/id-campaign/{id-campaign}':
+    get:
+      description: List of Campaign Setup - Get Device Prices associated to a Campaign
+      x-proxy-name: List of Campaign Setup - Get Device Prices associated to a Campaign
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get Device Prices associated to a Campaign
+      operationId: getDevicePricesByCampaign
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: id-campaign
+          in: path
+          description: Campaign ID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: id-service
+          in: query
+          description: Service ID
+          example: '300'
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Current Page
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: Total of Records
+          example: 10
+          schema:
+            type: integer
+            format: int32
+            default: 50
+        - name: billing-value
+          in: query
+          description: Anual Billing Card Value (if id-range is not null this field will be ignored)
+          example: 500.3
+          schema:
+            type: number
+            format: double
+        - name: id-range
+          in: query
+          description: Id Range value
+          example: 5
+          schema:
+            type: integer
+            format: int64
+        - name: person-type
+          in: query
+          description: Person Type
+          example: L
+          schema:
+            type: string
+            enum:
+              - P
+              - L
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageableDTOOfPriceTechnologyCampaignDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  '/config/campaigns/service-contract/{service-contract}':
+    get:
+      description: List of Campaign Setup - Get the Available Campaigns
+      x-proxy-name: List of Campaign Setup - Get the Available Campaigns
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the Available Campaigns
+      operationId: getAvailableCampaigns
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: agent-id
+          in: query
+          description: Agent ID
+          example: '50043201'
+          schema:
+            type: string
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+        - name: cnae
+          in: query
+          description: CNAE Code
+          example: 2391501
+          schema:
+            type: integer
+            format: int32
+        - name: cnpj
+          in: query
+          description: Company Tax ID (CNPJ) associated to the Economic Group
+          example: '19402145000147'
+          schema:
+            type: string
+        - name: has-economic-group
+          in: query
+          description: Flag for Economic Group Check
+          example: false
+          schema:
+            type: boolean
+            default: false
+        - name: id-economic-group
+          in: query
+          description: Economic Group ID (if Exist)
+          example: 10
+          schema:
+            type: integer
+            format: int64
+        - name: service-contract
+          in: path
+          description: Service Contract code. Please Check with Fiserv Representative junto a FISERV.
+          required: true
+          example: 101
+          schema:
+            type: integer
+            format: int32
+        - name: sub-channel
+          in: query
+          description: Sub Channel Code
+          example: '00001'
+          schema:
+            type: string
+        - name: uf
+          in: query
+          description: State Abbreviation
+          example: SP
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CampaignDTO'
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  /config/proposal/build-fees:
+    post:
+      description: List of Campaign Setup -  Return the JSON with a model of Fees to be sent
+      x-proxy-name: List of Campaign Setup -  Return the JSON with a model of Fees to be sent
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Return the JSON with a model of Fees to be sent
+      operationId: getJsonModelFeesToSent
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: setUpFeesDTO
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetUpFees'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeeDTO'
+        '201':
+          description: Created
+          content: {}
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+      x-codegen-request-body-name: setUpFeesDTO
+  /config/proposal/status:
+    get:
+      description: List of Setup to Send Proposal - Get the Proposal Status
+      x-proxy-name: List of Setup to Send Proposal - Get the Proposal Status
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Get the Proposal Status
+      operationId: getTheProposalStatus
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  description: Proposal Status Description
+                  example: AFFILIATED
+                  enum:
+                    - VALIDATION_ERROR
+                    - REJECTED_CREDIT
+                    - PENDING_QC
+                    - REJECTED_QC
+                    - PENDING_CREDIT
+                    - APPROVED_CREDIT
+                    - IN_PROGRESS
+                    - AFFILIATED
+                    - PENDING_CREDIT_SUBMISSION
+                    - PENDING_SERPRO_SUBMISSION
+                    - APPROVED_SERPRO
+                    - REJECTED_SERPRO
+                    - REJECTED_TMS
+                    - EXPIRED_DUE_TO_LACK_OF_PAYMENT
+                    - REJECTED_DUE_TO_REJECTED_PAYMENT
+                    - PENDING_BOARDING_SUBMISSION
+                    - PENDING_MERCHANT_ID
+                    - PENDING_BLACK_LIST
+                    - REJECTED_BLACK_LIST
+                    - REJECTED_SERPRO_BY_PARTNER
+                    - REJECTED_SERPRO_BY_BIRTH_DATE
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+  /config/proposal/build-fees/v2:
+    post:
+      description: List of Setup to Send Proposal -  Return the JSON with a model of Fees to be sent
+      x-proxy-name: List of Setup to Send Proposal -  Return the JSON with a model of Fees to be sent
+      x-group-name: Online Boarding and Status
+      x-child-product-name: Online Boarding
+      summary: Return the JSON with a model of Fees to be sent Takes a slight difference that the default route (/config/proposal/build-fees/v2)
+      operationId: getJsonModelFeesToSent1
+      parameters:
+        - name: Api-Key
+          in: header
+          description: APigee Key
+          required: true
+          schema:
+            type: string
+          example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB
+        - name: Client-Request-Id
+          in: header
+          description: Randomly generated by client
+          required: true
+          schema:
+            type: string
+          example: 6NYHj9Pgyxc84rmafpwG4fjhLwFfJYFVmxJOcgziD0QN3q6mGC
+        - name: Message-Signature
+          in: header
+          description: HMAC
+          required: true
+          schema:
+            type: string
+          example: 1tsmkG9Ip3k2rcO5cETButfP3D/RS6U8troFF+mUrno=
+        - name: Timestamp
+          in: header
+          description: Date - Epoch Format
+          required: true
+          schema:
+            type: string
+          example: '1563309156733'
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: setUpFeesDTO
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetUpFees'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeeDTO'
+        '201':
+          description: Created
+          content: {}
+        '401':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+      deprecated: false
+      security:
+        - Bearer: []
+      x-codegen-request-body-name: setUpFeesDTO
 components:
   securitySchemes:
     Bearer:
@@ -1607,7 +4131,7 @@ components:
           example: '2020-03-29'
           description: Invoice issue date. The format must be YYYY-MM-DD
       x-stoplight:
-        id: rc8r30j4ph7zn
+        id: evqnbj1ub649n
     ProfessionalLicense:
       type: object
       properties:
@@ -1635,7 +4159,7 @@ components:
         numberDocument:
           type: integer
           format: int32
-          example: 932825210
+          example: 93282521
           description: Document number. Information needed when licenseTypeName equals PROFESSIONAL_COUNCIL.
         professionalCouncilCategory:
           type: string
@@ -1664,7 +4188,7 @@ components:
       title: ProfessionalLicense
       description: Professional license information
       x-stoplight:
-        id: jvsehoiks99zj
+        id: k454njr0azrp0
     PoliticallyExposedPersonDTO:
       type: object
       required:
@@ -1686,7 +4210,7 @@ components:
           description: Position of PEP (Politically Exposed Persons) person (text)
       title: PoliticallyExposedPersonDTO
       x-stoplight:
-        id: wq5fznho4k5pd
+        id: aj3aut5urat20
     AccountFees:
       type: object
       description: Account Fees related to the mandatory services to be hired. All the returned items must be submitted as part of the proposal
@@ -1709,7 +4233,7 @@ components:
           example: Taxas/Ajustes - (meaning Fee/Adjustments)
       title: AccountFees
       x-stoplight:
-        id: gqkwmxhtzfud5
+        id: 835y5cmu72g42
     Bank:
       type: object
       description: Information about Avaliable Banks to be used for settlement
@@ -1724,14 +4248,13 @@ components:
           example: Citibank
       title: Bank
       x-stoplight:
-        id: kdfas3bwdjowb
+        id: lvusboeiblb8c
     BankingAccounts:
       type: object
       description: It returns the ID and Description for Association/Protucts for Settlement Information
       properties:
         id:
           description: ID of Association/Schema Code for Payment Information
-          example: '050 - Visa Credit'
           type: string
           enum:
             - 050 - Visa Credit
@@ -1747,7 +4270,6 @@ components:
         description:
           type: string
           description: Association/Schema Code Description
-          example: '050 - Visa Credit'
           enum:
             - 050 - Visa Credit
             - 051 - Marter Credit
@@ -1763,7 +4285,7 @@ components:
           type: boolean
       title: BankingAccounts
       x-stoplight:
-        id: 3a77im3w67wmi
+        id: zot9uxprqj06v
     BankingAccountsWithPrepaymentEnableValue:
       type: object
       description: It returns the ID and Description for Association/Protucts for Settlement Information
@@ -1771,7 +4293,6 @@ components:
         id:
           type: string
           description: ID of Association/Schema Code for Payment Information
-          example: '050 - Visa Credit'
           format: int32
           enum:
             - 050 - Visa Credit
@@ -1787,18 +4308,17 @@ components:
         description:
           type: string
           description: Association/Schema Code Description
-          example: 'Visa Credit'
           enum:
-            - Visa Credit
-            - Marter Credit
-            - Master Debit
-            - Visa Debit
-            - Cabal Credit
-            - Cabal Debit
-            - Hipercard Credit
-            - ELO Credit
-            - ELO Debit
-            - AMEX Credit
+            - 050 - Visa Credit
+            - 051 - Marter Credit
+            - 052 - Master Debit
+            - 053 - Visa Debit
+            - 055 - Cabal Credit
+            - 056 - Cabal Debit
+            - 059 - Hipercard Credit
+            - 060 - ELO Credit
+            - 061 - ELO Debit
+            - 063 - AMEX Credit
         required:
           type: boolean
         prepaymentEnable:
@@ -1810,7 +4330,7 @@ components:
             - '001'
       title: BankingAccountsWithPrepaymentEnableValue
       x-stoplight:
-        id: h4w25kz7hozdn
+        id: 50ki5dw2gjhil
     CaptureSolution:
       type: object
       description: It returns the Capture Solutions Parameters. The examples might slightly vary
@@ -1822,7 +4342,6 @@ components:
         idService:
           type: string
           description: Capture Service Code
-          example: '303 - POS Internet/Discado'
           enum:
             - 367 - POS Auto Credenc (meaning POS Auto Boarding)
             - 334 - Ecommerce TEF
@@ -1852,7 +4371,6 @@ components:
         description:
           type: string
           description: Descrição do Serviço.
-          example: '303 - POS Internet/Discado'
           enum:
             - 367 - POS Auto Credenc (meaning POS Auto Boarding)
             - 334 - Ecommerce TEF
@@ -1908,7 +4426,7 @@ components:
           example: RENT
       title: CaptureSolution
       x-stoplight:
-        id: wy6hvwt862jaz
+        id: p05q9puxmgrak
     Cnae:
       type: object
       description: It retuns the CNAES and Descriptions existing in our current process
@@ -1924,7 +4442,7 @@ components:
           example: Operadoras de Celular - (meaning Cellphone Operator)
       title: Cnae
       x-stoplight:
-        id: n0bfrwlz3bzk6
+        id: cu0resry0i1nz
     MccDto:
       type: object
       description: Returns the mmc code according to the search
@@ -1943,7 +4461,7 @@ components:
           example: 1799
       title: MccDto
       x-stoplight:
-        id: sz93qmvseu8ca
+        id: 43odn0hp70p2r
     Frequency:
       type: object
       description: Cycles and Frequencies for Services Information. Input field (cycleTypeId) to be got at "/config/additional-services/"
@@ -1963,7 +4481,7 @@ components:
           example: Daily
       title: Frequency
       x-stoplight:
-        id: hp2nv6a9yyhmi
+        id: f2t0k4m9zurfw
     MobileOperator:
       type: object
       description: Information about the Cellphone Chip Operator
@@ -1971,7 +4489,6 @@ components:
         id:
           type: string
           description: Cellphone Operator Code
-          example: '01 (default)'
           enum:
             - 01 (default)
             - 02 (Vivo)
@@ -1982,7 +4499,6 @@ components:
         name:
           type: string
           description: Cellphone Operator Code Name
-          example: '01 (default)'
           enum:
             - 01 (default)
             - 02 (Vivo)
@@ -1992,7 +4508,7 @@ components:
             - 06 (Algar)
       title: MobileOperator
       x-stoplight:
-        id: vm7gzdorn53v5
+        id: dqp56zvkeklvk
     ResultOfListOfAccountFees:
       type: object
       description: Account Fees related to the mandatory services. All the returned items must be submitted as part of the proposal
@@ -2014,7 +4530,29 @@ components:
           example: Return Message Text
       title: ResultOfListOfAccountFees
       x-stoplight:
-        id: cmhjyg4ey4pdf
+        id: jsf10cx59tgb6
+    ResultOfListOfCampaingSimulatorDTO:
+      type: object
+      description: Result List of CampaingSimulatorDTO
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CampaingSimulatorDTO'
+        error:
+          type: boolean
+          description: Return Code
+          example: true
+          enum:
+            - true
+            - false
+        message:
+          type: string
+          description: Return Message
+          example: Return Message Text
+      title: ResultOfListOfCampaingSimulatorDTO
+      x-stoplight:
+        id: 96ef8e4yisu8a
     ResultOfListOfBankingAccounts:
       type: object
       properties:
@@ -2035,7 +4573,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfBankingAccounts
       x-stoplight:
-        id: ibnmsunxh5lt5
+        id: x6rniklhdxuk9
     ResultOfListOfBankingAccountsWithPrepaymentEnableValue:
       type: object
       properties:
@@ -2056,7 +4594,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfBankingAccountsWithPrepaymentEnableValue
       x-stoplight:
-        id: ngntir03dpuhz
+        id: ics3xrlvao001
     ResultOfListOfCaptureSolution:
       type: object
       properties:
@@ -2077,7 +4615,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfCaptureSolution
       x-stoplight:
-        id: bst2aono5khz7
+        id: rqpozlixjl8vf
     ResultOfListOfCnae:
       type: object
       properties:
@@ -2098,7 +4636,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfCnae
       x-stoplight:
-        id: 2hi90hyzrvsji
+        id: kfl2odm7getil
     ResultOfListOfFrequency:
       type: object
       properties:
@@ -2119,7 +4657,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfFrequency
       x-stoplight:
-        id: 7mbw9uxgbor8b
+        id: 5ky5n27z4jvf0
     ResultOfListOfMobileOperator:
       type: object
       properties:
@@ -2140,7 +4678,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfMobileOperator
       x-stoplight:
-        id: u603o7wuunk1w
+        id: sjefqwf8wtufc
     ResultOfListOfService:
       type: object
       properties:
@@ -2161,7 +4699,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfService
       x-stoplight:
-        id: mbp5u45xplr0x
+        id: 6k67tn5t7hlh0
     ResultOfListOfAquisition:
       type: object
       properties:
@@ -2182,7 +4720,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfService
       x-stoplight:
-        id: ippn6kcblc1vp
+        id: v49qnviz3aibx
     ResultOfListOfTransactionTypes:
       type: object
       properties:
@@ -2203,7 +4741,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfTransactionTypes
       x-stoplight:
-        id: 6qiiojo7si9wh
+        id: qouflpnymutli
     Service:
       type: object
       description: 'Information related to Additional Services to be Hired, such as Statements. The ID will be used for Boarding'
@@ -2211,7 +4749,6 @@ components:
         id:
           type: string
           description: Additional Service Code
-          example: '313 - Extrato Papel Diário - (meaning Daily Paper Statement)'
           enum:
             - 313 - Extrato Papel Diário - (meaning Daily Paper Statement)
             - 314 - Extrato Email Diario - (meaning Daily Email Statement)
@@ -2232,7 +4769,6 @@ components:
         description:
           type: string
           description: Additional Service Code Description
-          example: 313 - Extrato Papel Diário - (meaning Daily Paper Statement)
           enum:
             - 313 - Extrato Papel Diário - (meaning Daily Paper Statement)
             - 314 - Extrato Email Diario - (meaning Daily Email Statement)
@@ -2253,7 +4789,6 @@ components:
         cycleTypeId:
           type: string
           description: Cycle Service Type Code. This ID wil be used to get Frequency in "/config/frequencies/"
-          example: '003 - Daily'
           enum:
             - 001 - Monthly DOW
             - 002 - Twice Monthly DOM
@@ -2263,7 +4798,6 @@ components:
         cycleTypeDescription:
           type: string
           description: Cycle Service Type Code Desciption
-          example: '003 - Daily'
           enum:
             - 001 - Monthly DOW
             - 002 - Twice Monthly DOM
@@ -2273,7 +4807,6 @@ components:
         deliveryMethodID:
           type: string
           description: Delivery Method Code
-          example: '200 - Documento Impresso - (meaning printed document)'
           enum:
             - 200 - Documento Impresso - (meaning printed document)
             - 500 - E-mail
@@ -2283,7 +4816,6 @@ components:
         deliveryMethodDescription:
           type: string
           description: Delivery Method Code Description
-          example: '026 - EDI'
           enum:
             - 200 - Documento Impresso - (meaning printed document)
             - 500 - E-mail
@@ -2292,7 +4824,7 @@ components:
             - etc.
       title: Service
       x-stoplight:
-        id: j17ivymd3o7c2
+        id: 3nhxf04p7a6nr
     Aquisition:
       type: object
       description: List of Associations and Products available for boarding
@@ -2300,7 +4832,6 @@ components:
         id:
           type: string
           description: Association/Schema Product Code
-          example: '102 - Adq - MC Credit'
           enum:
             - 102 - Adq - MC Credit
             - 103 - Acq - CABAL Credit
@@ -2315,7 +4846,6 @@ components:
         description:
           type: string
           description: Association/Schema Product Code Description
-          example: '102 - Adq - MC Credit'
           enum:
             - 102 - Adq - MC Credit
             - 103 - Acq - CABAL Credit
@@ -2329,7 +4859,7 @@ components:
             - 201 - Adq - VISA Credit
       title: Aquisition
       x-stoplight:
-        id: 4y8jtjw0oxgi2
+        id: 7a345wswggcot
     ServiceContractDTO:
       type: object
       properties:
@@ -2341,7 +4871,7 @@ components:
             format: int32
       title: ServiceContractDTO
       x-stoplight:
-        id: 3jd0i2pphffwx
+        id: 5pe0ii0ykviwx
     TransactionTypes:
       type: object
       description: 'This endpoint is for Prices reference only. If your Instituion/Service Contract works with Price Validation, please refer to the CAMPAING Endpoints: ''List of Campaing Setup'''
@@ -2349,7 +4879,6 @@ components:
         eventArea:
           type: string
           description: Card Transaction Type
-          example: 'Estrangeiro (meaning Internacional)'
           enum:
             - Doméstico (meaning Domestic)
             - Estrangeiro (meaning Internacional)
@@ -2360,7 +4889,6 @@ components:
         transactionTypeId:
           type: integer
           description: Transaction Type Code to be applied the fee
-          example: 5
           format: int32
           enum:
             - 5
@@ -2391,7 +4919,6 @@ components:
         transactionTypeDescription:
           type: string
           description: Transaction Type Description to be applied the fee
-          example: '005 - Compra - (meaning Purchase)'
           enum:
             - 005 - Compra - (meaning Purchase)
             - 461 - Compra com 02 parcelas - (meaning Purchase 02 installments)
@@ -2421,7 +4948,7 @@ components:
             - etc.
       title: TransactionTypes
       x-stoplight:
-        id: r86wjc5uxe7g8
+        id: w8z35q1zg9d4l
     AdditionalService:
       type: object
       description: 'Information related to Additional Services to be Hired, such as Statements. The returned ID will be used for Boarding'
@@ -2429,7 +4956,6 @@ components:
         id:
           type: string
           description: Additional Services Code. check Additional Services Parameters "/config/additional-services"
-          example: '313 - Extrato Papel Diário - (meaning Daily Paper Statement)'
           enum:
             - 313 - Extrato Papel Diário - (meaning Daily Paper Statement)
             - 314 - Extrato Email Diario - (meaning Daily Email Statement)
@@ -2459,7 +4985,7 @@ components:
           description: Additional Service Amount
       title: AdditionalService
       x-stoplight:
-        id: 2oh6oggzm57ui
+        id: tjbdlh9zsfok2
     ApiResult:
       type: object
       properties:
@@ -2476,7 +5002,7 @@ components:
           example: Return Message Text
       title: ApiResult
       x-stoplight:
-        id: oiymcfdq13rxw
+        id: ppyb07k55zsuh
     ApiResultOfCreatedProposalResp:
       type: object
       properties:
@@ -2495,7 +5021,7 @@ components:
           example: Return Message Text
       title: ApiResultOfCreatedProposalResp
       x-stoplight:
-        id: 4vihjvdka0iv0
+        id: 79h24tcpbk659
     response422detail:
       type: object
       properties:
@@ -2514,7 +5040,7 @@ components:
           example: Return Message Text
       title: response422detail
       x-stoplight:
-        id: gakcx4tmbn3a2
+        id: wowv7n0ezpbcr
     ApiResultOfProposalQuery:
       type: object
       properties:
@@ -2533,7 +5059,7 @@ components:
           example: Return Message Text
       title: ApiResultOfProposalQuery
       x-stoplight:
-        id: r259m9b0m5umc
+        id: egk5r0ahdvp8z
     captureSolutions:
       type: object
       description: Capture Solution to be Requested. Check Indicated Endpoints for Detais
@@ -2562,7 +5088,7 @@ components:
           description: Service Fee Amount
       title: captureSolutions
       x-stoplight:
-        id: bhh2qpmf5p4sf
+        id: l6wxd0wlbrqcb
     Contact:
       type: object
       required:
@@ -2620,7 +5146,7 @@ components:
       title: Contact
       description: Merchant Contact Information
       x-stoplight:
-        id: co62i3vfyamf5
+        id: c1ip8ebeanmw1
     CreatedProposalResp:
       type: object
       description: Return the Proposal Number or Error information
@@ -2631,7 +5157,7 @@ components:
           example: O00000000000384
       title: CreatedProposalResp
       x-stoplight:
-        id: e92di17szal5e
+        id: q9yqhitn1fvt9
     response422:
       type: object
       description: Return the Proposal Number or Error information
@@ -2650,7 +5176,7 @@ components:
           example: '[  697 ]'
       title: response422
       x-stoplight:
-        id: mucjfkkzu9n5f
+        id: hek7tezhagsxq
     DeliveryInformation:
       type: object
       description: Delivery Information Details (Merchant -> Customer)
@@ -2662,7 +5188,7 @@ components:
             $ref: '#/components/schemas/Information'
       title: DeliveryInformation
       x-stoplight:
-        id: xmen8ylrvj8tt
+        id: 48us7h0zfxqek
     Fee:
       type: object
       description: MDR Fees to be boarded
@@ -2671,7 +5197,6 @@ components:
       properties:
         chargeModel:
           type: string
-          example: '502 - MDR (regular)'
           description: MDR Charging Model Type
           enum:
             - 502 - MDR (regular)
@@ -2712,7 +5237,7 @@ components:
                 example: TAX
       title: Fee
       x-stoplight:
-        id: 9cl37mrm98ftj
+        id: pel7oohsbmmsn
     FeeDetails:
       type: object
       description: MDR Service Fees. Please refer to "/config/fees/" for Associations/Products ID
@@ -2725,7 +5250,7 @@ components:
         transactionTypeId:
           type: integer
           format: int32
-          example: 461
+          example: 5
           description: 'Transaction Type Id. Please check "/config/fees". It requires the Association/Prodcut ID, CNAE and Service Contract. It is mandatory to send all the items returned in this endpoint'
           enum:
             - 5
@@ -2773,7 +5298,7 @@ components:
             - ALL
       title: FeeDetails
       x-stoplight:
-        id: 4b3hbmrme0jdj
+        id: 730kblzw1yp98
     Information:
       type: object
       description: Merchant Additional Information
@@ -2818,11 +5343,11 @@ components:
           description: Address Longitude
         referencePoint:
           type: string
-          example: 'teste'
+          example: teste
           description: Landmark Information
       title: Information
       x-stoplight:
-        id: l53x3db9e745a
+        id: 90dmrozrrzfm0
     Interval:
       type: object
       description: Merchant Inteval Lunch Time or any other interval
@@ -2843,7 +5368,7 @@ components:
           description: Week Day
       title: Interval
       x-stoplight:
-        id: jg06bmzdtxta2
+        id: k0luw8i4yncrz
     LegalPerson:
       type: object
       description: Merchant Legal Representative. It is mandatory if the Merchant is a Company (CNPJ)
@@ -2886,7 +5411,6 @@ components:
           description: Merchant Trade Name
         formConstitution:
           type: string
-          example: '1 - (Empresário Individual - EI)'
           description: 'Company Type Code, according to Brazil Law (refer to Domains)'
           enum:
             - 1 - (Empresário Individual - EI)
@@ -2920,7 +5444,7 @@ components:
           description: Merchant State License Information
       title: LegalPerson
       x-stoplight:
-        id: 2blhrykuhffl8
+        id: tsq9sdxxa1gsg
     ManualPrepayment:
       type: object
       description: Inforamtion about Manual Prepayment request
@@ -2948,7 +5472,7 @@ components:
           description: Manual PRepayment Fee (unreleased). This information must be the same of relreasedPrepayment
       title: ManualPrepayment
       x-stoplight:
-        id: 0dvmp44wfdusj
+        id: 7vnlctsuo9fkp
     MerchantAccountFee:
       type: object
       description: It is a mandatory information related to the services provided by Fiserv. Refer to the "/config/account-fees/" for the list of options. All the IDs returned by this endpoint need to be an item of this request
@@ -2971,7 +5495,7 @@ components:
           description: Fee Code that will be returned by the auxiliary endpoint "/config/account-fees/"
       title: MerchantAccountFee
       x-stoplight:
-        id: 14itcu7559b47
+        id: njpoz1ei5jcn1
     MerchantCompliance:
       type: object
       description: Marchant Company Partners Inforamtion for Compliance Purpose
@@ -3066,7 +5590,6 @@ components:
           description: Preferred Prefix Name
         type:
           type: string
-          example: 'P - Pessoa Física (meaning Individual)'
           description: Partnership Type
           enum:
             - P - Pessoa Física (meaning Individual)
@@ -3082,7 +5605,7 @@ components:
           description: Registro Nacional de Estrangeiro
       title: MerchantCompliance
       x-stoplight:
-        id: u5gcqieyird3e
+        id: 3yhl37eoxmjtp
     PaymentReport:
       type: object
       description: Rerpot the payment done - Applicable for Sales only
@@ -3182,7 +5705,7 @@ components:
           description: Payment Total Amount
       title: PaymentReport
       x-stoplight:
-        id: nk3rlrpddr1hq
+        id: rl2vya459f0nt
     PhysicalPerson:
       type: object
       description: Merchant Ownership Information
@@ -3261,7 +5784,7 @@ components:
           description: Registro Nacional de Estrangeiro
       title: PhysicalPerson
       x-stoplight:
-        id: sm07x1kt8lbce
+        id: 41hn0jlosh9q9
     ProposalQuery:
       type: object
       description: Check the status of Boarding Process
@@ -3273,7 +5796,6 @@ components:
         paymentStatus:
           type: string
           description: Payment Status
-          example: APPROVED
           enum:
             - APPROVED
             - PENDING
@@ -3340,9 +5862,26 @@ components:
           enum:
             - Scheduled Maintenance
           example: Scheduled Maintenance
+        approvedNumberTerminals:
+          type: number
+          description: Number of terminals accepted
+          example: 2
+        deniedNumberTerminals:
+          type: number
+          description: Number of terminals not accepted
+          example: 2
+        reasonRejectionSerpro:
+          type: string
+          description: Serpro rejection reason message
+          example: CPF com situação irregular
+        reasonRejectionDiligence:
+          type: array
+          description: Credit and Risk rejection message
+          items:
+            type: string
       title: ProposalQuery
       x-stoplight:
-        id: ulvwvg86htlwt
+        id: zwa3o48onm09r
     SerproResponse:
       type: object
       description: Serpro Bureau Information (Government bureau of demographic and commercial data)
@@ -3424,7 +5963,6 @@ components:
             codigo:
               type: string
               description: Company Situation Code
-              example: '8 - Baixada - (meaning Revoked)'
               enum:
                 - 2 - Ativa - (meaning Active)
                 - 3 - Suspensa - (meaning Suspended)
@@ -3526,12 +6064,11 @@ components:
                 example: ''
       title: SerproResponse
       x-stoplight:
-        id: g97z0sqjvu4dd
+        id: n2kk7f34e35oe
     ServiceOrder:
       title: ServiceOrder
       description: Delivery Service Order Information (delivery from Fiserv > Merchant)
       allOf:
-        - $ref: '#/components/schemas/ProposalQuery'
         - type: object
           properties:
             logicNumber:
@@ -3548,7 +6085,7 @@ components:
               example: '301'
           title: ServiceOrder
       x-stoplight:
-        id: pfnfcv9yj114u
+        id: m6mb2impbt98u
     Submission:
       type: object
       required:
@@ -3610,7 +6147,7 @@ components:
         annualVolumeOfCash:
           type: number
           description: Merchant Sales Annual Revenue - Sales paid in Cash
-          example: 5000.00
+          example: 5000
         annualVolumeOfSalesCard:
           type: number
           description: Merchant Sales Annual Revenue - Sales paid in Debit and Credit Cards
@@ -3618,7 +6155,7 @@ components:
         annualVolumeSalesCardGroup:
           type: number
           description: Merchant Group Sales Annual Revenue - Sales paid in Debit and Credit Cards
-          example: 10000.00
+          example: 10000
         averageTicket:
           type: number
           example: 150
@@ -3704,7 +6241,6 @@ components:
                   transactionType:
                     description: Transaction Type ID for Prepayment. Provide what type of transactions shall be considered for the Prepayment
                     type: string
-                    example: '999 – Todos - (meaning ALL)'
                     enum:
                       - 001 – Somente parcelado - (meaning Only Installment)
                       - 002 – Somente parcelado com plano completo - (meaning Only Installment with Full Plan)
@@ -3721,7 +6257,6 @@ components:
                   cycleType:
                     description: Prepayment Cycle information. Usually it is used the Daily Option
                     type: string
-                    example: '003 - Daily'
                     enum:
                       - 001 - Monthly DOM
                       - 002 - Twice Monthly DOM
@@ -3732,7 +6267,6 @@ components:
                   periodicCycle:
                     description: Prepayment Periodicity
                     type: string
-                    example: '305 = Diário - (meaning Daily)'
                     enum:
                       - 305 = Diário - (meaning Daily)
                       - 309 = Semanal - Seg - (meaing Weekly Monday)
@@ -3789,7 +6323,6 @@ components:
                       - 737 = 31 DOM comercial - (meaning 31 SUN Commercial)
                   frequency:
                     type: string
-                    example: 'FIVE_DAYS - Monthly End of Month'
                     description: Prepayment Frequency Information. Period that the Merchant will receive the prepayment
                     enum:
                       - FIVE_DAYS - Monthly End of Month
@@ -3825,7 +6358,6 @@ components:
             $ref: '#/components/schemas/DeliveryInformation'
         ecommerce:
           type: string
-          example: 'TRADITIONAL (present card)'
           description: Type of Transactions to be allowed
           enum:
             - TRADITIONAL (present card)
@@ -3982,7 +6514,7 @@ components:
       title: Submission
       description: 'In order to submit a boarding proposal, it is required to send information about the Institution that the Merchant belongs to, Settlement Accounts, Commercial Merchant Information such as CNAE, Addresses, Contacts and Fees. It is also required to provide the Charging Model information for each services, such as Service Acquisition and Maintenance, Capture Solutions, Working Hours, Working Lunch and Delivery times'
       x-stoplight:
-        id: 4i6l4aup6fe0j
+        id: xf0sp4bxh64vb
     Time:
       type: object
       required:
@@ -3999,7 +6531,7 @@ components:
           description: Merchant Interval Time (time when the merchant will not be available) - To
       title: Time
       x-stoplight:
-        id: 3mcsxc9vg7x5b
+        id: hhuo36c50lb85
     WorkingDay:
       type: object
       required:
@@ -4030,7 +6562,7 @@ components:
       title: Working Hours
       description: Provide the Working Hours Information
       x-stoplight:
-        id: whd32oht2a3gk
+        id: m5ju9tywnhinv
     address:
       type: object
       required:
@@ -4101,14 +6633,13 @@ components:
       title: address
       description: Merchant Address Information
       x-stoplight:
-        id: 8kbbn7cmllkas
+        id: jnt3h8mwzmcs9
     situacaoSerproCPF:
       type: object
       properties:
         codigo:
           type: string
           description: Tax ID (CPF) Situation Code
-          example: '0 Regular - (meaning regular)'
           enum:
             - 0 Regular - (meaning regular)
             - 2 Suspensa - (meaning suspendente)
@@ -4120,7 +6651,6 @@ components:
         descricao:
           type: string
           description: Tax ID (CPF) Situation Description
-          example: '0 Regular - (meaning regular)'
           enum:
             - 0 Regular - (meaning regular)
             - 2 Suspensa - (meaning suspendente)
@@ -4132,7 +6662,7 @@ components:
       title: situacao
       description: Situaçãoo Cadastral do CPF Consultado.
       x-stoplight:
-        id: e2yy6jt2d1r1y
+        id: 4n7uwsqcmed6g
     ResponseSerproCPF:
       type: object
       properties:
@@ -4147,7 +6677,968 @@ components:
       title: Response
       description: Serpro Bureau Information
       x-stoplight:
-        id: 0dq3ufg9buvpz
+        id: 7wgmw7pi1xnns
+    CampaingSimulatorDTO:
+      title: CampaingSimulatorDTO
+      type: object
+      properties:
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 1
+        camapingCode:
+          type: string
+          description: Campaign Code
+          example: '10'
+        description:
+          type: string
+          description: Campaign description
+          example: MDR 10k - 30k D+30
+        hasMdrFlex:
+          type: boolean
+          description: Inform if the campaing has mdr flex fees
+          example: true
+        hasMdr:
+          type: boolean
+          description: Inform if the campaing has mdr fees
+          example: true
+        mdrWithPrepayment:
+          type: boolean
+          description: inform if the mdr is with prepayment or not
+          example: true
+        minAnnualBilling:
+          type: integer
+          description: Minimum annual billing
+          format: double
+          example: 360000
+        maxAnnualBilling:
+          type: integer
+          description: Maximun annual billing
+          format: double
+          example: 360000
+      description: Campaign Information for Simulator Project
+      x-stoplight:
+        id: vqir5pau0m367
+    BillingRangeDTO:
+      title: BillingRangeDTO
+      type: object
+      properties:
+        idCampaign:
+          type: integer
+          description: Campaign ID. Please check with Fiserv representative the usability
+          format: int64
+          example: 1
+        idRange:
+          type: integer
+          description: Revenue Range ID
+          format: int64
+          example: 1
+        maxAnnualBilling:
+          type: number
+          description: Revenue Range Max Amount
+          example: 1000
+        minAnnualBilling:
+          type: number
+          description: Revenu Range Min Amount
+          example: 100
+      description: Revenu Range Information
+      x-stoplight:
+        id: 3lpo1058t7gbj
+    Brand:
+      title: Brand
+      type: object
+      properties:
+        brand:
+          type: string
+          description: Association/Schema Name
+          example: VISA
+          enum:
+            - MASTER
+            - VISA
+            - CABAL
+            - MDS
+            - HIPERCARD
+            - ELO
+            - AMEX
+        rates:
+          type: array
+          description: Association/Schema Fee
+          items:
+            $ref: '#/components/schemas/Rate'
+      description: Association/Schema Information
+      x-stoplight:
+        id: mknokw4i6e5lq
+    CampaignDTO:
+      title: CampaignDTO
+      type: object
+      properties:
+        basedInCampaign:
+          type: integer
+          description: Campaign ID base
+          format: int64
+          example: 1
+        basedInCampaignDescription:
+          type: string
+          description: Campaign Base Description
+          example: Campanha promocional de Natal
+        description:
+          type: string
+          description: Campaign Description
+          example: Campanha promocional
+        economicGroup:
+          type: string
+          description: Economic Group Description
+          example: Grupo 1
+        expireDate:
+          type: string
+          description: Campaign Expire Date
+          format: date
+          example: '2022-05-21'
+        id:
+          type: integer
+          description: Campaign ID
+          format: int64
+        idEconomicGroup:
+          type: integer
+          description: Economic Group ID
+          format: int64
+          example: 1
+        idInstitution:
+          type: string
+          description: Merchant Institution Number
+          example: '00000006'
+        initialDate:
+          type: string
+          description: Campaign Start Date
+          format: date
+          example: '2020-05-21'
+        lastModifiedDate:
+          type: string
+          description: Last Campaign Modification
+          format: date
+        enablePriceQueue:
+          type: boolean
+          description: Price Queue Flag
+          example: true
+        serviceContract:
+          type: integer
+          description: Merchant Service Contract Code
+          format: int32
+          example: 101
+      description: Campaign Information
+      x-stoplight:
+        id: u42gylmb9ac5e
+    FactorFlexRateDTO:
+      title: FactorFlexRateDTO
+      type: object
+      properties:
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 2
+        idRange:
+          type: integer
+          description: Revenue Range ID
+          format: int64
+          example: 1
+        mcc:
+          type: integer
+          description: MCC Code (Merchant Category Code)
+          format: int32
+          example: 6021
+        minFactorRate1:
+          type: number
+          description: 'Factor #1 - Minimum Fee'
+          example: 1
+        minFactorRate2:
+          type: number
+          description: 'Factor #2 - Minimum Fee'
+          example: 2
+        suggestedFactorRate1:
+          type: number
+          description: 'Factor #1 - Suggested Fee'
+          example: 1.5
+        suggestedFactorRate2:
+          type: number
+          description: 'Factor #2 - Suggested Fee'
+          example: 2.5
+        receivingDeadline:
+          type: integer
+          description: Receiving Deadline
+          format: int64
+          example: 14
+      description: MDR Flex Factors Information
+      x-stoplight:
+        id: zsalq91y64bhz
+    MdrFlexRateDTO:
+      title: MdrFlexRateDTO
+      type: object
+      properties:
+        brands:
+          type: array
+          items:
+            $ref: '#/components/schemas/Brand'
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 1
+        mcc:
+          type: integer
+          description: Merchant MCC (Merchant Category Code)
+          format: int32
+          example: 6012
+        premiumPercent:
+          type: number
+          description: Percentual da taxa premium
+          example: 5.5
+      description: MDR FLEX Fee Information
+      x-stoplight:
+        id: 9x0h4tqqjd8qr
+    MdrRatesDTO:
+      title: MdrRatesDTO
+      type: object
+      properties:
+        brands:
+          type: array
+          description: Associaton/Schemas Information
+          items:
+            $ref: '#/components/schemas/Brand'
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 1
+        mcc:
+          type: integer
+          description: Merchant MCC (Merchant Category Code)
+          format: int32
+          example: 6012
+        premiumPercent:
+          type: number
+          description: Permium Share Percentage
+          example: 5.5
+      description: MDR Fee Information
+      x-stoplight:
+        id: 2df6fheqv5g37
+    PageableDTOOfBillingRangeDTO:
+      title: PageableDTOOfBillingRangeDTO
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current Page
+          format: int32
+          example: 1
+        response:
+          type: array
+          description: Dados relacionados aos ranges de faturamento
+          items:
+            $ref: '#/components/schemas/BillingRangeDTO'
+        size:
+          type: integer
+          description: Quantity of Records per Page
+          format: int32
+          example: 10
+        totalItens:
+          type: integer
+          description: Quantity of Records
+          format: int64
+          example: 50
+        totalPages:
+          type: integer
+          description: Total of Pages
+          format: int32
+          example: 5
+      description: Retorno paginado das informações de range de faturamento.
+      x-stoplight:
+        id: euqjs8g60iqya
+    PageableDTOOfFactorFlexRateDTO:
+      title: PageableDTOOfFactorFlexRateDTO
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current Page
+          format: int32
+          example: 1
+        response:
+          type: array
+          description: Dados relacionados aos fatores das taxas flex
+          items:
+            $ref: '#/components/schemas/FactorFlexRateDTO'
+        size:
+          type: integer
+          description: Quantity of Records per Page
+          format: int32
+          example: 10
+        totalItens:
+          type: integer
+          description: Quantity of Records
+          format: int64
+          example: 50
+        totalPages:
+          type: integer
+          description: Total of Pages
+          format: int32
+          example: 5
+      description: Retorno paginado das informações de fator de taxa MDR Flex.
+      x-stoplight:
+        id: jp1tzmwuueigj
+    PageableDTOOfMdrFlexRateDTO:
+      title: PageableDTOOfMdrFlexRateDTO
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current Page
+          format: int32
+          example: 1
+        response:
+          type: array
+          description: MDR FLEX Fees Information
+          items:
+            $ref: '#/components/schemas/MdrFlexRateDTO'
+        size:
+          type: integer
+          description: Quantity of Records per Page
+          format: int32
+          example: 10
+        totalItens:
+          type: integer
+          description: Quantity of Records
+          format: int64
+          example: 50
+        totalPages:
+          type: integer
+          description: Total of Pages
+          format: int32
+          example: 5
+      description: Return with Page Control for MDR FLEX Fee Information
+      x-stoplight:
+        id: 5x9xv27ycekzm
+    PageableDTOOfMdrRatesDTO:
+      title: PageableDTOOfMdrRatesDTO
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current Page
+          format: int32
+          example: 1
+        response:
+          type: array
+          description: MDR Fee Information
+          items:
+            $ref: '#/components/schemas/MdrRatesDTO'
+        size:
+          type: integer
+          description: Quantity of Records per Page
+          format: int32
+          example: 10
+        totalItens:
+          type: integer
+          description: Quantity of Records
+          format: int64
+          example: 50
+        totalPages:
+          type: integer
+          description: Total of Pages
+          format: int32
+          example: 5
+      description: Return with Page Control for MDR Fee Information
+      x-stoplight:
+        id: qkrmd7al19nh1
+    PageableDTOOfPrepaymentRateDTO:
+      title: PageableDTOOfPrepaymentRateDTO
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current Page
+          format: int32
+          example: 1
+        response:
+          type: array
+          description: Prepayment Fee Information
+          items:
+            $ref: '#/components/schemas/PrepaymentRateDTO'
+        size:
+          type: integer
+          description: Quantity of Records per Page
+          format: int32
+          example: 10
+        totalItens:
+          type: integer
+          description: Quantity of Records
+          format: int64
+          example: 50
+        totalPages:
+          type: integer
+          description: Total of Pages
+          format: int32
+          example: 5
+      description: Return PrepaymentFee Information (with Page Control)
+      x-stoplight:
+        id: qazf3w3678jgt
+    PageableDTOOfPriceTechnologyCampaignDTO:
+      title: PageableDTOOfPriceTechnologyCampaignDTO
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current Page
+          format: int32
+          example: 1
+        response:
+          type: array
+          description: Technology Fee Campaign Information
+          items:
+            $ref: '#/components/schemas/PriceTechnologyCampaignDTO'
+        size:
+          type: integer
+          description: Quantity of Records per Page
+          format: int32
+          example: 10
+        totalItens:
+          type: integer
+          description: Quantity of Records
+          format: int64
+          example: 50
+        totalPages:
+          type: integer
+          description: Total of Pages
+          format: int32
+          example: 5
+      description: Return Technology Fee by Campaign (with Page Control)
+      x-stoplight:
+        id: c8dx4fq9e8c5b
+    ApproversCampaignDTO:
+      title: ApproversCampaignDTO
+      type: object
+      description: Returns the approver data for a campaign
+      properties:
+        cpfCnpj:
+          type: string
+          description: CPF/CNPJ of approver
+          example: '1234567890'
+        idCampaignLong:
+          type: integer
+          description: ID Campaign
+          example: 1
+        campaignDescription:
+          type: string
+          description: Campaign Description
+          example: Regular
+        name:
+          type: string
+          description: Campaign Name
+          example: Regular
+        idApproverType:
+          type: integer
+          description: Approver type id
+          example: 1
+        approverType:
+          type: string
+          description: Approver type description
+          example: MANAGER
+          enum:
+            - MANAGER
+            - DIRECTOR
+            - EXECUTIVE_DIRECTOR
+      x-stoplight:
+        id: kr1851ifeqvuq
+    ApproversDTO:
+      title: ApproversDTO
+      type: object
+      description: Returns possible approvers for a campaign
+      properties:
+        cpfCnpj:
+          type: string
+          description: CPF/CNPJ of approver
+          example: '1234567890'
+        name:
+          type: string
+          description: Approver name
+          example: João da Silva
+        email:
+          type: string
+          description: Approver email
+          example: joao@fiserv.com
+      x-stoplight:
+        id: a4uugtn9umz7z
+    BusinessPointDTO:
+      title: BusinessPointDTO
+      type: object
+      properties:
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 1
+        idRange:
+          type: integer
+          description: Range ID
+          format: int32
+          example: 5
+        approverType:
+          type: string
+          description: Approver Type
+          example: MANAGER
+          enum:
+            - MANAGER
+            - DIRECTOR
+            - EXECUTIVE_DIRECTOR
+      description: Business Point Information
+      x-stoplight:
+        id: tmakrzilpf56d
+    CampaignTechnologyPriceDTO:
+      title: CampaignTechnologyPriceDTO
+      type: object
+      properties:
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 1
+        idRange:
+          type: integer
+          description: Range ID
+          format: int32
+          example: 5
+        discountFee:
+          type: number
+          description: Discount Fee Value
+          example: 0.33
+        approverType:
+          type: string
+          description: Approver Type
+          example: MANAGER
+          enum:
+            - MANAGER
+            - DIRECTOR
+            - EXECUTIVE_DIRECTOR
+        personType:
+          type: string
+          description: Person Type
+          example: L
+          enum:
+            - P
+            - L
+      description: Technology Price Discount Information
+      x-stoplight:
+        id: gp8tl2mkldsq8
+    PageableDTOOfBusinessPoint:
+      title: PageableDTOOfBusinessPoint
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current Page
+          format: int32
+          example: 1
+        response:
+          type: array
+          description: MDR Fee Information
+          items:
+            $ref: '#/components/schemas/BusinessPointDTO'
+        size:
+          type: integer
+          description: Quantity of Records per Page
+          format: int32
+          example: 10
+        totalItens:
+          type: integer
+          description: Quantity of Records
+          format: int64
+          example: 50
+        totalPages:
+          type: integer
+          description: Total of Pages
+          format: int32
+          example: 5
+      description: Return with Page Control for MDR Fee Information
+      x-stoplight:
+        id: qrsnjg5rwf3kf
+    PageableDTOOfCampaignTechnologyPriceDTO:
+      title: PageableDTOOfCampaignTechnologyPriceDTO
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current Page
+          format: int32
+          example: 1
+        response:
+          type: array
+          description: Technology Price Discount Information
+          items:
+            $ref: '#/components/schemas/CampaignTechnologyPriceDTO'
+        size:
+          type: integer
+          description: Quantity of Records per Page
+          format: int32
+          example: 10
+        totalItens:
+          type: integer
+          description: Quantity of Records
+          format: int64
+          example: 50
+        totalPages:
+          type: integer
+          description: Total of Pages
+          format: int32
+          example: 5
+      description: Return with Page Control for Technology Price Fee Information
+      x-stoplight:
+        id: dja2wsch18hjf
+    PremiumUfDTO:
+      title: PremiumUfDTO
+      type: object
+      properties:
+        premiumPercent:
+          type: number
+          description: Premium Share Percentage
+          example: 5.5
+        serviceContract:
+          type: integer
+          description: Service Contract Code
+          format: int32
+          example: 101
+        state:
+          type: string
+          description: State
+          example: São Paulo
+        uf:
+          type: string
+          description: State Abbreviation
+          example: SP
+      description: Premium Share Percentage Information
+      x-stoplight:
+        id: bcls8eilqkdhh
+    PrepaymentRateDTO:
+      title: PrepaymentRateDTO
+      type: object
+      properties:
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 2
+        idRange:
+          type: integer
+          description: Revenue Range ID
+          format: int64
+          example: 1
+        mcc:
+          type: integer
+          description: Merchant MCC Code
+          format: int32
+          example: 6021
+        minAutoPrepayment:
+          type: number
+          description: Minimum Automatic Prepayment Fee
+          example: 1
+        minManualRate:
+          type: number
+          description: Minimum Manual Prepayment Fee
+          example: 1
+        suggestedAutoPrepayment:
+          type: number
+          description: Suggested Automatic Prepayment Fee
+          example: 2
+        suggestedManualRate:
+          type: number
+          description: Suggested Manual Prepayment Fee
+          example: 2
+      description: Prepayment Fee Information
+      x-stoplight:
+        id: 9o0z0yf11bh4i
+    PriceTechnologyCampaignDTO:
+      title: PriceTechnologyCampaignDTO
+      type: object
+      properties:
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 2
+        minTechPrice:
+          type: number
+          description: Technology Minimum Price
+          example: 20
+        name:
+          type: string
+          description: Campaign Name
+          example: Campanha promocional
+        serviceId:
+          type: string
+          description: Tecnology Code
+          enum:
+            - 367 - POS Auto Credenc (meaning POS Auto Boarding)
+            - 334 - Ecommerce TEF
+            - 330 - TEF Dedicado-conec (meaning Balance Eletronic Transfer - Dedicated)
+            - 352 - Mobile POS
+            - 331 - TEF IP-conec (meaning Balance Eletronic Transfer - IP)
+            - 377 - POS Web
+            - 378 - POS TEF Terceiros (meaning Balance Eletronic Transfer - Third Party)
+            - 380 - POS MP5
+            - 309 - Arquivo de lote (meaning Batch file)
+            - 386 - POS do Futuro (meaning Future POS)
+            - 301 - POS GPRS
+            - 307 - TEF Discado-conec (meaning Balance Eletronic Transfer - Dial in)
+            - 305 - POS 3 Conexões (meaning POS three Connections)
+            - 366 - POS Wifi
+            - 357 - POGO
+            - 364 - POS Virtual
+            - 395 - POS MOBY6500 Aluguel (meaning POS MOBY6500 Rent)
+            - 365 - POS Wifi GPRS
+            - 308 - E-Commerce Gateway 1
+            - 391 - App Hardwareless
+            - 356 - E-Comm IPG
+            - 300 - POS ISO
+            - 306 - PINPAD
+            - 379 - Gateway WhiteLabel
+            - 303 - POS Internet/Discado
+        suggestedTechPrice:
+          type: number
+          description: Technology Suggested Price
+          example: 30
+        tradeName:
+          type: string
+          description: Tecnology Trade name
+          example: Fiserv
+        idRange:
+          type: integer
+          description: Range ID
+          format: int64
+          example: 2
+        personType:
+          type: string
+          description: Person Type
+          example: L
+          enum:
+            - P
+            - L
+      description: Technology Campaign Information
+      x-stoplight:
+        id: 5f3nc4hj2mkxl
+    Rate:
+      title: Rate
+      type: object
+      properties:
+        minimumRate:
+          type: number
+          description: Association/Schema Min Fee
+          example: 2
+        modalityEnum:
+          type: string
+          description: Type of Fee
+          example: CREDIT
+          enum:
+            - CREDIT
+            - DEBIT
+            - ADDITIONAL_PER_INSTALLMENT
+            - LESS_THAN_OR_EQUAL_TO_SIX_INSTALLMENTS
+            - BIGGER_THAN_SIX_INSTALLMENTS
+            - SYSTEM_CREDIT
+        suggestedRate:
+          type: number
+          description: Association/Schema Suggested Fee
+          example: 2.5
+        transactionId:
+          type: integer
+          description: Transaction Type ID
+          format: int32
+          example: 5
+          enum:
+            - 5
+            - 6
+            - 115
+            - 461
+            - 462
+            - 463
+            - 464
+            - 465
+            - 466
+            - 467
+            - 468
+            - 469
+            - 470
+            - 471
+            - 472
+            - 473
+            - 474
+            - 475
+            - 476
+            - 477
+            - 478
+            - 479
+            - 480
+            - 481
+            - 482
+            - 483
+            - 484
+            - 485
+            - 486
+            - 487
+            - 488
+            - 489
+            - 490
+            - 491
+            - 492
+            - 493
+            - 494
+            - 495
+            - 496
+            - 999
+      description: Association/Schema Fee Information
+      x-stoplight:
+        id: ij2d678m88psz
+    FeeDTO:
+      title: FeeDTO
+      type: object
+      properties:
+        chargeModel:
+          type: string
+          description: Charging Type
+          example: MDR
+          enum:
+            - MDR
+            - MDRFLEX
+        paymentDay:
+          type: integer
+          description: Payment Day
+          format: int32
+          example: 5
+        services:
+          description: Service and Capture Campaign Information
+          type: array
+          items:
+            $ref: '#/components/schemas/ServiceDTO'
+        type:
+          description: The type of the Fee. It can be  TAX or CURRENCY
+          type: string
+          example: TAX
+      description: Service and Capture Campaign Information
+      x-stoplight:
+        id: i4aj3sso27s5p
+    ServiceDTO:
+      title: ServiceDTO
+      type: object
+      properties:
+        factor1FlexRateFee:
+          type: number
+          description: 'Factir #1 Value for MDR FLEX Fee'
+          example: 2.8
+        factor2FlexRateFee:
+          type: number
+          description: 'Factir #2 Value for MDR FLEX Fee'
+          example: 2.3
+        feeDetails:
+          type: array
+          description: Fee Details Information
+          items:
+            $ref: '#/components/schemas/FeeDetailsDTO'
+        numberOfInstallments:
+          type: integer
+          description: Total of Installments
+          format: int32
+          example: 12
+        serviceCode:
+          type: string
+          description: Capture Service Code
+          example: '300'
+      description: Capture Information
+      x-stoplight:
+        id: sr94xxv36pnv6
+    FeeDetailsDTO:
+      title: FeeDetailsDTO
+      type: object
+      properties:
+        eventArea:
+          type: string
+          description: Card Type
+          example: DOMESTIC
+          enum:
+            - NOT_AVAILABLE
+            - FOREIGN
+            - DOMESTIC
+            - DOMESTIC_FLEX
+            - ALL
+        feeValue:
+          type: number
+          description: Fee Amount
+          example: 2.1
+        mdrFlexRateFee:
+          type: number
+          description: MDR Flex Fee
+          example: 1.1
+        transactionTypeId:
+          type: integer
+          description: Transaction Type Code
+          format: int32
+          example: 999
+      description: Fees Detail Information
+      x-stoplight:
+        id: 66p9e7nezemup
+    SetUpFees:
+      title: SetUpFees
+      required:
+        - chargeModelEnum
+        - cnaeNumber
+        - idCampaign
+        - premiumPercent
+        - idRange
+        - personType
+      type: object
+      properties:
+        chargeModelEnum:
+          type: string
+          description: Fee Charging Model
+          example: MDRFLEX
+          enum:
+            - MDR
+            - MDRFLEX
+        cnaeNumber:
+          type: integer
+          description: CNAE Code
+          format: int32
+          example: 4923001
+        idCampaign:
+          type: integer
+          description: Campaign ID
+          format: int64
+          example: 1
+        idRange:
+          type: integer
+          description: Revenue Range ID
+          format: int64
+          example: 1
+        personType:
+          type: string
+          description: Person type. P for individuals and L for legal person
+          example: P
+          enum:
+            - P
+            - L
+        paymentDay:
+          type: string
+          description: Day of the Month when the payment will happen
+          example: THIRTY
+          enum:
+            - TWO
+            - FOURTEEN
+            - THIRTY
+        premiumPercent:
+          type: number
+          description: Premium Fee Percentage
+          example: 75
+      description: Fees Information
+      x-stoplight:
+        id: vxsgywo37iotd
     ResultCnaeRestrictRespnse:
       title: Result
       type: object
@@ -4173,7 +7664,7 @@ components:
           items:
             $ref: '#/components/schemas/CnaeRestrictResponse'
       x-stoplight:
-        id: 7rgjgrbmrdd2h
+        id: ymmpi9scqbq37
     AntiFraudDetails:
       title: AntiFraudDetails
       description: Anti Fraud Information
@@ -4198,7 +7689,7 @@ components:
           description: Antifraude Service Name
           example: Nativa AntiFraud
       x-stoplight:
-        id: 8zlbpvhwbb2gv
+        id: 6qpq95nhmevh5
     CnaeRestrictResponse:
       title: response
       description: Restrict or Unwanted CNAEs
@@ -4224,7 +7715,7 @@ components:
             - Restricted
             - UnWanted
       x-stoplight:
-        id: oyvaj8woq9afp
+        id: wrbhgptr1h3en
     BusinessHistory:
       title: BusinessHistory
       description: Merchant History Information
@@ -4239,7 +7730,7 @@ components:
           description: How many years the company provides professionar services
           example: 2 anos
       x-stoplight:
-        id: 2ihid7s80nkbq
+        id: qqc8tk046qlcq
     ComplementaryInformations:
       title: ComplementaryInformations
       description: Merchant Complementary Information
@@ -4272,7 +7763,7 @@ components:
             - true
             - false
       x-stoplight:
-        id: du4ir9r0lhb4v
+        id: tecfxuakgq8aw
     CorporateDetails:
       title: CorporateDetails
       description: Additional Corporate Information
@@ -4297,7 +7788,7 @@ components:
           type: string
           description: Other location where the company acts (text)
       x-stoplight:
-        id: 5v1l03chp9cjd
+        id: 50yqm3tez8j7k
     DataPartnersOutOfMembershipBoard:
       title: DataPartnersOutOfMembershipBoard
       description: Merchant Partnership information out of Social Contract
@@ -4320,7 +7811,7 @@ components:
             - ASSOCIATE
             - ADMINISTRATOR
       x-stoplight:
-        id: o6zve18yrn31b
+        id: msj6pgqxny1qo
     ECommerce:
       title: ECommerce
       description: Complementary Information when the Technology is E-commerce
@@ -4359,10 +7850,10 @@ components:
           items:
             type: string
             enum:
-              - LINK_PAYMENT
-              - SPLIT_PAYMENT
-              - RECURRENCE
-              - VIRTUAL_STORE
+              - 'LINK_PAYMENT'
+              - 'SPLIT_PAYMENT'
+              - 'RECURRENCE'
+              - 'VIRTUAL_STORE'
         gatewayOrIntegratorDetails:
           description: Gateway Information
           items:
@@ -4425,7 +7916,7 @@ components:
           items:
             $ref: '#/components/schemas/VisitAddress'
       x-stoplight:
-        id: u10zw89o2uqw7
+        id: hri9zgvl5xded
     EnterpriseContact:
       title: EnterpriseContact
       description: Merchant Contact Information
@@ -4436,7 +7927,7 @@ components:
           description: Primary Contact Position in the Company
           example: Owner
       x-stoplight:
-        id: e9h2x5okcln66
+        id: kzmmxeyvf7ncb
     PartnersData:
       title: PartnersData
       description: Partner Information
@@ -4467,7 +7958,7 @@ components:
             - ASSOCIATE
             - ADMINISTRATOR
       x-stoplight:
-        id: 3g7d6jg4ox5zs
+        id: 1npgggz9377pl
     PepAffiliationsAndRelationshipWithGovernmentAgencies:
       title: PepAffiliationsAndRelationshipWithGovernmentAgencies
       type: object
@@ -4524,7 +8015,7 @@ components:
           type: string
           description: Information about Politacally Exposed Person (text)
       x-stoplight:
-        id: b9pvk8vk6ha8p
+        id: ix2hfifyy9h7f
     InterestConflicts:
       title: InterestConflicts
       type: object
@@ -4550,7 +8041,7 @@ components:
           type: string
           description: Relaive Role Description (text)
       x-stoplight:
-        id: ibshqhp2wo4k8
+        id: azodff90u0d3i
     RestrictedCnaeInfo:
       title: RestrictedCnaeInfo
       description: 'Additional Information when Restricted CNAE. Check Available Restricted CNAEs information - "/config/restricted-cnae". In case of a restricted CNAE, all information will be required'
@@ -4605,7 +8096,7 @@ components:
           items:
             $ref: '#/components/schemas/PepAffiliationsAndRelationshipWithGovernmentAgencies'
       x-stoplight:
-        id: gi9p7puxzenq7
+        id: m0byzsg21fewh
     GatewayOrIntegratorDetails:
       title: GatewayOrIntegratorDetails
       description: Gateway or Integration Details (If ecommercer has a payment gateway)
@@ -4623,7 +8114,7 @@ components:
           description: Gateway Name or Integrator Name (text)
           example: Nativa
       x-stoplight:
-        id: ca337db4q0oas
+        id: vqxsevlhbcyzq
     VisitAddress:
       title: VisitAddress
       description: Visitation Address Information
@@ -4686,7 +8177,7 @@ components:
           description: Partner name
           example: Zachary Hamilton
       x-stoplight:
-        id: pc1329pgwskf2
+        id: rvqh1ofiz9j64
     DeliveryDetails:
       title: DeliveryDetails
       description: Merchant Delivery Details
@@ -4728,7 +8219,7 @@ components:
           description: Delivery Merchat to Customer.Percentage of delivery over 90 days. The sum of all the fields of percentage shall be 100%
           example: 20
       x-stoplight:
-        id: w71gzre4v92fi
+        id: dji2yof6t83sw
     PlatformDetails:
       title: PlatformDetails
       description: Merchant Platform Details
@@ -4739,7 +8230,7 @@ components:
           description: Website Products link Information (text)
           example: instagram.com/loja1
       x-stoplight:
-        id: 7c790ht6jup2o
+        id: 8rly041w94zbq
     InvestigationsLitigationAndLegalProceedings:
       title: InvestigationsLitigationAndLegalProceedings
       description: Judicial or Legal Actions
@@ -4765,7 +8256,7 @@ components:
           type: string
           description: Process Status (text)
       x-stoplight:
-        id: vlrf58mxk83cq
+        id: 68b413i19kb4v
     TefInfoDTO:
       title: TefInfoDTO
       type: object
@@ -4810,7 +8301,7 @@ components:
         - integratorDetails
         - activationPeriod
       x-stoplight:
-        id: dtp3y5aktpn8h
+        id: xt572k056d4tp
     ActivationPeriod:
       title: ActivationPeriod
       type: object
@@ -4845,7 +8336,7 @@ components:
         - startDate
         - endDate
       x-stoplight:
-        id: h3pgv7pwqozyf
+        id: ecckgsmwwi3vz
     BranchOffices:
       title: BranchOffices
       type: object
@@ -4863,7 +8354,7 @@ components:
       required:
         - hasBranchOffices
       x-stoplight:
-        id: x4p7t0n7s8haq
+        id: bbepphjyfgwwg
     BusinessInfo:
       title: BusinessInfo
       type: object
@@ -4884,7 +8375,7 @@ components:
       required:
         - hasGasStation
       x-stoplight:
-        id: p30qfagezssv6
+        id: iij8qleh04tjc
     IntegratorDetails:
       title: IntegratorDetails
       description: Additional Information about Integration
@@ -4920,7 +8411,7 @@ components:
         - contactPhoneNumber
         - emails
       x-stoplight:
-        id: xj156gg72iu39
+        id: 38kp7a353wjyd
     PinPadInfo:
       title: PinPadInfo
       type: object
@@ -4946,7 +8437,7 @@ components:
         - hasOwnPinPad
         - hasThirtyPartyPinPad
       x-stoplight:
-        id: p8ics7ztu1a0e
+        id: sbnom39i1h2gp
     PinPadRequestedInfo:
       title: PinPadRequestedInfo
       description: Additional Pin Pad Information
@@ -4973,7 +8464,7 @@ components:
       required:
         - pinPads
       x-stoplight:
-        id: einckrkabw1cn
+        id: bvhgqtvuvp9ol
     ProviderInfo:
       title: ProviderInfo
       description: Additional Provider Information
@@ -5003,7 +8494,7 @@ components:
         - tefProvidersType
         - connectionTypes
       x-stoplight:
-        id: k5xdmp80ql0zj
+        id: ja9jzm396v3w3
     EdiAdditionalData:
       title: EdiAdditionalData
       description: Additional information for Electronic Statement (EDI)
@@ -5045,7 +8536,7 @@ components:
       required:
         - hasEdi
       x-stoplight:
-        id: qwyeol0xdrvnf
+        id: w6ha6w0ppgydg
     PaymentSplit:
       title: PaymentSplit
       description: Additional information for Payment Split
@@ -5062,7 +8553,7 @@ components:
           description: 'If the ecType field is equal to EC_SECUNDARIO, the corresponding EC Master cnpj must be sent.'
           example: '7014139000133'
       x-stoplight:
-        id: d693hnvhvtoja
+        id: gbsg6kervjy80
     EdiAcquirer:
       title: EdiAcquirerData
       description: Additional Acquirer for Electronic Statement (EDI)
@@ -5075,4 +8566,4 @@ components:
       required:
         - idAcquirerConciliator
       x-stoplight:
-        id: zevvj59xaa7d5
+        id: me9tiw1gz605h
