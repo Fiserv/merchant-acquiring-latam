@@ -64,8 +64,8 @@ paths:
   /api/proposal:
     post:
       x-proxy-name: Online Boarding and Status
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: 'Boarding New Proposals. To prepare the payload area, it will be required to check some other endpoints as described in some fields'
       description: 'Importante: Each person has its respective fields to be sent. The example has 2 fullfiled obects, one for Individual (PF) and oter for Companies (PJ). Use he examples.'
       operationId: boardingNewProposals
@@ -139,8 +139,8 @@ paths:
   /api/proposal/v3:
     post:
       x-proxy-name: Online Boarding and Status - Boarding New Proposals
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: 'Boarding New Proposals. To prepare the payload area, it will be required to check some other endpoints as described in some fields - V3'
       description: 'Importante: Each person has its respective fields to be sent. The example has 2 fullfiled obects, one for Individual (PF) and oter for Companies (PJ). Use he examples. This endpoint acts almost like the default route (api/proposal). Nevertheless, this route shows slight comportamental differences about tax and currency.'
       operationId: boardingNewProposals1
@@ -214,8 +214,8 @@ paths:
   '/api/proposal/{proposalNumber}':
     get:
       x-proxy-name: Check Proposal Status
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Check Proposal Status
       description: Check Proposal Status using the Proposal Number
       operationId: checkProposalStatus
@@ -286,8 +286,8 @@ paths:
     post:
       description: Declare Payment - Used for Device Sales
       x-proxy-name: Declare Payment - Used for Device Sales
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Declare Payment - Used for Device Sales
       operationId: declarePayment
       parameters:
@@ -357,8 +357,8 @@ paths:
     get:
       description: Verify Tax ID (CNPJ for company) at SERPRO
       x-proxy-name: Verify Tax ID (CNPJ for company) at SERPRO
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Verify Tax ID (CNPJ for company) at SERPRO
       operationId: verifyTaxIdATSerpro
       parameters:
@@ -428,8 +428,8 @@ paths:
     get:
       description: Verify Tax ID (CPF for individual) at SERPRO
       x-proxy-name: Verify Tax ID (CPF for individual) at SERPRO
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Verify Tax ID (CPF for individual) at SERPRO
       operationId: verifyTaxIdATSerproGET
       parameters:
@@ -499,8 +499,8 @@ paths:
     get:
       description: Service Contract Parameters. It is an internal code used in Fiserv to identify the Partner
       x-proxy-name: Service Contract Parameters. It is an internal code used in Fiserv to identify the Partner
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Service Contract Parameters. It is an internal code used in Fiserv to identify the Partner
       operationId: ListOfAvailableServiceContracts
       parameters:
@@ -556,8 +556,8 @@ paths:
     get:
       description: Acount Fees for Required Service Parameters (accountFees)
       x-proxy-name: Acount Fees for Required Service Parameters (accountFees)
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Acount Fees for Required Service Parameters (accountFees)
       operationId: listOfAccountFeesForRequiredServices(AccountFees)
       parameters:
@@ -623,8 +623,8 @@ paths:
     get:
       description: Associations/Schemas Product Code for Settlement Parameters
       x-proxy-name: Associations/Schemas Product Code for Settlement Parameters
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Associations/Schemas Product Code for Settlement Parameters
       operationId: listOfAvailableSchemasForSettlement
       parameters:
@@ -691,8 +691,8 @@ paths:
     get:
       description: Associations/Schemas Product Code for Settlement Parameters with prepayment enable value
       x-proxy-name: Associations/Schemas Product Code for Settlement Parameters with prepayment enable value
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Associations/Schemas Product Code for Settlement Parameters with prepayment enable value
       operationId: listOfAvailableSchemasForSettlement1
       parameters:
@@ -758,8 +758,8 @@ paths:
     get:
       description: List of Banks for Settlement to be used during boarding
       x-proxy-name: List of Banks for Settlement to be used during boarding
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: List of Banks for Settlement to be used during boarding
       operationId: listOfAvailableBanksForSettlement
       parameters:
@@ -817,8 +817,8 @@ paths:
     get:
       description: List of CNAEs Parameter for Boarding
       x-proxy-name: List of CNAEs Parameter for Boarding
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: List of CNAEs Parameter for Boarding
       operationId: listOfAvailableCNAEForBoarding
       parameters:
@@ -890,8 +890,8 @@ paths:
     get:
       description: Returns an object containing Merchant category identification code
       x-proxy-name: Returns an object containing Merchant category identification code
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: returns an object containing Merchant category identification code
       operationId: getMcc
       parameters:
@@ -931,8 +931,8 @@ paths:
     get:
       description: Returns the object 'ApiResult' with the status of professional license
       x-proxy-name: Returns the object 'ApiResult' with the status of professional license
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Returns the object 'ApiResult' with the status of professional license
       operationId: getProfessionalLicenseStatusByServiceContract
       parameters:
@@ -1010,8 +1010,8 @@ paths:
     get:
       description: Restricted/Unwanted CNAEs for Boarding
       x-proxy-name: Restricted/Unwanted CNAEs for Boarding
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Restricted/Unwanted CNAEs for Boarding
       operationId: ListOfRestrictedUnwantedCNAEs
       parameters:
@@ -1136,8 +1136,8 @@ paths:
   '/config/fees/{serviceContract}':
     get:
       x-proxy-name: 'MDR Service Fees Parameters (Standard Fees, for reference only)'
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       description: DR Service Fees Parameters (Standard Fees, for reference only)
       summary: 'MDR Service Fees Parameters (Standard Fees, for reference only)'
       operationId: listOfAvailableMDRFeesReferenceOnly
@@ -1220,8 +1220,8 @@ paths:
     get:
       description: Associations/Schemas List
       x-proxy-name: Associations/Schemas List
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Associations/Schemas List
       operationId: listOfAvailableAssociations/Schemas
       parameters:
@@ -1288,8 +1288,8 @@ paths:
     get:
       description: Additional Services Parameters
       x-proxy-name: Additional Services Parameters
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Additional Services Parameters
       operationId: listOfAvailableAdditionalServices
       parameters:
@@ -1356,8 +1356,8 @@ paths:
     get:
       description: Frequency Cycles for Additional Services
       x-proxy-name: Frequency Cycles for Additional Services
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Frequency Cycles for Additional Services
       operationId: listOfAvailableFrequencyCycles
       parameters:
@@ -1430,8 +1430,8 @@ paths:
     get:
       description: Capture Solutions Parameters
       x-proxy-name: Capture Solutions Parameters
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Capture Solutions Parameters
       operationId: listOfAvailableCaptureSolutions
       parameters:
@@ -1521,8 +1521,8 @@ paths:
     get:
       description: Phone Operators Parameters
       x-proxy-name: Phone Operators Parameters
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Phone Operators Parameters
       operationId: listOfPhoneOperatios
       parameters:
@@ -1581,8 +1581,8 @@ paths:
     get:
       description: Merchant - Compliance (Not Available)
       x-proxy-name: Merchant - Compliance (Not Available)
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Merchant - Compliance (Not Available)
       operationId: checkCompliance
       parameters:
@@ -1647,8 +1647,8 @@ paths:
     get:
       description: List of Campaign Setup
       x-proxy-name: List of Campaign Setup
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Return the campaings according to the reported annual income for the simulator project
       operationId: listOfCampaingsForSimulatorProject
       parameters:
@@ -1746,8 +1746,8 @@ paths:
     get:
       description: Range of Revenue for the Campaign
       x-proxy-name: Range of Revenue for the Campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Range of Revenue for the Campaign
       operationId: listOfRangeOfRevenueForCampaign
       parameters:
@@ -1848,8 +1848,8 @@ paths:
     get:
       description: List of Campaign Setup
       x-proxy-name: List of Campaign Setup
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the Factor fees for MDR Flex associated to a campaign
       operationId: getFactorFeesForMDRFlexByCampaign
       parameters:
@@ -1971,8 +1971,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the Factor fees for MDR Flex associated to a campaign
       x-proxy-name: List of Campaign Setup - Get the Factor fees for MDR Flex associated to a campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the Factor fees for MDR Flex associated to a campaign
       operationId: getFactorFeesForMDRFlexByCampaignWithBillingValue
       parameters:
@@ -2093,8 +2093,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign
       x-proxy-name: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the MDR Flex Fees associated to a campaign
       operationId: getMDRFlexFeesByCampaign
       parameters:
@@ -2258,8 +2258,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign - Billing Value
       x-proxy-name: List of Campaign Setup - Get the MDR Flex Fees associated to a campaign - Billing Value
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the MDR Flex Fees associated to a campaign
       operationId: getMDRFlexFeesByCampaignWithBillingValue
       parameters:
@@ -2422,8 +2422,8 @@ paths:
     get:
       description: List of Campaign Setup - Get MDR Fees for a given campaign
       x-proxy-name: List of Campaign Setup - Get MDR Fees for a given campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get MDR Fees for a given campaign
       operationId: getMDRFeesByCampaign
       parameters:
@@ -2588,8 +2588,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the MDR Fees associated to a campaign
       x-proxy-name: List of Campaign Setup - Get the MDR Fees associated to a campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the MDR Fees associated to a campaign
       operationId: getMDRFeesByCampaignWithBillingValue
       parameters:
@@ -2753,8 +2753,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the current campaign approvers
       x-proxy-name: List of Campaign Setup - Get the current campaign approvers
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the current campaign approvers
       operationId: getCurrentApprovers
       parameters:
@@ -2834,8 +2834,8 @@ paths:
     get:
       description: List of Campaign Setup - Get possible approvers for a campaign
       x-proxy-name: List of Campaign Setup - Get possible approvers for a campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get possible approvers for a campaign
       operationId: getApprovers
       parameters:
@@ -2915,8 +2915,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the Business Point associated to a campaign - Billing value
       x-proxy-name: List of Campaign Setup - Get the Business Point associated to a campaign - Billing value
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the Business Point associated to a campaign
       operationId: getBusinessPointWithBillingValue
       parameters:
@@ -3027,8 +3027,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the Business Point associated to a campaign
       x-proxy-name: List of Campaign Setup - Get the Business Point associated to a campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the Business Point associated to a campaign
       operationId: getBusinessPointWithoutBillingValue
       parameters:
@@ -3139,8 +3139,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the technology price discount fee associated to a campaign
       x-proxy-name: List of Campaign Setup - Get the technology price discount fee associated to a campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the technology price discount fee associated to a campaign
       operationId: getTechnologyPriceDiscountFee
       parameters:
@@ -3251,8 +3251,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the Premium Rate according to the State/Servicecontract
       x-proxy-name: List of Campaign Setup - Get the Premium Rate according to the State/Servicecontract
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the Premium Rate according to the State/Servicecontract
       operationId: getPremiumRates
       parameters:
@@ -3366,8 +3366,8 @@ paths:
     get:
       description: List of Campaign Setup - Get PrePayment Fees for Campaign
       x-proxy-name: List of Campaign Setup - Get PrePayment Fees for Campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get PrePayment Fees for Campaign
       operationId: getPrePaymentFees
       parameters:
@@ -3482,8 +3482,8 @@ paths:
     get:
       description: List of Campaign Setup - Get PrePayment Fees for Campaign V2
       x-proxy-name: List of Campaign Setup - Get PrePayment Fees for Campaign V2
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get PrePayment Fees for Campaign
       operationId: getPrePaymentFeesWithBillingValue
       parameters:
@@ -3597,8 +3597,8 @@ paths:
     get:
       description: List of Campaign Setup - Get Device Prices associated to a Campaign
       x-proxy-name: List of Campaign Setup - Get Device Prices associated to a Campaign
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get Device Prices associated to a Campaign
       operationId: getDevicePricesByCampaign
       parameters:
@@ -3721,8 +3721,8 @@ paths:
     get:
       description: List of Campaign Setup - Get the Available Campaigns
       x-proxy-name: List of Campaign Setup - Get the Available Campaigns
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the Available Campaigns
       operationId: getAvailableCampaigns
       parameters:
@@ -3847,8 +3847,8 @@ paths:
     post:
       description: List of Campaign Setup -  Return the JSON with a model of Fees to be sent
       x-proxy-name: List of Campaign Setup -  Return the JSON with a model of Fees to be sent
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Return the JSON with a model of Fees to be sent
       operationId: getJsonModelFeesToSent
       parameters:
@@ -3929,8 +3929,8 @@ paths:
     get:
       description: List of Setup to Send Proposal - Get the Proposal Status
       x-proxy-name: List of Setup to Send Proposal - Get the Proposal Status
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Get the Proposal Status
       operationId: getTheProposalStatus
       parameters:
@@ -4026,8 +4026,8 @@ paths:
     post:
       description: List of Setup to Send Proposal -  Return the JSON with a model of Fees to be sent
       x-proxy-name: List of Setup to Send Proposal -  Return the JSON with a model of Fees to be sent
-      x-group-name: Online Boarding and Status
-      x-child-product-name: Online Boarding
+      x-group-name: Online Boarding
+      x-child-product-name: Digital Solutions
       summary: Return the JSON with a model of Fees to be sent Takes a slight difference that the default route (/config/proposal/build-fees/v2)
       operationId: getJsonModelFeesToSent1
       parameters:
