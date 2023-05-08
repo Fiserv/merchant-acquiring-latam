@@ -15,6 +15,7 @@ x-config:
   tryItOut: true
 tags:
   - name: Historico de Contrato
+    description: Historic Contract
 paths:
   /bwa/historico-contrato/v1/historicoContrato:
     get:
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -108,7 +109,6 @@ components:
         mensagem:
           type: string
           description: Return Message
-          example: Error Message
           enum:
             - Successfully Done
             - Invalid Request Information (Institution, merchant ou service-contract) (400 BAD REQUEST)
@@ -124,7 +124,7 @@ components:
         dataEfetivacao:
           type: string
           description: Contract date
-          example: 20220628
+          example: '20220628'
         statusContrato:
           type: string
           description: Status of the contract
@@ -149,5 +149,5 @@ components:
         percentualReserva:
           type: string
           description: Froud indicator
-          example: 1.00
+          example: '1'
       title: historicoContrato
