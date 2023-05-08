@@ -81,7 +81,7 @@ components:
           example: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzYVdqaW5TNHQ4eUhQSkVqdG91MW9CQ2c0U1lUWHNBMllUM2kyU0o4UXJZIn0.eyJqdGkiOiI2MjNmMzA3Zi0xZWExLTRmNjgtYjU0NS0zODcxNWQ0MjAyNWEiLCJleHAiOjE1NzM1ODg1NTcsIm5iZiI6MCwiaWF0IjoxNTczNTU5NzU3LCJpc3MiOiJodHRwczovL3JicHZ3YjEwMDYuMWRjLmNvbS9hdXRoL3JlYWxtcy9GaXJzdERhdGEiLCJhdWQiOiJ0bXMtc2IiLCJzdWIiOiJlNzY0MTA1OC0xNmZmLTQ5NTMtOGRjYi1iZTM0ZDdkZDg5NjEiLCJ0eXAiOiJJRCIsImF6cCI6InRtcy1zYiIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6ImQ1ODRlZThlLTlmOGEtNDZmOC05YTA5LTk0ZmZlZGVjMDk2MyIsImFjciI6IjEiLCJuYW1lIjoiIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZTM2MCJ9.Td2ZUg_1_7xj3gi3vdKTNDA3X0i0LtV4LvkMARwV19A_XE50en9rdGVHT_9gm9hCJk4ttTPedI6Ul6WYpb6nkGfNvPQH9wX-kCycmnlRPxRledelOdbtbXauIG1k-kg6Y46kczi-_wZRLVtxgStCI8ACjrrEVSd05TtX3pvlHEfVoyE7iYfq5AEJvDySLEsJoqH8dUMcB4LYZ_IRfVd7Q6cj6y9OVFNVzr4D2SnmaI0KR3Z8OPLKDxRdUlgdDht9CnOKaixhonXtlK1jbSeQkUOWoFAFoMgPUxqN-ehEP36NeCazl3ZKu7wkXJ7_dykSweffq5laCtWB6wWoL_9kmA
         not-before-policy:
           type: integer
-          example: "0"
+          example: 0
         session_state:
           type: string
           description: Session State

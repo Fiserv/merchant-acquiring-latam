@@ -12,7 +12,7 @@ Below you can check each link to access the detailed document for each Web-servi
 
 [Online Boarding and Status - Boarding New Proposals](../api/?type=post&path=/api/proposal1/v3)
 
-[Check Proposal Status](../api/?type=get&path=/api/proposal2/{proposalNumber})
+[Check Proposal Status](../api/?type=get&path=/api/api/proposal/{proposalNumber})
 
 [Declare Payment - Used for Device Sales](../api/?type=post&path=/api/payment/report)
 
