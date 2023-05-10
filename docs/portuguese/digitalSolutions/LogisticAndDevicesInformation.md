@@ -7,7 +7,7 @@ Para uma breve introdução de como usar o APIS, acesse nossa [introdução](?pa
 
 Abaixo você pode conferir cada link para acessar o documento detalhado de cada Web-service (APIs), para que você possa desenvolver e implementar o seu negócio.
 
-[Logistic Information - Add/Consult](../api/?type=post&path=/bwa/dados-logistica/)
+[Logistic Information - Add/Consult](../api/?type=post&path=/bwa/dados-logistica)
 
 [Paper Roll - Request](../api/?type=get&path=/bwa/solicitabobina/{instituicao}/{merchant}/{logico})
 
@@ -15,7 +15,7 @@ Abaixo você pode conferir cada link para acessar o documento detalhado de cada 
 
 [Service Order - Consult](../api/?type=get&path=/bwa/consultaos/{instituicao}/{numeroMerchant})
 
-[Service Order - Terminal Maintenance](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag/)
+[Service Order - Terminal Maintenance](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag)
 
 [Zipcode (CEP) - Consult](../api/?type=get&path=/bwa/cep-service/cep/{cep})
 
