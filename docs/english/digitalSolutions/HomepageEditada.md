@@ -238,6 +238,8 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Sales - Suspended Transactions - Consult suspended summarized by Merchant ID](../api/?type=post&path=/bwa/consulta-transacoes-suspensas/v1/consulta/transacaosuspensaSumarizada)
 
+[Search for Chargeback installments Information by Tax ID, Merchant Code, Instituion and Action Date](../api/?type=post&path=/api/chargeback/apigee/filter/installments)
+
 ## Service Order Information
 
 [Find, by code, one cancellation reason registered in BR TMP](../api/?type=get&path=/bwa/service-order-cancellation-reason/{code})
