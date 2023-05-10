@@ -15,8 +15,9 @@ x-config:
   tryItOut: true
 tags:
   - name: Search Device Operation
+    description: Search Device Operation
 paths:
-  /bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest/:
+  /bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest:
     post:
       tags:
         - Search Device Operation
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -108,7 +109,7 @@ components:
         terminalID:
           type: string
           description: Device ID with 8 digits
-          example: 12345678
+          example: '12345678'
         tmsReferenceID:
           type: string
           description: Device Reference ID with 12 digits
@@ -125,7 +126,7 @@ components:
         responseCode:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 - Successfully Done"
           enum:
             - 00 - Successfully Done
             - 03 - Invalid Combination (Merchant ID, Device Id and Reference ID)
@@ -143,7 +144,7 @@ components:
         tmsReferenceID:
           type: string
           description: Request Reference ID, with 12 digits
-          example: 123456789012
+          example: '123456789012'
     processMessage:
       type: object
       properties:
@@ -158,7 +159,7 @@ components:
         tmsRequestNumber:
           type: string
           description: Request Number created, with 8 digits
-          example: 12345678
+          example: '12345678'
         tmsDetails:
           type: array
           description: Reference Numbers List

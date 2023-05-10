@@ -13,8 +13,6 @@ servers:
 paths:
   /bwa/brtmp-microservices/listTicket/{merchantId}:
     get:
-      tags:
-        - list-ticket-controller
       x-proxy-name: TMP - Find, by merchantId, the list of ticket registered in TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -48,7 +46,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -90,8 +88,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/product/{serialNumber}:
     get:
-      tags:
-        - product-controller
       x-proxy-name: TMP - Find, by its Serial Number, a product registered in TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -125,7 +121,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -167,8 +163,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/ticket-reschedule-motive:
     get:
-      tags:
-        - ticket-reschedule-motive-controller
       x-proxy-name: TMP - List all reschedule motive registered in TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -195,7 +189,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -237,8 +231,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/motives-reverse:
     get:
-      tags:
-        - motive-reverse-controller
       x-proxy-name: TMP - List all motives reverse registered in TMP with filter by code
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -251,7 +243,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 400000
+            example: '400000'
         - name: auth
           in: header
           description: Oauth Key
@@ -272,7 +264,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -314,8 +306,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/ticket-reschedule:
     post:
-      tags:
-        - ticket-reschedule-controller
       x-proxy-name: TMP - Register reschedule in TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -342,7 +332,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -390,8 +380,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/ticket-cancel-reason/{code}:
     get:
-      tags:
-        - cancellation-reason-controller
       x-proxy-name: TMP - Find, by code, one cancellation reason registered in BR TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -425,7 +413,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -467,8 +455,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/ticket-cancel-reason:
     get:
-      tags:
-        - cancellation-reason-controller
       x-proxy-name: TMP - List all cancellation reasons registered in TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -495,7 +481,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -537,8 +523,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/modal/search:
     get:
-      tags:
-        - modal-controller
       x-proxy-name: TMP - It List, according the given parameters, the Service Providers/Modals which can be attached in the Service Order
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -551,7 +535,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 410000
+            example: '410000'
             enum:
               - '400000'
               - '410000'
@@ -586,7 +570,7 @@ paths:
           required: false
           schema:
             type: string
-            example: 99999
+            example: '99999'
         - name: productAccounting
           in: query
           description: Product Accounting
@@ -621,7 +605,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -649,7 +633,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 101
+            example: '101'
       responses:
         '200':
           description: OK
@@ -677,8 +661,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/flag/pesquisa-por-instituicao:
     get:
-      tags:
-        - special-condition-controller
       x-proxy-name: TMP - Consults special condition by institution
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -705,7 +687,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -733,7 +715,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 101
+            example: '101'
       responses:
         '200':
           description: OK
@@ -761,8 +743,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/update-task:
     post:
-      tags:
-        - update-task-controller
       x-proxy-name: TMP - Request for actions with the sale format (Reversal, post code, dispute) in TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -789,7 +769,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -841,8 +821,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/coil/inventory/{merchant}:
     get:
-      tags:
-        - coil-controller
       x-proxy-name: TMP - Get Coil Inventory By EC
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -851,6 +829,7 @@ paths:
       parameters:
         - name: merchant
           in: path
+          description: merchant
           required: true
           schema:
             type: string
@@ -874,7 +853,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -916,8 +895,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/coil/balance/{merchant}:
     get:
-      tags:
-        - coil-controller
       x-proxy-name: TMP - Get Coil Balance By EC
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -926,6 +903,7 @@ paths:
       parameters:
         - name: merchant
           in: path
+          description: merchant
           required: true
           schema:
             type: string
@@ -949,7 +927,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -991,8 +969,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/ticket-maintenance-reason/{code}:
     get:
-      tags:
-        - maintenance-reason-controller
       x-proxy-name: TMP - Find, by code, one maintenance reason registered in BR TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -1026,7 +1002,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -1074,8 +1050,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/ticket-maintenance-reason:
     get:
-      tags:
-        - maintenance-reason-controller
       x-proxy-name: TMP - List all maintenance reasons registered in TMP
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -1102,7 +1076,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -1150,8 +1124,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/service-order/logistics/{referenceNumberID}:
     get:
-      tags:
-        - service-order-controller
       x-proxy-name: TMP - Find, by the Service Order number, the Service Order's logistic data
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -1164,7 +1136,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 600000128529
+            example: '600000128529'
         - name: auth
           in: header
           description: Oauth Key
@@ -1185,7 +1157,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -1227,8 +1199,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/tms-cos/rest/consultaos/v2/json/trackos/{instituicao}/{merchant}:
     get:
-      tags:
-        - tms-cos-controller
       x-proxy-name: TMP - Find Order number by Inc and merchant
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -1237,11 +1207,13 @@ paths:
       parameters:
         - name: instituicao
           in: path
+          description: instituicao
           required: true
           schema:
             type: string
         - name: merchant
           in: path
+          description: merchant
           required: true
           schema:
             type: string
@@ -1265,7 +1237,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -1307,8 +1279,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/tms-cos/resources/v2/json/{merchant}/{institution}:
     get:
-      tags:
-        - tms-cos-controller
       x-proxy-name: TMP - List Services Orders
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -1318,10 +1288,12 @@ paths:
         - name: merchant
           in: path
           required: true
+          description: merchant
           schema:
             type: string
         - name: institution
           in: path
+          description: institution
           required: true
           schema:
             type: string
@@ -1345,7 +1317,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -1387,8 +1359,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/tms-cos/rest/consultaos/v3/json/trackos/{instituicao}/{merchant}:
     get:
-      tags:
-        - tms-cos-controller
       x-proxy-name: TMP - Find Order number by Inc and merchant V3
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -1397,11 +1367,13 @@ paths:
       parameters:
         - name: instituicao
           in: path
+          description: institution
           required: true
           schema:
             type: string
         - name: merchant
           in: path
+          description: merchant
           required: true
           schema:
             type: string
@@ -1425,7 +1397,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -1467,8 +1439,6 @@ paths:
                 $ref: '#/components/schemas/DApiErro'
   /bwa/brtmp-microservices/tms-cos/resources/v2/json/byos/{instituicao}/{serviceorder}:
     get:
-      tags:
-        - tms-cos-controller
       x-proxy-name: TMP - Find byos by Inc and merchant V2
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -1477,11 +1447,13 @@ paths:
       parameters:
         - name: serviceorder
           in: path
+          description: serviceorder
           required: true
           schema:
             type: string
         - name: instituicao
           in: path
+          description: instituicao
           required: true
           schema:
             type: string
@@ -1505,7 +1477,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -1587,7 +1559,6 @@ components:
         listTicket:
           type: array
           description: List all tickets per merchant
-          example: 2021-05-14 07:49 Sex
           items:
             $ref: '#/components/schemas/DTicket'
     DTicket:
@@ -1631,7 +1602,6 @@ components:
           description: Date cancel ticket
           example: 2021-05-14 07:49 Sex
       description: List all tickets per merchant
-      example: 2021-05-14 07:49 Sex
     DInstitution:
       type: object
       properties:

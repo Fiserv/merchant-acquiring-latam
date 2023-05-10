@@ -15,6 +15,7 @@ x-config:
   tryItOut: true
 tags:
   - name: Service Order Search
+    description: Service Order Search
 paths:
   /bwa/consultaos/{instituicao}/{numeroMerchant}:
     get:
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -113,14 +114,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -181,14 +182,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -249,14 +250,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -317,14 +318,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -385,14 +386,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -453,14 +454,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -515,7 +516,7 @@ components:
         codigoRetorno:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 - Successfully Done"
           enum:
             - 00 - Successfully Done
             - 01 - Merchant don't have OS to consult
@@ -548,7 +549,7 @@ components:
               osStatus:
                 type: string
                 description: Service Order Status
-                example: "O"
+                example: "O - Open"
                 enum:
                   - O - Open
                   - C - Closed
@@ -600,7 +601,7 @@ components:
               osTipo:
                 type: string
                 description: Service Order Request Type
-                example: "400000"
+                example: "400000 - Instalation"
                 enum:
                   - 400000 - Instalation
                   - 410000 - Maintenance
@@ -637,7 +638,7 @@ components:
         retornoCodigo:
           type: string
           description: Return Codes.
-          example: "00"
+          example: "00 - Successfully Done"
           enum:
             - 00 - Successfully Done
             - 01 - Merchant don't have OS to consult

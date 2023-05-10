@@ -24,6 +24,7 @@ paths:
       x-proxy-name: Merchant Status Update
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
+      description: Merchant Status Update
       summary: Merchant Status Update
       operationId: merchantStatusUpdate
       parameters:
@@ -38,21 +39,21 @@ paths:
           in: header
           description: APigee Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: auth
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -96,7 +97,7 @@ components:
         merchantStatus:
           type: string
           description: Merchant New Status
-          example: "1"
+          example: "1 - Ativo - (meaning Active)"
           enum:
             - "1 - Ativo - (meaning Active)"
             - "2 - Inativo - (meaning Inactive)"
@@ -105,7 +106,7 @@ components:
         reason:
           type: string
           description: Reason for the Status Update
-          example: "01"
+          example: "01 - Padrão - (meaning Operations - Default)"
           enum:
             - 01 - Padrão - (meaning Operations - Default)
             - 02 - Inoperante - (meaning Inoperative)
@@ -138,7 +139,7 @@ components:
         statusCode:
           type: string
           description: Return Code
-          example: "0"
+          example: "0 - Merchant status updated"
           enum:
             - 0 - Merchant status updated
             - 1 - Merchant status already set

@@ -18,14 +18,12 @@ x-config:
 paths:
   '/bwa/consulta-transacoes-suspensas/v1/consulta/transacaosuspensa':
     post:
-      tags:
-        - Consult suspended transactions by Merchant
       x-proxy-name: Merchant Sales - Suspended Transactions - Consult
       x-group-name: Sales Information
       x-child-product-name: Digital Solutions
       description: Search for suspended transactions by Merchant ID
       summary: 'Search for suspended transactions by Merchant ID'
-      operationId: Search for suspended transactions by Merchant ID
+      operationId: SearchForSuspendedTransactionsByMerchantID
       parameters:
         - name: Message-Signature
           in: header
@@ -45,14 +43,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -149,14 +147,12 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   '/bwa/consulta-transacoes-suspensas/v1/consulta/transacaosuspensaSumarizada':
     post:
-      tags:
-        - Consult suspended transactions by Merchant
       x-proxy-name: Merchant Sales - Suspended Transactions - Consult suspended summarized by Merchant ID
       x-group-name: Sales Information
       x-child-product-name: Digital Solutions
       description: Search for suspended summarized by Merchant ID
       summary: 'Search for suspended summarized by Merchant ID'
-      operationId: Search for suspended summarized by Merchant ID
+      operationId: SearchForSuspendedSummarizedByMerchantID
       parameters:
         - name: Message-Signature
           in: header
@@ -176,14 +172,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -288,14 +284,14 @@ components:
           example: 9
           type: integer
           format: int32
-          enum: 
+          enum:
             - 9
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios (meaning mdantory Fields Missing)
+          example: 9 - Campos mandatorios - (meaning Mandatory Fields Missing
           type: string
-          enum: 
+          enum:
             - "9 - Campos mandatorios - (meaning Mandatory Fields Missing"
             - "10 - (Erro validaçao) - (meaning Validation Error)"
     Unauthorized:
@@ -316,14 +312,14 @@ components:
           example: 3
           type: integer
           format: int32
-          enum: 
+          enum:
             - 3
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado- (meaning Access Denied)
+          example: 3 - Acesso negado - (meaning Access Denied)
           type: string
-          enum: 
+          enum:
             - "3 - Acesso negado - (meaning Access Denied)"
             - "6 - Token expirado - (meaning Expired Token)"
     NotFound:
@@ -354,14 +350,14 @@ components:
           example: 2
           type: integer
           format: int32
-          enum: 
+          enum:
             - 2
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (meaning Internal Error)
+          example: 2 - Erro Interno - (meaning Internal Error)
           type: string
-          enum: 
+          enum:
             - "2 - Erro Interno - (meaning Internal Error)"
             - "7 - Erro na integracao da API. Detalhe - (meaning API Integration Error)"
     ResponseEntityConsultaTransacao:
@@ -382,7 +378,7 @@ components:
             - 106
         mensagem:
           description: Description return code
-          example: Sucesso (Success)
+          example: 0 - Sucesso - (meaning Success)
           type: string
           enum:
             - "0 - Sucesso - (meaning Success)"
@@ -410,7 +406,7 @@ components:
           example: 350
           type: integer
           format: int32
-        currentPage: 
+        currentPage:
           description: Current search page
           example: 0
           type: integer
@@ -423,15 +419,15 @@ components:
     ITransacaoSuspensaDTO:
       type: object
       properties:
-        dataOriginalPagamento: 
+        dataOriginalPagamento:
           description: "Original payment date"
           example: "20210503"
           type: string
-        dataPagamento: 
+        dataPagamento:
           description: "Original payment date"
           example: "20210430"
           type: string
-        clientNumber: 
+        clientNumber:
           description: "Merchant Code"
           example: "12345678"
           type: string
@@ -441,7 +437,7 @@ components:
           type: string
         tipoTransacao:
           description: "Transaction type"
-          example: "Visa Credito"
+          example: "VISA Credit"
           type: string
           enum:
             - "Amex Credit"
@@ -460,87 +456,86 @@ components:
           type: string
         statusPagamento:
           description: "Payment status"
-          example: "Pagamento recusado - (meaning Payment Rejected)"
+          example: "Pagamento recusado"
           type: string
           enum:
-            - "Antecipada" 
-            - "Apr inexistente" 
-            - "Apresentação tardia" 
-            - "Aprovada" 
-            - "BIN Adq não encontr" 
-            - "Cancelada" 
-            - "Carregada" 
-            - "Cartão fora Tab BIN" 
-            - "Cat term incorreta" 
-            - "Chargeback" 
-            - "Ciclo encerrado" 
-            - "Client/cart não enc" 
-            - "Cód autorização req" 
-            - "Código POS inválido" 
-            - "COLOCAR EM ESPERA" 
-            - "Confere" 
-            - "Contrato encerrado" 
-            - "Contrato inválido" 
-            - "Data trans inválida" 
-            - "DCC não confere" 
-            - "Destino não definido" 
-            - "Digitada" 
-            - "Em Chargeback" 
-            - "Equipamento não enc" 
-            - "Erro" 
-            - "Excluída" 
-            - "Falha conta contábil" 
-            - "Falha verif Luhn" 
-            - "Fase1 Inst proc inex" 
-            - "Formato DCC inválido" 
-            - "Fraude confirmada" 
-            - "Fraude perda banco" 
-            - "Fraude perda pelo EC" 
-            - "Fundos indisponíveis" 
-            - "Hr trans inválido" 
-            - "Legítima" 
-            - "Liberada" 
-            - "Limite parc excedido" 
-            - "Liquidação pendente" 
-            - "Liquidado" 
-            - "Lote não reconc" 
-            - "Não aplicável" 
-            - "Não processada" 
-            - "Omitida" 
-            - "Orig não encontrado" 
-            - "Pagamento enviado" 
-            - "Pagamento recusado" 
+            - "Antecipada"
+            - "Apr inexistente"
+            - "Apresentação tardia"
+            - "Aprovada"
+            - "BIN Adq não encontr"
+            - "Cancelada"
+            - "Carregada"
+            - "Cartão fora Tab BIN"
+            - "Cat term incorreta"
+            - "Chargeback"
+            - "Ciclo encerrado"
+            - "Client/cart não enc"
+            - "Cód autorização req"
+            - "Código POS inválido"
+            - "COLOCAR EM ESPERA"
+            - "Confere"
+            - "Contrato encerrado"
+            - "Contrato inválido"
+            - "Data trans inválida"
+            - "DCC não confere"
+            - "Destino não definido"
+            - "Digitada"
+            - "Em Chargeback"
+            - "Equipamento não enc"
+            - "Erro"
+            - "Excluída"
+            - "Falha conta contábil"
+            - "Falha verif Luhn"
+            - "Fase1 Inst proc inex"
+            - "Formato DCC inválido"
+            - "Fraude confirmada"
+            - "Fraude perda banco"
+            - "Fraude perda pelo EC"
+            - "Fundos indisponíveis"
+            - "Hr trans inválido"
+            - "Legítima"
+            - "Liberada"
+            - "Limite parc excedido"
+            - "Liquidação pendente"
+            - "Liquidado"
+            - "Lote não reconc"
+            - "Não aplicável"
+            - "Não processada"
+            - "Omitida"
+            - "Orig não encontrado"
+            - "Pagamento enviado"
+            - "Pagamento recusado"
             - "Pagamento Suspenso"
             - "Pago"
-            - "Pendente" 
-            - "Pgto com sucesso" 
-            - "Processada" 
-            - "Processada" 
-            - "Recusada" 
-            - "Reg conta inexiste" 
-            - "Regra taxa IRD vazia" 
-            - "Rejeitado" 
-            - "Reprocessado" 
-            - "Sem contr de serviço" 
-            - "Sem instr de proc" 
-            - "Sem nome da empresa" 
-            - "Serv não atribuídos" 
-            - "Serv não definidos" 
-            - "Status contrato inc" 
-            - "Status da conta inc" 
-            - "Status do cartão inc" 
-            - "Suspeita de fraude" 
-            - "Tam No do cartão inc" 
-            - "Taxa não encontrada" 
-            - "Tel serv inexistente" 
-            - "Trans pgto inexiste" 
-            - "Trans pós-datada" 
-            - "Tx entr não encontr" 
-            - "Tx saída não encontr" 
-            - "Valor alto" 
-            - "Valor zerado" 
-            - "VAU Aprovado" 
-            - "VAU Rejeitado" 
+            - "Pendente"
+            - "Pgto com sucesso"
+            - "Processada"
+            - "Recusada"
+            - "Reg conta inexiste"
+            - "Regra taxa IRD vazia"
+            - "Rejeitado"
+            - "Reprocessado"
+            - "Sem contr de serviço"
+            - "Sem instr de proc"
+            - "Sem nome da empresa"
+            - "Serv não atribuídos"
+            - "Serv não definidos"
+            - "Status contrato inc"
+            - "Status da conta inc"
+            - "Status do cartão inc"
+            - "Suspeita de fraude"
+            - "Tam No do cartão inc"
+            - "Taxa não encontrada"
+            - "Tel serv inexistente"
+            - "Trans pgto inexiste"
+            - "Trans pós-datada"
+            - "Tx entr não encontr"
+            - "Tx saída não encontr"
+            - "Valor alto"
+            - "Valor zerado"
+            - "VAU Aprovado"
+            - "VAU Rejeitado"
         dataSuspensao:
           description: "Suspension date"
           example: "20210429"
@@ -561,11 +556,11 @@ components:
           description: "Number of Installment Transaction"
           example: "5"
           type: string
-        totalBruto: 
+        totalBruto:
           description: "Total Amount Gross"
           example: "18928000"
           type: string
-        totalLiquido: 
+        totalLiquido:
           description: "Total Amount Net"
           example: "18549440"
           type: string
@@ -587,7 +582,7 @@ components:
             - 106
         mensagem:
           description: Description return code
-          example: Sucesso (Success)
+          example: 0 - Sucesso - (meaning Success)
           type: string
           enum:
             - "0 - Sucesso - (meaning Success)"
@@ -615,7 +610,7 @@ components:
           example: 350
           type: integer
           format: int32
-        currentPage: 
+        currentPage:
           description: Current search page
           example: 0
           type: integer
@@ -628,11 +623,11 @@ components:
     ITransacaoSuspensaSumarizadaDTO:
       type: object
       properties:
-        totalBruto: 
+        totalBruto:
           description: "Total Amount Gross"
           example: "18928060"
           type: string
-        totalLiquido: 
+        totalLiquido:
           description: "Total Amount Net"
           example: "18549498.8"
           type: string
@@ -656,9 +651,9 @@ components:
       properties:
         bandeira:
           description: "Card flag on transaction"
-          example: "002"
+          example: "002 - Mastercard"
           type: string
-          enum: 
+          enum:
             - "002 - Mastercard"
             - "003 - Visa"
             - "004 - Amex Full"
@@ -667,9 +662,9 @@ components:
             - "025 - ELO Full"
         tipoServico:
           description: "Transaction type carried out"
-          example: "001"
+          example: "001 - Credit"
           type: string
-          enum: 
+          enum:
             - "001 - Credit"
             - "002 - Debit"
         dataInicial:

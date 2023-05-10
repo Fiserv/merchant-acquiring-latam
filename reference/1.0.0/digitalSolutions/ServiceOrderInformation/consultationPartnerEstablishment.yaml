@@ -17,13 +17,12 @@ x-config:
 paths:
   '/bwa/consulta-estabelecimento-socio/v1/consulta/{documento}':
     get:
-      tags:
-        - 'Search for Merchant by Partner Tax ID'
       x-proxy-name: Search for Merchant by Partner Tax ID
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
       summary: 'Search for Merchant by Partner Tax ID'
-      operationId: Search for Merchant by Partner Tax ID
+      operationId: SearchForMerchantByPartnerTaxID
+      description: Search for Merchant by Partner Tax ID
       parameters:
         - name: Message-Signature
           in: header
@@ -43,14 +42,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -64,7 +63,7 @@ paths:
           in: header
           description: Institution Number
           required: true
-          example: 00000009
+          example: '00000009'
           schema:
             type: string
         - name: codigo-contrato
@@ -81,7 +80,7 @@ paths:
           required: true
           schema:
             type: string
-     
+
       responses:
         '200':
           description: Successfully Done
@@ -135,14 +134,14 @@ components:
           example: 9
           type: integer
           format: int32
-          enum: 
+          enum:
             - 9
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios (meaning Missing Mandatory Fields)
+          example: 9 - Campos mandatorios...
           type: string
-          enum: 
+          enum:
             - 9 - Campos mandatorios...
             - 10 - (Erro validaçao)...
     Unauthorized:
@@ -163,14 +162,14 @@ components:
           example: 3
           type: integer
           format: int32
-          enum: 
+          enum:
             - 3
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado (meaning Access Denied)
+          example: 3 - Acesso negado (meaning Access Denied)
           type: string
-          enum: 
+          enum:
             - 3 - Acesso negado (meaning Access Denied)
             - 6 - Token expirado (meaning Expired Token)
     NotFound:
@@ -201,14 +200,14 @@ components:
           example: 2
           type: integer
           format: int32
-          enum: 
+          enum:
             - 2
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno (meaning Internal Error)
+          example: 2 - Erro Interno (meaning Internal Error)
           type: string
-          enum: 
+          enum:
             - 2 - Erro Interno (meaning Internal Error)
             - 7 - Erro na integracao da API. Detalhe (meaning Integration Error)
     ResponseEntityConsultaPartner:
@@ -223,7 +222,7 @@ components:
             - 0
         mensagem:
           description: Description return code
-          example: Sucesso (meaning Success)
+          example: 0 - Sucesso (meaning Success)
           type: string
           enum:
             - 0 - Sucesso (meaning Success)
@@ -231,56 +230,56 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/StcStatisticDetailSpRespDTO'
-        
+
     StcStatisticDetailSpRespDTO:
       type: object
       properties:
-        status: 
+        status:
           description: "Establishment status"
           example: "Ativo (meaning Active)"
           type: string
           enum:
-             - Ativo (meaning Active)
-             - Suspenso (meaning Suspended)
-             - Fechado (meaning Closed)
-             - Inativo (meaning Inactive)
-        email: 
+            - Ativo (meaning Active)
+            - Suspenso (meaning Suspended)
+            - Fechado (meaning Closed)
+            - Inativo (meaning Inactive)
+        email:
           description: "E-mail Information"
           example: "partener@establishment.com"
           type: string
-        companyName: 
+        companyName:
           description: "Company Name"
           example: "Company S/A"
           type: string
-        clientNumber: 
+        clientNumber:
           description: "Customer Tax ID"
           example: "087645873457"
           type: string
-        registrationNumber: 
+        registrationNumber:
           description: "Merchant Id Number"
           example: "45873457"
           type: string
-        partnerInfoName1: 
+        partnerInfoName1:
           description: "Partner Info Name 1"
           example: "Partner name 1"
           type: string
-        partnerInfoPhone1: 
+        partnerInfoPhone1:
           description: "Partner Info Phone 1"
           example: "11333333333"
           type: string
-        partnerInfoName2: 
+        partnerInfoName2:
           description: "Partner Info Name 2"
           example: "Partner name 2"
           type: string
-        partnerInfoPhone2: 
+        partnerInfoPhone2:
           description: "Partner Info Phone 2"
           example: "11333333333"
           type: string
-        partnerInfoName3: 
+        partnerInfoName3:
           description: "Partner Info Name 3"
           example: "Partner name 3"
           type: string
-        partnerInfoPhone3: 
+        partnerInfoPhone3:
           description: "Partner Info Phone 3"
           example: "11333333333"
           type: string
