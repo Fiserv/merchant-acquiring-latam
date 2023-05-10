@@ -128,7 +128,7 @@ components:
         statusContrato:
           type: string
           description: Status of the contract
-          example: Ativo
+          example: Inativo
           enum:
             - 'Ativo'
             - 'Inativo'
