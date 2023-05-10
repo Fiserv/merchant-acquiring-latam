@@ -232,7 +232,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Sales tracking](../api/?type=get&path=/bwa/acompanhamento-vendas/v1/acompanhamentoVendas)
 
-[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest/)
+[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest)
 
 [Merchant Sales - Suspended Transactions - Consult](../api/?type=post&path=/bwa/consulta-transacoes-suspensas/v1/consulta/transacaosuspensa)
 

@@ -233,7 +233,7 @@ Para acceder como APIs comece adquirindo um [Token Access](../api/?type=post&pat
 
 [Sales tracking](../api/?type=get&path=/bwa/acompanhamento-vendas/v1/acompanhamentoVendas)
 
-[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest/)
+[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest)
 
 [Merchant Sales - Suspended Transactions - Consult](../api/?type=post&path=/bwa/consulta-transacoes-suspensas/v1/consulta/transacaosuspensa)
 
@@ -243,7 +243,7 @@ Para acceder como APIs comece adquirindo um [Token Access](../api/?type=post&pat
 
 [Find, by code, one cancellation reason registered in BR TMP](../api/?type=get&path=/bwa/service-order-cancellation-reason/{code})
 
-[List all cancellation reasons registered in TMP](../api/?type=get&path=/bwa/service-order-cancellation-reason/)
+[List all cancellation reasons registered in TMP](../api/?type=get&path=/bwa/service-order-cancellation-reason)
 
 [Search for Merchant by Partner Tax ID](../api/?type=get&path=/bwa/consulta-estabelecimento-socio/v1/consulta/{documento})
 
