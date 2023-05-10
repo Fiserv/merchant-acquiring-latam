@@ -38,21 +38,21 @@ paths:
           in: header
           description: APigee Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: auth
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Data em formato epoch
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id

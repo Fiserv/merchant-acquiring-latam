@@ -17,12 +17,12 @@ x-config:
   tryItOut: true
 tags:
   - name: Search for Reason, Sub-Reason and Symptom for Cases to be opened in Salesforce
+    description: Search for Reason, Sub-Reason and Symptom for Cases to be opened in Salesforce
   - name: Request Opening (Cases in Salesforce)
+    description: Search for Reason, Sub-Reason and Symptom for Cases to be opened in Salesforce
 paths:
   "/bwa/abertura-caso/config/motivos":
     get:
-      tags:
-        - Search for Reason, Sub-Reason and Symptom for Cases to be opened in Salesforce
       x-proxy-name: Merchant Requests (Cases) - Search for Reason to be used for Salesforce Case Opening
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
@@ -48,14 +48,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -77,8 +77,6 @@ paths:
       deprecated: false
   "/bwa/abertura-caso/config/sub-motivos/{Id}":
     get:
-      tags:
-        - Search for Reason, Sub-Reason and Symptom for Cases to be opened in Salesforce
       x-proxy-name: Merchant Requests (Cases) - Search for Sub-Reasons to be used for Salesforce Case Opening by Reason
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
@@ -104,14 +102,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -125,7 +123,7 @@ paths:
           description: Reason Code (get from /motivos). In case of an invalid Reason Code, the returned JSON will be empty
           in: path
           required: true
-          example: 96
+          example: '96'
           schema:
             type: string
       responses:
@@ -167,14 +165,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -188,7 +186,7 @@ paths:
           in: path
           description: Sub-Reason Code (get from /sub-motivos). In case of an invalid Sub-Reason Code, the returned JSON will be empty
           required: true
-          example: 217
+          example: '217'
           schema:
             type: string
       responses:
@@ -201,7 +199,7 @@ paths:
         "500":
           description: System Error
       deprecated: false
-  "/bwa/abertura-caso/":
+  "/bwa/abertura-caso":
     post:
       tags:
         - Search for Reason, Sub-Reason and Symptom for Cases to be opened in Salesforce
@@ -230,14 +228,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -286,14 +284,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -402,21 +400,21 @@ components:
         codigoRetorno:
           type: integer
           description: Status Code for the request
-          example: "00"
+          example: 00
           enum:
             - 00
             - 01
         descricaoRetorno:
           type: string
           description: Status Code description.
-          example: "00"
+          example: "00 - Ok"
           enum:
             - 00 - Ok
             - 01 - System Error
         numeroCaso:
           type: integer
           description: Case number
-          example: "123456789"
+          example: 123456789
     Caso:
       type: object
       required:
@@ -483,7 +481,7 @@ components:
         status:
           type: string
           description: Open the case as CLOSED. Please contact Fiserv Representative for reference
-          example: "Fechado"
+          example: "FECHADO"
           enum:
             - 'FECHADO'
             - ''

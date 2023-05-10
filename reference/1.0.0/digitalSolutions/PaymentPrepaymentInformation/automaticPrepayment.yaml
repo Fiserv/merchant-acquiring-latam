@@ -19,14 +19,12 @@ x-config:
 paths:
   '/bwa/antecipacao-automatica/v1/antecipacao/':
     get:
-      tags:
-        - Automatic Prepayment
       x-proxy-name: Automatic Prepayment - Cancel - Consult Automatic Prepayment
       x-group-name: Payment & Prepayment Information
       x-child-product-name: Digital Solutions
       description: Consult Automatic Prepayment - Cancel
       summary: 'Consult Automatic Prepayment - Cancel'
-      operationId: 'Consult Automatic Prepayment - Cancel'
+      operationId: ConsultAutomaticPrepaymentCancel
       parameters:
         - name: Message-Signature
           in: header
@@ -46,14 +44,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -80,7 +78,7 @@ paths:
         - name: bandeira
           in: query
           description: Account type. Possible values [ 050 (Visa Credit) / 051 (Master Credit) / 055 (Cabal Credit) / 059 (Hipercard Credit) / 060 (ELO Credit) / 063 (AMEX Credi)]
-          example: 051, 050
+          example: '051'
           required: false
           schema:
             type: string
@@ -129,14 +127,12 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   '/bwa/antecipacao-automatica/v1/antecipacao':
     post:
-      tags:
-        - Automatic Prepayment
       x-proxy-name: Automatic Prepayment - Cancel - Automatic Prepayment
       x-group-name: Payment & Prepayment Information
       x-child-product-name: Digital Solutions
       description: Automatic Prepayment - Cancel - Automatic Prepayment
       summary: 'Automatic Prepayment - Cancel'
-      operationId: 'Automatic Prepayment - Cancel'
+      operationId: 'AutomaticPrepaymentCancel'
       parameters:
         - name: Message-Signature
           in: header
@@ -156,14 +152,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -248,7 +244,7 @@ components:
           format: int32
         mensagem:
           description: Description return code
-          example: Estabelecimento nao possui Antecipacao Automatica Vigente
+          example: 102 - Estabelecimento nao possui Antecipacao Automatica Vigente
           type: string
           enum: 
             - "102 - Estabelecimento nao possui Antecipacao Automatica Vigente"
@@ -277,7 +273,7 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado- (meaning Access Denied)
+          example: 3 - Acesso negado - (meaning Access Denied)
           type: string
           enum: 
             - "3 - Acesso negado - (meaning Access Denied)"
@@ -317,7 +313,7 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (meaning Internal Error)
+          example: 2 - Erro Interno - (meaning Internal Error)
           type: string
           enum: 
             - "2 - Erro Interno - (meaning Internal Error)"
@@ -358,11 +354,11 @@ components:
           type: string
         card:
           description: Association Code
-          example: "002"
+          example: "002 - MC Credit"
           type: string
           enum:
-            - 002 - MC Credit       
-              003 - VISA Credit     
+            - 002 - MC Credit
+            - 003 - VISA Credit     
               004 - Amex Credit     
               006 - Diners Credit   
               009 - CABAL Credit    
@@ -381,11 +377,10 @@ components:
             - 101
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso.
           type: string
           enum:
-            - >-
-              0 - Sucesso.
+            - 0 - Sucesso.
         conteudo:
           type: array
           items:
@@ -424,7 +419,7 @@ components:
         transactionType:
           type: string
           description: transaction Type
-          example: "001"
+          example: "001 Acquirer Instalments"
           enum:
             - 001 Acquirer Instalments 
             - 002 Acquirer Instalments Full Plan 
@@ -437,7 +432,7 @@ components:
         schemeOptionsDesc:
           type: string
           description: scheme Options 
-          example: "MC credit"
+          example: "050 Visa Credit"
           enum:
             - 050 Visa Credit
             - 051 Master Credit
@@ -448,7 +443,7 @@ components:
         transactionTypeDesc:
           type: string
           description: transaction Type
-          example: "Acquirer Instalments"
+          example: "001 Acquirer Instalments"
           enum:
             - 001 Acquirer Instalments 
             - 002 Acquirer Instalments Full Plan 
@@ -457,7 +452,7 @@ components:
         frequencyTypeDesc:
           type: string
           description: frequency Type 
-          example: "DAILY"
+          example: "305 DAILY"
           enum:
             - 305 DAILY
             - 309 Weekly - Mon
@@ -515,7 +510,7 @@ components:
         frequencyPeriod:
           type: string
           description: frequency Period
-          example: "005"
+          example: "005 5 days frequency period"
           enum:
             - 005 5 days frequency period 
             - 007 7 days frequency period
@@ -528,7 +523,7 @@ components:
         frequencyPeriodDesc:
           type: string
           description: frequency Period 
-          example: "5 days frequency period"
+          example: "005 5 days frequency period"
           enum:
             - 005 5 days frequency period 
             - 007 7 days frequency period
@@ -549,7 +544,7 @@ components:
         schemeOptions:
           type: string
           description: scheme Options
-          example: "051"
+          example: "051 Master Credit"
           enum:
             - 050 Visa Credit
             - 051 Master Credit
@@ -560,7 +555,7 @@ components:
         frequencyType:
           type: string
           description: frequency Type
-          example: "305"
+          example: "305 DAILY"
           enum:
             - 305 DAILY
             - 309 Weekly - Mon

@@ -15,11 +15,10 @@ x-config:
   tryItOut: true
 tags:
   - name: Merchant Trade Name Update
+    description: Merchant Trade Name Update
 paths:
-  "/bwa/wsm/merchantinformation/tradeName/updateTradeName/":
+  "/bwa/wsm/merchantinformation/tradeName/updateTradeName":
     post:
-      tags:
-        - Merchant Trade Name Update
       x-proxy-name: Merchant Trade Name - Update
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
@@ -45,14 +44,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -116,7 +115,7 @@ components:
         responseCode:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 - Atualização realizada com sucesso. -(meaning Updated Successfully Done)"
           enum:
             - 00 - Atualização realizada com sucesso. -(meaning Updated Successfully Done)
             - 01 - Atualização realizada com sucesso, mas mensagem UNS não enviada - (meaning Update Successfully done without UNS)

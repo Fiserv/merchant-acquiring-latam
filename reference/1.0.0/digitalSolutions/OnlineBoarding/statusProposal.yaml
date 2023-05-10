@@ -19,11 +19,10 @@ x-config:
   tryItOut: true
 tags:
   - name: Search for Proposal Status
+    description: Online Boarding
 paths:
   '/bwa/proposta/status/{inst}/{doc}':
     get:
-      tags:
-        - Online Boarding
       x-proxy-name: Proposal Status - Consult (Out of Online Boarding)
       x-group-name: Online Boarding
       x-child-product-name: Digital Solutions

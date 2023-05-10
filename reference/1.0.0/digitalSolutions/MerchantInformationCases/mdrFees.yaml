@@ -17,6 +17,7 @@ x-config:
   tryItOut: true
 tags:
   - name: Search for MDR Fees for Merchant
+    description: Search for MDR Fees for Merchant
 paths:
   "/bwa/mdr-fees/{institution}/{merchanID}":
     get:
@@ -47,14 +48,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -95,7 +96,7 @@ paths:
       x-child-product-name: Digital Solutions
       description: Search for MDR Fees for Merchant - Consult
       summary: Merchant Information & Cases
-      operationId: searchForMDRFees v2
+      operationId: searchForMDRFeesV2
       parameters:
         - name: Message-Signature
           in: header
@@ -115,14 +116,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -205,7 +206,6 @@ components:
         cardSchemeId:
           type: string
           description: Association/Schema Code
-          example: "004"
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -217,7 +217,6 @@ components:
         cardSchemeDescription:
           type: string
           description: "Association/Schema Code Description"
-          example: "AMEX Full Crédito"
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -275,7 +274,6 @@ components:
           example: "20221231"
         captureMethod:
           type: string
-          example: "999"
           enum:
             - 999 – All (default value)
             - 500 – POS – Point of Sale
@@ -295,7 +293,6 @@ components:
         id:
           type: string
           description: Association/Schema Code
-          example: "004"
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -307,7 +304,6 @@ components:
         description:
           type: string
           description: "Association/Schema Code Description"
-          example: "AMEX Full Crédito"
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -343,7 +339,6 @@ components:
         id:
           type: string
           description: Product Type Code (associated to the Association/Schema ID). It will show only the code
-          example: "113"
           enum:
             - "109 - All - Hipercard/Hiper-Credit"
             - "102 - Credit Card - MC Credit"
@@ -356,7 +351,6 @@ components:
         description:
           type: string
           description: Product Type Description. Apresentatará apenas a descrição (sem informação de Bandeira).
-          example: "All"
           enum:
             - "109 - All - Hipercard/Hiper-Credit"
             - "102 - Credit Card - MC Credit"
@@ -381,14 +375,12 @@ components:
         returnCode:
           type: string
           description: Return Code
-          example: "00"
           enum:
             - "00 - Succesfully Done"
             - "01 - System Error"
         returnDescription:
           type: string
           description: Descrição do Retorno
-          example: "Successfully Done"
           enum:
             - "00 - Succesfully Done"
             - "01 - System Error"
@@ -407,7 +399,6 @@ components:
         id:
           type: string
           description: Transaction Type Code (It will return only the code)
-          example: "005"
           enum:
             - 005 - Compra - (meaning Purchase)
             - 461 - Compra com 02 parcelas - (meaning Purchase 02 installments)
@@ -438,7 +429,6 @@ components:
         description:
           type: string
           description: Transaction Descrition (It will show only description)
-          example: "Purchase"
           enum:
             - 005 - Compra - (meaning Purchase)
             - 461 - Compra com 02 parcelas - (meaning Purchase 02 installments)
@@ -469,7 +459,6 @@ components:
         areaOfEvent:
           type: string
           description: Card Type
-          example: "001"
           enum:
             - "001 - Internacional"
             - "002 - Nacional"
@@ -508,7 +497,6 @@ components:
         category:
           type: string
           description: Fee Category - MDR or MDR Flex
-          example: "502"
           enum:
             - 003 or 502 - MDR
             - 501 - MDR Flex
