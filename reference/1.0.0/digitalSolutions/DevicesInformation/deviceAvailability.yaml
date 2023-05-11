@@ -15,11 +15,10 @@ x-config:
   tryItOut: true
 tags:
   - name: Search for Available Devices by Merchant Code
+    description: Search for Available Devices by Merchant Code
 paths:
   /bwa/tecnologia/habilitadas-ec:
     get:
-      tags:
-        - Search for Available Devices by Merchant Code
       x-proxy-name: Merchant Device Availability - Consult
       x-group-name: Devices Information
       x-child-product-name: Digital Solutions
@@ -129,7 +128,7 @@ components:
         mensagem:
           type: string
           description: Return Message
-          example: Error Message
+          example: Successfully Done
           enum:
             - Successfully Done
             - Invalid Request Information (Institution, merchant ou service-contract) (400 BAD REQUEST)
@@ -162,7 +161,6 @@ components:
             - "ECD"
             - "ECE"
             - "ECS"
-            - "ECO"
             - "MPS"
             - "KNI"
             - "KMM"
@@ -206,7 +204,6 @@ components:
         id:
           type: string
           description: Device Technology Code
-          example: 366
           enum:
             - "300 - ETH POS ISO"
             - "301 - GPR POS GPRS Mobile"

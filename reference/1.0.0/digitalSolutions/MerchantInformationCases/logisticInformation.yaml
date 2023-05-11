@@ -15,11 +15,10 @@ x-config:
   tryItOut: true
 tags:
   - name: Consult or Update Logistic Information
+    description: Consult or Update Logistic Information
 paths:
-  "/bwa/dados-logistica/":
+  "/bwa/dados-logistica":
     post:
-      tags:
-        - Consult or Update Logistic Information
       x-proxy-name: Merchant Logistic Information - Add/Update
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
@@ -45,14 +44,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -105,14 +104,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -161,7 +160,7 @@ components:
           type: integer
           format: int64
           description: Delivery Contact Phone Number
-          example: "11983836161"
+          example: 11983836161
         complemento:
           type: string
           description: Delivery Address Complement
@@ -211,62 +210,48 @@ components:
         sun:
           type: string
           description: Lunch Time - format HH:MM
-          example: ["13:00", "14:00", "18:00", "19:00"]
         mon:
           type: string
           description: Lunch Time - format HH:MM
-          example: ["13:00", "14:00", "18:00", "19:00"]
         tue:
           type: string
           description: Lunch Time - format HH:MM
-          example: ["13:00", "14:00", "18:00", "19:00"]
         wed:
           type: string
           description: Lunch Time - format HH:MM
-          example: ["13:00", "14:00", "18:00", "19:00"]
         thu:
           type: string
           description: Lunch Time - format HH:MM
-          example: ["13:00", "14:00", "18:00", "19:00"]
         fri:
           type: string
           description: Lunch Time - format HH:MM
-          example: ["13:00", "14:00", "18:00", "19:00"]
         sat:
           type: string
           description: Lunch Time - format HH:MM
-          example: ["13:00", "14:00", "18:00", "19:00"]
     HorarioManutencao:
       type: object
       properties:
         sun:
           type: string
           description: Maintenance Available Time - format HH:MM
-          example: ["08:00", "13:00", "15:00", "18:00"]
         mon:
           type: string
           description: Maintenance Available Time - format HH:MM
-          example: ["08:00", "13:00", "15:00", "18:00"]
         tue:
           type: string
           description: Maintenance Available Time - format HH:MM
-          example: ["08:00", "13:00", "15:00", "18:00"]
         wed:
           type: string
           description: Maintenance Available Time - format HH:MM
-          example: ["08:00", "13:00", "15:00", "18:00"]
         thu:
           type: string
           description: Maintenance Available Time - format HH:MM
-          example: ["08:00", "13:00", "15:00", "18:00"]
         fri:
           type: string
           description: Maintenance Available Time - format HH:MM
-          example: ["08:00", "13:00", "15:00", "18:00"]
         sat:
           type: string
           description: Maintenance Available Time - format HH:MM
-          example: ["08:00", "13:00", "15:00", "18:00"]
     responseRetorno:
       type: object
       description: Response Information
@@ -274,14 +259,12 @@ components:
         codigoRetorno:
           type: string
           description: Return Code
-          example: "00"
           enum:
             - "00 - Successfully done"
             - "01 - System Error"
         descricaoRetorno:
           type: string
           description: Return Code Description
-          example: "Successfully Done"
           enum:
             - "00 - Successfully done"
             - "01 - System Error"
@@ -302,14 +285,12 @@ components:
       properties:
         codigoRetorno:
           description: Return Code
-          example: "00"
           enum:
             - "00 - Successfully done"
             - "01 - System Error"
         descricaoRetorno:
           type: string
           description: Return Code Description
-          example: "Successfully Done"
           enum:
             - "00 - Successfully done"
             - "01 - System Error"

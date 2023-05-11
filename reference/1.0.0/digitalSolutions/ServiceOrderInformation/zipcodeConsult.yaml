@@ -15,6 +15,7 @@ x-config:
   tryItOut: true
 tags:
   - name: Search Zipcode or City (Brazil)
+    description: Search Zipcode or City (Brazil)
 paths:
   "/bwa/cep-service/cep/{cep}":
     get:
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -112,14 +113,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -199,14 +200,14 @@ components:
         code:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 - Successfully Done"
           enum:
             - "00 - Successfully Done"
             - "99 - System Error"
         description:
           type: string
           description: Return description
-          example: "Successfully Done"
+          example: "00 - Successfully Done"
           enum:
             - "00 - Successfully Done"
             - "99 - System Error"
@@ -228,14 +229,14 @@ components:
         code:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 - Successfully Done"
           enum:
             - "00 - Successfully Done"
             - "99 - System Error"
         description:
           type: string
           description: Return Description
-          example: "00"
+          example: "00 - Successfully Done"
           enum:
             - "00 - Successfully Done"
             - "99 - System Error"

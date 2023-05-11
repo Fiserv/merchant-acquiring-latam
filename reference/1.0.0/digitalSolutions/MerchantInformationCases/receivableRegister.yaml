@@ -16,14 +16,12 @@ x-config:
 paths:
   "/bwa/recebiveis/v1/receivableUnit/consulta/{dataInicio}/{dataFim}":
     get:
-      tags:
-        - Receivable Register, Receivable Unit and Agenda Out
       x-proxy-name: Merchant Information - Registradora (CIRC3952)
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Merchant Information - Registradora
       summary: Merchant Information & Cases
-      operationId: Receivable Unit
+      operationId: ReceivableUnit
       parameters:
         - name: Message-Signature
           in: header
@@ -43,14 +41,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -156,14 +154,12 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   "/bwa/recebiveis/v1/agendaOut/consulta/{dataInicio}/{dataFim}":
     get:
-      tags:
-        - Receivable Register, Receivable Unit and Agenda Out
       x-proxy-name: Merchant Information - Agenda Out
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Merchant Information - Agenda Out
       summary: Agenda Out
-      operationId: Agenda Out
+      operationId: AgendaOut
       parameters:
         - name: Message-Signature
           in: header
@@ -183,14 +179,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -296,14 +292,12 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   "/bwa/recebiveis/v1/lockInformation/consulta/{dataInicio}/{dataFim}":
     get:
-      tags:
-        - Receivable Register, Receivable Unit and Agenda Out
       x-proxy-name: Merchant Information - Lock Information
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Merchant Information - Lock Information
       summary: Lock Information
-      operationId: Lock Information
+      operationId: LockInformation
       parameters:
         - name: Message-Signature
           in: header
@@ -323,14 +317,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -456,7 +450,6 @@ components:
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios (meaning mdantory Fields Missing)
           type: string
           enum:
             - "9 - Campos mandatorios - (meaning Mandatory Fields Missing)"
@@ -485,7 +478,6 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado- (meaning Access Denied)
           type: string
           enum:
             - "3 - Acesso negado - (meaning Access Denied)"
@@ -525,7 +517,6 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (meaning Internal Error)
           type: string
           enum:
             - "2 - Erro Interno - (meaning Internal Error)"
@@ -543,7 +534,6 @@ components:
             - 101
         mensagem:
           description: Description return code
-          example: Sucesso.
           type: string
           enum:
             - "0 - Sucesso."
@@ -588,7 +578,7 @@ components:
           example: "502.02"
         arranjo:
           description: Arranjo. Payment Combination
-          example: "CBC"
+          example: "CBC - Cabal Credit"
           enum:
             - "ACC - Amex Credit"
             - "CBC - Cabal Credit"
@@ -677,10 +667,10 @@ components:
             - 101
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso
           type: string
           enum:
-            - "0 - Sucesso."
+            - "0 - Sucesso"
         conteudo:
           type: array
           items:
@@ -927,14 +917,13 @@ components:
             - "Sim Inativ"
             - "Sim (Grupo)"
             - "Atribuído"
-            - "n/a"
             - "Reverse Pend"
             - "Include"
             - "Exclude"
         arranjo:
           type: string
           description: Schema Payment
-          example: "CBC"
+          example: "CBC - Cabal Credit"
           enum:
             - "ACC - Amex Credit"
             - "CBC - Cabal Credit"
@@ -995,10 +984,10 @@ components:
             - 101
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso
           type: string
           enum:
-            - "0 - Sucesso."
+            - "0 - Sucesso"
         conteudo:
           type: array
           items:
@@ -1037,7 +1026,7 @@ components:
         arranjo:
           type: string
           description: Schema Payment
-          example: "CBC"
+          example: "CBC - Cabal Credit"
           enum:
             - "ACC - Amex Credit"
             - "CBC - Cabal Credit"

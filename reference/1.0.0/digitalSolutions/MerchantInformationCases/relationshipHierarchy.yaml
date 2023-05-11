@@ -19,19 +19,20 @@ x-config:
   tryItOut: true
 tags:
   - name: 'Get The Merchant Relationship Hierarchy'
+    description: Merchant Relationship Hierarchy Maintenance
   - name: 'Add Merchant Relationship Hierarchy'
+    description: Merchant Relationship Hierarchy Maintenance
   - name: 'Remove Merchant Relationship Hierarchy'
+    description: Merchant Relationship Hierarchy Maintenance
 paths:
   '/bwa/hierarquia-relacionamento/v1/relacionamento/obterEstabelecimentoPai':
     get:
-      tags:
-        - Merchant Relationship Hierarchy Maintenance
       x-proxy-name: Merchant Relationship Hierarchy - Consult
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Search Merchant Relationship Hierarchy
       summary: Merchant Information & Cases
-      operationId: Search Merchant Relationship Hierarchy
+      operationId: SearchMerchantRelationshipHierarchy
       parameters:
         - name: Message-Signature
           in: header
@@ -51,14 +52,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -127,8 +128,6 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   '/bwa/hierarquia-relacionamento/v1/relacionamento/incluir':
     post:
-      tags:
-        - Merchant Relationship Hierarchy Maintenance
       x-proxy-name: Merchant Relationship Hierarchy - Add
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
@@ -154,14 +153,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -236,8 +235,6 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   '/bwa/hierarquia-relacionamento/v1/relacionamento/excluir':
     post:
-      tags:
-        - Merchant Relationship Hierarchy Maintenance
       x-proxy-name: Merchant Relationship Hierarchy - Remove
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
@@ -263,14 +260,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -358,7 +355,7 @@ components:
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios (meaning mdantory Fields Missing)
+          example: 9 - Campos mandatorios - (meaning Mandatory Fields Missing
           type: string
           enum:
             - "9 - Campos mandatorios - (meaning Mandatory Fields Missing"
@@ -387,7 +384,6 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado
           type: string
           enum:
             - "3 - Acesso negado - (meaning Access Denied)"
@@ -427,7 +423,6 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (meaning Internal Error)
           type: string
           enum:
             - "2 - Erro Interno - (meaning Internal Error)"
@@ -445,10 +440,10 @@ components:
             - 104
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso
           type: string
           enum:
-            - "0 - Sucesso."
+            - "0 - Sucesso"
             - "104 - Estabelecimento ja possui hierarquia"
         conteudo:
           type: array
@@ -467,7 +462,7 @@ components:
           type: string
         grupo:
           description: Merchant Group
-          example: 00009999
+          example: '00009999'
           type: string
         documento:
           description: Tax ID (CPF or CNPJ)
@@ -496,10 +491,10 @@ components:
             - 102
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso
           type: string
           enum:
-            - "0 - Sucesso."
+            - "0 - Sucesso"
             - "101 - Estabelecimento ja possui relacionamento"
             - "102 - Estabelecimento pai nao tem relacionamento com o estabelecimento informado"
         conteudo:
@@ -535,10 +530,10 @@ components:
             - 105
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso
           type: string
           enum:
-            - "0 - Sucesso."
+            - "0 - Sucesso"
             - "103 - Este estabelecimento ja possui hierarquia de pagamento, favor remover a hierarquia antes de prosseguir"
             - "105 - A exclusao solicitada nao possui hierarquia"
         conteudo:

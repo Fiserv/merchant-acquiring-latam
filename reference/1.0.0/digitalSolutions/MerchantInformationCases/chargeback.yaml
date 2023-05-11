@@ -21,14 +21,12 @@ tags:
 paths:
   '/bwa/chargeback-ec/api/chargeback/ec/apigee/filter':
     post:
-      tags:
-        - Search for Chargeback Information (Chargeback Portal)
       x-proxy-name: Merchant Chargeback - Consult
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Merchant Chargeback - Consult
       summary: Search for Chargeback Information
-      operationId: Search for Chargeback Information
+      operationId: SearchForChargebackInformation
       parameters:
         - name: Message-Signature
           in: header
@@ -48,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -187,7 +185,7 @@ paths:
         - name: size
           in: query
           description: Number of records to search on the page (Default 20)
-          example: null
+          example: 20
           required: false
           schema:
             type: integer
@@ -199,22 +197,22 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DChargebackResponsePage'
-        201:
+        '201':
           description: Created
           content: {}
-        401:
+        '401':
           description: Unauthorized
           content: {}
-        403:
+        '403':
           description: Forbidden
           content: {}
-        404:
+        '404':
           description: Not Found
           content: {}
       deprecated: false
@@ -227,7 +225,7 @@ components:
         action:
           type: string
           description: Chargeback Installment Action
-          example: null
+          example: ''
         id:
           type: integer
           format: int64
@@ -282,12 +280,11 @@ components:
         ecCode:
           type: integer
           description: Merchant code
-          example: '1234595'
+          example: 1234595
         emailSentDate:
           type: string
           format: date
           description: Date when the Email Information was sent
-          example: '25/04/2020'
         id:
           type: integer
           description: chargeback internal Id Code
@@ -308,7 +305,7 @@ components:
         messageText:
           type: string
           description: Free Message Text
-          example: null
+          example: ''
         rcCardBrand:
           type: string
           description: Card Brand Reason code
@@ -320,7 +317,6 @@ components:
         screeningStatus:
           type: string
           description: Screening Status
-          example: '- READABLE - OUTDATED - INVALID - UNREADABLE - REITERATION'
           enum:
             - DEBIT
             - RESUBMISSION

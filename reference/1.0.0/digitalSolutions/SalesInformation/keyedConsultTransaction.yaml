@@ -17,14 +17,12 @@ x-config:
 paths:
   '/bwa/consulta-transacao-digitada/v1/consulta':
     get:
-      tags:
-        - Search for keyed transaction status, with CNAE details
       x-proxy-name: Merchant Sales - Keyed Trans Permission - Consult
       x-group-name: Sales Information
       x-child-product-name: Digital Solutions
       description: Search detailed information by Customer Information
       summary: 'Search detailed information by Customer Information'
-      operationId: Search detailed information by Customer Information
+      operationId: SearchDetailedInformationByCustomerInformation
       parameters:
         - name: Message-Signature
           in: header
@@ -44,14 +42,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -135,14 +133,14 @@ components:
           example: 9
           type: integer
           format: int32
-          enum: 
+          enum:
             - 9
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios (meaning mdantory Fields Missing)
+          example: 9 - Campos mandatorios - (meaning Mandatory Fields Missing
           type: string
-          enum: 
+          enum:
             - "9 - Campos mandatorios - (meaning Mandatory Fields Missing"
             - "10 - (Erro validaçao) - (meaning Validation Error)"
     Unauthorized:
@@ -163,14 +161,14 @@ components:
           example: 3
           type: integer
           format: int32
-          enum: 
+          enum:
             - 3
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado
+          example: 3 - Acesso negado - (meaning Access Denied)
           type: string
-          enum: 
+          enum:
             - "3 - Acesso negado - (meaning Access Denied)"
             - "6 - Token expirado - (meaning Expired Token)"
     NotFound:
@@ -201,14 +199,14 @@ components:
           example: 2
           type: integer
           format: int32
-          enum: 
+          enum:
             - 2
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (meaning Internal Error)
+          example: 2 - Erro Interno - (meaning Internal Error)
           type: string
-          enum: 
+          enum:
             - "2 - Erro Interno - (meaning Internal Error)"
             - "7 - Erro na integracao da API. Detalhe - (meaning API Integration Error)"
     ResponseEntityConsultaCnae:
@@ -223,42 +221,41 @@ components:
             - 0
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso.
           type: string
           enum:
-            - >-
-              0 - Sucesso.
+            - 0 - Sucesso.
         conteudo:
           type: array
           items:
             $ref: '#/components/schemas/StcStatisticDetailSpRespDTO'
-        
+
     StcStatisticDetailSpRespDTO:
       type: object
       properties:
-        cnae: 
+        cnae:
           description: "CNAE Number (Brazilian Activity Code)"
           example: 113322
           type: integer
-        mcc: 
+        mcc:
           description: "MCC - Merchant Category Code"
           example: 65123
           type: integer
-        nivel: 
+        nivel:
           description: "Risk Level to enable transaction keyed"
-          example: "L"
+          example: "L - Low"
           enum:
-           - H - High
-           - M - Medium
-           - L - Low
+            - H - High
+            - M - Medium
+            - L - Low
           type: string
-        denominacao: 
+        denominacao:
           description: "CNAE description"
           example: "Cultivo de abacaxi"
           type: string
-        vendaDigitada: 
+        vendaDigitada:
           description: "CNAE autorization Information"
-          example: "Liberado -  Mediante Formulário - (meaning Released - Request Form Required)"
+          example: "Liberado - Dispensado de Formulário - (meaning Released - Exempt Form)"
           enum:
             - Não Liberado  - (meaning Not released)
             - Não atuar - Segmento não qualificado  - (meaning No Action - Segment not qualified)
@@ -266,18 +263,18 @@ components:
             - Liberado - Dispensado de Formulário - (meaning Released - Exempt Form)
             - Liberado - Mediante Formulário - (meaning Released - Request Form Required)
           type: string
-        reativacao: 
+        reativacao:
           description: "Reactivation type"
-          example: "BKO"
+          example: "BKO - Backoffice"
           enum:
             - BKO - Backoffice
             - C&R - Credit & Risk
           type: string
-        descricaoMcc: 
+        descricaoMcc:
           description: "MCC description"
           example: "COOPERATIVA AGRÍCOLA"
           type: string
-        tipoRisco: 
+        tipoRisco:
           description: "Risk type to enable Transaction Keyed. I Lowest - IV Higuest"
           example: "I"
           enum:
@@ -286,7 +283,7 @@ components:
             - III
             - IV
           type: string
-        sic: 
+        sic:
           description: "SIC (Standard Industrial Classification) Number"
           example: 5261
           type: integer

@@ -9,15 +9,15 @@ A continuación puede consultar cada enlace para acceder al documento detallado 
 
 
 
-[Merchant Addresses - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/address/updateAddress/)
+[Merchant Addresses - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/address/updateAddress)
 
 [Merchant Devices Billing History](../api/?type=get&path=/bwa/cobranca-terminal/v1/consulta/{data})
 
 [Merchant Devices and Fees - Consult](../api/?type=get&path=/bwa/mdr-fees/{institution}/{merchanID})
 
-[Merchant Trade Name - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/tradeName/updateTradeName/)
+[Merchant Trade Name - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/tradeName/updateTradeName)
 
-[Merchant Working Hours - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/workingHours/updateWorkingHours/)
+[Merchant Working Hours - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/workingHours/updateWorkingHours)
 
 [Merchant Contract Status - Update](../api/?type=post&path=/bwa/status-estabelecimento/v1/atualizaStatusEstabelecimento)
 
@@ -27,9 +27,9 @@ A continuación puede consultar cada enlace para acceder al documento detallado 
 
 [Merchant Information - Update](../api/?type=post&path=/bwa/atualiza-socio/v1/atualizaEstabelecimento/{clientNumber})
 
-[Merchant Trade Name - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/tradeName/updateTradeName/)
+[Merchant Trade Name - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/tradeName/updateTradeName)
 
-[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest/)
+[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest)
 
 [Service Fees (MDR) - Consult](../api/?type=get&path=/bwa/mdr-fees/v2)
 
@@ -39,5 +39,5 @@ A continuación puede consultar cada enlace para acceder al documento detallado 
 
 [Payment Settlement Account - Validation](../api/?type=post&path=/bwa/domicilio-bancario/validar)
 
-[Payment Settlement Account - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/accounts/paymentAccountInfo/)
+[Payment Settlement Account - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/accounts/paymentAccountInfo)
 

@@ -15,8 +15,9 @@ x-config:
   tryItOut: true
 tags:
   - name: Merchant Working Hours Update
+    description: Merchant Working Hours Update
 paths:
-  "/bwa/wsm/merchantinformation/workingHours/updateWorkingHours/":
+  "/bwa/wsm/merchantinformation/workingHours/updateWorkingHours":
     post:
       tags:
         - Merchant Working Hours Update
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -133,14 +134,14 @@ components:
         responseCode:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 - Successfully Done"
           enum:
             - 00 - Successfully Done
             - 99 - System Error
         responseCodeDesc:
           type: string
           description: Return Code
-          example: Successfully Done
+          example: 00 - Successfully Done
           enum:
             - 00 - Successfully Done
             - 99 - System Error

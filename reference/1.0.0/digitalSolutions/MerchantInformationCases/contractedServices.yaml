@@ -19,13 +19,11 @@ tags:
 paths:
   "/bwa/produtos-servicos/v1/produtos-servicos":
     get:
-      tags:
-        - Consult the Products and Services contracted by the Merchant
       x-proxy-name: Contracted Services - Consult
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Consult the Products and Services contracted by the Merchant
-      operationId: Consult the Products and Services contracted by the Merchant
+      operationId: ConsultTheProductsAndServicesContractedByTheMerchant
       parameters:
         - name: Message-Signature
           in: header
@@ -45,14 +43,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -157,7 +155,6 @@ components:
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios (meaning mdantory Fields Missing)
           type: string
           enum:
             - "9 - Campos mandatorios - (meaning Mandatory Fields Missing)"
@@ -186,7 +183,6 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado- (meaning Access Denied)
           type: string
           enum:
             - "3 - Acesso negado - (meaning Access Denied)"
@@ -226,7 +222,6 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (meaning Internal Error)
           type: string
           enum:
             - "2 - Erro Interno - (meaning Internal Error)"
@@ -244,11 +239,9 @@ components:
             - 101
         mensagem:
           description: Description return code
-          example: Sucesso.
           type: string
           enum:
-            - >-
-              0 - Sucesso.
+            - 0 - Sucesso.
         conteudo:
           type: array
           items:

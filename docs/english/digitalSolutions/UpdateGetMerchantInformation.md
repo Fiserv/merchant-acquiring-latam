@@ -9,19 +9,19 @@ Below you can check each link to access the detailed document for each Web-servi
 
 [Token Access](?path=docs/english/digitalSolutions/TokenGenerationforWeb-services.md)
 
-[Merchant Addresses - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/address/updateAddress/)
+[Merchant Addresses - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/address/updateAddress)
 
 [Merchant Devices and Fees - Consult](../api/?type=get&path=/bwa/mdr-fees/{institution}/{merchanID})
 
 [Merchant Customer Information - Consult](../api/?type=get&path=/bwa/estabelecimento/v2)
 
-[Merchant Trade Name - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/tradeName/updateTradeName/)
+[Merchant Trade Name - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/tradeName/updateTradeName)
 
-[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest/)
+[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest)
 
 [Proposal Status - Consult (Out of Online Boarding)](../api/?type=get&path=/bwa/proposta/status/{inst}/{doc})
 
-[Prepayment - Enable/Disable](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag/)
+[Prepayment - Enable/Disable](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag)
 
 [Prepayment - Consult/Request/Cancel](../api/?type=get&path=/bwa/antecipacao-automatica/v1/antecipacao/)
 

@@ -17,18 +17,18 @@ x-config:
   tryItOut: true
 tags:
   - name: Search Merchant Partner Information
+    description: Get or Update Merchant Partner Information
   - name: Update Merchant Partnet Information
+    description: Get or Update Merchant Partner Information
 paths:
   '/bwa/atualiza-socio/v1/consultaEstabelecimento/{clientNumber}':
     get:
-      tags:
-        - Get or Update Merchant Partner Information
       x-proxy-name: Merchant Information - Consult Partner
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Search Merchant Partner Information
       summary: Search Merchant Partner Information
-      operationId: Search Merchant Partner Information
+      operationId: SearchMerchantPartnerInformation
       parameters:
         - name: Message-Signature
           in: header
@@ -48,14 +48,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -87,43 +87,43 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseEntityConsultaSocio'
-        206:
+        '206':
           description: Partial Content
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PartialContent'
-        401:
+        '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Unauthorized'
-        403:
+        '403':
           description: Forbidden
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Forbidden'
-        404:
+        '404':
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFound'
-        409:
+        '409':
           description: Conflict
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Conflict'
-        500:
+        '500':
           description: Internal Server Error
           content:
             application/json:
@@ -131,14 +131,12 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   '/bwa/atualiza-socio/v1/atualizaEstabelecimento/{clientNumber}':
     post:
-      tags:
-        - Get or Update Merchant Partner Information
       x-proxy-name: Merchant Information - Update Partner
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Update Merchant Partnet Information
       summary: Update Merchant Partnet Information
-      operationId: Update Merchant Partnet Information
+      operationId: UpdateMerchantPartnetInformation
       parameters:
         - name: Message-Signature
           in: header
@@ -158,14 +156,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -203,43 +201,43 @@ paths:
             schema:
               $ref: '#/components/schemas/SocioRespDTO'
       responses:
-        200:
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseEntityConsultaSocio'
-        206:
+        '206':
           description: Partial Content
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PartialContent'
-        401:
+        '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Unauthorized'
-        403:
+        '403':
           description: Forbidden
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Forbidden'
-        404:
+        '404':
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFound'
-        409:
+        '409':
           description: Conflict
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Conflict'
-        500:
+        '500':
           description: Internal Server Error
           content:
             application/json:
@@ -260,7 +258,7 @@ components:
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios - (meaning Mandatory Fields)
+          example: 9 - Campos mandatorios - (meaning Mandatory Fields)
           type: string
           enum:
             - "9 - Campos mandatorios - (meaning Mandatory Fields)"
@@ -288,7 +286,7 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado - Meaning Denied Access
+          example: 3 - Acesso negado - (Meaning Denied Access)
           type: string
           enum:
             - "3 - Acesso negado - (Meaning Denied Access)"
@@ -326,7 +324,7 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (Meaning Internal Error)
+          example: 2 - Erro Interno - (Meaning Internal Error)
           type: string
           enum:
             - "2 - Erro Interno - (Meaning Internal Error)"
@@ -343,7 +341,7 @@ components:
             - 0
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso - (Meaning Successfull Done)
           type: string
           enum:
             - "0 - Sucesso - (Meaning Successfull Done)"

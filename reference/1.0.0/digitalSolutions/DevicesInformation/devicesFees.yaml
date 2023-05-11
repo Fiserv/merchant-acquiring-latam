@@ -16,14 +16,12 @@ x-config:
 paths:
   "/bwa/device-fees/{institution}/{merchanID}":
     get:
-      tags:
-        - Search for Device Informations
       x-proxy-name: Merchant Devices and Fees - Consult
       x-group-name: Devices Information
       x-child-product-name: Digital Solutions
       description: Merchant Devices and Fees - Consult
       summary: Search for Device Fees based on Merchant Institution and Merchant Code
-      operationId: searchForDeviceFees - Deprecated
+      operationId: searchForDeviceFeesDeprecated
       parameters:
         - name: Message-Signature
           in: header
@@ -43,14 +41,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -84,8 +82,6 @@ paths:
       deprecated: true
   "/bwa/device-fees/v2":
     get:
-      tags:
-        - Search for Device Informations
       x-proxy-name: Search for Device Fees based on Merchant Institution and Merchant Code - Changed the resource name
       x-group-name: Devices Information
       x-child-product-name: Digital Solutions
@@ -111,14 +107,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -152,8 +148,6 @@ paths:
       deprecated: false
   "/bwa/device-fees/device-service":
     get:
-      tags:
-        - Search for Device Informations
       x-proxy-name: Search for Device Service Types
       x-group-name: Devices Information
       x-child-product-name: Digital Solutions
@@ -179,14 +173,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -241,7 +235,6 @@ components:
         modeloTerminal:
           type: string
           description: Device Model
-          example: "334"
           enum:
             - "300 - POS ISO"
             - "301 - POS GPRS"
@@ -274,7 +267,6 @@ components:
         descricaoModeloTerminal:
           type: string
           description: Device Model Description
-          example:
           enum:
             - "300 - POS ISO"
             - "301 - POS GPRS"
@@ -315,7 +307,6 @@ components:
         lastVisit:
           type: string
           description: Last Visit Date (not used)
-          example: Null
         infoTerminal:
           type: string
           description: Additional Information about the Devices, such as Phone Operator, User, Card, etc.
@@ -366,7 +357,6 @@ components:
         codigoRetorno:
           type: string
           description: Return Code
-          example: "00"
           enum:
             - 00 - Solicitação processada OK - (meaning Successfully Dine)
             - 01 - Status do Contrato inválido - (meaning Invalid Status)
@@ -388,7 +378,6 @@ components:
         descricaoRetorno:
           type: string
           description: Descrião do Código de Retorno.
-          example: Solicitação processada OK.
           enum:
             - 00 - Solicitação processada OK - (meaning Successfully Dine)
             - 01 - Status do Contrato inválido - (meaning Invalid Status)
@@ -426,7 +415,6 @@ components:
         codigoRetorno:
           type: string
           description: Return Code
-          example: "00"
           enum:
             - 00 - Solicitação processada OK - (meaning Successfully Dine)
             - 01 - Status do Contrato inválido - (meaning Invalid Status)
@@ -448,7 +436,6 @@ components:
         mensagem:
           type: string
           description: Descrião do Código de Retorno.
-          example: Solicitação processada OK.
           enum:
             - 00 - Solicitação processada OK - (meaning Successfully Dine)
             - 01 - Status do Contrato inválido - (meaning Invalid Status)
@@ -494,13 +481,11 @@ components:
         codigoRetorno:
           type: string
           description: Return Code
-          example: "00"
           enum:
             - 00 - Sucesso.
         descricaoRetorno:
           type: string
           description: Descrião do Código de Retorno.
-          example: Sucesso.
           enum:
             - 00 - Sucesso. - (meaning Successfully Dine)
         conteudo:
@@ -522,7 +507,6 @@ components:
         modeloTerminal:
           type: string
           description: Device Model
-          example: "334"
           enum:
             - "300 - POS ISO"
             - "301 - POS GPRS"
@@ -578,7 +562,6 @@ components:
         descricaoModeloTerminal:
           type: string
           description: Device Model Description
-          example:
           enum:
             - "300 - POS ISO"
             - "301 - POS GPRS"
@@ -642,7 +625,7 @@ components:
         lastVisit:
           type: string
           description: Last Visit Date (not used)
-          example: Null
+          example: ''
         infoTerminal:
           type: string
           description: Additional Information about the Devices, such as Phone Operator, User, Card, etc.

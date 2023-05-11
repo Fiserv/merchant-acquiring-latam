@@ -20,8 +20,6 @@ tags:
 paths:
   '/bwa/dirf-api/v1/dirf/irpdf/{ano}':
     get:
-      tags:
-        - Consult DIRF
       x-proxy-name: Merchant Information - DIRF
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
@@ -47,14 +45,14 @@ paths:
         in: header
         description: Oauth Key
         required: true
-        example: null
+        example: ''
         schema:
           type: string
       - name: Timestamp
         in: header
         description: Date - Epoch format
         required: true
-        example: 1563309156733
+        example: '1563309156733'
         schema:
           type: string
       - name: Client-Request-Id
@@ -85,7 +83,7 @@ paths:
         schema:
           type: string
       responses:
-        200:
+        '200':
           description: Successfully Done
           content:
             application/octet-stream:
@@ -96,37 +94,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Excecao'
-        206:
+        '206':
           description: Partial Content
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PartialContent'
-        401:
+        '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Unauthorized'
-        403:
+        '403':
           description: Forbidden
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Forbidden'
-        404:
+        '404':
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFound'
-        409:
+        '409':
           description: Conflict
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Conflict'
-        500:
+        '500':
           description: Internal Server Error
           content:
             application/json:
@@ -147,7 +145,6 @@ components:
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios - (meaning Mandatory Fields)
           type: string
           enum: 
             - "9 - Campos mandatorios - (meaning Mandatory Fields)"
@@ -175,7 +172,6 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado - Meaning Denied Access
           type: string
           enum: 
             - "3 - Acesso negado - (Meaning Denied Access)"
@@ -213,7 +209,6 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (Meaning Internal Error)
           type: string
           enum: 
             - "2 - Erro Interno - (Meaning Internal Error)"
@@ -223,14 +218,13 @@ components:
       properties:
         codigoRetorno:
           description: Return code
-          example: 0
+          example: 101
           type: integer
           format: int32
           enum:
             - 101
         mensagem:
           description: Description return code
-          example: "Nao existem informacoes para o ano selecionado 2019. (meaning there is no information for the selected year)"
           type: string
           enum:
             - "101 - Nao existem informacoes para o ano selecionado {ano}. (meaning there is no information for the selected year)"    
