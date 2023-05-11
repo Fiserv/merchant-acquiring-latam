@@ -15,7 +15,7 @@ x-config:
   tryItOut: true
 tags:
   - name: Service Order Opening for API TMS Microservices
-
+    description: Service Order Opening for API TMS Microservices
 paths:
   "/bwa/brtms-microservices/serviceorder/remote/transaction":
     post:
@@ -57,7 +57,7 @@ components:
         reasonId:
           type: string
           description: opening reason code
-          example: "C01"
+          example: "C01 (Troca de operadora/estabelecimento)"
           enum:
             - C01 (Troca de operadora/estabelecimento)
             - F05 (Problema com leitora)
@@ -72,7 +72,7 @@ components:
         messagePcode:
           type: string
           description: message codes - 400000 Install / 410000 maintenance  / 415000 simcard exchange / 470000 supply / 440000 uninstall / 490000 update / 420000 exchange technology / 450000 cancellation
-          example: "410000"
+          example: "410000 - maintenance"
           enum:
             - "400000 - Install"
             - "410000 - maintenance"
@@ -610,7 +610,7 @@ components:
         responseCode:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 Manutencao solicitada com sucesso"
           enum:
             - 00 Manutencao solicitada com sucesso
             - 01 invalid message formatting
@@ -656,7 +656,6 @@ components:
             - Manutencao solicitada com sucesso
             - invalid message formatting
             - Erro - Ja existe pedido
-            - Invalid message type
             - Invalid Operation
             - Transacao invalida - Gravar/atualizar slip na base de dados terminal bloqueado
             - problemas de comunicacao na consulta dos dados (TMS FHM)
@@ -667,7 +666,6 @@ components:
             - invalid parameters
             - invalid notes/descriptions
             - invalid urgency code
-            - Resposta invalida - Falha no processamento
             - transaction in progress
             - transaction not found
             - Moeda Informada invalida
@@ -698,5 +696,3 @@ components:
           description: System Retrieval Reference Number - For TMS use only
           example: "600000000002"
       title: APITMSResponse
-
-

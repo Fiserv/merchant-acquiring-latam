@@ -23,14 +23,12 @@ tags:
 paths:
   '/bwa/consulta-servico-bandeira/v1/consulta/servicoBandeira':
     get:
-      tags:
-        - Controller Consultation Service
       x-proxy-name: Merchant Services - Consult/Update for Associations/Schema
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Search for Association/Schema Service Status
       summary: Merchant Information & Cases
-      operationId: Search for Association/Schema Service Status
+      operationId: SearchForAssociationSchemaServiceStatus
       parameters:
       - name: Message-Signature
         in: header
@@ -50,14 +48,14 @@ paths:
         in: header
         description: Oauth Key
         required: true
-        example: null
+        example: ''
         schema:
           type: string
       - name: Timestamp
         in: header
         description: Date - Epoch format
         required: true
-        example: 1563309156733
+        example: '1563309156733'
         schema:
           type: string
       - name: Client-Request-Id
@@ -82,43 +80,43 @@ paths:
         schema:
           type: string
       responses:
-        200:
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseEntityConsultaServicoBandeira'
-        206:
+        '206':
           description: Partial Content
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PartialContent'
-        401:
+        '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Unauthorized'
-        403:
+        '403':
           description: Forbidden
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Forbidden'
-        404:
+        '404':
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFound'
-        409:
+        '409':
           description: Conflict
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Conflict'
-        500:
+        '500':
           description: Internal Server Error
           content:
             application/json:
@@ -126,14 +124,12 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   '/bwa/consulta-servico-bandeira/v1/consulta/servicoBandeira/{categoria}':
     get:
-      tags:
-        - Controller Consultation Service
       x-proxy-name: Merchant Services - Consult for Associations/Schema Status by Category
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Search for Association/Schema Service Status by Category
       summary: Merchant Information & Cases
-      operationId: Search for Association/Schema Service Status by Category
+      operationId: SearchForAssociationSchemaServiceStatusByCategory
       parameters:
       - name: Message-Signature
         in: header
@@ -153,14 +149,14 @@ paths:
         in: header
         description: Oauth Key
         required: true
-        example: null
+        example: ''
         schema:
           type: string
       - name: Timestamp
         in: header
         description: Date - Epoch format
         required: true
-        example: 1563309156733
+        example: '1563309156733'
         schema:
           type: string
       - name: Client-Request-Id
@@ -196,43 +192,43 @@ paths:
             - "007"
             - "028"
       responses:
-        200:
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseEntityConsultaServicoBandeira'
-        206:
+        '206':
           description: Partial Content
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PartialContent'
-        401:
+        '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Unauthorized'
-        403:
+        '403':
           description: Forbidden
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Forbidden'
-        404:
+        '404':
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFound'
-        409:
+        '409':
           description: Conflict
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Conflict'
-        500:
+        '500':
           description: Internal Server Error
           content:
             application/json:
@@ -240,14 +236,12 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   '/bwa/consulta-servico-bandeira/v1/altera/status':
     post:
-      tags:
-        - Controller Consultation Service
       x-proxy-name: Merchant Services - Update for Associations/Schema Status
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Change for Association/Schema Service Status
       summary: Merchant Information & Cases
-      operationId: Change for Association/Schema Service Status
+      operationId: ChangeForAssociationSchemaServiceStatus
       parameters:
       - name: Message-Signature
         in: header
@@ -267,14 +261,14 @@ paths:
         in: header
         description: Oauth Key
         required: true
-        example: null
+        example: ''
         schema:
           type: string
       - name: Timestamp
         in: header
         description: Date - Epoch format
         required: true
-        example: 1563309156733
+        example: '1563309156733'
         schema:
           type: string
       - name: Client-Request-Id
@@ -305,43 +299,43 @@ paths:
             schema:
               $ref: '#/components/schemas/AlteraStatusRequest'
       responses:
-        200:
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseEntityAlteraStatus'
-        206:
+        '206':
           description: Partial Content
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PartialContent'
-        401:
+        '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Unauthorized'
-        403:
+        '403':
           description: Forbidden
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Forbidden'
-        404:
+        '404':
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFound'
-        409:
+        '409':
           description: Conflict
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Conflict'
-        500:
+        '500':
           description: Internal Server Error
           content:
             application/json:
@@ -362,7 +356,7 @@ components:
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios - (meaning Mandatory Fields)
+          example: 9 - Campos mandatorios - (meaning Mandatory Fields)
           type: string
           enum: 
             - "9 - Campos mandatorios - (meaning Mandatory Fields)"
@@ -390,7 +384,7 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado - Meaning Denied Access
+          example: 3 - Acesso negado - (Meaning Denied Access)
           type: string
           enum: 
             - "3 - Acesso negado - (Meaning Denied Access)"
@@ -428,7 +422,7 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (Meaning Internal Error)
+          example: 2 - Erro Interno - (Meaning Internal Error)
           type: string
           enum: 
             - "2 - Erro Interno - (Meaning Internal Error)"
@@ -446,7 +440,7 @@ components:
             - 101
         mensagem:
           description: Description return code
-          example: Sucesso.
+          example: 0 - Sucesso - (Meaning Successfull Done)
           type: string
           enum:
             - "0 - Sucesso - (Meaning Successfull Done)"
@@ -483,7 +477,7 @@ components:
             - "Inativo"
         serviceId:
           description: Product Service Code related to the Category (it will return only the code)
-          example: "102"
+          example: "102 Acq - MC Credit"
           type: string
           enum:
           - 102 Acq - MC Credit
@@ -537,7 +531,7 @@ components:
           - 201 Acq - Visa Credit
         serviceIdDescr:
           description: Product Service description related to the Category (it will return only the description)
-          example: Acq - MC Credit
+          example: 102 Acq - MC Credit
           type: string
           enum:
           - 102 Acq - MC Credit
@@ -602,7 +596,7 @@ components:
       properties:
         serviceId:
           description: Product Service Code related to the Category (it will return only the code)
-          example: "102"
+          example: "102 Acq - MC Credit"
           type: string
           enum:
           - 102 Acq - MC Credit
@@ -656,7 +650,7 @@ components:
           - 201 Acq - Visa Credit
         serviceIdDescr:
           description: Product Service description related to the Category (it will return only the description)
-          example: Acq - MC Credit
+          example: 102 Acq - MC Credit
           type: string
           enum:
           - 102 Acq - MC Credit
@@ -710,7 +704,7 @@ components:
           - 201 Acq - Visa Credit
         newStatus:
           description: New status to be assigned
-          example: "001"
+          example: "001 Habilitado"
           type: string
           enum:
           - "001 Habilitado"
@@ -737,7 +731,7 @@ components:
         descricao:
           type: string
           description: "Description of the result of the change"
-          example: "Servico [102] habilitado com sucesso para o estabelecimento [12345678]"
+          example: "300 Servico [102] habilitado com sucesso para o estabelecimento [12345678]"
           enum:
           - "300 Servico [102] habilitado com sucesso para o estabelecimento [12345678]"
           - "301 A solicitacao do servico [102] para o estabelecimento [12345678] sera efetivada em ate 24 horas"

@@ -64,7 +64,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Historic Contract](../api/?type=get&path=/bwa/historico-contrato/v1/historicoContrato)
 
-[Merchant Logistic Information - Add/Update](../api/?type=post&path=/bwa/dados-logistica/)
+[Merchant Logistic Information - Add/Update](../api/?type=post&path=/bwa/dados-logistica)
 
 [Merchant Logistic Information - Consult Logistic Information](../api/?type=get&path=/bwa/dados-logistica/{numeroInstituicao}/{merchantId}/{cnpjCpf})
 
@@ -108,7 +108,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Requests (Cases) - Search for Symptom to be used for Salesforce Case Opening by Symptoms](../api/?type=get&path=/bwa/abertura-caso/config/sintomas/{Id})
 
-[Merchant Requests (Cases) - Request Opening (Cases in Salesforce)](../api/?type=post&path=/bwa/abertura-caso/)
+[Merchant Requests (Cases) - Request Opening (Cases in Salesforce)](../api/?type=post&path=/bwa/abertura-caso)
 
 [Merchant Requests (Cases) - Request Opening by Brand (Cases in Salesforce)](../api/?type=post&path=/bwa/abertura-caso/{marca})
 
@@ -134,7 +134,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 ## Online Boarding
 
-[Online Boarding Endpoints](?path=docs/portuguese/digitalSolutions/BoardingInformation.md)
+[Online Boarding Endpoints](?path=docs/english/digitalSolutions/BoardingInformation.md)
 
 ## Payment & Prepayment
 
@@ -150,7 +150,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Get cash flow detail by scheme](../api/?type=get&path=/bwa/cashflow/v1/detailByScheme)
 
-[Payment Settlement Account - Validation](../api/?type=post&path=/bwa/domicilio-bancario/)
+[Payment Settlement Account - Validation](../api/?type=post&path=/bwa/domicilio-bancario)
 
 [Payment Settlement Account - Validation based on Rules for Bank and Type of Account](../api/?type=post&path=/bwa/domicilio-bancario/validar)
 
@@ -174,7 +174,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Prepayment - History Fees Consult - Consult of Sales Related to Prepayment](../api/?type=get&path=/bwa/taxa-antecipacao/v1/consulta/resumoVendas/{prepaymentNumber})
 
-[Payment Settlement Account - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/accounts/paymentAccountInfo/)
+[Payment Settlement Account - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/accounts/paymentAccountInfo)
 
 [Payments - Consult for All Transaction Period - Summarized](../api/?type=get&path=/bwa/pagamentos/resources/v1/transacoes/sumarizacao/{inst}/{merchant}/{dataInicio}/{dataFim})
 
@@ -192,7 +192,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Detailing of sales](../api/?type=get&path=/bwa/pagamentos-liberados/v1/rocs/detalhamento)
 
-[Service Order - Terminal Maintenance - Prepayment Flag Update (Turn On/Off)](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag/)
+[Service Order - Terminal Maintenance - Prepayment Flag Update (Turn On/Off)](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag)
 
 [Prepayment - Maintenance/Simulate/Confirm/Reject - Consult Available Balances For Prepayment (all Associations)](../api/?type=post&path=/bwa/wsm/prepayments/consultations/consultPrepayment)
 
@@ -232,17 +232,19 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Sales tracking](../api/?type=get&path=/bwa/acompanhamento-vendas/v1/acompanhamentoVendas)
 
-[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest/)
+[Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest)
 
 [Merchant Sales - Suspended Transactions - Consult](../api/?type=post&path=/bwa/consulta-transacoes-suspensas/v1/consulta/transacaosuspensa)
 
 [Merchant Sales - Suspended Transactions - Consult suspended summarized by Merchant ID](../api/?type=post&path=/bwa/consulta-transacoes-suspensas/v1/consulta/transacaosuspensaSumarizada)
 
+[Search for Chargeback installments Information by Tax ID, Merchant Code, Instituion and Action Date](../api/?type=post&path=/api/chargeback/apigee/filter/installments)
+
 ## Service Order Information
 
 [Find, by code, one cancellation reason registered in BR TMP](../api/?type=get&path=/bwa/service-order-cancellation-reason/{code})
 
-[List all cancellation reasons registered in TMP](../api/?type=get&path=/bwa/service-order-cancellation-reason/)
+[List all cancellation reasons registered in TMP](../api/?type=get&path=/bwa/service-order-cancellation-reason)
 
 [Search for Merchant by Partner Tax ID](../api/?type=get&path=/bwa/consulta-estabelecimento-socio/v1/consulta/{documento})
 

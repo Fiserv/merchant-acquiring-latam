@@ -15,8 +15,9 @@ x-config:
   tryItOut: true
 tags:
   - name: Merchant Address Update
+    description: Merchant Address Update
 paths:
-  "/bwa/wsm/merchantinformation/address/updateAddress/":
+  "/bwa/wsm/merchantinformation/address/updateAddress":
     post:
       tags:
         - Merchant Address Update
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -109,7 +110,7 @@ components:
         addressCategory:
           type: string
           description: Merchant Address Category Code
-          example: "002"
+          example: "002 - Shipping Code"
           enum:
             - 001 - Billing Code
             - 002 - Shipping Code
@@ -140,7 +141,7 @@ components:
         state:
           type: string
           description: Merchant Address State Code
-          example: "331"
+          example: "331 - SP - São Paulo"
           enum:
             - 307 - AC - Acre
             - 308 - AL - Alagoas
@@ -186,7 +187,7 @@ components:
         responseCode:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 - Update Successful (Address information updated)"
           enum:
             - 00 - Update Successful (Address information updated)
             - 01 - Update Successful but UNS message not sent. (Address information updated)
@@ -200,7 +201,7 @@ components:
             - 99 - System Error
         responseCodeDesc:
           type: string
-          description: Return Code Descrition
+          description: 00 - Update Successful (Address information updated)
           enum:
             - 00 - Update Successful (Address information updated)
             - 01 - Update Successful but UNS message not sent. (Address information updated)
@@ -233,7 +234,7 @@ components:
         addressCategory:
           type: string
           description: Merchant Address Category Code
-          example: "002"
+          example: "002 - Shipping Code"
           enum:
             - 001 - Billing Code
             - 002 - Shipping Code

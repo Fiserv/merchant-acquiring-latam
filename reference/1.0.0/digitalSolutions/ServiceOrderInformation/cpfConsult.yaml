@@ -15,11 +15,10 @@ x-config:
   tryItOut: true
 tags:
   - name: Bureau for Tax ID - Individual - CPF (SERPRO)
+    description: Bureau for Tax ID - Individual - CPF
 paths:
   "/bwa/consulta-cpf/{cpf}":
     get:
-      tags:
-        - Bureau for Tax ID - Individual - CPF
       x-proxy-name: Tax ID (individual) Validation (not available PROD)
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -45,14 +44,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -84,7 +83,7 @@ components:
         codigo:
           type: string
           description: Tax ID (CPF) Situation Code
-          example: "0"
+          example: "0 Regular - (meaning regular)"
           enum:
             - 0 Regular - (meaning regular)
             - 2 Suspensa - (meaning suspendente)
@@ -96,7 +95,7 @@ components:
         descricao:
           type: string
           description: Tax ID (CPF) Situation Description
-          example: "Regular"
+          example: "0 Regular - (meaning regular)"
           enum:
             - 0 Regular - (meaning regular)
             - 2 Suspensa - (meaning suspendente)

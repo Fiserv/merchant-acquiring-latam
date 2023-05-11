@@ -15,11 +15,10 @@ x-config:
   tryItOut: true
 tags:
   - name: Payment Account Information for Settlement (Domicílio Bancário)
+    description: Payment Account Information for Settlement
 paths:
-  "/bwa/wsm/merchantinformation/accounts/paymentAccountInfo/":
+  "/bwa/wsm/merchantinformation/accounts/paymentAccountInfo":
     post:
-      tags:
-        - Payment Account Information for Settlement
       x-proxy-name: Payment Settlement Account - Update
       x-group-name: Payment & Prepayment Information
       x-child-product-name: Digital Solutions
@@ -45,14 +44,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -107,14 +106,14 @@ components:
         requestType:
           type: string
           description: Request Type - Consult or Update
-          example: "U"
+          example: "U - Update"
           enum:
             - "C - Consult"
             - "U - Update"
         accountTypeId:
           type: string
           description: Account Type ID related to the Association/schema. Required when Request Type is "U"
-          example: "050"
+          example: "050 - Visa Credit"
           enum:
             - 050 - Visa Credit
             - 051 - Marter Credit
@@ -145,7 +144,7 @@ components:
         bankAccountType:
           type: string
           description: Type of Account. Required when Request Type is "U"
-          example: "001"
+          example: "005 - Checking Account"
           enum:
             - 005 - Checking Account
             - 006 - Deposit Account
@@ -172,7 +171,7 @@ components:
         accountTypeId:
           type: string
           description: Account Type ID related to the Association. Required when Request Type is "U"
-          example: "050"
+          example: "050 - Visa Credit"
           enum:
             - 050 - Visa Credit
             - 051 - Marter Credit
@@ -199,11 +198,11 @@ components:
         paymentAccountNumber:
           type: string
           description: Payment Account Number. If not sent, it will assume the same of Merchant. Required when Request Type is "U"
-          example: 12345678
+          example: '12345678'
         bankAccountType:
           type: string
           description: Type of Account. Required when Request Type is "U"
-          example: 001
+          example: 005 - Checking Account
           enum:
             - 005 - Checking Account
             - 006 - Deposit Account
@@ -215,7 +214,7 @@ components:
         responseCode:
           type: string
           description: Return Status Code.
-          example: "00"
+          example: "00 - Successfully."
           enum:
             - 00 - Successfully.
             - 01 - Invalid Type of Request.
@@ -237,7 +236,7 @@ components:
         responseCodeDesc:
           type: string
           description: Return Code description.
-          example: "Successfully"
+          example: "00 - Successfully."
           enum:
             - 00 - Successfully.
             - 01 - Invalid Type of Request.

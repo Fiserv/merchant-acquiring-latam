@@ -10,7 +10,7 @@ A continuación puede consultar cada enlace para acceder al documento detallado 
 
 [Token Access](?path=docs/español/digitalSolutions/TokenGenerationforWeb-services.md)
 
-[Prepayment - Enable/Disable](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag/)
+[Prepayment - Enable/Disable](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag)
 
 [Prepayment - Consult/Request/Cancel](../api/?type=get&path=/bwa/antecipacao-automatica/v1/antecipacao/)
 

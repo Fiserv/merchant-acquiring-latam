@@ -17,7 +17,7 @@ tags:
   - name: Prepayment Flag Update
     description: Prepayment Flag Update
 paths:
-  "/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag/":
+  "/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag":
     post:
       tags:
         - Prepayment Flag Update
@@ -46,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -99,7 +99,7 @@ components:
         prepaymentFlag:
           type: string
           description: Prepayment Flag Information
-          example: "1"
+          example: "1 - Habilitar - (meaning Turn it On)"
           enum:
             - 1 - Habilitar - (meaning Turn it On)
             - 0 - Desabilitar - (meaning Turn it Off)
@@ -135,7 +135,7 @@ components:
           example: "91002806"
         statusCode:
           type: string
-          example: "0"
+          example: "0 - Prepayment Flag Update"
           description: Return Code Description
           enum:
             - 0 - Prepayment Flag Update

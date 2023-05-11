@@ -16,8 +16,6 @@ x-config:
 paths:
   "/bwa/taxa-antecipacao/v1/consulta":
     get:
-      tags:
-        - Payment & Prepayment Information/Prepayment Fees
       x-proxy-name: Prepayment - History Fees Consult - Consult History of Prepayment Fees
       x-group-name: Payment & Prepayment Information
       x-child-product-name: Digital Solutions
@@ -43,14 +41,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -188,8 +186,6 @@ paths:
       deprecated: false
   "/bwa/taxa-antecipacao/v1/consulta/resumoVendas/{prepaymentNumber}":
     get:
-      tags:
-        - Payment & Prepayment Information/Prepayment Fees
       x-proxy-name: Prepayment - History Fees Consult - Consult of Sales Related to Prepayment
       x-group-name: Payment & Prepayment Information
       x-child-product-name: Digital Solutions
@@ -215,14 +211,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -334,7 +330,7 @@ components:
             - 0
         mensagem:
           description: Description return code
-          example: Sucesso (meaning Success)
+          example: 0 - Sucesso (meaning Success)
           type: string
           enum:
             - 0 - Sucesso (meaning Success)
@@ -352,7 +348,7 @@ components:
             - 0
         mensagem:
           description: Description return code
-          example: Sucesso (meaning Success)
+          example: 0 - Sucesso (meaning Success)
           type: string
           enum:
             - 0 - Sucesso (meaning Success)
@@ -364,7 +360,7 @@ components:
         bandeiras:
           type: string
           description: "Association / Schema service"
-          example: "Visa,MasterCard"
+          example: "Visa"
           enum:
             - "Visa"
             - "MasterCard"
@@ -440,7 +436,7 @@ components:
           type: string
         statusAntecipacao:
           description: "Prepayment Status"
-          example: "Confirmado (meaning Confirmed)"
+          example: "Inicializado (meaning Initialized)"
           type: string
           enum:
             - Inicializado (meaning Initialized)
@@ -474,7 +470,7 @@ components:
           type: string
         tipoAntecipacao:
           description: "Prepayment Type"
-          example: "Manual (meaning Confirmed)"
+          example: "Manual (meaning Manual)"
           type: string
           enum:
             - Manual (meaning Manual)
@@ -547,7 +543,7 @@ components:
             - 104
         mensagem:
           description: Description return code
-          example: Campos mandatorios (meaning Missing Mandatory Fields)
+          example: 9 - Campos mandatorios...
           type: string
           enum:
             - 9 - Campos mandatorios...
@@ -578,7 +574,7 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado (meaning Access Denied)
+          example: 3 - Acesso negado (meaning Access Denied)
           type: string
           enum:
             - 3 - Acesso negado (meaning Access Denied)
@@ -596,7 +592,7 @@ components:
             - 11
         mensagem:
           description: Description return code
-          example: Item nao encontrado (meaning Item not found)
+          example: 5 - Item nao encontrado (meaning Item not found)
           type: string
           enum:
             - 5 - Item nao encontrado (meaning Item not found)
@@ -624,7 +620,7 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno (meaning Internal Error)
+          example: 2 - Erro Interno (meaning Internal Error)
           type: string
           enum:
             - 2 - Erro Interno (meaning Internal Error)
@@ -658,7 +654,7 @@ components:
           type: string
         indCredDeb:
           description: "Credit or Debit Identification"
-          example: "C"
+          example: "C - Credito (meaning Credit)"
           type: string
           enum:
             - C - Credito (meaning Credit)
@@ -722,7 +718,7 @@ components:
         composicaoValor:
           type: string
           description: "Description status of inclusion for composition of the amount of the anticipation"
-          example: "Only High Amount"
+          example: "001 (Only High Amount)"
           enum:
             - "000 (High and Low Amount)"
             - "001 (Only High Amount)"

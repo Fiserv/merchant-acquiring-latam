@@ -20,14 +20,12 @@ tags:
 paths:
   '/bwa/ajuste-debitos/v1/obter':
     get:
-      tags:
-        - Search for EC's Account Debits
       x-proxy-name: Merchant Debits (fee, refund, reversal, etc)- Consult
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       summary: Merchant Information & Cases
       description: Search EC's Account Debits
-      operationId: Search EC's Account Debits
+      operationId: SearchECsAccountDebits
       parameters:
         - name: Message-Signature
           in: header
@@ -47,14 +45,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -77,7 +75,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 33333332
+          example: '33333332'
         - name: dataInicio
           in: query
           description: Search start date. yyyyMMdd format
@@ -85,14 +83,14 @@ paths:
           schema:
             type: string
             format: String
-          example: 20210131
+          example: '20210131'
         - name: dataFim
           in: query
           description: Search end date. yyyyMMdd format
           required: true
           schema:
             type: string
-          example: 20210228
+          example: '20210228'
         - name: linguagem
           in: query
           description: Search language
@@ -204,7 +202,6 @@ components:
         mensagem:
           type: string
           description: Description return code
-          example: "Campos mandatorios: ... (meaning Mandatory Fields)"
           enum:
             - "9 - Campos mandatorios: ... (meaning Mandatory Fields)"
             - "10 - (Erro validaçao) (meaning VAlidation Error)"
@@ -221,7 +218,6 @@ components:
         mensagem:
           type: string
           description: Description return code
-          example: Item duplicado - (Meaning Duplicated Item)
           enum:
             - 8 - Item duplicado (Meaning Duplicated Item)
     Unauthorized:
@@ -641,7 +637,6 @@ components:
             - OverLimit Interest
             - Pagamento de Cashback
             - Pagamento pelo portador
-            - Pagamento pelo portador
             - Pagamentos pelo EC
             - Parcelado Emissor >12 parc
             - Parcelado Emissor-02 parc
@@ -961,7 +956,6 @@ components:
         mensagem:
           type: string
           description: Description return code
-          example: Acesso negado - (Meaning Denied Access)
           enum:
             - 3 - Acesso negado - (Meaning Denied Access)
             - 10 - Token expirado - (Meaning Expired Token
@@ -978,7 +972,6 @@ components:
         mensagem:
           type: string
           description: Description return code
-          example: Item nao encontrado - (Meaning item not found)
           enum:
             - 5 - Item nao encontrado (Meaning item not found)
     InternalServerError:
@@ -995,7 +988,6 @@ components:
         mensagem:
           type: string
           description: Description return code
-          example: Erro Interno - (Meaning Internal Error)
           enum:
             - 2 - Erro Interno (Meaning Internal Error)
             - 7 - Erro na integracao da API. Detalhe (Meaning Integration Error)

@@ -16,13 +16,11 @@ servers:
 paths:
   /bwa/merchant-billing/monthly/presumed:
     get:
-      tags:
-        - Consult the Merchant Monthly Presumed Billing
       x-proxy-name: Merchant Information - Monthly Presumed Billing
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Consult the Merchant Monthly Presumed Billing
-      operationId: Consult the Merchant Monthly Presumed Billing
+      operationId: ConsultTheMerchantMonthlyPresumedBilling
       parameters:
         - name: auth
           in: header
@@ -44,7 +42,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -72,14 +70,14 @@ paths:
           required: true
           schema:
             type: string
-            example: 101
+            example: '101'
         - name: merchant
           in: header
           description: The merchant number
           required: true
           schema:
             type: string
-            example: 33785866
+            example: '33785866'
       responses:
         '200':
           description: OK
@@ -160,7 +158,7 @@ components:
           example: '101'
         billing:
           type: string
-          example: 000000000012000.00
+          example: '000000000012000.00'
           description: Merchant Monthly Presumed Billing
       description: Return body
     DResponseDFaturamento:

@@ -17,18 +17,18 @@ x-config:
   tryItOut: true
 tags:
   - name: Search for Existing Customer by Tax ID (CPF/CNPJ)
+    description: Search for Existing Customer by Tax ID (CPF/CNPJ)
   - name: Validate if Customer can be Boarded - Applicable for BIN only
+    description: Validate if Customer can be Boarded - Applicable for BIN only
 paths:
   '/bwa/validacao-cliente/v2/validacao/{documento}':
     get:
-      tags:
-        - Search for Existing Customer by Tax ID (CPF/CNPJ)
       x-proxy-name: Existing Customer Validation
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Search Existing Customer by Tax ID (CPF/CNPJ)
       summary: Merchant Information & Cases
-      operationId: Search Existing Customer by Tax ID (CPF/CNPJ)
+      operationId: SearchExistingCustomerByTaxID(CPF/CNPJ)
       parameters:
         - name: Message-Signature
           in: header
@@ -48,14 +48,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -131,7 +131,7 @@ paths:
       x-child-product-name: Digital Solutions
       description: Validation by Institution and Tax ID
       summary: Merchant Information & Cases
-      operationId: Validation by Institution and Tax ID
+      operationId: ValidationByInstitutionAndTaxID
       parameters:
         - name: Message-Signature
           in: header
@@ -151,14 +151,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -234,7 +234,7 @@ paths:
       x-child-product-name: Digital Solutions
       description: Validation by Institution and Tax ID and Service contract
       summary: Merchant Information & Cases
-      operationId: Validation by Institution and Tax ID and Service contract
+      operationId: ValidationByInstitutionAndTaxIDandServiceContract
       parameters:
         - name: Message-Signature
           in: header
@@ -254,14 +254,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -344,7 +344,7 @@ paths:
       x-child-product-name: Digital Solutions
       description: Validation by Boarding Channel
       summary: Merchant Information & Cases
-      operationId: Validation by Boarding Channel
+      operationId: ValidationByBoardingChannel
       parameters:
         - name: Message-Signature
           in: header
@@ -364,14 +364,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -440,7 +440,7 @@ paths:
       x-child-product-name: Digital Solutions
       description:  Validation by MDR Comparison
       summary: Merchant Information & Cases
-      operationId: Validation by MDR Comparison
+      operationId: ValidationByMDRComparison
       parameters:
         - name: Message-Signature
           in: header
@@ -460,14 +460,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -529,14 +529,12 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
   '/bwa/validacao-cliente/v2/credenciamento/tecnologia/{codigoTecnologia}/{instituicao}/{documento}':
     get:
-      tags:
-        - Search for Existing Customer by Tax ID (CPF/CNPJ)
       x-proxy-name: Existing Customer Validation - Validation by Technology - ECommerce X POS comparison
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Validation by Technology - ECommerce X POS comparison
       summary: Merchant Information & Cases
-      operationId: Validation by Technology - ECommerce X POS comparison
+      operationId: ValidationByTechnologyECommerceXPOSComparison
       parameters:
         - name: Message-Signature
           in: header
@@ -556,14 +554,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -646,7 +644,7 @@ paths:
       x-child-product-name: Digital Solutions
       description: Validation by Technology and Service contract - ECommerce X POS comparison
       summary: Merchant Information & Cases
-      operationId: Validation by Technology and Service contract - ECommerce X POS comparison
+      operationId: ValidationByTechnologyAndServiceContractECommerceXPOSComparison
       parameters:
         - name: Message-Signature
           in: header
@@ -666,14 +664,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example: null
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -769,7 +767,6 @@ components:
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios - (meaning Mandatory Fields)
           type: string
           enum:
             - 9 - Campos mandatorios - (meaning Mandatory Fields)
@@ -797,7 +794,6 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado - Meaning Denied Access
           type: string
           enum:
             - "3 - Acesso negado - (Meaning Denied Access)"
@@ -835,7 +831,6 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (Meaning Internal Error)
           type: string
           enum:
             - "2 - Erro Interno - (Meaning Internal Error)"
@@ -860,11 +855,10 @@ components:
       properties:
         findCpfCnpj:
           description: Merchant Tax ID (CPF or CNPJ)
-          example: 04962772000165
+          example: '04962772000165'
           type: string
         statusClientCode:
           description: Status code client
-          example: '00'
           type: string
           enum:
             - 00 - Cliente consta em nossa base de dados - (meaning Existing Customer)
@@ -875,7 +869,6 @@ components:
             - 99 - Erro de sistema  - (meaning System Error)
         statusClientDescription:
           description: Description of status code client
-          example: Cliente consta em nossa base de dados
           type: string
           enum:
             - 00 - Cliente consta em nossa base de dados - (meaning Existing Customer)
@@ -916,7 +909,6 @@ components:
           type: string
         marca:
           description: Service Contract Code
-          example: BIN
           type: string
           enum:
             - 101 - Bin
@@ -1021,21 +1013,18 @@ components:
       properties:
         areaEvento:
           description: Event area. If the CARD is National or International
-          example: '002'
           type: string
           enum:
             - "001 - Internacional"
             - "002 - Nacional"
         categoria:
           description: Type of Fee category
-          example: '003'
           type: string
           enum:
             - 003 or 502 - MDR
             - 501 - MDR Flex
         codigoBandeira:
           description: Association Code
-          example: 009
           type: string
           enum:
             - 002 - Mastercard
@@ -1047,7 +1036,6 @@ components:
             - 025 - ELO Full
         codigoProduto:
           description: Product Code, related to the Association
-          example: '102'
           type: string
           enum:
             - 102 - Adq-MC Crédito
@@ -1066,7 +1054,6 @@ components:
           type: string
         tipoTransacao:
           description: Transaction type
-          example: '467'
           type: string
           enum:
             - 005 - Compra - (meaning Purchase)

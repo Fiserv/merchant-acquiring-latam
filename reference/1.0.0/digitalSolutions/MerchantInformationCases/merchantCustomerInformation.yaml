@@ -15,6 +15,7 @@ x-config:
   tryItOut: true
 tags:
   - name: Search for Merchant Information by Tax ID or Merchant Code
+    description: Search for Merchant Information by Tax ID or Merchant Code
 paths:
   "/bwa/estabelecimento/v2":
     get:
@@ -25,7 +26,7 @@ paths:
       x-child-product-name: Digital Solutions
       description: Search for Merchant Information by Tax ID or Merchant Code
       summary: Merchant Information & Cases
-      operationId: Search for Merchant Information by Tax ID or Merchant Code
+      operationId: SearchForMerchantInformationByTaxIDorMerchantCode
       parameters:
         - name: Message-Signature
           in: header
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -99,7 +100,7 @@ paths:
       x-child-product-name: Digital Solutions
       description: Search for Merchant Information - To be retired (TBD)
       summary: Merchant Information & Cases
-      operationId: searchMerchantInformation - To be retired (TBD)
+      operationId: searchMerchantInformationToBeRetired
       parameters:
         - name: Message-Signature
           in: header
@@ -119,14 +120,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -181,7 +182,6 @@ components:
         indicadorPep:
           type: string
           description: Indicator of Politically Exposed Person (PEP)
-          example: "000"
           enum:
             - "000 - No"
             - "001 - Yes"
@@ -203,7 +203,7 @@ components:
         codigoBandeira:
           type: string
           description: Association/Schema to be paid for the payment information
-          example: "009"
+          example: "009 - Cabal"
           enum:
             - "002 - Mastercard"
             - "003 - Visa"
@@ -215,7 +215,7 @@ components:
         tipoConta:
           type: string
           description: Settlement Account Type
-          example: "005"
+          example: "005 - Checking Account"
           enum:
             - "005 - Checking Account"
             - "006 - Deposit Account"
@@ -343,7 +343,6 @@ components:
         codStatusMerchant:
           type: string
           description: Merchant Status Code
-          example: "001"
           enum:
             - "001 - Ativo - (meaning Active)"
             - "002 - Inativo - (meaning Inactive)"
@@ -355,7 +354,6 @@ components:
         descStatusMerchant:
           type: string
           description: Merchant Merchant Status Description
-          example: "Ativo"
           enum:
             - "001 - Ativo - (meaning Active)"
             - "002 - Inativo - (meaning Inactive)"
@@ -367,7 +365,6 @@ components:
         motivoCancelamento:
           type: string
           description: Cancelling Reason, when applicable
-          example: "Suspensão Requisição Cliente"
           enum:
             - Operações Default - (meaning Operations - Default)
             - Inoperante - (meaning Inoperative)
@@ -383,7 +380,6 @@ components:
           type: string
           description: Temporary block
           maxLength: 50
-          example: Sim
           enum:
             - Sim - (Yes)
             - Nao - (No)
@@ -404,7 +400,6 @@ components:
         tipoDocumento:
           type: string
           description: Type of Document
-          example: "CPF"
           enum:
             - CPF for Individual
             - CNPJ for Company
@@ -475,14 +470,12 @@ components:
         codigoRetorno:
           type: string
           description: Return Code
-          example: "00"
           enum:
             - "00 Successfully Done"
             - "01 Error Message"
         descricaoRetorno:
           type: string
           description: Return Code Description
-          example: "00"
           enum:
             - "00 Successfully Done"
             - "01 Error Message"
@@ -500,7 +493,7 @@ components:
         diaSemana:
           type: string
           description: Week Days
-          example: Domingo (meaning Sunday)
+          example: Domingo - (meaning Sunday)
           enum:
             - Domingo - (meaning Sunday)
             - Segunda - (meaning MOnday)

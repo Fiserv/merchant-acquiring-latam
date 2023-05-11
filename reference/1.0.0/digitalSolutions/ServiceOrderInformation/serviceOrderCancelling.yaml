@@ -1,25 +1,26 @@
 openapi: 3.0.2
+x-stoplight:
+  id: eisdsu51xt4p9
 info:
   description: Service Order Cancelling
-  version: "1.0"
+  version: '1.0'
   title: Service Order Cancelling
-  termsOfService: urn:tos
+  termsOfService: 'urn:tos'
   contact: {}
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0'
 servers:
-  - url: https://cat.api.firstdata.com
+  - url: 'https://cat.api.firstdata.com'
 x-production-url: prod.api.firstdata.com
 x-config:
   tryItOut: true
 tags:
   - name: Service Order Cancelling (Device Request)
+    description: Service Order Cancelling
 paths:
   /bwa/wsm/devicerequest/canceloperation/processCancelOperationRequest:
     post:
-      tags:
-        - Service Order Cancelling
       x-proxy-name: Service Order - Cancelling
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -66,16 +67,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/BodyCancelOperation"
+              $ref: '#/components/schemas/BodyCancelOperation'
         description: Service Order Cancelling
         required: true
       responses:
-        "200":
+        '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Response"
+                $ref: '#/components/schemas/Response'
         '401':
           description: Unauthorized
           content:
@@ -107,11 +108,11 @@ components:
               institutionNumber:
                 type: string
                 description: Merchant Institution Number
-                example: "00000003"
+                example: '00000003'
               merchantID:
                 type: string
                 description: Merchant Code
-                example: "91002806"
+                example: '91002806'
               contactName:
                 type: string
                 description: Merchant Contact Name (max 20 characters)
@@ -119,75 +120,89 @@ components:
               terminalID:
                 type: string
                 description: Terminal Identification
-                example: "ETH39PZA"
+                example: ETH39PZA
               tmsReferenceID:
                 type: string
                 description: Terminal Reference Identification (Service Order Number)
-                example: "000000378053"
+                example: '000000378053'
+      x-stoplight:
+        id: 2to1du5r973ui
     tmsInformationList:
       type: object
       properties:
         tmsReferenceID:
           type: string
           description: Terminal Reference Identification - 12 digit (Service Order Number)
-          example: "123456789012"
+          example: '123456789012'
+      x-stoplight:
+        id: c2enylrsscak8
     tmsDetails:
       type: object
       properties:
         tmsInformationList:
           type: array
           items:
-            $ref: "#/components/schemas/tmsInformationList"
+            $ref: '#/components/schemas/tmsInformationList'
+      x-stoplight:
+        id: trsa511h942cj
     responseInformationList:
       type: object
       properties:
         responseCode:
           type: string
           description: Return Code
-          example: "00"
+          example: '00 - Request Successfully Done'
           enum:
-            - "00 - Request Successfully Done"
-            - "99 - System Error"
+            - 00 - Request Successfully Done
+            - 99 - System Error
         responseCodeDesc:
           type: string
           description: Return Descripion code
-          example: Request Successfully Done
+          example: 00 - Request Successfully Done
           enum:
-            - "00 - Request Successfully Done"
-            - "99 - System Error"
+            - 00 - Request Successfully Done
+            - 99 - System Error
+      x-stoplight:
+        id: 0dcj7jo207er5
     response:
       type: object
       properties:
         responseInformationList:
           type: array
           items:
-            $ref: "#/components/schemas/responseInformationList"
+            $ref: '#/components/schemas/responseInformationList'
+      x-stoplight:
+        id: 0vu02tfibdy9z
     processMessage:
       type: object
       properties:
         institutionNumber:
           type: string
           description: Merchant Institution Number
-          example: "00000003"
+          example: '00000003'
         merchantID:
           type: string
           description: Merchant Code
-          example: "91002806"
+          example: '91002806'
         tmsRequestNumber:
           type: string
           description: Device Request Number - 8 Digit
-          example: "12345678"
+          example: '12345678'
         tmsDetails:
-          $ref: "#/components/schemas/tmsDetails"
+          $ref: '#/components/schemas/tmsDetails'
         response:
-          $ref: "#/components/schemas/response"
+          $ref: '#/components/schemas/response'
+      x-stoplight:
+        id: b5dkztnusdih4
     Response:
       type: object
       properties:
         processMessage:
           type: array
           items:
-            $ref: "#/components/schemas/processMessage"
+            $ref: '#/components/schemas/processMessage'
+      x-stoplight:
+        id: c7ycl46pb2r4j
     Unauthorized:
       type: object
       properties:
@@ -199,3 +214,5 @@ components:
           description: Description return code
           example: Acesso nao autorizado ao conteudo pesquisado - (meaning Unauthorized Access)
           type: string
+      x-stoplight:
+        id: vi1e0bh5ahgpn

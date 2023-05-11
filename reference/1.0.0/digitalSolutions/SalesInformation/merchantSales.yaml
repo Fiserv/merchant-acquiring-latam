@@ -1,24 +1,26 @@
 openapi: 3.0.2
+x-stoplight:
+  id: 4cslkhtqwuktq
 info:
   description: Search for Sales for a Merchant
-  version: "1.0"
+  version: '1.0'
   title: Search for Sales for a Merchant
-  termsOfService: urn:tos
+  termsOfService: 'urn:tos'
   contact:
     name: First Data
-    url: https://www.firstdata.com/pt_br/home.html
+    url: 'https://www.firstdata.com/pt_br/home.html'
   license:
     name: Licença - Open Source
-    url: https://www.firstdata.com/pt_br/home.html
+    url: 'https://www.firstdata.com/pt_br/home.html'
 servers:
-  - url: https://cat.api.firstdata.com
+  - url: 'https://cat.api.firstdata.com'
 x-production-url: prod.api.firstdata.com
 x-config:
   tryItOut: true
 tags:
   - name: Search for Sales for a Merchant
 paths:
-  "/bwa/vendas/resources/v1/receber/{inst}/{merchant}/{dataInicio}/{dataFim}":
+  '/bwa/vendas/resources/v1/receber/{inst}/{merchant}/{dataInicio}/{dataFim}':
     get:
       tags:
         - Search for Sales for a Merchant
@@ -26,7 +28,7 @@ paths:
       x-group-name: Sales Information
       x-child-product-name: Digital Solutions
       description: Merchant Sales - Paid or To Be Received - Consult
-      summary: Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the seleciton of ONLY ONE association schema
+      summary: 'Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the seleciton of ONLY ONE association schema'
       operationId: searchForSalesReceivedOrToBeReceivedByOneAssociation
       parameters:
         - name: Message-Signature
@@ -47,14 +49,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -79,25 +81,20 @@ paths:
         - name: inst
           in: path
           description: Merchant Institution Number
-          example: "00000003"
+          example: '00000003'
           required: true
           schema:
             type: string
         - name: merchant
           in: path
           description: Merchant Code
-          example: "91002806"
+          example: '91002806'
           required: true
           schema:
             type: string
         - name: tipoSumarizacao
           in: query
-          description: Summarization Type Possible values
-            [ T - (TODOS meaning All) /
-            D - (DATA meaning Date) /
-            P - (PRODUTO meaning Product) /
-            B - (BANDEIRA meaning Association/Schema)
-            ]
+          description: 'Summarization Type Possible values [ T - (TODOS meaning All) / D - (DATA meaning Date) / P - (PRODUTO meaning Product) / B - (BANDEIRA meaning Association/Schema) ]'
           allowEmptyValue: false
           required: false
           schema:
@@ -109,61 +106,42 @@ paths:
               - B
         - name: codigoBandeira
           in: query
-          description: Association/Schema Code. Possible values
-            [ 002 (Mastercard) /
-            003 (Visa) /
-            004 (Amex Full) /
-            009 (CABAL) /
-            020 (MDS) /
-            024 (Hipercard/Hiper) /
-            025 (ELO Full)
-            ]
-          example: "002"
+          description: 'Association/Schema Code. Possible values [ 002 (Mastercard) / 003 (Visa) / 004 (Amex Full) / 009 (CABAL) / 020 (MDS) / 024 (Hipercard/Hiper) / 025 (ELO Full) ]'
+          example: '002'
           required: false
           allowEmptyValue: false
           schema:
             type: string
             enum:
-              - "002"
-              - "003"
-              - "004"
-              - "009"
-              - "020"
-              - "024"
-              - "025"
+              - '002'
+              - '003'
+              - '004'
+              - '009'
+              - '020'
+              - '024'
+              - '025'
         - name: codigoProduto
           in: query
-          description: Product Code. Possible values
-            [ 102 (Adq - MC Credit) /
-            103 (Acq-CABAL Credit) /
-            104 (Acq-CABAL Debit) /
-            109 (Adq - Hiper Credit) /
-            110 (Acq-ELO Full Credit) /
-            111 (Acq-ELO Full Debit) /
-            113 (Adq-AMEX Full Credit) /
-            201 (Adq - VISA Credit) /
-            200 (Adq - VISA Debit) /
-            716 (Adq - MC Debit) /
-            ]
+          description: 'Product Code. Possible values [ 102 (Adq - MC Credit) / 103 (Acq-CABAL Credit) / 104 (Acq-CABAL Debit) / 109 (Adq - Hiper Credit) / 110 (Acq-ELO Full Credit) / 111 (Acq-ELO Full Debit) / 113 (Adq-AMEX Full Credit) / 201 (Adq - VISA Credit) / 200 (Adq - VISA Debit) / 716 (Adq - MC Debit) / ]'
           required: false
           allowEmptyValue: false
           schema:
             type: string
             enum:
-              - "102"
-              - "103"
-              - "104"
-              - "109"
-              - "110"
-              - "111"
-              - "113"
-              - "201"
-              - "200"
-              - "716"
+              - '102'
+              - '103'
+              - '104'
+              - '109'
+              - '110'
+              - '111'
+              - '113'
+              - '201'
+              - '200'
+              - '716'
         - name: numTerminal
           in: query
           description: Terminal number.
-          example: "EII0051B"
+          example: EII0051B
           required: false
           allowEmptyValue: false
           schema:
@@ -171,7 +149,7 @@ paths:
         - name: codTipoTransacao
           in: query
           description: Type transaction.
-          example: "LOJISTA"
+          example: LOJISTA
           required: false
           allowEmptyValue: true
           schema:
@@ -183,7 +161,7 @@ paths:
               - CREDIARIO
         - name: page
           in: query
-          description: Page Number. Used for search pagination, it should be informed which page will be returned, available only when the parameter "tipoSumarizacao" is equal to null
+          description: 'Page Number. Used for search pagination, it should be informed which page will be returned, available only when the parameter "tipoSumarizacao" is equal to null'
           required: false
           schema:
             type: integer
@@ -191,28 +169,27 @@ paths:
         - name: tipoOrdenacao
           in: query
           description: order.
-          example: "DESC"
+          example: DESC
           required: false
           allowEmptyValue: false
           schema:
             type: string
         - name: size
           in: query
-          description: Page Size. Used for search pagination, it must be informed how many records per page will be returned, available only when the parameter "tipoSumarizacao" is equal to null
+          description: 'Page Size. Used for search pagination, it must be informed how many records per page will be returned, available only when the parameter "tipoSumarizacao" is equal to null'
           required: false
           schema:
             type: integer
             format: int32
-
       responses:
-        "200":
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/VendasResponse"
+                $ref: '#/components/schemas/VendasResponse'
       deprecated: false
-  "/bwa/vendas/resources/v1/realizadas/{inst}/{merchant}/{dataInicio}/{dataFim}":
+  '/bwa/vendas/resources/v1/realizadas/{inst}/{merchant}/{dataInicio}/{dataFim}':
     get:
       tags:
         - Search for Sales for a Merchant
@@ -220,7 +197,7 @@ paths:
       x-group-name: Sales Information
       x-child-product-name: Digital Solutions
       description: Merchant Sales - To Be Received - Consult - It allows the selection of MULTIPLE association schema
-      summary: Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the selection of MULTIPLE association schema
+      summary: 'Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the selection of MULTIPLE association schema'
       operationId: searchForSalesReceivedOrToBeReceivedByMultipleAssociationV1
       parameters:
         - name: Message-Signature
@@ -241,14 +218,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -273,25 +250,20 @@ paths:
         - name: inst
           in: path
           description: Merchant Institution Number
-          example: "00000003"
+          example: '00000003'
           required: true
           schema:
             type: string
         - name: merchant
           in: path
           description: Merchant Code
-          example: "91002806"
+          example: '91002806'
           required: true
           schema:
             type: string
         - name: tipoSumarizacao
           in: query
-          description: Summarization Type Possible values
-            [ T - (TODOS meaning All) /
-            D - (DATA meaning Date) /
-            P - (PRODUTO meaning Product) /
-            B - (BANDEIRA meaning Association/Schema)
-            ]
+          description: 'Summarization Type Possible values [ T - (TODOS meaning All) / D - (DATA meaning Date) / P - (PRODUTO meaning Product) / B - (BANDEIRA meaning Association/Schema) ]'
           allowEmptyValue: false
           required: false
           schema:
@@ -303,16 +275,8 @@ paths:
               - B
         - name: codigoBandeira
           in: query
-          description: Association/Schema Code. Array with association code. Possible values
-            [ 002 (Mastercard) /
-            003 (Visa) /
-            004 (Amex Full) /
-            009 (CABAL) /
-            020 (MDS) /
-            024 (Hipercard/Hiper) /
-            025 (ELO Full)
-            ]
-          example: "002,003,004"
+          description: 'Association/Schema Code. Array with association code. Possible values [ 002 (Mastercard) / 003 (Visa) / 004 (Amex Full) / 009 (CABAL) / 020 (MDS) / 024 (Hipercard/Hiper) / 025 (ELO Full) ]'
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
@@ -325,13 +289,13 @@ paths:
           schema:
             type: string
             enum:
-              - "CREDIT"
-              - "DEBIT"
-              - "CREDIT,DEBIT"
+              - CREDIT
+              - DEBIT
+              - 'CREDIT,DEBIT'
         - name: tipoOrdenacao
           in: query
           description: order.
-          example: "DESC"
+          example: DESC
           required: false
           allowEmptyValue: false
           schema:
@@ -339,7 +303,7 @@ paths:
         - name: codAutorizacao
           in: query
           description: Authorization Code.
-          example: "002,003,004"
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
@@ -347,7 +311,7 @@ paths:
         - name: numTerminal
           in: query
           description: Terminal number.
-          example: "EII0051B"
+          example: EII0051B
           required: false
           allowEmptyValue: false
           schema:
@@ -355,7 +319,7 @@ paths:
         - name: codTipoTransacao
           in: query
           description: Transaction tipe.
-          example: "LOJISTA"
+          example: LOJISTA
           required: false
           allowEmptyValue: false
           schema:
@@ -368,34 +332,34 @@ paths:
         - name: indicadorCancelVenda
           in: query
           description: Sales cancel indicato.
-          example: "002,003,004"
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
             type: string
         - name: page
           in: query
-          description: Page Number. Used for search pagination, it should be informed which page will be returned, available only when the parameter "tipoSumarizacao" is equal to null
+          description: 'Page Number. Used for search pagination, it should be informed which page will be returned, available only when the parameter "tipoSumarizacao" is equal to null'
           required: false
           schema:
             type: integer
             format: int32
         - name: size
           in: query
-          description: Page Size. Used for search pagination, it must be informed how many records per page will be returned, available only when the parameter "tipoSumarizacao" is equal to null
+          description: 'Page Size. Used for search pagination, it must be informed how many records per page will be returned, available only when the parameter "tipoSumarizacao" is equal to null'
           required: false
           schema:
             type: integer
             format: int32
       responses:
-        "200":
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/VendasResponse"
+                $ref: '#/components/schemas/VendasResponse'
       deprecated: false
-  "/bwa/vendas/resources/v2/realizadas/{dataInicio}/{dataFim}":
+  '/bwa/vendas/resources/v2/realizadas/{dataInicio}/{dataFim}':
     get:
       tags:
         - Search for Sales for a Merchant
@@ -403,7 +367,7 @@ paths:
       x-group-name: Sales Information
       x-child-product-name: Digital Solutions
       description: Merchant Sales - Paid - Consult - It allows the selection of MULTIPLE association schema
-      summary: Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the selection of MULTIPLE association schema
+      summary: 'Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the selection of MULTIPLE association schema'
       operationId: searchForSalesReceivedOrToBeReceivedByMultipleAssociation
       parameters:
         - name: Message-Signature
@@ -424,14 +388,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -456,25 +420,20 @@ paths:
         - name: instituicao
           in: header
           description: Merchant Institution Number
-          example: "00000003"
+          example: '00000003'
           required: true
           schema:
             type: string
         - name: estabelecimento
           in: header
           description: Merchant Code
-          example: "91002806"
+          example: '91002806'
           required: true
           schema:
             type: string
         - name: tipoSumarizacao
           in: query
-          description: Summarization Type Possible values
-            [ T - (TODOS meaning All) /
-            D - (DATA meaning Date) /
-            P - (PRODUTO meaning Product) /
-            B - (BANDEIRA meaning Association/Schema)
-            ]
+          description: 'Summarization Type Possible values [ T - (TODOS meaning All) / D - (DATA meaning Date) / P - (PRODUTO meaning Product) / B - (BANDEIRA meaning Association/Schema) ]'
           allowEmptyValue: false
           required: false
           schema:
@@ -487,7 +446,7 @@ paths:
         - name: codAutorizacao
           in: query
           description: Authorization Code.
-          example: "002,003,004"
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
@@ -495,7 +454,7 @@ paths:
         - name: numTerminal
           in: query
           description: Terminal number.
-          example: "EII0051B"
+          example: EII0051B
           required: false
           allowEmptyValue: false
           schema:
@@ -503,7 +462,7 @@ paths:
         - name: codTipoTransacao
           in: query
           description: Transaction tipe.
-          example: "LOJISTA"
+          example: LOJISTA
           required: false
           allowEmptyValue: false
           schema:
@@ -516,23 +475,15 @@ paths:
         - name: indicadorCancelVenda
           in: query
           description: Sales cancel indicato.
-          example: "002,003,004"
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
             type: string
         - name: codigoBandeira
           in: query
-          description: Association/Schema Code. Array with association code. Possible values
-            [ 002 (Mastercard) /
-            003 (Visa) /
-            004 (Amex Full) /
-            009 (CABAL) /
-            020 (MDS) /
-            024 (Hipercard/Hiper) /
-            025 (ELO Full)
-            ]
-          example: "002,003,004"
+          description: 'Association/Schema Code. Array with association code. Possible values [ 002 (Mastercard) / 003 (Visa) / 004 (Amex Full) / 009 (CABAL) / 020 (MDS) / 024 (Hipercard/Hiper) / 025 (ELO Full) ]'
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
@@ -545,19 +496,19 @@ paths:
           schema:
             type: string
             enum:
-              - "CREDIT"
-              - "DEBIT"
-              - "CREDIT,DEBIT"
+              - CREDIT
+              - DEBIT
+              - 'CREDIT,DEBIT'
         - name: page
           in: query
-          description: Page Number. Used for search pagination, it should be informed which page will be returned, available only when the parameter "tipoSumarizacao" is equal to null
+          description: 'Page Number. Used for search pagination, it should be informed which page will be returned, available only when the parameter "tipoSumarizacao" is equal to null'
           required: false
           schema:
             type: integer
             format: int32
         - name: size
           in: query
-          description: Page Size. Used for search pagination, it must be informed how many records per page will be returned, available only when the parameter "tipoSumarizacao" is equal to null
+          description: 'Page Size. Used for search pagination, it must be informed how many records per page will be returned, available only when the parameter "tipoSumarizacao" is equal to null'
           required: false
           schema:
             type: integer
@@ -565,20 +516,20 @@ paths:
         - name: tipoOrdenacao
           in: query
           description: order.
-          example: "DESC"
+          example: DESC
           required: false
           allowEmptyValue: false
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/VendasResponse"
+                $ref: '#/components/schemas/VendasResponse'
       deprecated: false
-  "/bwa/vendas/resources/v2/receber/{dataInicio}/{dataFim}":
+  '/bwa/vendas/resources/v2/receber/{dataInicio}/{dataFim}':
     get:
       tags:
         - Search for Sales for a Merchant
@@ -586,7 +537,7 @@ paths:
       x-group-name: Sales Information
       x-child-product-name: Digital Solutions
       description: Merchant Sales - To Be Received - Consult - It allows the selection of MULTIPLE association schema
-      summary: Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the selection of MULTIPLE association schema
+      summary: 'Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the selection of MULTIPLE association schema'
       operationId: searchForSalesToReceive
       parameters:
         - name: Message-Signature
@@ -607,14 +558,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -639,25 +590,20 @@ paths:
         - name: instituicao
           in: header
           description: Merchant Institution Number
-          example: "00000003"
+          example: '00000003'
           required: true
           schema:
             type: string
         - name: estabelecimento
           in: header
           description: Merchant Code
-          example: "91002806"
+          example: '91002806'
           required: true
           schema:
             type: string
         - name: tipoSumarizacao
           in: query
-          description: Summarization Type Possible values
-            [ T - (TODOS meaning All) /
-            D - (DATA meaning Date) /
-            P - (PRODUTO meaning Product) /
-            B - (BANDEIRA meaning Association/Schema)
-            ]
+          description: 'Summarization Type Possible values [ T - (TODOS meaning All) / D - (DATA meaning Date) / P - (PRODUTO meaning Product) / B - (BANDEIRA meaning Association/Schema) ]'
           allowEmptyValue: false
           required: false
           schema:
@@ -670,7 +616,7 @@ paths:
         - name: codAutorizacao
           in: query
           description: Authorization Code.
-          example: "002,003,004"
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
@@ -678,7 +624,7 @@ paths:
         - name: numTerminal
           in: query
           description: Terminal number.
-          example: "EII0051B"
+          example: EII0051B
           required: false
           allowEmptyValue: false
           schema:
@@ -686,7 +632,7 @@ paths:
         - name: codTipoTransacao
           in: query
           description: Transaction tipe.
-          example: "LOJISTA"
+          example: LOJISTA
           required: false
           allowEmptyValue: false
           schema:
@@ -698,16 +644,8 @@ paths:
               - CREDIARIO
         - name: codigoBandeira
           in: query
-          description: Association/Schema Code. Array with association code. Possible values
-            [ 002 (Mastercard) /
-            003 (Visa) /
-            004 (Amex Full) /
-            009 (CABAL) /
-            020 (MDS) /
-            024 (Hipercard/Hiper) /
-            025 (ELO Full)
-            ]
-          example: "002,003,004"
+          description: 'Association/Schema Code. Array with association code. Possible values [ 002 (Mastercard) / 003 (Visa) / 004 (Amex Full) / 009 (CABAL) / 020 (MDS) / 024 (Hipercard/Hiper) / 025 (ELO Full) ]'
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
@@ -720,19 +658,19 @@ paths:
           schema:
             type: string
             enum:
-              - "CREDIT"
-              - "DEBIT"
-              - "CREDIT,DEBIT"
+              - CREDIT
+              - DEBIT
+              - 'CREDIT,DEBIT'
         - name: page
           in: query
-          description: Page Number. Used for search pagination, it should be informed which page will be returned, available only when the parameter "tipoSumarizacao" is equal to null
+          description: 'Page Number. Used for search pagination, it should be informed which page will be returned, available only when the parameter "tipoSumarizacao" is equal to null'
           required: false
           schema:
             type: integer
             format: int32
         - name: size
           in: query
-          description: Page Size. Used for search pagination, it must be informed how many records per page will be returned, available only when the parameter "tipoSumarizacao" is equal to null
+          description: 'Page Size. Used for search pagination, it must be informed how many records per page will be returned, available only when the parameter "tipoSumarizacao" is equal to null'
           required: false
           schema:
             type: integer
@@ -740,20 +678,20 @@ paths:
         - name: tipoOrdenacao
           in: query
           description: order.
-          example: "DESC"
+          example: DESC
           required: false
           allowEmptyValue: false
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/VendasResponse"
+                $ref: '#/components/schemas/VendasResponse'
       deprecated: false
-  "/bwa/vendas/resources/v2/canceladas":
+  /bwa/vendas/resources/v2/canceladas:
     get:
       tags:
         - Search for Sales for a Merchant
@@ -761,7 +699,7 @@ paths:
       x-group-name: Sales Information
       x-child-product-name: Digital Solutions
       description: Merchant Sales - Canceled - Consult
-      summary: Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the selection of MULTIPLE association schema
+      summary: 'Search for Paid Sales or Sales to be Received By Period, Institution, Merchant and Other Options. It allows the selection of MULTIPLE association schema'
       operationId: searchForSalesCanceled
       parameters:
         - name: Message-Signature
@@ -782,14 +720,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: 'null'
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -814,7 +752,7 @@ paths:
         - name: numeroTransacao
           in: query
           description: Transaction number.
-          example: "11111222"
+          example: '11111222'
           required: false
           allowEmptyValue: false
           schema:
@@ -822,21 +760,21 @@ paths:
         - name: instituicao
           in: header
           description: Merchant Institution Number
-          example: "00000003"
+          example: '00000003'
           required: true
           schema:
             type: string
         - name: estabelecimento
           in: header
           description: Merchant Code
-          example: "91002806"
+          example: '91002806'
           required: true
           schema:
             type: string
         - name: codAutorizacao
           in: query
           description: Authorization Code.
-          example: "002,003,004"
+          example: '002,003,004'
           required: false
           allowEmptyValue: false
           schema:
@@ -844,7 +782,7 @@ paths:
         - name: numTerminal
           in: query
           description: Terminal number.
-          example: "EII0051B"
+          example: EII0051B
           required: false
           allowEmptyValue: false
           schema:
@@ -852,7 +790,7 @@ paths:
         - name: codTipoTransacao
           in: query
           description: Transaction tipe.
-          example: "LOJISTA"
+          example: LOJISTA
           required: false
           allowEmptyValue: false
           schema:
@@ -863,12 +801,12 @@ paths:
               - EMISSOR
               - CREDIARIO
       responses:
-        "200":
+        '200':
           description: Successfully Done
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CancelamentoResponse"
+                $ref: '#/components/schemas/CancelamentoResponse'
       deprecated: false
 components:
   schemas:
@@ -883,7 +821,7 @@ components:
         codigoBandeira:
           type: string
           description: Association/Schema Code. Returned when type is "T" e "B".
-          example: "020"
+          example: '020 - MDS'
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -895,7 +833,7 @@ components:
         descricaoBandeira:
           type: string
           description: Association/Schema Description. Returned when type is "T" e "B".
-          example: "MDS"
+          example: 020 - MDS
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -907,37 +845,37 @@ components:
         codigoProduto:
           type: string
           description: Product Code. Returned when type is "T" e "P".
-          example: "716"
+          example: '716 - Adq - MC Debit'
           enum:
-            - "102 - Adq - MC Credit"
-            -  103 - Acq-CABAL Credit
-            -  104 - Acq-CABAL Debit
-            - "109 - Adq - Hiper Credit"
-            - "110 - Acq-ELO Full Credit"
-            - "111 - Acq-ELO Full Debit"
-            - "113 - Adq-AMEX Full Credit"
-            - "201 - Adq - VISA Credit"
-            - "200 - Adq - VISA Debit"
-            - "716 - Adq - MC Debit"
+            - 102 - Adq - MC Credit
+            - 103 - Acq-CABAL Credit
+            - 104 - Acq-CABAL Debit
+            - 109 - Adq - Hiper Credit
+            - 110 - Acq-ELO Full Credit
+            - 111 - Acq-ELO Full Debit
+            - 113 - Adq-AMEX Full Credit
+            - 201 - Adq - VISA Credit
+            - 200 - Adq - VISA Debit
+            - 716 - Adq - MC Debit
         descricaoProduto:
           type: string
           description: Product Code Description. Returned when type is "T" e "P".
-          example: "Adq - MC Débito"
+          example: 716 - Adq - MC Debit
           enum:
-            - "102 - Adq - MC Credit"
-            -  103 - Acq-CABAL Credit
-            -  104 - Acq-CABAL Debit
-            - "109 - Adq - Hiper Credit"
-            - "110 - Acq-ELO Full Credit"
-            - "111 - Acq-ELO Full Debit"
-            - "113 - Adq-AMEX Full Credit"
-            - "201 - Adq - VISA Credit"
-            - "200 - Adq - VISA Debit"
-            - "716 - Adq - MC Debit"
+            - 102 - Adq - MC Credit
+            - 103 - Acq-CABAL Credit
+            - 104 - Acq-CABAL Debit
+            - 109 - Adq - Hiper Credit
+            - 110 - Acq-ELO Full Credit
+            - 111 - Acq-ELO Full Debit
+            - 113 - Adq-AMEX Full Credit
+            - 201 - Adq - VISA Credit
+            - 200 - Adq - VISA Debit
+            - 716 - Adq - MC Debit
         codTipoTransacao:
           type: string
-          description: Transaction Type Code. Returned when type is "T". These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative
-          example: "005"
+          description: 'Transaction Type Code. Returned when type is "T". These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative'
+          example: '005 - Compra - (meaning Purchase)'
           enum:
             - 005 - Compra - (meaning Purchase)
             - 006 - Reembolso Crédito - (meaning Refund Credit)
@@ -978,11 +916,11 @@ components:
             - 494 - Crediario Install-11 parcels - (meaning Crediario - 12 issuer installments)
             - 495 - Crediario Install-12 parcels - (meaning Crediario - 12 issuer installments)
             - 496 - Crediario Install>12 parcels - (meaning Crediario - 12 issuer installments)
-            - "***** These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative *****"
+            - '***** These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative *****'
         descTipoTransacao:
           type: string
-          description: Transaction Type Code Description. Returned when type is "T". These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative
-          example: "Compra"
+          description: 'Transaction Type Code Description. Returned when type is "T". These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative'
+          example: 005 - Compra - (meaning Purchase)
           enum:
             - 005 - Compra - (meaning Purchase)
             - 006 - Reembolso Crédito - (meaning Refund Credit)
@@ -1023,32 +961,34 @@ components:
             - 494 - Crediario Install-11 parcels - (meaning Crediario - 12 issuer installments)
             - 495 - Crediario Install-12 parcels - (meaning Crediario - 12 issuer installments)
             - 496 - Crediario Install>12 parcels - (meaning Crediario - 12 issuer installments)
-            - "***** These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative *****"
+            - '***** These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative *****'
         valorBrutoParcela:
           type: string
-          description: Installment Gross Amount. Returned when type is "T", "P", "B" e "D"
-          example: "50"
+          description: 'Installment Gross Amount. Returned when type is "T", "P", "B" e "D"'
+          example: '50'
         valorDescontoParcela:
           type: string
-          description: Installment Discount Amount. Returned when type is "T", "P", "B" e "D"
-          example: "0.93"
+          description: 'Installment Discount Amount. Returned when type is "T", "P", "B" e "D"'
+          example: '0.93'
         valorLiquidoParcela:
           type: string
-          description: Installment Net Amount. Returned when type is "T", "P", "B" e "D"
-          example: "49.07"
+          description: 'Installment Net Amount. Returned when type is "T", "P", "B" e "D"'
+          example: '49.07'
         valorLiquidoMedio:
           type: string
-          description: Average Net Amount. Returned when type is "T", "P", "B" e "D"
-          example: "49.07"
+          description: 'Average Net Amount. Returned when type is "T", "P", "B" e "D"'
+          example: '49.07'
         valorBrutoMedio:
           type: string
-          description: Average Gross Amount. Returned when type is "T", "P", "B" e "D"
-          example: "50"
+          description: 'Average Gross Amount. Returned when type is "T", "P", "B" e "D"'
+          example: '50'
         quantidade:
           type: string
-          description: Quantity of Installments. Returned when type is "T", "P", "B" e "D"
-          example: "1"
+          description: 'Quantity of Installments. Returned when type is "T", "P", "B" e "D"'
+          example: '1'
       title: Sumarizacao
+      x-stoplight:
+        id: hexes0vdzr9de
     Venda:
       type: object
       description: This block will be returned when Summ Information is not provided
@@ -1056,7 +996,7 @@ components:
         numeroTransacao:
           type: string
           description: Sales Transaction Number (not available for Summarization)
-          example: "92674343362"
+          example: '92674343362'
         dataTransacao:
           type: string
           description: Sales Transaction Date
@@ -1064,45 +1004,45 @@ components:
         horaTransacao:
           type: string
           description: Time Transaction Date
-          example: "HH:MM:SS"
+          example: 'HH:MM:SS'
         comprovante:
           type: string
           description: code that ensures the transaction occured
-          example: "000000966"
+          example: '000000966'
         codProdutoTransacao:
           type: string
           description: Transaction Product Code
-          example: "716"
+          example: '716 - Adq - MC Debit'
           enum:
-            - "102 - Adq - MC Credit"
-            -  103 - Acq-CABAL Credit
-            -  104 - Acq-CABAL Debit
-            - "109 - Adq - Hiper Credit"
-            - "110 - Acq-ELO Full Credit"
-            - "111 - Acq-ELO Full Debit"
-            - "113 - Adq-AMEX Full Credit"
-            - "201 - Adq - VISA Credit"
-            - "200 - Adq - VISA Debit"
-            - "716 - Adq - MC Debit"
+            - 102 - Adq - MC Credit
+            - 103 - Acq-CABAL Credit
+            - 104 - Acq-CABAL Debit
+            - 109 - Adq - Hiper Credit
+            - 110 - Acq-ELO Full Credit
+            - 111 - Acq-ELO Full Debit
+            - 113 - Adq-AMEX Full Credit
+            - 201 - Adq - VISA Credit
+            - 200 - Adq - VISA Debit
+            - 716 - Adq - MC Debit
         descProdutoTransacao:
           type: string
           description: Transaction Product Code Description
-          example: "Adq - MC Débito"
+          example: 716 - Adq - MC Debit
           enum:
-            - "102 - Adq - MC Credit"
-            -  103 - Acq-CABAL Credit
-            -  104 - Acq-CABAL Debit
-            - "109 - Adq - Hiper Credit"
-            - "110 - Acq-ELO Full Credit"
-            - "111 - Acq-ELO Full Debit"
-            - "113 - Adq-AMEX Full Credit"
-            - "201 - Adq - VISA Credit"
-            - "200 - Adq - VISA Debit"
-            - "716 - Adq - MC Debit"
+            - 102 - Adq - MC Credit
+            - 103 - Acq-CABAL Credit
+            - 104 - Acq-CABAL Debit
+            - 109 - Adq - Hiper Credit
+            - 110 - Acq-ELO Full Credit
+            - 111 - Acq-ELO Full Debit
+            - 113 - Adq-AMEX Full Credit
+            - 201 - Adq - VISA Credit
+            - 200 - Adq - VISA Debit
+            - 716 - Adq - MC Debit
         codBandeira:
           type: string
           description: Transaction Association/Schema Code
-          example: "020"
+          example: 020 - MDS
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -1114,7 +1054,7 @@ components:
         descBandeira:
           type: string
           description: Transaction Association/Schema Code Description
-          example: "MDS"
+          example: 020 - MDS
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -1125,8 +1065,8 @@ components:
             - 025 - ELO Full
         codTipoTransacao:
           type: string
-          description: Transaction Type Code. These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative
-          example: "005"
+          description: 'Transaction Type Code. These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative'
+          example: '005 - Compra - (meaning Purchase)'
           enum:
             - 005 - Compra - (meaning Purchase)
             - 006 - Reembolso Crédito - (meaning Refund Credit)
@@ -1167,11 +1107,11 @@ components:
             - 494 - Crediario Install-11 parcels - (meaning Crediario - 12 issuer installments)
             - 495 - Crediario Install-12 parcels - (meaning Crediario - 12 issuer installments)
             - 496 - Crediario Install>12 parcels - (meaning Crediario - 12 issuer installments)
-            - "***** These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative *****"
+            - '***** These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative *****'
         descTipoTransacao:
           type: string
-          description: Transaction Type Code Description. These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative
-          example: "Compra"
+          description: 'Transaction Type Code Description. These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative'
+          example: 005 - Compra - (meaning Purchase)
           enum:
             - 005 - Compra - (meaning Purchase)
             - 006 - Reembolso Crédito - (meaning Refund Credit)
@@ -1212,179 +1152,192 @@ components:
             - 494 - Crediario Install-11 parcels - (meaning Crediario - 12 issuer installments)
             - 495 - Crediario Install-12 parcels - (meaning Crediario - 12 issuer installments)
             - 496 - Crediario Install>12 parcels - (meaning Crediario - 12 issuer installments)
-            - "***** These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative *****"
+            - '***** These domains are part of a parameter table. It might vary, please ask the full list of domain to your Fiserv Representative *****'
         numeroParcela:
           type: string
           description: Installment Number
-          example: ""
+          example: ''
         qtdeParcelas:
           type: string
           description: Quantity of Installments
-          example: ""
+          example: ''
         valorTotalPlano:
           type: string
           description: Sales Total Plan Amount
-          example: ""
+          example: ''
         codAutorizacao:
           type: string
           description: Transaction Authorization Code
-          example: "964906"
+          example: '964906'
         numCartao:
           type: string
           description: Card Number
-          example: ""
+          example: ''
         numTerminal:
           type: string
           description: Device Transaction Number
-          example: "ETD2CF63"
+          example: ETD2CF63
         codTipoTerminal:
           type: string
           description: Device Type Code
-          example: "303"
+          example: '334 - Ecommerce TEF'
           enum:
-            - "367 - POS Auto Credenc (meaning POS Auto Boarding)"
-            - "334 - Ecommerce TEF"
-            - "330 - TEF Dedicado-conec (meaning Balance Eletronic Transfer - Dedicated)"
-            - "352 - Mobile POS"
-            - "331 - TEF IP-conec (meaning Balance Eletronic Transfer - IP)"
-            - "377 - POS Web"
-            - "378 - POS TEF Terceiros (meaning Balance Eletronic Transfer - Third Party)"
-            - "380 - POS MP5"
-            - "309 - Arquivo de lote (meaning Batch file)"
-            - "386 - POS do Futuro (meaning Future POS)"
-            - "301 - POS GPRS"
-            - "307 - TEF Discado-conec (meaning Balance Eletronic Transfer - Dial in)"
-            - "305 - POS 3 Conexões (meaning POS three Connections)"
-            - "366 - POS Wifi"
-            - "357 - POGO"
-            - "364 - POS Virtual"
-            - "395 - POS MOBY6500 Aluguel (meaning POS MOBY6500 Rent)"
-            - "365 - POS Wifi GPRS"
-            - "308 - E-Commerce Gateway 1"
-            - "391 - App Hardwareless"
-            - "356 - E-Comm IPG"
-            - "300 - POS ISO"
-            - "306 - PINPAD"
-            - "379 - Gateway WhiteLabel"
-            - "303 - POS Internet/Discado"
+            - 367 - POS Auto Credenc (meaning POS Auto Boarding)
+            - 334 - Ecommerce TEF
+            - 330 - TEF Dedicado-conec (meaning Balance Eletronic Transfer - Dedicated)
+            - 352 - Mobile POS
+            - 331 - TEF IP-conec (meaning Balance Eletronic Transfer - IP)
+            - 377 - POS Web
+            - 378 - POS TEF Terceiros (meaning Balance Eletronic Transfer - Third Party)
+            - 380 - POS MP5
+            - 309 - Arquivo de lote (meaning Batch file)
+            - 386 - POS do Futuro (meaning Future POS)
+            - 301 - POS GPRS
+            - 307 - TEF Discado-conec (meaning Balance Eletronic Transfer - Dial in)
+            - 305 - POS 3 Conexões (meaning POS three Connections)
+            - 366 - POS Wifi
+            - 357 - POGO
+            - 364 - POS Virtual
+            - 395 - POS MOBY6500 Aluguel (meaning POS MOBY6500 Rent)
+            - 365 - POS Wifi GPRS
+            - 308 - E-Commerce Gateway 1
+            - 391 - App Hardwareless
+            - 356 - E-Comm IPG
+            - 300 - POS ISO
+            - 306 - PINPAD
+            - 379 - Gateway WhiteLabel
+            - 303 - POS Internet/Discado
         descTipoTerminal:
           type: string
           description: Device Type Code Description
-          example: "POS Internet/Discado"
+          example: 334 - Ecommerce TEF
           enum:
-            - "367 - POS Auto Credenc (meaning POS Auto Boarding)"
-            - "334 - Ecommerce TEF"
-            - "330 - TEF Dedicado-conec (meaning Balance Eletronic Transfer - Dedicated)"
-            - "352 - Mobile POS"
-            - "331 - TEF IP-conec (meaning Balance Eletronic Transfer - IP)"
-            - "377 - POS Web"
-            - "378 - POS TEF Terceiros (meaning Balance Eletronic Transfer - Third Party)"
-            - "380 - POS MP5"
-            - "309 - Arquivo de lote (meaning Batch file)"
-            - "386 - POS do Futuro (meaning Future POS)"
-            - "301 - POS GPRS"
-            - "307 - TEF Discado-conec (meaning Balance Eletronic Transfer - Dial in)"
-            - "305 - POS 3 Conexões (meaning POS three Connections)"
-            - "366 - POS Wifi"
-            - "357 - POGO"
-            - "364 - POS Virtual"
-            - "395 - POS MOBY6500 Aluguel (meaning POS MOBY6500 Rent)"
-            - "365 - POS Wifi GPRS"
-            - "308 - E-Commerce Gateway 1"
-            - "391 - App Hardwareless"
-            - "356 - E-Comm IPG"
-            - "300 - POS ISO"
-            - "306 - PINPAD"
-            - "379 - Gateway WhiteLabel"
-            - "303 - POS Internet/Discado"
+            - 367 - POS Auto Credenc (meaning POS Auto Boarding)
+            - 334 - Ecommerce TEF
+            - 330 - TEF Dedicado-conec (meaning Balance Eletronic Transfer - Dedicated)
+            - 352 - Mobile POS
+            - 331 - TEF IP-conec (meaning Balance Eletronic Transfer - IP)
+            - 377 - POS Web
+            - 378 - POS TEF Terceiros (meaning Balance Eletronic Transfer - Third Party)
+            - 380 - POS MP5
+            - 309 - Arquivo de lote (meaning Batch file)
+            - 386 - POS do Futuro (meaning Future POS)
+            - 301 - POS GPRS
+            - 307 - TEF Discado-conec (meaning Balance Eletronic Transfer - Dial in)
+            - 305 - POS 3 Conexões (meaning POS three Connections)
+            - 366 - POS Wifi
+            - 357 - POGO
+            - 364 - POS Virtual
+            - 395 - POS MOBY6500 Aluguel (meaning POS MOBY6500 Rent)
+            - 365 - POS Wifi GPRS
+            - 308 - E-Commerce Gateway 1
+            - 391 - App Hardwareless
+            - 356 - E-Comm IPG
+            - 300 - POS ISO
+            - 306 - PINPAD
+            - 379 - Gateway WhiteLabel
+            - 303 - POS Internet/Discado
         codTipoCartao:
           type: string
           description: Card Type Code
-          example: 898
+          example: 898 - Doméstico BR (meaning National BR)
           enum:
-            - "204 - Estrangeiro Master (meaning Foreigner Master)"
-            - "209 - Estrangeiro (meaning Foreigner)"
-            - "898 - Doméstico BR (meaning National BR)"
+            - 204 - Estrangeiro Master (meaning Foreigner Master)
+            - 209 - Estrangeiro (meaning Foreigner)
+            - 898 - Doméstico BR (meaning National BR)
         descTipoCartao:
           type: string
           description: Card Type Code Description
-          example: Doméstico - BR
+          example: 898 - Doméstico BR (meaning National BR)
           enum:
-            - "204 - Estrangeiro Master (meaning Foreigner Master)"
-            - "209 - Estrangeiro (meaning Foreigner)"
-            - "898 - Doméstico BR (meaning National BR)"
+            - 204 - Estrangeiro Master (meaning Foreigner Master)
+            - 209 - Estrangeiro (meaning Foreigner)
+            - 898 - Doméstico BR (meaning National BR)
         valorBrutoParcela:
           type: string
           description: Transaction Installment Gross Amount
-          example: 240.00
+          example: '240'
         seuNumero:
           type: string
           description: Number of client
-          example: 0001
+          example: '1'
         valorDescontoParcela:
           type: string
           description: Transaction Installment Discount Amount
-          example: 7.18
+          example: '7.18'
         valorLiquidoParcela:
           type: string
           description: Transaction Installment Net Amount
-          example: 232.82
+          example: '232.82'
         indicadorCredDeb:
           type: string
           description: Transaction Debit/Credit Indicator
-          example: "C"
+          example: C - Credit
           enum:
-            - "D - Debit"
-            - "C - Credit"
+            - D - Debit
+            - C - Credit
         indicadorCancelVenda:
           type: string
           description: Transaction Cancelling Indicator
-          example: "000"
+          example: '000 - Not Cancelled'
           enum:
-            - "000 - Not Cancelled"
-            - "001 - Cancelled"
+            - 000 - Not Cancelled
+            - 001 - Cancelled
+            - 002 - Partial Cancelled
         numeroParcelado:
           type: string
           description: Transaction Installment Number
-          example: 91219086727
+          example: '91219086727'
         numeroResumoVenda:
           type: string
           description: a number that represents the resume of the sales
-          example: 91219223169
+          example: '91219223169'
         dataPrevistaPagto:
           type: string
           description: Payment Due Date (forecast)
-          example: 20190730
+          example: '20190730'
         eciCode:
           type: string
           description: Payment Due Date (forecast)
-          example: 20190730
+          example: '20190730'
         cashbackAmount:
           type: string
           description: Payment Due Date (forecast)
-          example: 20190730
+          example: '20190730'
         reverseInterchange:
           type: string
           description: Payment Due Date (forecast)
-          example: 20190730
+          example: '20190730'
         valorTotalCancelamento:
           type: string
           description: Canceled Value
-          example: 10000.00
+          example: '10000'
         statusPagamento:
           type: string
           description: Payment Status
           example: E
+        dataEfetivaPagto:
+          type: string
+          description: Payment efective date
+          example: '0'
+        statusAntecipacao:
+          type: string
+          description: Status Prepayment
+          example: '0'
+        numeroOrdemPagto:
+          type: string
+          description: Payment order number
+          example: '30880414920'
       title: Vendas
       xml:
         name: Vendas
         attribute: false
         wrapped: false
+      x-stoplight:
+        id: 2os6onosor0d7
     VendasResponse:
       type: object
-      description: "All the sales based on input parameters 'Receber or Realizadas'. Max Interval of Dates is 30 days for all the parameters with Summ Information. If tipoSumarizacao is not defined/sent, the Maxium Interval between dates will be 7 days.
-                   1) Paramater 'Realizadas' + Summ 'D', it will summ up by Transaction Date;
-                   2) Parameter 'Receber' + Summ 'D', it will summ up by Payment Date (future date)."
+      description: 'All the sales based on input parameters ''Receber or Realizadas''. Max Interval of Dates is 30 days for all the parameters with Summ Information. If tipoSumarizacao is not defined/sent, the Maxium Interval between dates will be 7 days. 1) Paramater ''Realizadas'' + Summ ''D'', it will summ up by Transaction Date; 2) Parameter ''Receber'' + Summ ''D'', it will summ up by Payment Date (future date).'
       required:
         - codigoRetorno
         - descricaoRetorno
@@ -1425,12 +1378,11 @@ components:
           type: array
           description: This block will be returned when Summ Information is provided
           items:
-            $ref: "#/components/schemas/Sumarizacao"
+            $ref: '#/components/schemas/Sumarizacao'
         totalElements:
           type: integer
           format: int32
-          description: Total of Records
-            informados.
+          description: Total of Records informados.
         totalPages:
           type: integer
           format: int32
@@ -1439,15 +1391,17 @@ components:
           type: array
           description: This block will be returned when Summ Information is not provided
           items:
-            $ref: "#/components/schemas/Venda"
+            $ref: '#/components/schemas/Venda'
       title: VendasResponse
       xml:
         name: response
         attribute: false
         wrapped: false
+      x-stoplight:
+        id: zz3q0zl99g9j9
     CancelamentoResponse:
       type: object
-      description: "Canceled Sales parameters 'canceladas'. "
+      description: 'Canceled Sales parameters ''canceladas''. '
       required:
         - codigoRetorno
         - mensagem
@@ -1467,15 +1421,17 @@ components:
           type: array
           description: This block will be returned when Summ Information is not provided
           items:
-            $ref: "#/components/schemas/Cancelamento"
+            $ref: '#/components/schemas/Cancelamento'
       title: cancelamentoResponse
       xml:
         name: response
         attribute: false
         wrapped: false
+      x-stoplight:
+        id: g98yzre5flvwa
     Cancelamento:
       type: object
-      description: "Canceled Sales parameters 'canceladas'. "
+      description: 'Canceled Sales parameters ''canceladas''. '
       required:
         - dataCancelamento
         - horaCancelamento
@@ -1506,3 +1462,5 @@ components:
         numeroTransacao:
           type: string
           description: Return Description
+      x-stoplight:
+        id: 7zb9ho2soq8mi

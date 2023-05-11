@@ -17,13 +17,12 @@ x-config:
   tryItOut: true
 tags:
   - name: Search for Cases opened in Salesforce
+    description: Search for Cases and comments opened in Salesforce
   - name: Search for Comments related to a Case
     description: Caso Resource
 paths:
   "/bwa/sales-force-ws/caso/{numeroInstituicao}":
     get:
-      tags:
-        - Search for Cases and comments opened in Salesforce
       x-proxy-name: Search for Cases opened in Salesforce
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
@@ -49,14 +48,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -100,7 +99,7 @@ paths:
         - name: dataFim
           in: query
           description: Search End Date. Format DD-MM-YYYY
-          example:
+          example: ''
           required: false
           allowEmptyValue: false
           schema:
@@ -115,7 +114,7 @@ paths:
         - name: idCaso
           in: query
           description: Case ID Number (SF Internal Number). Sample '5000g000022h4qHAAQ'
-          example:
+          example: ''
           required: false
           allowEmptyValue: false
           schema:
@@ -160,14 +159,12 @@ paths:
       deprecated: false
   "/bwa/sales-force-ws/comentarios":
     get:
-      tags:
-        - Search for Cases and comments opened in Salesforce
       x-proxy-name: Search for Comments related to a Case
       x-group-name: Merchant Information & Cases
       x-child-product-name: Digital Solutions
       description: Search for Comments related to a Case
       summary: Merchant Information & Cases
-      operationId: Search for Comments related to a Case
+      operationId: SearchForCommentsRelatedToACase
       parameters:
         - name: Message-Signature
           in: header
@@ -187,14 +184,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -209,13 +206,13 @@ paths:
           description: Case Number. It can be found when searching for cases "/sales-force-ws/caso"
           required: false
           allowEmptyValue: false
-          example: 2345446
+          example: '2345446'
           schema:
             type: string
         - name: idCase
           in: header
           description: Case ID Number (SF Internal Number). Sample '5000g000022h4qHAAQ'. It can be found when searching for cases "/sales-force-ws/caso"
-          example:
+          example: ''
           required: false
           allowEmptyValue: false
           schema:
@@ -306,7 +303,7 @@ components:
         caseNumber:
           type: string
           description: Case number
-          example: 1234567
+          example: '1234567'
         classificao:
           type: string
           description: Case Reason
@@ -330,7 +327,7 @@ components:
         externalCaseNumber:
           type: string
           description: External ID Number provided when opening the case
-          example: 12345
+          example: '12345'
         idSalesForce:
           type: string
           description: Case ID Code
@@ -342,7 +339,7 @@ components:
         merchantId:
           type: string
           description: Merchant Code
-          example: 12345678
+          example: '12345678'
         nomeRequisitante:
           type: string
           description: Requester Name
@@ -358,12 +355,11 @@ components:
         personalId:
           type: string
           description: Customer Tax ID (CPF/CNPJ)
-          example: 2040607030
+          example: '2040607030'
         recordDate:
           type: string
           format: date-time
           description: Record date
-          example: DD/MM/YYYY
         resolucao:
           type: string
           description: Case Resolution Description (text)
@@ -379,7 +375,7 @@ components:
         status:
           type: string
           description: Case Status
-          example: Open
+          example: Open/New
           enum:
             - Open/New
             - Closed/Resolved
@@ -407,7 +403,7 @@ components:
         codigoRetorno:
           type: string
           description: Return Code
-          example: "00"
+          example: "00 - Successfully Done"
           enum:
             - "00 - Successfully Done"
             - "01 - Sustem Error"
@@ -418,7 +414,7 @@ components:
         descricaoRetorno:
           type: string
           description: Return Code Description
-          example: Successfully Done
+          example: 00 - Successfully Done
           enum:
             - "00 - Successfully Done"
             - "01 - Sustem Error"
@@ -452,7 +448,6 @@ components:
         codigoRetorno:
           type: string
           description: Return Code
-          example: '0'
           enum:
             - 0 - Sucesso (meaning Success) - HTTP 200
             - 2 - Erro Interno (meaning Internal Error) - HTTP 500
@@ -466,7 +461,6 @@ components:
         mensagem:
           type: string
           description: Return Code Description
-          example: 'Sucesso'
           enum:
             - 0 - Sucesso (meaning Success) - HTTP 200
             - 2 - Erro Interno (meaning Internal Error) - HTTP 500
@@ -496,7 +490,7 @@ components:
         externalCaseNumber:
           type: string
           description: Temporary Case Number provided when case is opened via API. In case it is was not opened via API, it will be ""
-          example: 1234
+          example: '1234'
         recordDate:
           type: string
           description: Time Stamp related to when the case was extracted from Salesforce
@@ -504,11 +498,11 @@ components:
         caseNumber:
           type: string
           description: Case Number managed by Salesforce. This number can be searched directly in Salesforce
-          example: 38084515
+          example: '38084515'
         commentPublic:
           type: string
           description: 'It returns "TRUE" or "FALSE". It means if the comment was classifed as Public or Private '
-          example: 12345
+          example: '12345'
         createdDate:
           type: string
           description: Date/Time when the comment was added
@@ -558,7 +552,6 @@ components:
             - 10
         mensagem:
           description: Description return code
-          example: Campos mandatorios (meaning mdantory Fields Missing)
           type: string
           enum:
             - "9 - Campos mandatorios - (meaning Mandatory Fields Missing"
@@ -587,7 +580,6 @@ components:
             - 6
         mensagem:
           description: Description return code
-          example: Acesso negado
           type: string
           enum:
             - "3 - Acesso negado - (meaning Access Denied)"
@@ -627,7 +619,7 @@ components:
             - 7
         mensagem:
           description: Description return code
-          example: Erro Interno - (meaning Internal Error)
+          example: 2 - Erro Interno - (meaning Internal Error)
           type: string
           enum:
             - "2 - Erro Interno - (meaning Internal Error)"

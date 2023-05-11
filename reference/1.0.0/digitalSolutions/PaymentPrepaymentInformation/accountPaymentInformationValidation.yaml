@@ -17,8 +17,9 @@ x-config:
   tryItOut: true
 tags:
   - name: Account Payment Information Validation
+    description:  Account Payment Information Validation
 paths:
-  /bwa/domicilio-bancario/:
+  /bwa/domicilio-bancario:
     post:
       tags:
         - Account Payment Information Validation
@@ -47,14 +48,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -107,14 +108,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -169,7 +170,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 1591212089576
+            example: '1591212089576'
         - name: Message-Signature
           in: header
           description: HMAC
@@ -251,7 +252,7 @@ components:
           type: integer
           format: int64
           description: Requestor Service Contract
-          example: "111"
+          example: 111
         institution:
           type: string
           description: Requestor institution
@@ -313,15 +314,15 @@ components:
         agenciaTamanho:
           type: string
           description: Size for branch field
-          example: 4
+          example: '4'
         agenciaTamanhoMinObrigatorio:
           type: string
           description: Mandatory minimum size for branch field
-          example: 4
+          example: '4'
         banco:
           type: string
           description: Bank code information
-          example: 341
+          example: '341'
         contaComoEnviarBW:
           type: string
           description: Rule explaining how conta information shall be sent
@@ -329,7 +330,7 @@ components:
         contaFormato:
           type: string
           description: Mininum and maximum size for account number
-          example: 3,12
+          example: '3,12'
         contaMsgErroFormato:
           type: string
           description: Provide information about possible errors
@@ -337,18 +338,18 @@ components:
         contaObrigatorio:
           type: boolean
           description: Indicator of Mandatory field for branch
-          example: true
+          example: True
           enum:
             - True
             - False
         contaTamanho:
           type: string
           description: Size for account field
-          example: 12
+          example: '12'
         contaTamanhoMinObrigatorio:
           type: string
           description: Mandatory minimum size for account field
-          example: 3
+          example: '3'
         digitoVerAgenciaMsgErroFormato:
           type: string
           description: Error message for account field
@@ -356,7 +357,7 @@ components:
         digitoVerContaFormato:
           type: string
           description: Size for accounts's digit
-          example: 1
+          example: '1'
         digitoVerContaMsgErroFormato:
           type: string
           description: Account's digit error message
@@ -364,33 +365,32 @@ components:
         digitoVerContaObrigatorio:
           type: boolean
           description: Indicator of Mandatory field for account
-          example: true
+          example: True
           enum:
             - True
             - False
         digitoVerContaTamanho:
           type: string
           description: Size for account's digit field
-          example: 1
+          example: '1'
         digitoVerificadorAgenciaObrigatorio:
           type: boolean
           description: Indicator of mandatory field for Branch's digit
-          example: true
+          example: True
           enum:
             - True
             - False
         digitoVerificadorAgenciaTamanho:
           type: string
           description: Size for branch's digit field
-          example: 1
+          example: '1'
         digitoVerificadorFormato:
           type: string
           description: Mninum size for branch's digit
-          example: 1
+          example: '1'
         modalidade:
           type: string
           description: Type of Account
-          example: Conta Corrente
           enum:
             - Conta Corrente - (meaning Checking Account)
             - Conta Poupança - (meaning Saving Account)
@@ -398,7 +398,7 @@ components:
         operacaoApresentarInformacao:
           type: string
           description: Operation Type Required Indicator (Applicable to CEF Bank only)
-          example: 1
+          example: 1 - Show the Information
           enum:
             - "1 - Show the Information"
             - "N/A - Not Applicable"
@@ -423,13 +423,11 @@ components:
         banco:
           type: string
           description: Bank Code Information. For Payment Account, provide the string "Conta Pagamento"
-          example: 341
           enum:
             - Bank Code (with 3 digits, such as 001, 341, 237, etc). If Payment Account, provide the string "Conta Pagamento"
         modalidade:
           type: string
           description: Type of Account
-          example: Conta Corrente
           enum:
             - Conta Corrente - (meaning Checking Account)
             - Conta Poupança - (meaning Saving Account)
@@ -437,7 +435,6 @@ components:
         titularidade:
           type: string
           description: Type of Ownership
-          example: CPF
           enum:
             - CPF - (meaning Tax ID for Individual)
             - CNPJ - (meaning Tax ID for Company)
@@ -448,29 +445,28 @@ components:
         banco:
           type: string
           description: Bank Code Information. For Payment Account, provide the string "Conta Pagamento"
-          example: 999
           enum:
             - Bank Code (with 3 digits, such as 001, 341, 237, etc). If Payment Account, provide the string "Conta Pagamento"
         agencia:
           type: string
           description: Branch Code
-          example: 9999
+          example: '9999'
         digitoAgencia:
           type: string
           description: Branch's Digit Number
-          example: 1
+          example: '1'
         conta:
           type: string
           description: Account Number
-          example: 1234567
+          example: '1234567'
         digitoConta:
           type: string
           description: Acount's digit Number
-          example: 1
+          example: '1'
         cpfCnpj:
           type: string
           description: Tax ID of Account Owner (CPF or CNPJ)
-          example: 1234567890
+          example: '1234567890'
         modalidade:
           type: string
           description: Type of Account
@@ -482,7 +478,7 @@ components:
         operacao:
           type: string
           description: Operation type (required for CEF Bank only)
-          example: 13
+          example: '13'
         titularidade:
           type: string
           description: Type of Ownership. CPF for Individual or CNPJ for Company
@@ -505,7 +501,7 @@ components:
         status:
           type: boolean
           description: Provide information about validation
-          example: true
+          example: True
           enum:
             - True
             - False

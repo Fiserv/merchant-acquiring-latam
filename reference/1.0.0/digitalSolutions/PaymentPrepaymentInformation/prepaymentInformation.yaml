@@ -15,6 +15,7 @@ x-config:
   tryItOut: true
 tags:
   - name: Prepayment Information Maintenance
+    description: Prepayment Information Maintenance
 paths:
   /bwa/wsm/prepayments/consultations/consultPrepayment:
     post:
@@ -25,7 +26,7 @@ paths:
       x-child-product-name: Digital Solutions
       description:  Consult Available Balances For Prepayment (all Associations)
       summary: Consult Available Balances For Prepayment (all Associations)
-      operationId: ConsultAvailableBalancesForPrepayment (all Associations)
+      operationId: ConsultAvailableBalancesForPrepaymentAllAssociations
       parameters:
         - name: Message-Signature
           in: header
@@ -45,14 +46,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -111,14 +112,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -177,14 +178,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -243,14 +244,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: DAte - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -309,7 +310,7 @@ components:
         schemeOptions:
           type: string
           description: "Association/Schema Code for Prepayment. To request more than one schema, add ',' following the orders specificed. It is mandatory to follow the exactly sequence. IMPORTANT: In case it is requested the same dates for different Associations/Schemas, the return will consolidate with previous requests and return all the Associations/Schemas (Field is required for Request Type = 'N')"
-          example: "002,003"
+          example: "002 Mastercard"
           enum:
             - 002 Mastercard
             - 003 Visa
@@ -378,7 +379,7 @@ components:
         transactionType:
           type: string
           description: Transaction Type Code to be used for prepayment selection
-          example: "001"
+          example: "001 - Parcelado sem juros - (meaning Installment with no interesting)"
           enum:
             - "001 - Parcelado sem juros - (meaning Installment with no interesting)"
             - "003 - Compra à Vista (sem parcelado) - (meaning Purchase with no Installments)"
@@ -386,7 +387,7 @@ components:
         frequencyType:
           type: string
           description: Frequency Type for Prepayment request
-          example: "305"
+          example: "305 = Diário - (meaning Daily)"
           enum:
             - 305 = Diário - (meaning Daily)
             - 309 = Semanal - Seg - (meaing Weekly Monday)
@@ -444,7 +445,7 @@ components:
         frequencyPeriod:
           type: string
           description: Frequency Period that the Merchant will receive the prepayment
-          example: "005"
+          example: "005 – Monthly End of Month"
           enum:
             - 005 – Monthly End of Month
             - 010 – Bimonthly
@@ -515,7 +516,7 @@ components:
         requestType:
           type: string
           description: Request Type - Confirmation or Rejection
-          example: "C"
+          example: "C - Confirmation"
           enum:
             - C - Confirmation
             - D - Rejection
@@ -534,7 +535,7 @@ components:
         selectedValue:
           type: string
           description: Amount Request Type
-          example: "2"
+          example: "2 - Valor Mínimo (Low) - meaning (Minimum amount (Low)"
           enum:
             - 1 - Valor Máximo (High) - meaning Maximum amount (High)
             - 2 - Valor Mínimo (Low) - meaning (Minimum amount (Low)
@@ -585,7 +586,7 @@ components:
         prepaymentStatus:
           description: Prepayment Status Code. Fixed "000" for Request Type "N".
           type: string
-          example: "000"
+          example: "001 - Inicializado (meaning Initialized)"
           enum:
             - 001 - Inicializado (meaning Initialized)
             - 002 - Pendente (meaning Pending)
@@ -599,7 +600,7 @@ components:
         transactionType:
           type: string
           description: Transaction Type Code to be used for prepayment selection
-          example: "001"
+          example: "001 - Parcelado sem juros - (meaning Installment with no interesting)"
           enum:
             - "001 - Parcelado sem juros - (meaning Installment with no interesting)"
             - "003 - Compra à Vista (sem parcelado) - (meaning Purchase with no Installments)"
@@ -607,7 +608,7 @@ components:
         schemeOption:
           type: string
           description: "Association/Schema Code for Prepayment. To request more than one schema, add ',' following the orders specificed. It is mandatory to follow the exactly sequence. IMPORTANT: In case it is requested the same dates for different Associations/Schemas, the return will consolidate with previous requests and return all the Associations/Schemas"
-          example: "002,024"
+          example: "002 Mastercard"
           enum:
             - 002 Mastercard
             - 003 Visa
@@ -714,7 +715,7 @@ components:
         schemeOptions:
           type: string
           description: Association/Schema Code
-          example: "050"
+          example: "050 - Visa Credit"
           enum:
             - 050 - Visa Credit
             - 051 - MC Credit
@@ -725,7 +726,7 @@ components:
         schemeOptionsDesc:
           type: string
           description: Association/Schema Code Description
-          example: "Visa Credit"
+          example: "050 - Visa Credit"
           enum:
             - 050 - Visa Credit
             - 051 - MC Credit
@@ -736,7 +737,7 @@ components:
         transactionType:
           type: string
           description: Transaction Type Code to be used for prepayment selection
-          example: "001"
+          example: "001 - Parcelado sem juros - (meaning Installment with no interesting)"
           enum:
             - "001 - Parcelado sem juros - (meaning Installment with no interesting)"
             - "003 - Compra à Vista (sem parcelado) - (meaning Purchase with no Installments)"
@@ -744,7 +745,7 @@ components:
         transactionTypeDesc:
           type: string
           description: Transaction Type Description
-          example: "Parcelado"
+          example: "001 - Parcelado sem juros - (meaning Installment with no interesting)"
           enum:
             - "001 - Parcelado sem juros - (meaning Installment with no interesting)"
             - "003 - Compra à Vista (sem parcelado) - (meaning Purchase with no Installments)"
@@ -752,7 +753,7 @@ components:
         frequencyType:
           type: string
           description: Frequency Type for Prepayment
-          example: "305"
+          example: "305 = Diário - (meaning Daily)"
           enum:
             - 305 = Diário - (meaning Daily)
             - 309 = Semanal - Seg - (meaing Weekly Monday)
@@ -810,7 +811,7 @@ components:
         frequencyTypeDesc:
           type: string
           description: Frequency Description for Prepayment
-          example: "Diário"
+          example: "305 = Diário - (meaning Daily)"
           enum:
             - 305 = Diário - (meaning Daily)
             - 309 = Semanal - Seg - (meaing Weekly Monday)
@@ -868,7 +869,7 @@ components:
         frequencyPeriod:
           type: string
           description: Frequency Period that the Merchant will receive the prepayment
-          example: "005"
+          example: "005 – Monthly End of Month"
           enum:
             - 005 – Monthly End of Month
             - 010 – Bimonthly
@@ -880,7 +881,7 @@ components:
         frequencyPeriodDesc:
           type: string
           description: Frequency Period Description
-          example: "005 – 05 Dias"
+          example: "005 – Monthly End of Month"
           enum:
             - 005 – Monthly End of Month
             - 010 – Bimonthly
@@ -910,7 +911,7 @@ components:
         responseCode:
           type: string
           description: Return Code. A different message might be sent, with error details
-          example: "00"
+          example: "00 - Request Approved"
           enum:
             - 00 - Request Approved
             - 01 - Invalid Parameters (for instance, Invalid Content or Invalid Merchant)
@@ -930,13 +931,12 @@ components:
             - 17 - MID + Institution combination invalid
             - 18 - Merchant not at billing level - when acct_number is not equal to payment_acct_number in cas_client_account
             - 14 - Merchant has automatic Pre-payment set for the Card scheme requested
-            - 17 - MID + Institution combination invalid
             - 18 - Merchant not at billing level - Payment Hierarquy
             - 99 - System Error
         responseCodeDesc:
           type: string
           description: Return Code Description
-          example: "Request Approved"
+          example: "00 - Request Approved"
           enum:
             - 00 - Request Approved
             - 01 - Invalid Parameters (for instance, Invalid Content or Invalid Merchant)
@@ -956,7 +956,6 @@ components:
             - 17 - MID + Institution combination invalid
             - 18 - Merchant not at billing level - when acct_number is not equal to payment_acct_number in cas_client_account
             - 14 - Merchant has automatic Pre-payment set for the Card scheme requested
-            - 17 - MID + Institution combination invalid
             - 18 - Merchant not at billing level - Payment Hierarquy
             - 99 - System Error
     response:
@@ -992,14 +991,14 @@ components:
         prepaymentIndicator:
           type: string
           description: Indicates whether the Merchant has prepayment request enabled (returns only the code)
-          example: "0"
+          example: "0 - No"
           enum:
             - 0 - No
             - 1 - Yes
         prepaymentIndicatorDesc:
           type: string
           description: Prepayment request indicator description (returns only the description)
-          example: "No"
+          example: "0 - No"
           enum:
             - 0 - No
             - 1 - Yes
@@ -1130,7 +1129,7 @@ components:
         prepaymentStatus:
           type: string
           description: Prepayment Status Code
-          example: "Pending"
+          example: "Pendente (meaning Pending)"
           enum:
             - Inicializado (meaning Initialized)
             - Pendente (meaning Pending)
@@ -1144,7 +1143,7 @@ components:
         schemeOptions:
           type: string
           description: Association/Schema Code. To request for more than 1 schema, separate with ','
-          example: "050"
+          example: "050 - Visa Credit"
           enum:
             - 050 - Visa Credit
             - 051 - MC Credit
@@ -1155,7 +1154,7 @@ components:
         schemeOptionsDesc:
           type: string
           description: Association/Schema Description. To request for more than 1 schema, separate with ','
-          example: Visa Credit
+          example: 050 - Visa Credit
           enum:
             - 050 - Visa Credit
             - 051 - MC Credit
@@ -1166,7 +1165,7 @@ components:
         transactionType:
           type: string
           description: Transaction Type Code to be used for prepayment selection
-          example: "001"
+          example: "001 - Parcelado sem juros - (meaning Installment with no interesting)"
           enum:
             - "001 - Parcelado sem juros - (meaning Installment with no interesting)"
             - "003 - Compra à Vista (sem parcelado) - (meaning Purchase with no Installments)"
@@ -1174,7 +1173,7 @@ components:
         transactionTypeDesc:
           type: string
           description: Transaction Type Description
-          example: "Parcelado"
+          example: "001 - Parcelado sem juros - (meaning Installment with no interesting)"
           enum:
             - "001 - Parcelado sem juros - (meaning Installment with no interesting)"
             - "003 - Compra à Vista (sem parcelado) - (meaning Purchase with no Installments)"

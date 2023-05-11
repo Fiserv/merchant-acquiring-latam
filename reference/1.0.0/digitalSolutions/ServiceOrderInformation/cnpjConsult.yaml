@@ -18,8 +18,6 @@ tags:
 paths:
   "/bwa/cnpj/{cnpj}":
     get:
-      tags:
-        - Bureau for Tax ID - Company - CNPJ
       x-proxy-name: Tax ID (company) Validation(not available PROD)
       x-group-name: Service Order Information
       x-child-product-name: Digital Solutions
@@ -45,14 +43,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -102,7 +100,7 @@ components:
             codigo:
               type: string
               description: CNAE - Main Activity Code
-              example: 6201501
+              example: '6201501'
             descricao:
               type: string
               description: CNAE - Main Activity Description
@@ -113,7 +111,7 @@ components:
             codigo:
               type: string
               description: Company Type Code
-              example: 2062
+              example: '2062'
             descricao:
               type: string
               description: Company Type Description
@@ -128,7 +126,7 @@ components:
             numero:
               type: string
               description: Tax ID Address Number
-              example: 169
+              example: '169'
             complemento:
               type: string
               description: Tax ID Address Complement
@@ -136,7 +134,7 @@ components:
             cep:
               type: string
               description: Tax ID Address ZIPCODE
-              example: 05056020
+              example: '05056020'
             bairro:
               type: string
               description: Tax ID Address Neighborhood
@@ -158,7 +156,7 @@ components:
             codigo:
               type: string
               description: Company Situation Code
-              example: "8"
+              example: "8 - Baixada - (meaning Revoked)"
               enum:
                 - 2 - Ativa - (meaning Active)
                 - 3 - Suspensa - (meaning Suspended)
@@ -216,7 +214,7 @@ components:
               codigo:
                 type: string
                 description: CNAE - Secondary Activity Code
-                example: 6204000
+                example: '6204000'
               descricao:
                 type: string
                 description: CNAE - Secondary Activity Description

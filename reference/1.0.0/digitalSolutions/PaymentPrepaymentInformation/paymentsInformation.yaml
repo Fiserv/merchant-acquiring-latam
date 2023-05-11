@@ -17,6 +17,7 @@ x-config:
   tryItOut: true
 tags:
   - name: Payments Information
+    description: Payments Information
 paths:
   /bwa/pagamentos/resources/v1/transacoes/sumarizacao/{inst}/{merchant}/{dataInicio}/{dataFim}:
     get:
@@ -47,14 +48,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -155,14 +156,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -254,14 +255,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -354,14 +355,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -469,14 +470,14 @@ paths:
           in: header
           description: Oauth Key
           required: true
-          example:
+          example: ''
           schema:
             type: string
         - name: Timestamp
           in: header
           description: Date - Epoch Format
           required: true
-          example: 1563309156733
+          example: '1563309156733'
           schema:
             type: string
         - name: Client-Request-Id
@@ -561,7 +562,7 @@ components:
         codigoBandeira:
           type: string
           description: Association/Schema Code. Returned when type is T, B.
-          example: "002"
+          example: "002 - Mastercard"
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -573,7 +574,7 @@ components:
         descricaoBandeira:
           type: string
           description: Association/Schema Description. Returned when type is T, B.
-          example: Mastercard
+          example: 002 - Mastercard
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -585,7 +586,7 @@ components:
         codigoProduto:
           type: string
           description: Product Code. Returned when type is T, P.
-          example: "102"
+          example: "102 - Adq-MC Crédito"
           enum:
             - 102 - Adq-MC Crédito
             - 103 - Acq-CABAL Credit
@@ -600,7 +601,7 @@ components:
         descricaoProduto:
           type: string
           description: Product Description. Returned when type is T, P.
-          example: "Descrição, quando houver"
+          example: "102 - Adq-MC Crédito"
           enum:
             - 102 - Adq-MC Crédito
             - 103 - Acq-CABAL Credit
@@ -615,7 +616,7 @@ components:
         codTipoTransacao:
           type: string
           description: Payment Type Code. Returned when type is T, P.
-          example: "005"
+          example: "005 - Compra - (meaning Purchase)"
           enum:
             - 005 - Compra - (meaning Purchase)
             - 461 - Compra com 02 parcelas - (meaning Purchase 02 installments)
@@ -645,7 +646,7 @@ components:
         descTipoTransacao:
           type: string
           description: Payment Type Code Description. Returned when type is T, P.
-          example: "Compra"
+          example: "005 - Compra - (meaning Purchase)"
           enum:
             - 005 - Compra - (meaning Purchase)
             - 461 - Compra com 02 parcelas - (meaning Purchase 02 installments)
@@ -675,27 +676,27 @@ components:
         qtdTransacoes:
           type: string
           description: Quantity of Transactions as part of the return. Returned when type is T, D, P, B.
-          example: 1
+          example: '1'
         valorBrutoParcela:
           type: string
           description: Installments Gross Amount. Returned when type is T, D, P, B.
-          example: 40
+          example: '40'
         valorDescontoParcela:
           type: string
           description: Installments Gross Amount. Returned when type is T, D, P, B.
-          example: 0.81
+          example: '0.81'
         valorLiquidoParcela:
           type: string
           description: Installment Net Amount. Returned when type is T, D, P, B.
-          example: 39.19
+          example: '39.19'
         valorLiquidoMedio:
           type: string
           description: Average Net Amount. Returned when type is T, D, P, B.
-          example: 39.19
+          example: '39.19'
         valorBrutoMedio:
           type: string
           description: Average Gross Transaction Amount. Returned when type is T, D, P, B.
-          example: 40.00
+          example: '40.00'
       title: Sumarizacao
     Transacao:
       type: object
@@ -732,7 +733,7 @@ components:
         numeroTransacao:
           type: string
           description: Transaction Number
-          example: 91219086730
+          example: '91219086730'
         dataTransacao:
           type: string
           description: Transaction Date
@@ -740,7 +741,7 @@ components:
         horaTransacao:
           type: string
           description: Transaction Time
-          example: 12:48:35
+          example: '12:48:35'
         comprovante:
           type: string
           description: Transction Receipt Number
@@ -748,7 +749,7 @@ components:
         codProdutoTransacao:
           type: string
           description: Transaction Product Code
-          example: 102
+          example: 200 - Adq - VISA Debit
           enum:
             - "200 - Adq - VISA Debit"
             - "109 - Adq - Hiper Credit"
@@ -761,7 +762,7 @@ components:
         descProdutoTransacao:
           type: string
           description: Transaction Product Code Description
-          example: "Adq - VISA Débito"
+          example: "200 - Adq - VISA Debit"
           enum:
             - "200 - Adq - VISA Debit"
             - "109 - Adq - Hiper Credit"
@@ -774,7 +775,7 @@ components:
         codBandeira:
           type: string
           description: Transaction Association/Schema Code
-          example: "002"
+          example: "002 - Mastercard"
           enum:
             - 002 - Mastercard
             - 003 - Visa
@@ -798,7 +799,7 @@ components:
         codTipoTransacao:
           type: string
           description: Transaction Type Code
-          example: 469
+          example: 005 - Compra - (meaning Purchase)
           enum:
             - 005 - Compra - (meaning Purchase)
             - 461 - Compra com 02 parcelas - (meaning Purchase 02 installments)
@@ -828,7 +829,7 @@ components:
         descTipoTransacao:
           type: string
           description: Transaction Type Code Description
-          example: Compra com 10 parcelas
+          example: 005 - Compra - (meaning Purchase)
           enum:
             - 005 - Compra - (meaning Purchase)
             - 461 - Compra com 02 parcelas - (meaning Purchase 02 installments)
@@ -866,11 +867,11 @@ components:
         valorTotalPlano:
           type: string
           description: Transaction Total Amount
-          example: 2400
+          example: '2400'
         codAutorizacao:
           type: string
           description: Transaction Authorization Code
-          example: 005185
+          example: '005185'
         numCartao:
           type: string
           description: Card Number responsible for the Transaction
@@ -882,7 +883,7 @@ components:
         codTipoCaptura:
           type: string
           description: Transaction Capture Type Code\
-          example: "334"
+          example: "334 - Ecommerce TEF"
           enum:
             - "367 - POS Auto Credenc (meaning POS Auto Boarding)"
             - "334 - Ecommerce TEF"
@@ -912,7 +913,7 @@ components:
         descTipoCaptura:
           type: string
           description: Transaction Capture Type Code Description
-          example: "Ecommerce TEF"
+          example: "334 - Ecommerce TEF"
           enum:
             - "367 - POS Auto Credenc (meaning POS Auto Boarding)"
             - "334 - Ecommerce TEF"
@@ -942,7 +943,7 @@ components:
         codTipoCartao:
           type: string
           description: Card Type Code
-          example: 898
+          example: 898 - Doméstico BR (meaning National BR)
           enum:
             - "204 - Estrangeiro Master (meaning Foreigner Master)"
             - "209 - Estrangeiro (meaning Foreigner)"
@@ -950,7 +951,7 @@ components:
         descTipoCartao:
           type: string
           description: Card Type Code Description
-          example: Doméstico - BR
+          example: 898 - Doméstico BR (meaning National BR)
           enum:
             - "204 - Estrangeiro Master (meaning Foreigner Master)"
             - "209 - Estrangeiro (meaning Foreigner)"
@@ -958,49 +959,49 @@ components:
         valorBrutoParcela:
           type: string
           description: Transaction Installment Gross Amount
-          example: 240.00
+          example: '240.00'
         valorDescontoParcela:
           type: string
           description: Transaction Installment Discount Amount
-          example: 7.18
+          example: '7.18'
         valorLiquidoParcela:
           type: string
           description: Transaction Installment Net Amount
-          example: 232.82
+          example: '232.82'
         indicadorCredDeb:
           type: string
           description: Transaction Debit/Credit Indicator
-          example: "C"
+          example: "C - Credit"
           enum:
             - "D - Debit"
             - "C - Credit"
         indicadorCancelVenda:
           type: string
           description: Transaction Cancelling Indicator
-          example: "000"
+          example: "000 - Not Cancelled"
           enum:
             - "000 - Not Cancelled"
             - "001 - Cancelled"
         numeroParcelado:
           type: string
           description: Transaction Installment Number
-          example: 91219086727
+          example: '91219086727'
         numeroResumoVenda:
           type: string
           description: Transaction Selling Number
-          example: 91219223169
+          example: '91219223169'
         dataPrevistaPagto:
           type: string
           description: Payment Due Date (forecast)
-          example: 20190730
+          example: '20190730'
         lockinType:
           type: string
           description: (001 - Cessão, 002, 003, 004 - Gravame)
-          example: 001
+          example: '001'
         finInstitutionTaxId:
           type: string
           description: CNPJ FDIC
-          example: 99999999999999
+          example: '99999999999999'
       title: Transacao
     TransacaoResponse:
       type: object
@@ -1018,7 +1019,7 @@ components:
         codigoRetorno:
           type: string
           description: Return Code. It will return only the code
-          example: "00"
+          example: "00 - Successfully done"
           enum:
             - "00 - Successfully done"
             - "01 - Done with estrictions"
@@ -1026,7 +1027,7 @@ components:
         descricaoRetorno:
           type: string
           description: Return Code Description
-          example: "Successfully done"
+          example: "00 - Successfully done"
           enum:
             - "00 - Successfully done"
             - "01 - Done with estrictions"
@@ -1135,7 +1136,7 @@ components:
         codigoRetorno:
           type: string
           description: Return Code. It will return only the code
-          example: "00"
+          example: "00 - Successfully done"
           enum:
             - "00 - Successfully done"
             - "01 - Done with estrictions"
@@ -1143,7 +1144,7 @@ components:
         descricaoRetorno:
           type: string
           description: Return Code Description
-          example: "Successfully done"
+          example: "00 - Successfully done"
           enum:
             - "00 - Successfully done"
             - "01 - Done with estrictions"
@@ -1199,7 +1200,7 @@ components:
         numeroOrdemPagto:
           type: string
           description: Payment Order Number
-          example: 92908678690
+          example: '92908678690'
         dataEfetivaPagto:
           type: string
           description: Payment Effective Date
@@ -1207,11 +1208,11 @@ components:
         valorPagtoLiquido:
           type: string
           description: Payment Net Amount
-          example: 39.19
+          example: '39.19'
         numeroBanco:
           type: string
           description: Settlement Bank Code
-          example: 341
+          example: '341'
         numeroAgencia:
           type: string
           description: Settlement Branch Code
@@ -1223,19 +1224,19 @@ components:
         codigoStatusPagto:
           type: string
           description: Payment Status Code
-          example: "002 (always 002)"
+          example: "002"
           enum:
             -  "002"
         descStatusPagto:
           type: string
           description: Payment Status Code Description
-          example: Postada
+          example: 002 - Postada
           enum:
             - "002 - Postada"
         codigoTipoPagto:
           type: string
           description: Payment Type Code
-          example: 250
+          example: 250 – Pagamentos pelo EC (meaning payments done by Merchant)
           enum:
             - 250 – Pagamentos pelo EC (meaning payments done by Merchant)
             - 251 – Antecipação Manual  (meaning manual prepayment)
@@ -1243,7 +1244,7 @@ components:
         descTipoPagto:
           type: string
           description: Payment Type Code Description
-          example: Pagamentos pelo EC
+          example: 250 – Pagamentos pelo EC (meaning payments done by Merchant)
           enum:
             - 250 – Pagamentos pelo EC (meaning payments done by Merchant)
             - 251 – Antecipação Manual  (meaning manual prepayment)
@@ -1251,7 +1252,7 @@ components:
         situacaoPago:
           type: string
           description: Situação complementar do Pagamento
-          example: Pago
+          example: Pago (meaning Paid)
           enum:
             - "Rejeitado (meaning Rejected)"
             - "Pago (meaning Paid)"
@@ -1259,7 +1260,7 @@ components:
         codBandeira:
           type: string
           description: Scheme code
-          example: 025
+          example: '025'
         descBandeira:
           type: string
           description: Scheme description
@@ -1267,7 +1268,7 @@ components:
         codProduto:
           type: string
           description: Product code
-          example: 110
+          example: '110'
         descProduto:
           type: string
           description: Product description
@@ -1284,5 +1285,5 @@ components:
         finInstitutionTaxId:
           type: string
           description: Locking type taxId of finance institution
-          example: 73850789000143
+          example: '73850789000143'
       title: TransacaoDetalhe
