@@ -134,7 +134,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 ## Online Boarding
 
-[Online Boarding Endpoints](?path=docs/portuguese/digitalSolutions/BoardingInformation.md)
+[Online Boarding Endpoints](?path=docs/english/digitalSolutions/BoardingInformation.md)
 
 ## Payment & Prepayment
 
