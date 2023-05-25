@@ -10,7 +10,7 @@ Below you can check each link to access the detailed document for each Web-servi
 
 [Online Boarding and Status](../api/?type=post&path=/api/proposal)
 
-[Online Boarding and Status - Boarding New Proposals](../api/?type=post&path=/api/proposal1/v3)
+[Online Boarding and Status - Boarding New Proposals](../api/?type=post&path=/api/proposal/v3)
 
 [Check Proposal Status](../api/?type=get&path=/api/proposal/{proposalNumber})
 

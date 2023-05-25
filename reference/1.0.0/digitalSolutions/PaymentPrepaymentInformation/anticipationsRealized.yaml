@@ -65,7 +65,7 @@ paths:
               - '059'
               - '060'
               - '062'
-              - '063'  
+              - '063'
         - name: page
           in: query
           description: Search page number (Default 0)
