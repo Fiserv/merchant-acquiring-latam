@@ -1756,6 +1756,11 @@ paths:
           schema:
             type: integer
             format: int32
+        - name: cnpj
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -4895,6 +4900,8 @@ components:
             - 347 - Extrato Rec Semanal - (meaning Weekly Rec Statement)
             - 348 - Extrato Rec Mensal - (meaning Monthly Rec Statemet)
             - 349 - Extrato Rec Bimensal - (meaning Bimonthly Rec Statement)
+        fee:
+          type: number
         cycleTypeId:
           type: string
           description: >-
@@ -5835,6 +5842,9 @@ components:
           type: string
           example: A9999999
           description: Registro Nacional de Estrangeiro
+        notesCreditRisk:
+          type: string
+          description: Completion of this field must be previously aligned with Credit and Risk.
       title: PhysicalPersonDTO
       x-stoplight:
         id: zpc4i7ny732uw

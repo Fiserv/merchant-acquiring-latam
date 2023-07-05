@@ -79,6 +79,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: bandeiras
+          in: query
+          description: Schema
+          example: "Visa"
+          required: false
+          schema:
+            type: string
       responses:
         "200":
           description: Success
@@ -87,7 +94,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/ServiceFeesResponse"
       deprecated: false
-  "/bwa/mdr-fees/v2":
+  "/bwa/v2/mdr-fees":
     get:
       tags:
         - Search for MDR Fees for Merchant

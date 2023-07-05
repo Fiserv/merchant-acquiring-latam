@@ -11,7 +11,7 @@ Nuestras API tienen rutas URI y utilizan autenticación HTTP nativa, lo que prop
 Para comenzar a utilizar nuestras API, el desarrollador deberá seguir los pasos que se detallan a continuación:
 
 1. Cree un usuario/contraseña en Dev Portal;
-2. Cuando esté listo, la comprensión de las API y el desarrollo de la integración estén en progreso, solicite el Usuario/Contraseña del Token a través de la casilla **FiservDigitalBrazil@firstdatacorp.com.br.**Al enviar el correo electrónico, proporcione:
+2. Cuando esté listo, la comprensión de las API y el desarrollo de la integración estén en progreso, solicite el Usuario/Contraseña del Token a través de la casilla **FiservDigitalBrazil@fiserv.com.**Al enviar el correo electrónico, proporcione:
     * **Asunto**: Requisição de Usuário para Autenticação;
     * Cuerpo:
         * **Su nombre / Nombre de la empresa**
@@ -90,7 +90,7 @@ Muestra de respuesta
 
 Las API de Fiserv usan [autenticación HMAC](?path=docs/español/digitalSolutions/TokenGenerationforWeb-services.md).
 
-Para poder acceder a cualquiera de los Códigos o APIs descritos en esta plataforma, se requerirán las credenciales enviadas por correo electrónico. ¿No tienes las credenciales? Cree su cuenta y solicite un Usuario/Contraseña enviando un e-mail a la casilla **FiservDigitalBrazil@firstdatacorp.com.br**.
+Para poder acceder a cualquiera de los Códigos o APIs descritos en esta plataforma, se requerirán las credenciales enviadas por correo electrónico. ¿No tienes las credenciales? Cree su cuenta y solicite un Usuario/Contraseña enviando un e-mail a la casilla **FiservDigitalBrazil@fiserv.com**.
 
 Deberá enviar los siguientes parámetros en el encabezado de cada solicitud de API:
 

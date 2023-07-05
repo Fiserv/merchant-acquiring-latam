@@ -80,6 +80,49 @@ paths:
         - name: documento
           in: header
           description: Tax ID (CPF/CNPJ) Information
+          example: "99999999999"
+          required: false
+          schema:
+            type: string
+        - name: produtos
+          in: query
+          description: Products
+          example: "Credit"
+          required: false
+          schema:
+            type: string
+        - name: bandeiras
+          in: query
+          description: Schemas
+          example: "Visa"
+          required: false
+          schema:
+            type: string
+        - name: banco
+          in: query
+          description: Bank
+          example: "001"
+          required: false
+          schema:
+            type: string
+        - name: agencia
+          in: query
+          description: Agency
+          example: "010101"
+          required: false
+          schema:
+            type: string
+        - name: conta
+          in: query
+          description: Account
+          example: "99999999"
+          required: false
+          schema:
+            type: string
+        - name: tipoContas
+          in: query
+          description: Account type
+          example: "1"
           required: false
           schema:
             type: string
