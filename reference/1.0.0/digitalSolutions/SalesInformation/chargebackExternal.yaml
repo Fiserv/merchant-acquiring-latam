@@ -212,25 +212,15 @@ components:
           type: string
           description: Chargeback Slip
           example: "1109039753"
-        processingStartDate:
+        requestDateStart:
           type: string
           format: date
-          description: Processing Start Date Information. Format YYYY-MM-DD
+          description: Request Date Start Information. Format YYYY-MM-DD
           example: "2022-09-20"
-        processingEndDate:
+        requestDateEnd:
           type: string
           format: date
-          description: Processing End Date Information. Format YYYY-MM-DD. Max difference in days are 10.
-          example: "2022-09-30"
-        actionStartDate:
-          type: string
-          format: date
-          description: Action Start Date Information. Format YYYY-MM-DD
-          example: "2022-09-20"
-        actionEndDate:
-          type: string
-          format: date
-          description: Action End Date Information. Format YYYY-MM-DD. Max difference in days are 10.
+          description:  Request Date End Information. Format YYYY-MM-DD. Max difference in days are 10.
           example: "2022-09-30"
       title: DChargebackFilterRequest
       description: Filter object
@@ -299,43 +289,39 @@ components:
       title: DChargebackTransactionResponse
       description: Page wrapper with list of chargebacks object
       properties:
-        receivedAging:
-          type: integer
-          description: Chargeback Received aging
-          example: 13
-        key:
+        chargebackKey:
           type: string
           description: Chargeback encrypted key
           example: "98703001515590******1242667902"
         orderNumber:
           type: string
           description: Order Number
-        emailSentDate:
+        requestDate:
           type: string
           format: date
-          description: Date when the Email Information was sent
+          description: Processing Date Information. Format YYYY-MM-DD
           example: "2022-09-30"
-        screeningStatus:
+        documentationScreeningStatus:
           type: string
-          description: Screening Status
+          description: Documentation Screening Status
           example: "Readable document"
-        customerName:
+        merchantName:
           type: string
-          description: Customer Name
+          description: Merchant Name
           example: "TEST MERCHANT"
-        ecCode:
+        merchantId:
           type: integer
-          description: Merchant code
+          description: Merchant Id
           example: 99999999
-        rcCardBrand:
+        chargebackReasonCode:
           type: string
-          description: Card Brand Reason code
+          description: Reason Code of chargeback
           example: "30-Product not received or service not provided"
         chargebackSlip:
           type: string
           description: Chargeback Slip
           example: "1109039753"
-        cardNumber:
+        cardholderCardNumber:
           type: string
           description: Card Number
           example: "515590******1242"
@@ -347,11 +333,11 @@ components:
           type: string
           description: Transaction Date
           example: "2022-09-30"
-        authCode:
+        transactionAuthCode:
           type: string
           description: Authorization code returned by the cardbrand at time of authorization of the original transaction
           example: "667902"
-        totalTransactionValue:
+        totalTransactionAmount:
           type: number
           description: Total Transaction Amount
           example: 407.07
@@ -362,10 +348,6 @@ components:
           enum:
             - Debit Card
             - Credit Card
-        transactionTypeDescription:
-          type: string
-          description: Transaction Type Description
-          example: "Merchant Install-07 parcels"
         cardBrand:
           type: string
           description: Card Brand
@@ -376,48 +358,127 @@ components:
             - Elo Full
             - Hipercard/Hiper
             - Amex Full
-        messageText:
+        transactionTypeDescription:
           type: string
-          description: Free Message Text
-          example: ''
+          description: Transaction Type Description
+          example: "Merchant Install-07 parcels"
+        note:
+          type: string
+          description: Observation
+          example: ""
+        institution:
+          type: object
+          description: Institution object
+          $ref: '#/components/schemas/DInstitutionResponse'
         serviceContract:
           type: string
           description: Institution Service Contract
           example: "101-Merchant Retail BIN"
-        terminalId:
+        merchantTerminalNumber:
           type: string
           description: Terminal Logical Number
           example: "EII0184B"
-        captureMode:
+        transactionEntryMode:
           type: string
           description: Transaction capture mode (entry mode)
           example: "054-eCommerce, Canal Criptografado"
-        hasDocument:
+        attachedDocument:
           type: boolean
           description: If the chargaback has document
           example: true
-        action:
-          type: string
-          description: Chargeback Action
         actionDate:
           type: string
           format: date
           description: Date of action at the chargeback
           example: "2022-09-30"
+        companyNumber:
+          type: string
+          description: Tax ID (CPF/CNPJ) Information
+          example: "98102650006779"
         processingDate:
           type: string
           format: date
           description: Processing Date Information. Format YYYY-MM-DD
           example: "2022-09-20"
-        companyNumber:
+        originalNumberSlip:
           type: string
-          description: Tax ID (CPF/CNPJ) Information
-          example: "98102650006779"
-        institution:
-          type: object
-          description: Institution object
-          oneOf:
-            - $ref: '#/components/schemas/DInstitutionResponse'
+          description: Original Slip
+          example: "1109039753"
+        chargebackValue:
+          type: number
+          description: Chargeback value
+          example: 78
+        originalInstallmentValue:
+          type: number
+          description: Installment original value
+          example: 41
+        netValue:
+          type: number
+          description: Net value
+          example: 36
+        installmentNumber:
+          type: number
+          description: Installment number
+          example: 4
+        numberOfInstallments:
+          type: number
+          description: Number of total installments
+          example: 12
+        chargebackStatus:
+          type: string
+          description: Chargeback Status
+          example: "New"
+          enum:
+            - New
+            - Documet request
+            - In analysis
+            - In screening
+            - Done
+        action:
+          type: string
+          description: Chargeback Action
+          example: "Debit"
+        cancelSlip:
+          type: string
+          description: Cancel Slip
+          example: "45775154"
+        indicatorDocumentationSentByIssuer:
+          type: string
+          description: Indicator of Documentation sent by the Issuer
+          example: "003-Document to follow"
+        sourceCurrency:
+          type: number
+          description: Code of currency
+          example: 986
+        sourceValue:
+          type: number
+          description: Source value
+          example: 52
+        quotationCurrency:
+          type: number
+          description: Quototion currency
+          example: 986
+        chargebackValueInDolar:
+          type: number
+          description: Chargeback value in dolar
+          example: 4578
+        conversionFactor:
+          type: number
+          description: Conversion factor
+          example: 1
+        productAccount:
+          type: string
+          description: Product Account
+          example: "457896523541"
+        deadline:
+          type: string
+          format: date
+          description: Deadline may vary according to the card brand
+          example: "2023-03-01"
+        priorityTransaction:
+          type: string
+          description: If the transaction has priority
+          example: "yes"
     DInstitutionResponse:
       type: object
       title: DInstitutionResponse
