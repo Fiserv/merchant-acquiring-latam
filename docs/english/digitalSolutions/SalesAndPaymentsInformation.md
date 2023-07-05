@@ -11,6 +11,8 @@ Below you can check each link to access the detailed document for each Web-servi
 
 [Merchant Authorizations History - Consult](../api/?type=get&path=/bwa/autorizacoesbw/v1/autorizacoesbw)
 
+[Merchant Authorizations History - Consult V2](../api/?type=get&path=/bwa/autorizacoesbw/v2/autorizacoesbw)
+
 [Merchant Sales (Paid or To Be Received) - Consult](../api/?type=get&path=/bwa/vendas/resources/v1/receber/{inst}/{merchant}/{dataInicio}/{dataFim})
 
 [Payments - Consult](../api/?type=get&path=/bwa/pagamentos/resources/v1/transacoes/sumarizacao/{inst}/{merchant}/{dataInicio}/{dataFim})

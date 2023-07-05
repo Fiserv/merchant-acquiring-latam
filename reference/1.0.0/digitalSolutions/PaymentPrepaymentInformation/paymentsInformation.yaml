@@ -199,10 +199,73 @@ paths:
           required: true
           schema:
             type: string
+        - name: tipoSumarizacao
+          in: query
+          description: Summarization type
+          example: "D"
+          required: false
+          schema:
+            type: string
         - name: codigoTipoPagto
           in: query
           description: Payment Type Code. Allowed values [250 – Pagamentos pelo EC (meaning payments done by Merchant) / 251 – Antecipação Manual (meaning manual prepayment) / 252 – Antecipação Automatica (meaning auto prepayment)]. Example [250,251]
           required: false
+          schema:
+            type: string
+        - name: numeroBanco
+          in: query
+          description: Bank number
+          example: "001"
+          required: False
+          schema:
+            type: string
+        - name: descBandeira
+          in: query
+          description: Schema description
+          example: "001"
+          required: False
+          schema:
+            type: string
+        - name: produto
+          in: query
+          description: Product
+          example: "001"
+          required: False
+          schema:
+            type: string
+        - name: situacaoPagto
+          in: query
+          description: Payment situation
+          example: "001"
+          required: False
+          schema:
+            type: string
+        - name: valorMax
+          in: query
+          description: Max. value
+          example: "001"
+          required: False
+          schema:
+            type: string
+        - name: valorMin
+          in: query
+          description: Min. value
+          example: "001"
+          required: False
+          schema:
+            type: string
+        - name: lockinType
+          in: query
+          description: LockinType
+          example: "001"
+          required: False
+          schema:
+            type: string
+        - name: numeroOrdemPagto
+          in: query
+          description: Order payment number
+          example: "001"
+          required: False
           schema:
             type: string
         - name: page
@@ -417,6 +480,24 @@ paths:
           in: path
           description: Payment Order Number
           required: true
+          schema:
+            type: string
+        - name: codigoAutorizacao
+          in: query
+          description: Payment Order Number
+          required: false
+          schema:
+            type: string
+        - name: codigoProduto
+          in: query
+          description: Payment code
+          required: false
+          schema:
+            type: string
+        - name: codigoBandeira
+          in: query
+          description: Schema code
+          required: false
           schema:
             type: string
         - name: page
@@ -705,30 +786,37 @@ components:
         - dataTransacao
         - horaTransacao
         - comprovante
-        - codAutorizacao
-        - codBandeira
         - codProdutoTransacao
-        - codTipoCaptura
-        - codTipoCartao
-        - codTipoTransacao
-        - dataPrevistaPagto
-        - descBandeira
         - descProdutoTransacao
-        - descTipoCaptura
-        - descTipoCartao
+        - codBandeira
+        - descBandeira
+        - codTipoTransacao
         - descTipoTransacao
-        - indicadorCancelVenda
-        - indicadorCredDeb
+        - numeroParcela
+        - qtdeParcelas
+        - valorTotalPlano
+        - codAutorizacao
         - numCartao
         - numTerminal
-        - numeroParcela
-        - numeroParcelado
-        - numeroResumoVenda
-        - qtdeParcelas
+        - codTipoCaptura
+        - descTipoCaptura
+        - codTipoCartao
+        - descTipoCartao
         - valorBrutoParcela
         - valorDescontoParcela
         - valorLiquidoParcela
-        - valorTotalPlano
+        - indicadorCredDeb
+        - indicadorCancelVenda
+        - numeroParcelado
+        - numeroResumoVenda
+        - dataPrevistaPagto
+        - numeroOrdemPagto
+        - lockinType
+        - finInstitutionTaxId
+        - cancelDate
+        - cancelAmount
+        - valorDescontoAntecParcela
+        - valorAntecipadoParcela
       properties:
         numeroTransacao:
           type: string
@@ -994,6 +1082,10 @@ components:
           type: string
           description: Payment Due Date (forecast)
           example: '20190730'
+        numeroOrdemPagto:
+          type: string
+          description: Payment order number
+          example: '20190730'
         lockinType:
           type: string
           description: (001 - Cessão, 002, 003, 004 - Gravame)
@@ -1002,6 +1094,22 @@ components:
           type: string
           description: CNPJ FDIC
           example: '99999999999999'
+        cancelDate:
+          type: string
+          description: Cancel Date
+          example: '20190730'
+        cancelAmount:
+          type: string
+          description: Cancel amount
+          example: '100'
+        valorDescontoAntecParcela:
+          type: string
+          description: Prepayment parc. discount value
+          example: '100'
+        valorAntecipadoParcela:
+          type: string
+          description: Prepayment parc. value
+          example: '100'
       title: Transacao
     TransacaoResponse:
       type: object
@@ -1186,6 +1294,7 @@ components:
     TransacaoDetalhe:
       type: object
       required:
+        - qtdTransacoes
         - numeroOrdemPagto
         - dataEfetivaPagto
         - valorPagtoLiquido
@@ -1196,7 +1305,18 @@ components:
         - descStatusPagto
         - codigoTipoPagto
         - descTipoPagto
+        - situacaoPagto
+        - codBandeira
+        - descBandeira
+        - codProduto
+        - descProduto
+        - lockinType
+        - finInstitutionTaxId
       properties:
+        qtdTransacoes:
+          type: string
+          description: Amount of transactions
+          example: '150'
         numeroOrdemPagto:
           type: string
           description: Payment Order Number

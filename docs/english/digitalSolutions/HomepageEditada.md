@@ -70,7 +70,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Service Fees (MDR) - Search for MDR Fees based on Institution Number and Merchant Code](../api/?type=get&path=/bwa/mdr-fees/{institution}/{merchanID})
 
-[Merchant Service Fees (MDR) - Consult](../api/?type=get&path=/bwa/mdr-fees/v2)
+[Merchant Service Fees (MDR) - Consult](../api/?type=get&path=/bwa/v2/mdr-fees)
 
 [Merchant Contract Status - Update](../api/?type=post&path=/bwa/status-estabelecimento/v1/atualizaStatusEstabelecimento)
 
@@ -122,9 +122,9 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Services - Update for Associations/Schema Status](../api/?type=post&path=/bwa/consulta-servico-bandeira/v1/altera/status)
 
-[Merchant Addresses - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/address/updateAddress/)
+[Merchant Addresses - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/address/updateAddress)
 
-[Merchant Contact Information - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/contact/updateContactInformation/)
+[Merchant Contact Information - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/contact/updateContactInformation)
 
 [Merchant Information - Update Partner](../api/?type=post&path=/bwa/atualiza-socio/v1/atualizaEstabelecimento/{clientNumber})
 
@@ -166,6 +166,12 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Transactions related to Manual/Automatic Prepayment](../api/?type=get&path=/bwa/antecipacoes-realizadas/v1/detalhamento/antecipacoesRealizadas)
 
+[Get prepayment details aggrouping](../api/?type=get&path=/bwa/antecipacoes-realizadas/v1/cerc/divergencias/detalhes/agrupados)
+
+[Get prepayment divergence summary](../api/?type=get&path=/bwa/antecipacoes-realizadas/v1/cerc/divergencias/sumarizacao)
+
+[Get cerc divergence prepayment details](../api/?type=get&path=/bwa/antecipacoes-realizadas/v1/cerc/divergencias/detalhes)
+
 [Automatic Prepayment - Cancel - Consult Automatic Prepayment](../api/?type=get&path=/bwa/antecipacao-automatica/v1/antecipacao/)
 
 [Automatic Prepayment - Cancel - Automatic Prepayment](../api/?type=post&path=/bwa/antecipacao-automatica/v1/antecipacao)
@@ -173,6 +179,8 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 [Prepayment - History Fees Consult - Consult History of Prepayment Fees](../api/?type=get&path=/bwa/taxa-antecipacao/v1/consulta)
 
 [Prepayment - History Fees Consult - Consult of Sales Related to Prepayment](../api/?type=get&path=/bwa/taxa-antecipacao/v1/consulta/resumoVendas/{prepaymentNumber})
+
+[Prepayment - History Fees Consult - Totalization of the period](../api/?type=get&path=/bwa/taxa-antecipacao/v1/totalizacaoPeriodo)
 
 [Payment Settlement Account - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/accounts/paymentAccountInfo)
 
@@ -202,6 +210,8 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Prepayment - Maintenance/Simulate/Confirm/Reject - Confirmation or Rejection of Manual Prepayment Simulation](../api/?type=post&path=/bwa/wsm/prepayments/prepaySimulationsAction/prepaySimConfReject)
 
+[Prepayment - Maintenance/Simulate/Confirm/Reject - Confirmation or Rejection of Manual Prepayment Simulation V2](../api/?type=post&path=/bwa/wsm/prepayments/v2/prepaySimulationsAction/prepaySimConfReject)
+
 [Wallet - PIX - Transactions](../api/?type=get&path=/pix/transactions)
 
 [Wallet - PIX - Credentials](../api/?type=get&path=/pix/credentials/{pspCode}/{taxIdNumber1})
@@ -211,6 +221,8 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 ## Sales Information
 
 [Merchant Authorizations History - Consult](../api/?type=get&path=/bwa/autorizacoesbw/v1/autorizacoesbw)
+
+[Merchant Authorizations History - Consult V2](../api/?type=get&path=/bwa/autorizacoesbw/v2/autorizacoesbw)
 
 [Consult Chargeback Information](../api/?type=post&path=/bwa/chargeback-api-external/api/chargeback/apigee/filter)
 
@@ -229,6 +241,8 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 [Merchant Sales - To Be Received - Consult - It allows the selection of MULTIPLE association schema V2](../api/?type=get&path=/bwa/vendas/resources/v2/receber/{dataInicio}/{dataFim})
 
 [Merchant Sales - Canceled - Consult - It allows the selection of MULTIPLE association schema](../api/?type=get&path=/bwa/vendas/resources/v2/canceladas)
+
+[Merchant Sales - Paid - Consult - It allows the selection of MULTIPLE association schema - V2](../api/?type=get&path=/bwa/vendas/resources/v2/realizadas/transacao/{dataInicio}/{dataFim})
 
 [Sales tracking](../api/?type=get&path=/bwa/acompanhamento-vendas/v1/acompanhamentoVendas)
 
