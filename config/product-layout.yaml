@@ -29,7 +29,7 @@
 ################################################################################
 header:
   productionDescription: Expand your business’ reach by taking the acceptance process to a different level. Merchants will expand their service and provide different experiences to their clients by leveraging new features and services at the point-of-sale, in real-time to increase their billing and usage.
-getStarted: docs/english/getting-started.md
+getStarted: docs/getting-started.md
 benefits:
   - title: Customized Solutions
     description: Whatever your business needs – be it full, semi or direct we've got your integration model.
