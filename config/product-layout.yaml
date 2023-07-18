@@ -28,10 +28,6 @@
 # the delivery of this work
 ################################################################################
 header:
-#  productName: Merchant Acquiring - LATAM
-#  image: 
-#    link: "/assets/images/Fiserv_Logo.jpg"
-#    altText: Fiserv
   productionDescription: Expand your business’ reach by taking the acceptance process to a different level. Merchants will expand their service and provide different experiences to their clients by leveraging new features and services at the point-of-sale, in real-time to increase their billing and usage.
 getStarted: docs/english/getting-started.md
 benefits:
