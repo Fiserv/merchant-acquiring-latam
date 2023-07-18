@@ -1,7 +1,5 @@
 ---
 - sections:
-    - title: Getting Started
-      
     - title: Solutions
       sections:
         - title: Boarding
