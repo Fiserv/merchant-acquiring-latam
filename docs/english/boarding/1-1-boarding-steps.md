@@ -2,7 +2,7 @@
 
 When the offers have been configured, the following are the steps of the journey to getting your merchant boarded. Further details can be found on the subsequent pages:
 
-## 1. Get available offerings
+## 1 Get available offerings
 
 All available offerings are retrieved in order to select the desired one. The search can be filtered based on criteria provided. More details can be found in the List Available Offerings page.
 
