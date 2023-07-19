@@ -10,4 +10,5 @@ A solução de embarque do comerciante é um pré-requisito fundamental para o p
 
 Existem vários componentes envolvidos no processamento de transações. A imagem abaixo mostra um processo simplificado de ponta a ponta de embarque de novos comerciantes:
 
-![Boarding API Sequence v2 0](https://user-images.githubusercontent.com/111396588/222520058-5b096640-b811-4a37-8d3d-5c4e87d34d9b.jpg)
+![Boarding API Sequence v3 4](https://github.com/Fiserv/merchant-acquiring-latam/assets/111396588/848b8bd7-f403-413d-8015-7d0786df77ac)
+
