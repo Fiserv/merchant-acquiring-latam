@@ -38,6 +38,8 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Search for Device Service Types](../api/?type=get&path=/bwa/device-fees/device-service)
 
+[Merchant Devices and Fees - Consult - V3](../api/?type=get&path=/bwa/device-fees/v3/device-fees)
+
 ## Merchant Information
 
 [Merchant Debits (fee, refund, reversal, etc)- Consult](../api/?type=get&path=/bwa/ajuste-debitos/v1/obter)
@@ -71,6 +73,8 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 [Merchant Service Fees (MDR) - Search for MDR Fees based on Institution Number and Merchant Code](../api/?type=get&path=/bwa/mdr-fees/{institution}/{merchanID})
 
 [Merchant Service Fees (MDR) - Consult](../api/?type=get&path=/bwa/v2/mdr-fees)
+
+[Check Merchant Service Fees (MDR)](../api/?type=get&path=/bwa/v2/mdr-flex/check)
 
 [Merchant Contract Status - Update](../api/?type=post&path=/bwa/status-estabelecimento/v1/atualizaStatusEstabelecimento)
 
