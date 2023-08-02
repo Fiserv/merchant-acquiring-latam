@@ -1201,6 +1201,10 @@ components:
               type: string
               description: Elo Prepayment Amount
               example: "123456.78"
+            totalAmount:
+              type: string
+              description: Prepayment Total Amount
+              example: "123456.78"
         response:
           $ref: "#/components/schemas/response"
     ResponseConsult:
