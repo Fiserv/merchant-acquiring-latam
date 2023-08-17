@@ -600,6 +600,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
     post:
+      x-proxy-name: Create a new type of rule to be used in split manager
+      x-group-name: Split Payment
+      x-child-product-name: Digital Solutions
       description: Create a new type of rule to be used in split manager
       operationId: createRuleType
       requestBody:
