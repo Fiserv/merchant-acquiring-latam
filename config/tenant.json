@@ -91,7 +91,8 @@
             "digitalSolutions/ServiceOrderInformation/consultationPartnerEstablishment",
             "digitalSolutions/ServiceOrderInformation/contractStatus",
             "digitalSolutions/ServiceOrderInformation/geoLocation",
-            "digitalSolutions/ServiceOrderInformation/modalConsultation"
+            "digitalSolutions/ServiceOrderInformation/modalConsultation",
+            "digitalSolutions/SplitPayment/splitPayment"
          ]
       }
    ],
