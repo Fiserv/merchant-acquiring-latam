@@ -92,7 +92,7 @@ You can retrieve the data associated with a payment URL by sending a GET to /pay
 
 ---
 
-## Ver más
+## See Also
 
 - [3-D Secure](?path=docs/english/payments/3-5-3d-secure.md)
 - [Card Verification](?path=docs/english/payments/3-6-card-verification.md)
