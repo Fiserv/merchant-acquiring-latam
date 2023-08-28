@@ -4,6 +4,16 @@ tags: [Release Notes, January]
 
 # Release Notes
 
+## August 2023
+
+What's New
+
+- Endpoints related to: digitalSolutions/Split payment
+
+Fixed
+
+- Endpoints related to: digitalSolutions/Wallet Pix
+
 ## March 2023
 
 What's New
