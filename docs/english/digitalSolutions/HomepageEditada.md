@@ -176,7 +176,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Get cerc divergence prepayment details](../api/?type=get&path=/bwa/antecipacoes-realizadas/v1/cerc/divergencias/detalhes)
 
-[Automatic Prepayment - Cancel - Consult Automatic Prepayment](../api/?type=get&path=/bwa/antecipacao-automatica/v1/antecipacao/)
+[Automatic Prepayment - Cancel - Consult Automatic Prepayment](../api/?type=get&path=/bwa/antecipacao-automatica/v1/antecipacao)
 
 [Automatic Prepayment - Cancel - Automatic Prepayment](../api/?type=post&path=/bwa/antecipacao-automatica/v1/antecipacao)
 
