@@ -12,7 +12,7 @@ Below you can check each link to access the detailed document for each Web-servi
       
 [Prepayment - Enable/Disable](../api/?type=post&path=/bwa/wsm/fundingtools/prepayFlag/updatePrepayFlag)
 
-[Prepayment - Consult/Request/Cancel](../api/?type=get&path=/bwa/antecipacao-automatica/v1/antecipacao/)
+[Prepayment - Consult/Request/Cancel](../api/?type=get&path=/bwa/antecipacao-automatica/v1/antecipacao)
 
 [Prepayment - History Fees Consult](../api/?type=get&path=/bwa/taxa-antecipacao/v1/consulta)
 

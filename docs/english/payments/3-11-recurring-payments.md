@@ -149,7 +149,7 @@ Retrieve Payment Schedule data by making a GET call to /payment-schedules/{order
 
 ---
 
-## Ver más
+## See Also
 
 - [3-D Secure](?path=docs/english/payments/3-5-3d-secure.md)
 - [Card Verification](?path=docs/english/payments/3-6-card-verification.md)
