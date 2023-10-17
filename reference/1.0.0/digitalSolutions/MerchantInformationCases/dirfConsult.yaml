@@ -25,7 +25,7 @@ paths:
       x-child-product-name: Digital Solutions
       description: Reinf
       summary: Reinf
-      operationId: dirfPdf
+      operationId: reinffPdf
       parameters:
         - name: Message-Signature
           in: header
