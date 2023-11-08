@@ -28,6 +28,8 @@ paths:
       x-child-product-name: Digital Solutions
       description: Search the Authorizations by Merchant Code and Date
       summary: Search the Authorizations by Merchant Code and Date
+      tags:
+        - Transacions Authorization
       operationId: searchHistoricAuthorization
       parameters:
         - name: Message-Signature
@@ -183,6 +185,8 @@ paths:
       x-child-product-name: Digital Solutions
       description: Sales Report
       summary: Sales Report
+      tags:
+        - Sales Report
       operationId: salesReport
       parameters:
         - name: Message-Signature
@@ -271,10 +275,10 @@ paths:
             enum:
               - A
               - B
-        - name: tipoAutorizacao
+        - name: codTipoAutorizacoes
           in: query
-          description: Authorization type
-          example: 'Crédito Parcelado Lojista'
+          description: Schema
+          example: '003100'
           required: false
           schema:
             type: string
