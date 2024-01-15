@@ -205,36 +205,66 @@ components:
       properties:
         pspCode:
           type: string
+          example: with 8 digits(########)
+          description: psp code
         pspName:
           type: string
+          example: Existing psp types
+          description: psp name
         pspClientId:
           type: string
+          example: with 9 digits(#########)
+          description: psp client id
         pspClientSecret:
           type: string
+          example: with 12 digits(############)
+          description: PSP authentication key
         taxIdNumber1:
           type: string
+          example: E.g. CPF with 11 digits (###.###.###-##) and CNPJ with 14 digits(##.###.###/####-##)
+          description: Identification Number for Individuals or Legal Entities (CPF or CNPJ)
         keyType:
           type: string
+          example: with 2 digits(##)
+          description: Key type
         key:
           type: string
+          example: with 11 digits(###########)
+          description: Key
         dateLastBoarding:
           type: string
+          description: date Last Boarding
         dataLastBoarding:
           type: string
+          description: data Last Boarding
     CredentialDataRequest:
       type: object
       properties:
         pspCode:
           type: string
+          example: with 8 digits(########)
+          description: psp code
         pspName:
           type: string
+          example: Existing psp types
+          description: psp name
         pspClientId:
           type: string
+          example: with 9 digits(#########)
+          description: psp client id
         pspClientSecret:
           type: string
+          example: with 12 digits(############)
+          description: PSP authentication key
         taxIdNumber1:
           type: string
+          example: E.g. CPF with 11 digits (###.###.###-##) and CNPJ with 14 digits(##.###.###/####-##)
+          description: Identification Number for Individuals or Legal Entities (CPF or CNPJ)
         keyType:
           type: string
+          example: with 2 digits(##)
+          description: Key type
         key:
           type: string
+          example: with 11 digits(###########)
+          description: Key
