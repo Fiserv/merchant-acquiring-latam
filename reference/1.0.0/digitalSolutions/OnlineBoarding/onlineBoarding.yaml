@@ -1,6 +1,6 @@
 openapi: 3.0.0
 x-stoplight:
-  id: ilpiq064t9zaj
+  id: kd61gmah5b84g
 info:
   description: Online Boarding Process
   version: '1.0'
@@ -4265,7 +4265,7 @@ components:
       title: ProfessionalLicenseDTO
       description: Professional license information
       x-stoplight:
-        id: c85m55vx1qj9m
+        id: l4p70i6v8ludt
     PoliticallyExposedPersonDTO:
       type: object
       required:
@@ -4287,7 +4287,7 @@ components:
           description: Position of PEP (Politically Exposed Persons) person (text)
       title: PoliticallyExposedPersonDTO
       x-stoplight:
-        id: wvgp5ckhpc5zj
+        id: l5k2342v4ny5h
     AccountFees:
       type: object
       description: >-
@@ -4312,7 +4312,7 @@ components:
           example: Taxas/Ajustes - (meaning Fee/Adjustments)
       title: AccountFees
       x-stoplight:
-        id: 940vb6gljzhfd
+        id: z6q09b1jmjdi7
     Bank:
       type: object
       description: Information about Avaliable Banks to be used for settlement
@@ -4327,7 +4327,7 @@ components:
           example: Citibank
       title: Bank
       x-stoplight:
-        id: yirxntnl6lsdb
+        id: d8zmdze2aegyx
     BankingAccounts:
       type: object
       description: >-
@@ -4370,7 +4370,7 @@ components:
           example: '000'
       title: BankingAccounts
       x-stoplight:
-        id: oi3nahajqu1ua
+        id: ej1yk3ktu78v8
     BankingAccountsWithPrepaymentEnableValue:
       type: object
       description: >-
@@ -4417,7 +4417,7 @@ components:
             - '001'
       title: BankingAccountsWithPrepaymentEnableValue
       x-stoplight:
-        id: bcwuckpo6cqst
+        id: 2au7haqmjir0w
     CaptureSolution:
       type: object
       description: >-
@@ -4527,7 +4527,7 @@ components:
           example: RENT
       title: CaptureSolution
       x-stoplight:
-        id: ph0c9o5i8th2o
+        id: z26gxn48718g5
     Cnae:
       type: object
       description: It retuns the CNAES and Descriptions existing in our current process
@@ -4543,7 +4543,7 @@ components:
           example: Operadoras de Celular - (meaning Cellphone Operator)
       title: Cnae
       x-stoplight:
-        id: it50qm5yvs0pi
+        id: vuavyfa25p33l
     MccDto:
       type: object
       description: Returns the mmc code according to the search
@@ -4562,7 +4562,7 @@ components:
           example: 1799
       title: MccDto
       x-stoplight:
-        id: lqzga9s0nh1r4
+        id: bjet51jijoa7k
     Frequency:
       type: object
       description: >-
@@ -4584,7 +4584,7 @@ components:
           example: Daily
       title: Frequency
       x-stoplight:
-        id: ngpdbz25h9viq
+        id: jc7qdm99eu7x0
     MobileOperator:
       type: object
       description: Information about the Cellphone Chip Operator
@@ -4611,7 +4611,7 @@ components:
             - 06 (Algar)
       title: MobileOperator
       x-stoplight:
-        id: qx69dxfgri8vu
+        id: tkh1134nc5c2p
     ResultOfListOfAccountFees:
       type: object
       description: >-
@@ -4635,7 +4635,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfAccountFees
       x-stoplight:
-        id: qgbki8uxxdqmz
+        id: gx42ywpszevdq
     ResultOfListOfCampaingSimulatorDTO:
       type: object
       description: Result List of CampaingSimulatorDTO
@@ -4657,7 +4657,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfCampaingSimulatorDTO
       x-stoplight:
-        id: ay2fqg9zuvpvu
+        id: 47k8t9p307nhi
     ResultOfListOfBankingAccounts:
       type: object
       properties:
@@ -4678,7 +4678,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfBankingAccounts
       x-stoplight:
-        id: 8bf7w9rspmops
+        id: sfymi24k18py1
     ResultOfListOfBankingAccountsWithPrepaymentEnableValue:
       type: object
       properties:
@@ -4699,7 +4699,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfBankingAccountsWithPrepaymentEnableValue
       x-stoplight:
-        id: 5qdafa6kjo7zp
+        id: mvu15695y64cc
     ResultOfListOfCaptureSolution:
       type: object
       properties:
@@ -4720,7 +4720,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfCaptureSolution
       x-stoplight:
-        id: cjza0jdz9urh2
+        id: 9q74239q8v739
     ResultOfListOfCnae:
       type: object
       properties:
@@ -4741,7 +4741,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfCnae
       x-stoplight:
-        id: e8750z2g9lgxo
+        id: 9d06z7shmo2kn
     ResultOfListOfFrequency:
       type: object
       properties:
@@ -4762,7 +4762,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfFrequency
       x-stoplight:
-        id: ira39ju604vhv
+        id: 046e4ndf7fpr8
     ResultOfListOfMobileOperator:
       type: object
       properties:
@@ -4783,7 +4783,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfMobileOperator
       x-stoplight:
-        id: jx9ndgl772ay5
+        id: 3mrnguv5u4a4v
     ResultOfListOfService:
       type: object
       properties:
@@ -4804,7 +4804,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfService
       x-stoplight:
-        id: glb3v86neg3rx
+        id: g5tydw5fgi79x
     ResultOfListOfAquisition:
       type: object
       properties:
@@ -4825,7 +4825,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfService
       x-stoplight:
-        id: au1zjtydprrs8
+        id: b34paoi145yle
     ResultOfListOfTransactionTypes:
       type: object
       properties:
@@ -4846,7 +4846,7 @@ components:
           example: Return Message Text
       title: ResultOfListOfTransactionTypes
       x-stoplight:
-        id: ed6b2na2hjip8
+        id: 1rs8so8nkvi0h
     Service:
       type: object
       description: >-
@@ -4933,7 +4933,7 @@ components:
             - etc.
       title: Service
       x-stoplight:
-        id: cqd56756mvxzh
+        id: 9p2l0tga5oqhr
     Aquisition:
       type: object
       description: List of Associations and Products available for boarding
@@ -4970,7 +4970,7 @@ components:
           example: Documento Impresso
       title: Aquisition
       x-stoplight:
-        id: 9mor6u9vxlvbd
+        id: 7fpscpg37y754
     ServiceContractDTO:
       type: object
       properties:
@@ -4982,7 +4982,7 @@ components:
             format: int32
       title: ServiceContractDTO
       x-stoplight:
-        id: 6lmiuzxbkq2il
+        id: ffcpzovacnfyv
     TransactionTypes:
       type: object
       description: >-
@@ -5088,7 +5088,7 @@ components:
             - etc.
       title: TransactionTypes
       x-stoplight:
-        id: t4n2fz4z9rqt7
+        id: j2k6u4dyriiie
     AdditionalServiceDTO:
       type: object
       description: >-
@@ -5134,7 +5134,7 @@ components:
           description: Additional Service Amount
       title: AdditionalServiceDTO
       x-stoplight:
-        id: avbz6te5i0xtd
+        id: 7j1v2znc2jee4
     ApiResult:
       type: object
       properties:
@@ -5151,7 +5151,7 @@ components:
           example: Return Message Text
       title: ApiResult
       x-stoplight:
-        id: pe4sgrwbtlu9t
+        id: 52jv5x883p0ka
     ApiResultOfCreatedProposalResp:
       type: object
       properties:
@@ -5170,7 +5170,7 @@ components:
           example: Return Message Text
       title: ApiResultOfCreatedProposalResp
       x-stoplight:
-        id: qkl2nvg11lwbp
+        id: lmqgq0hlnc1lx
     response422detail:
       type: object
       properties:
@@ -5189,7 +5189,7 @@ components:
           example: Return Message Text
       title: response422detail
       x-stoplight:
-        id: bf9j9gh6wnjcd
+        id: ebilkmrtms15h
     ApiResultOfProposalQuery:
       type: object
       properties:
@@ -5208,7 +5208,7 @@ components:
           example: Return Message Text
       title: ApiResultOfProposalQuery
       x-stoplight:
-        id: zxydrrmyyr6nu
+        id: k9dznp5sg65w0
     captureSolutions:
       type: object
       description: Capture Solution to be Requested. Check Indicated Endpoints for Detais
@@ -5241,7 +5241,7 @@ components:
           description: Service Fee Amount
       title: captureSolutions
       x-stoplight:
-        id: tdwekbfugijra
+        id: v4nbbubgek0xf
     ContactDTO:
       type: object
       required:
@@ -5299,7 +5299,7 @@ components:
       title: ContactDTO
       description: Merchant Contact Information
       x-stoplight:
-        id: st2s7x0qt7egk
+        id: pvd029qi97bs8
     CreatedProposalResp:
       type: object
       description: Return the Proposal Number or Error information
@@ -5312,7 +5312,7 @@ components:
           example: O00000000000384
       title: CreatedProposalResp
       x-stoplight:
-        id: riclc7qvo0ie4
+        id: 9r1dlhjpn3a7c
     response422:
       type: object
       description: Return the Proposal Number or Error information
@@ -5338,7 +5338,7 @@ components:
           example: '[  697 ]'
       title: response422
       x-stoplight:
-        id: 4rojo5c7qobo4
+        id: 611uwar5ohuik
     DeliveryInformationDTO:
       type: object
       description: Delivery Information Details (Merchant -> Customer)
@@ -5352,7 +5352,7 @@ components:
             $ref: '#/components/schemas/InformationDTO'
       title: DeliveryInformationDTO
       x-stoplight:
-        id: 9ok4iubijqq5k
+        id: z2mxs3iv4m8so
     InformationDTO:
       type: object
       description: Merchant Additional Information
@@ -5427,7 +5427,7 @@ components:
           description: Week Day
       title: Interval
       x-stoplight:
-        id: upyfvyhtmi24h
+        id: loqm5pntz8gx3
     LegalPersonDTO:
       type: object
       description: >-
@@ -5503,6 +5503,11 @@ components:
           type: string
           example: São Paulo.
           description: Merchant State License Information
+        relationshipDate:
+          type: string
+          format: date
+          example: '2020-12-25'
+          description: Merchant Relantionship Start Date
       title: LegalPersonDTO
     ManualPrepaymentDTO:
       type: object
@@ -5833,9 +5838,14 @@ components:
           type: string
           example: A9999999
           description: Registro Nacional de Estrangeiro
+        relationshipDate:
+          type: string
+          format: date
+          example: '2020-12-25'
+          description: Merchant Relantionship Start Date
       title: PhysicalPersonDTO
       x-stoplight:
-        id: v99ol97npz1vq
+        id: 7i69it0mm5zfx
     ProposalQuery:
       type: object
       description: Check the status of Boarding Process
@@ -5945,7 +5955,7 @@ components:
           $ref: '#/components/schemas/MerchantSE'
       title: ProposalQuery
       x-stoplight:
-        id: nig6sf3pb3p1l
+        id: hn6ndg6udvni3
     MerchantSE:
       type: object
       properties:
@@ -6142,7 +6152,7 @@ components:
                 example: ''
       title: SerproResponse
       x-stoplight:
-        id: nvrw3ij8u1sqx
+        id: cb9gtu26c2kp0
     ServiceOrder:
       title: ServiceOrder
       description: Delivery Service Order Information (delivery from Fiserv > Merchant)
@@ -6163,7 +6173,7 @@ components:
               example: '301'
           title: ServiceOrder
       x-stoplight:
-        id: a9gw3g4uox1pt
+        id: m3f2r0tnwswmg
     Submission:
       type: object
       required:
@@ -6564,7 +6574,7 @@ components:
             available) - To2
       title: Time
       x-stoplight:
-        id: uwc1ag13p4wx9
+        id: bllxc5c6sns80
     WorkingDayDTO:
       type: object
       required:
@@ -6691,7 +6701,7 @@ components:
       title: situacao
       description: Situaçãoo Cadastral do CPF Consultado.
       x-stoplight:
-        id: vb02b9fgg5f0u
+        id: rppt4auq8d62l
     ResponseSerproCPF:
       type: object
       properties:
@@ -6706,7 +6716,7 @@ components:
       title: Response
       description: Serpro Bureau Information
       x-stoplight:
-        id: z4k2u5vg1907r
+        id: dbzwgdfeyrazg
     CampaingSimulatorDTO:
       title: CampaingSimulatorDTO
       type: object
@@ -6775,7 +6785,7 @@ components:
           example: 100
       description: Revenu Range Information
       x-stoplight:
-        id: 6xd0fcza0ssx5
+        id: winlbibnn5ly7
     Brand:
       title: Brand
       type: object
@@ -6799,7 +6809,7 @@ components:
             $ref: '#/components/schemas/Rate'
       description: Association/Schema Information
       x-stoplight:
-        id: 2odghefxwdgd9
+        id: c91a4sos13wbl
     CampaignDTO:
       title: CampaignDTO
       type: object
@@ -6912,7 +6922,7 @@ components:
           example: 14
       description: MDR Flex Factors Information
       x-stoplight:
-        id: 4h0f8sd3fbl0s
+        id: hnwquabe1ldor
     MdrFlexRateDTO:
       title: MdrFlexRateDTO
       type: object
@@ -7009,7 +7019,7 @@ components:
           example: 5
       description: Retorno paginado das informações de range de faturamento.
       x-stoplight:
-        id: xqnjcn5g7sb82
+        id: nlu2p6e4zcq5e
     PageableDTOOfFactorFlexRateDTO:
       title: PageableDTOOfFactorFlexRateDTO
       type: object
@@ -7041,7 +7051,7 @@ components:
           example: 5
       description: Retorno paginado das informações de fator de taxa MDR Flex.
       x-stoplight:
-        id: te5za0r6lk6lt
+        id: 1sv0lfoznyuxg
     PageableDTOOfMdrFlexRateDTO:
       title: PageableDTOOfMdrFlexRateDTO
       type: object
@@ -7073,7 +7083,7 @@ components:
           example: 5
       description: Return with Page Control for MDR FLEX Fee Information
       x-stoplight:
-        id: xtb93h6a7b14s
+        id: o5wewvzxgztit
     PageableDTOOfMdrRatesDTO:
       title: PageableDTOOfMdrRatesDTO
       type: object
@@ -7105,7 +7115,7 @@ components:
           example: 5
       description: Return with Page Control for MDR Fee Information
       x-stoplight:
-        id: ygf4fptdi9a56
+        id: erwsnlkydcvqt
     PageableDTOOfPrepaymentRateDTO:
       title: PageableDTOOfPrepaymentRateDTO
       type: object
@@ -7137,7 +7147,7 @@ components:
           example: 5
       description: Return PrepaymentFee Information (with Page Control)
       x-stoplight:
-        id: po6arsgqpxsw0
+        id: xoi18em9ekt0q
     PageableDTOOfPriceTechnologyCampaignDTO:
       title: PageableDTOOfPriceTechnologyCampaignDTO
       type: object
@@ -7169,7 +7179,7 @@ components:
           example: 5
       description: Return Technology Fee by Campaign (with Page Control)
       x-stoplight:
-        id: oqz5yivgfzgys
+        id: kvjxp1ee8s1xs
     ApproversCampaignDTO:
       title: ApproversCampaignDTO
       type: object
@@ -7221,7 +7231,7 @@ components:
           description: Approver email
           example: joao@fiserv.com
       x-stoplight:
-        id: myifxtzjwodz6
+        id: 910eyhzmwzs9c
     BusinessPointDTO:
       title: BusinessPointDTO
       type: object
@@ -7284,7 +7294,7 @@ components:
             - L
       description: Technology Price Discount Information
       x-stoplight:
-        id: i3hab7jp3fq1p
+        id: dv7csn7a4glg5
     PageableDTOOfBusinessPoint:
       title: PageableDTOOfBusinessPoint
       type: object
@@ -7316,7 +7326,7 @@ components:
           example: 5
       description: Return with Page Control for MDR Fee Information
       x-stoplight:
-        id: i05ohpf11lhwv
+        id: drtfi0h383mqd
     PageableDTOOfCampaignTechnologyPriceDTO:
       title: PageableDTOOfCampaignTechnologyPriceDTO
       type: object
@@ -7348,7 +7358,7 @@ components:
           example: 5
       description: Return with Page Control for Technology Price Fee Information
       x-stoplight:
-        id: pwpb84mg8ig3c
+        id: qmmsz3iroh7ks
     PremiumUfDTO:
       title: PremiumUfDTO
       type: object
@@ -7372,7 +7382,7 @@ components:
           example: SP
       description: Premium Share Percentage Information
       x-stoplight:
-        id: x7dur10n3epus
+        id: q352a0xeg8twy
     PrepaymentRateDTO:
       title: PrepaymentRateDTO
       type: object
@@ -7410,7 +7420,7 @@ components:
           example: 2
       description: Prepayment Fee Information
       x-stoplight:
-        id: qbz09woajpviw
+        id: nf45rjonllvgc
     PriceTechnologyCampaignDTO:
       title: PriceTechnologyCampaignDTO
       type: object
@@ -7485,7 +7495,7 @@ components:
             - L
       description: Technology Campaign Information
       x-stoplight:
-        id: tdmo6vy7wgx6j
+        id: bfqfmxxnp4p4t
     Rate:
       title: Rate
       type: object
@@ -7557,7 +7567,7 @@ components:
             - 999
       description: Association/Schema Fee Information
       x-stoplight:
-        id: acnb9z4lwu4o3
+        id: 6rzkstvf78xts
     FeeDTO:
       title: FeeDTO
       type: object
@@ -7587,7 +7597,7 @@ components:
           example: TAX
       description: Service and Capture Campaign Information
       x-stoplight:
-        id: ynk056gdbgzcw
+        id: uvunelzbuzdut
     ServiceDTO:
       title: ServiceDTO
       type: object
@@ -7616,7 +7626,7 @@ components:
           example: '300'
       description: Capture Information
       x-stoplight:
-        id: fslzmcw0ty5vm
+        id: 20g1oqf7kna7o
     FeeDetailsDTO:
       title: FeeDetailsDTO
       type: object
@@ -7716,7 +7726,7 @@ components:
           example: 75
       description: Fees Information
       x-stoplight:
-        id: plc65kil3kw7g
+        id: uz2lbbdqt81js
     ResultCnaeRestrictRespnse:
       title: Result
       type: object
@@ -7742,7 +7752,7 @@ components:
           items:
             $ref: '#/components/schemas/CnaeRestrictResponse'
       x-stoplight:
-        id: rn4pxcm1943g7
+        id: 9pd8vt38z4cs1
     AntiFraudDetails:
       title: AntiFraudDetails
       description: Anti Fraud Information
@@ -7769,7 +7779,7 @@ components:
           description: Antifraude Service Name
           example: Nativa AntiFraud
       x-stoplight:
-        id: s76up0nbr7bez
+        id: jglzxe28qx0yd
     CnaeRestrictResponse:
       title: response
       description: Restrict or Unwanted CNAEs
@@ -7795,7 +7805,7 @@ components:
             - Restricted
             - UnWanted
       x-stoplight:
-        id: 8r98me71b2kr5
+        id: m6xgk8q8qmetr
     BusinessHistory:
       title: BusinessHistory
       description: Merchant History Information
@@ -7814,7 +7824,7 @@ components:
           description: How many years the company provides professionar services
           example: 2 anos
       x-stoplight:
-        id: x5n8znqwgmjj6
+        id: u732ys4qy1p6q
     ComplementaryInformations:
       title: ComplementaryInformations
       description: Merchant Complementary Information
@@ -7861,7 +7871,7 @@ components:
             - true
             - false
       x-stoplight:
-        id: f6afoius65z5h
+        id: rvfgh1brnh5gd
     CorporateDetails:
       title: CorporateDetails
       description: Additional Corporate Information
@@ -7889,7 +7899,7 @@ components:
           type: string
           description: Other location where the company acts (text)
       x-stoplight:
-        id: llik9jqe25s25
+        id: qgqk4knp2ht5z
     DataPartnersOutOfMembershipBoard:
       title: DataPartnersOutOfMembershipBoard
       description: Merchant Partnership information out of Social Contract
@@ -7916,7 +7926,7 @@ components:
             - ASSOCIATE
             - ADMINISTRATOR
       x-stoplight:
-        id: h85z4kfqz1t3n
+        id: yfaok3nyrkauw
     ECommerceDTO:
       title: ECommerceDTO
       description: Complementary Information when the Technology is E-commerce
@@ -8026,7 +8036,7 @@ components:
           type: object
           $ref: '#/components/schemas/VisitAddressDTO'
       x-stoplight:
-        id: 81ethawcs2xu8
+        id: giri7k6gctqq1
     EnterpriseContact:
       title: EnterpriseContact
       description: Merchant Contact Information
@@ -8037,7 +8047,7 @@ components:
           description: Primary Contact Position in the Company
           example: Owner
       x-stoplight:
-        id: 1jey6oev8fh9b
+        id: 0hioaitxtf4ii
     PartnersData:
       title: PartnersData
       description: Partner Information
@@ -8073,7 +8083,7 @@ components:
             - ASSOCIATE
             - ADMINISTRATOR
       x-stoplight:
-        id: 55idatp8eplu7
+        id: 77xfz5vn4gnux
     PepAffiliationsAndRelationshipWithGovernmentAgencies:
       title: PepAffiliationsAndRelationshipWithGovernmentAgencies
       type: object
@@ -8147,7 +8157,7 @@ components:
           type: string
           description: Information about Politacally Exposed Person (text)
       x-stoplight:
-        id: p5lskc5ywawuy
+        id: sdzzru6gp0he4
     InterestConflicts:
       title: InterestConflicts
       type: object
@@ -8179,7 +8189,7 @@ components:
           type: string
           description: Relaive Role Description (text)
       x-stoplight:
-        id: as1rff5os08x8
+        id: dm7bex9f3gagb
     RestrictedCnaeInfoDTO:
       title: RestrictedCnaeInfoDTO
       description: >-
@@ -8246,7 +8256,7 @@ components:
           $ref: >-
             #/components/schemas/PepAffiliationsAndRelationshipWithGovernmentAgencies
       x-stoplight:
-        id: f57swoavxzrbc
+        id: yfrmkncyacmkj
     GatewayOrIntegratorDetails:
       title: GatewayOrIntegratorDetails
       description: Gateway or Integration Details (If ecommercer has a payment gateway)
@@ -8266,7 +8276,7 @@ components:
           description: Gateway Name or Integrator Name (text)
           example: Nativa
       x-stoplight:
-        id: 5w8b8wsta3r1v
+        id: mcx9cwgjusncu
     VisitAddressDTO:
       title: VisitAddressDTO
       description: Visitation Address Information
@@ -8341,7 +8351,7 @@ components:
           description: Partner name
           example: Zachary Hamilton
       x-stoplight:
-        id: 5rniy96xdu0qu
+        id: m9y7vp5wokoqb
     DeliveryDetails:
       title: DeliveryDetails
       description: Merchant Delivery Details
@@ -8379,7 +8389,7 @@ components:
           description: Website Products link Information (text)
           example: instagram.com/loja1
       x-stoplight:
-        id: jj8v5n32yfhr1
+        id: gfx34kwrloc2e
     InvestigationsLitigationAndLegalProceedings:
       title: InvestigationsLitigationAndLegalProceedings
       description: Judicial or Legal Actions
@@ -8412,7 +8422,7 @@ components:
           type: string
           description: Process Status (text)
       x-stoplight:
-        id: 26bpkh03sfnqs
+        id: yevlvfp0wv051
     TefInfoDTO:
       title: TefInfoDTO
       type: object
@@ -8497,7 +8507,7 @@ components:
         - startDate
         - endDate
       x-stoplight:
-        id: h3187nhh6v76w
+        id: i00my7hyqd7wh
     BranchOffices:
       title: BranchOffices
       type: object
@@ -8515,7 +8525,7 @@ components:
       required:
         - hasBranchOffices
       x-stoplight:
-        id: cfjuk8xj2fil6
+        id: 93batl3hl1xtw
     BusinessInfo:
       title: BusinessInfo
       type: object
@@ -8590,7 +8600,7 @@ components:
         - contactPhoneNumber
         - emails
       x-stoplight:
-        id: hl3l8ucoc6tln
+        id: qduzngailbjde
     PinPadInfo:
       title: PinPadInfo
       type: object
@@ -8616,7 +8626,7 @@ components:
         - hasOwnPinPad
         - hasThirtyPartyPinPad
       x-stoplight:
-        id: fvrwh48ndfi07
+        id: bn6387v3ojsey
     PinPadRequestedInfo:
       title: PinPadRequestedInfo
       description: Additional Pin Pad Information
@@ -8643,7 +8653,7 @@ components:
       required:
         - pinPads
       x-stoplight:
-        id: 9zelfivalfqla
+        id: zfs3ifpgqljtu
     ProviderInfo:
       title: ProviderInfo
       description: Additional Provider Information
@@ -8673,7 +8683,7 @@ components:
         - tefProvidersType
         - connectionTypes
       x-stoplight:
-        id: nqhvjxnydlzg9
+        id: zfd14vboirehp
     TefBrowserInfoDTO:
       title: TefBrowserInfoDTO
       type: object
@@ -8754,8 +8764,7 @@ components:
           description: Contact email list
           items:
             type: string
-            example:
-              "exemple.one@company.com.br"
+            example: 'exemple.one@company.com.br'
       required:
         - contactName
         - emails
@@ -8851,7 +8860,7 @@ components:
             Master cnpj must be sent.
           example: '7014139000133'
       x-stoplight:
-        id: 5opyti61hxj47
+        id: uygpvzhsl6quw
     EdiAcquirerDTO:
       title: EdiAcquirerDataDTO
       description: Additional Acquirer for Electronic Statement (EDI)
