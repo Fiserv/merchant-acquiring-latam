@@ -30,9 +30,9 @@ Below you can check each link to access the detailed document for each Web-servi
 
 [Operations - Consult](../api/?type=post&path=/bwa/wsm/devicerequest/consultoperation/processConsultOperationRequest)
 
-[Service Fees (MDR) - Consult](../api/?type=get&path=/bwa/mdr-fees/v2)
+[Service Fees (MDR) - Consult](../api/?type=get&path=/bwa/v2/mdr-fees)
 
-[Requests (Cases) - Open](../api/?type=get&path=/bwa/wsm/merchantinformation/workingHours/config/motivos)
+[Requests (Cases) - Open](../api/?type=post&path=/bwa/abertura-caso)
 
 [Requests (Cases) - Search](../api/?type=get&path=/bwa/abertura-caso/config/sub-motivos/{Id})
 
