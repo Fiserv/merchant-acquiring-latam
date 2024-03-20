@@ -92,8 +92,6 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Payment Hierarchy - Remove](../api/?type=post&path=/bwa/hierarquia-pagamento/v1/excluir)
 
-[Merchant Payment Hierarchy - Search for Payment Hierarchy](../api/?type=post&path=/bwa/hierarquia-pagamento/v1/)
-
 [Merchant Information - Registradora (CIRC3952)](../api/?type=get&path=/bwa/recebiveis/v1/receivableUnit/consulta/{dataInicio}/{dataFim})
 
 [Merchant Information - Agenda Out](../api/?type=get&path=/bwa/recebiveis/v1/agendaOut/consulta/{dataInicio}/{dataFim})
@@ -132,9 +130,9 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Information - Update Partner](../api/?type=post&path=/bwa/atualiza-socio/v1/atualizaEstabelecimento/{clientNumber})
 
-[Merchant Trade Name - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/tradeName/updateTradeName/)
+[Merchant Trade Name - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/tradeName/updateTradeName)
 
-[Merchant Working Hours - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/workingHours/updateWorkingHours/)
+[Merchant Working Hours - Update](../api/?type=post&path=/bwa/wsm/merchantinformation/workingHours/updateWorkingHours)
 
 ## Online Boarding
 
