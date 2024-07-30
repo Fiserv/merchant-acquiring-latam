@@ -32,7 +32,12 @@ paths:
       summary: Token Access
       operationId: requestTokenForAPIsAccess
       requestBody:
-        $ref: "#/components/requestBodies/tokenBody"
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: string
+              example: grant_type=password&client_id=estabelecimento&username={user_name}&password={password}
+        required: true
       responses:
         "200":
           description: Success
@@ -46,37 +51,7 @@ paths:
       x-child-product-name: Digital Solutions
       x-core: Token
 components:
-  requestBodies:
-    tokenBody:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/tokenBody"
   schemas:
-    tokenBody:
-      type: object
-      required:
-        - grant_type
-        - client_id
-        - username
-        - password
-      properties:
-        grant_type:
-          type: string
-          description: Type of auth
-          example: "password"
-        client_id:
-          type: string
-          description: Client ID
-          example: "merchant"
-        username:
-          type: string
-          description: User name
-          example: "Teste"
-        password:
-          type: string
-          description: Password
-          example: "7El{7.1q#%|Z"
     Response:
       type: object
       properties:
