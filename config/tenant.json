@@ -44,6 +44,7 @@
             "digitalSolutions/MerchantInformationCases/dirfConsult",
             "digitalSolutions/MerchantInformationCases/monthlyPresumedBilling",
             "digitalSolutions/MerchantInformationCases/receivableRegister",
+            "digitalSolutions/MerchantInformationCases/receivableUnits.yaml",
             "digitalSolutions/MerchantInformationCases/requestOpening",
             "digitalSolutions/MerchantInformationCases/paymentHierarchy",
             "digitalSolutions/MerchantInformationCases/mdrFees",
