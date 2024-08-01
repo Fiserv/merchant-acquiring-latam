@@ -220,6 +220,14 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Wallet - PIX - New Credentials](../api/?type=post&path=/pix/credentials)
 
+[Receivable Units - List Units](../api/?type=get&path=/bwa/recebiveis/v1/urs/listar)
+
+[Receivable Units - Deductions and Transactions](../api/?type=get&path=/bwa/recebiveis/v1/urs/movimentacoes)
+
+[Receivable Units - Agenda Out V2](../api/?type=get&path=/bwa/recebiveis/v2/urs/agendaOut)
+
+[Receivable Units - Transactions](../api/?type=get&path=/bwa/unidade-recebiveis/resources/v1/transacoes)
+
 ## Sales Information
 
 [Merchant Authorizations History - Consult](../api/?type=get&path=/bwa/autorizacoesbw/v1/autorizacoesbw)
