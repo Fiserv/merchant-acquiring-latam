@@ -846,10 +846,17 @@ paths:
           example: "20201001"
           schema:
             type: string
+        - name: tipoSumarizacao
+          in: query
+          description: Agrupamento por tipo [A-arranjo / D-Data / R-Range]
+          required: false
+          example: "D"
+          schema:
+            type: string
         - name: tipoContrato
           in: query
           description: Initial Reference Date. Format YYYYMMDD
-          required: true
+          required: false
           example: "001-Cessão"
           schema:
             type: string
