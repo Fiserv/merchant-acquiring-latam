@@ -384,6 +384,13 @@ paths:
           example: "PGW0AA05"
           schema:
             type: string
+        - name: codTipoTransacao
+          in: query
+          description: Transaction type code
+          required: false
+          example: "469"
+          schema:
+            type: string    
         - name: page
           in: query
           description: Search page number (Default 0)
