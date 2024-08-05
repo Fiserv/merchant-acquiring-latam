@@ -881,7 +881,7 @@ components:
             - 'Parcelado emissor'
             - 'Crediário'
             - 'Não identificado'
-          example: "Compra com 05 parcelas"
+          example: "Débito"
         dataOriginalPagamento:
           type: string
           description: original transaction date
