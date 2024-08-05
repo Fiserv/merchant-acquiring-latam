@@ -874,6 +874,13 @@ components:
         tipoProduto:
           type: string
           description: product type
+          enum: 
+            - 'Débito'
+            - 'Crédito à vista'
+            - 'Parcelado lojista'
+            - 'Parcelado emissor'
+            - 'Crediário'
+            - 'Não identificado'
           example: "Compra com 05 parcelas"
         dataOriginalPagamento:
           type: string
