@@ -254,6 +254,10 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Authorizations - Consult (Institute and marchant)](../api/?type=get&path=/bwa/autorizacoes/{inst}/{merchant})
 
+[Merchant Authorizations - Consult (Institute and marchant) V2](../api/?type=get&path=/bwa/autorizacoes/resources/v2/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Merchant Authorizations - Sales Report](../api/?type=get&path=/bwa/autorizacoes/resources/v2/relatorioVendas/{inst}/{merchant}/{dataInicio}/{dataFim})
+
 [Merchant Authorizations - Consult by Institution Number, Merchant Code and Terminal](../api/?type=get&path=/bwa/autorizacoes/{inst}/{merchant}/{terminals})
 
 [Merchant Sales - Paid or To Be Received - Consult](../api/?type=get&path=/bwa/vendas/resources/v1/receber/{inst}/{merchant}/{dataInicio}/{dataFim})
@@ -264,9 +268,13 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Sales - To Be Received - Consult - It allows the selection of MULTIPLE association schema V2](../api/?type=get&path=/bwa/vendas/resources/v2/receber/{dataInicio}/{dataFim})
 
+[Merchant Sales - To Be Received - Consult - It allows the selection of MULTIPLE association schema and multiple merchants V3](../api/?type=post&path=/bwa/vendas/resources/v3/receber/{dataInicio}/{dataFim})
+
 [Merchant Sales - Canceled - Consult - It allows the selection of MULTIPLE association schema](../api/?type=get&path=/bwa/vendas/resources/v2/canceladas)
 
 [Merchant Sales - Paid - Consult - It allows the selection of MULTIPLE association schema - V2](../api/?type=get&path=/bwa/vendas/resources/v2/realizadas/transacao/{dataInicio}/{dataFim})
+
+[Merchant Sales - Paid - Consult - It allows the selection of MULTIPLE association schema and multiple merchants - V3](../api/?type=post&path=/bwa/vendas/resources/v3/realizadas/transacao/{dataInicio}/{dataFim})
 
 [Sales tracking](../api/?type=get&path=/bwa/acompanhamento-vendas/v1/acompanhamentoVendas)
 
