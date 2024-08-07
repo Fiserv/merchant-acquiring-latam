@@ -689,9 +689,9 @@ paths:
             type: string
         - name: codMovimentacao
           in: query
-          description: Código de movimentacao
           required: false
-          example: "002050000002"
+          description: Movimentation code "[002002000002 – Chargeback]","[002001000001/002001001002 – Cancelamento]","[002007000002 – Ajuste Negativo]","[002007000001 – Ajuste Positivo]","[002050000002 – Transacoes Diversas Negativo]","[002050000001 - Transacoes Diversas Positivo]"
+          example: "002001000002"
           schema:
             type: string
         - name: nsu
@@ -1557,11 +1557,10 @@ components:
           type: array
           description: This block will be returned when Summ Information is provided
           items:
-            oneOf:
+            anyOf:
             - $ref: '#/components/schemas/UrSumarizacaoArranjo'
             - $ref: '#/components/schemas/UrSumarizacaoData'
             - $ref: '#/components/schemas/UrSumarizacaoRange'
-            
         lastPage:
           description: Informs if it is the last page of the search
           example: true
@@ -1844,7 +1843,7 @@ components:
           type: array
           description: This block will be returned when Summ Information is provided
           items:
-            oneOf:
+            anyOf:
             - $ref: '#/components/schemas/AgendaOutSumarizacaoArranjoResponse'
             - $ref: '#/components/schemas/AgendaOutSumarizacaoRangeResponse'
             - $ref: '#/components/schemas/AgendaOutSumarizacaoDiaResponse'
@@ -1872,18 +1871,26 @@ components:
           example: 30
           type: integer
           format: int32
-    
+      title: AgendaOutV2Response
     UrsMovimentacaoSumarizacaoResponse:
       type: object
       properties:
-        codMovimentacao:
+        tipoSumarizacao:
           type: string
           description: codMovimentacao
-          example: "002002"
-        descCodMovimentacao:
+          example: "codMovimentacao"
+        codMovimentacao:
           type: string
-          description: codMovimentacao description
-          example: "Chargeback"
+          description: Movimentation code "[002002000002 – Chargeback]","[002001000001/002001001002 – Cancelamento]","[002007000002 – Ajuste Negativo]","[002007000001 – Ajuste Positivo]","[002050000002 – Transacoes Diversas Negativo]","[002050000001 - Transacoes Diversas Positivo]"
+          example: "002001000002"
+          enum:
+            - "002002000002"
+            - "002001000001"
+            - "002001001002"
+            - "002007000002"
+            - "002007000001"
+            - "002050000002"
+            - "002050000001"
         quantidade:
           type: string
           example: '120'
@@ -1893,7 +1900,7 @@ components:
         valorVendaUrLiquido:
           type: string
           example: '2500.00'
-        valorChargeback:
+        valorDeducaoUrLiquid:
           type: string
           example: '1000.00'
         valorDeducaoLiquido:
@@ -2170,24 +2177,27 @@ components:
           example: "Compra"
         codMovimentacao:
           type: string
-          description: Movimentation code "[1 – Chargeback]","[2 – Cancelamento]","[3 – Aluguel]","[4 – Ajuste negativo]","[5 – Ajuste positivo]"
+          description: Movimentation code "[002002000002 – Chargeback]","[002001000001/002001001002 – Cancelamento]","[002007000002 – Ajuste Negativo]","[002007000001 – Ajuste Positivo]","[002050000002 – Transacoes Diversas Negativo]","[002050000001 - Transacoes Diversas Positivo]"
           example: "002001000002"
           enum:
-            - "1"
-            - "2"
-            - "3"
-            - "4"
-            - "5"
+            - "002002000002"
+            - "002001000001"
+            - "002001001002"
+            - "002007000002"
+            - "002007000001"
+            - "002050000002"
+            - "002050000001"
         descMovimentacao:
           type: string
-          description: Movimentation code "[1 – Chargeback]","[2 – Cancelamento]","[3 – Aluguel]","[4 – Ajuste negativo]","[5 – Ajuste positivo]"
+          description: Movimentation code "[002002000002 – Chargeback]","[002001000001/002001001002 – Cancelamento]","[002007000002 – Ajuste Negativo]","[002007000001 – Ajuste Positivo]","[002050000002 – Transacoes Diversas Negativo]","[002050000001 - Transacoes Diversas Positivo]"
           example: "Chargeback"
           enum:
             - "Chargeback"
             - "Cancelamento"
-            - "Aluguel"
-            - "Ajuste negativo"
-            - "Ajuste positivo"
+            - "Ajuste Negativo"
+            - "Ajuste Positivo"
+            - "Transacoes Diversas Negativo"
+            - "Transacoes Diversas Positivo"
         dataEvento:
           type: string
           description: Event date
@@ -2356,7 +2366,6 @@ components:
           type: string
           description: Agency number
           example: "00001"
-          
     AgendaOutSumarizacaoArranjoResponse:
       type: object
       properties:
@@ -2372,7 +2381,10 @@ components:
           example: '12'
         valorComprometido:
           type: string
-          example: '$0'
+          example: 'R$0'
+        valorComprometidoPercentual:
+          type: string
+          example: '%10'
         valorPagamentoPrevisto:
           type: string
           example: '2500.00'
@@ -2401,7 +2413,10 @@ components:
           example: '12'
         valorComprometido:
           type: string
-          example: '$0'
+          example: 'R$0'
+        valorComprometidoPercentual:
+          type: string
+          example: '%10'  
         valorPagamentoPrevisto:
           type: string
           example: '2500.00'
@@ -2428,7 +2443,10 @@ components:
           example: '5'
         valorComprometido:
           type: string
-          example: '%10'
+          example: 'R$10'
+        valorComprometidoPercentual:
+          type: string
+          example: '%10'  
         valorPagamentoPrevisto:
           type: string
           example: '2500.00'
