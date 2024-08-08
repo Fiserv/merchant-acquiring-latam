@@ -258,6 +258,12 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Authorizations - Sales Report](../api/?type=get&path=/bwa/autorizacoes/resources/v2/relatorioVendas/{inst}/{merchant}/{dataInicio}/{dataFim})
 
+[Merchant History Authorizations - Consult (Institute and marchant)](../api/?type=get&path=/bwa/autorizacoes-historico/resources/v2/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Merchant History Authorizations - Consult (Institute and marchant) - Multiple Merchants](../api/?type=post&path=/bwa/autorizacoes-historico/resources/v2/multiplas/autorizacoes/{inst}/{dataInicio}/{dataFim})
+
+[Merchant History Authorizations - Sales Report](../api/?type=get&path=/bwa/autorizacoes-historico/resources/v2/relatorioVendas/{inst}/{merchant}/{dataInicio}/{dataFim})
+
 [Merchant Authorizations - Consult by Institution Number, Merchant Code and Terminal](../api/?type=get&path=/bwa/autorizacoes/{inst}/{merchant}/{terminals})
 
 [Merchant Sales - Paid or To Be Received - Consult](../api/?type=get&path=/bwa/vendas/resources/v1/receber/{inst}/{merchant}/{dataInicio}/{dataFim})
