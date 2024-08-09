@@ -78,6 +78,7 @@
             "digitalSolutions/SalesInformation/keyedConsultTransaction",
             "digitalSolutions/SalesInformation/suspendedConsultTransaction",
             "digitalSolutions/SalesInformation/merchantAuthorizations",
+            "digitalSolutions/SalesInformation/merchantHistoricAuthorizations",
             "digitalSolutions/SalesInformation/authorizationsHistoryBW",
             "digitalSolutions/SalesInformation/chargebackExternal",
             "digitalSolutions/SalesInformation/salesTracking",
