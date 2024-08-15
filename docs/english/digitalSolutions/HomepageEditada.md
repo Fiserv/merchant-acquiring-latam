@@ -190,11 +190,25 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Payments - Consult for Completed Payments](../api/?type=get&path=/bwa/pagamentos/resources/v1/{inst}/{merchant}/{dataInicio}/{dataFim})
 
-[Payments - Search for Payments in specific status suspended or rejected](../api/?type=get&path=/bwa/pagamentos/resources/v1/{tipoPagamento}/{inst}/{merchant}/{dataInicio}/{dataFim})
+[Payments - Consult for Completed Payments By Many Merchants](../api/?type=post&path=/bwa/pagamentos/resources/v2/{dataInicio}/{dataFim})
+
+[Payments - Consult for Suspended Payments](../api/?type=get&path=/bwa/pagamentos/resources/v1/suspensos/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Payments - Consult for Suspended Payments By Many Merchants](../api/?type=post&path=/bwa/pagamentos/resources/v2/suspenso/{dataInicio}/{dataFim})
+
+[Payments - Consult for Rejected Payments](../api/?type=get&path=/bwa/pagamentos/resources/v1/rejeitados/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Payments - Consult for Rejected Payments By Many Merchants](../api/?type=post&path=/bwa/pagamentos/resources/v2/rejeitados/{dataInicio}/{dataFim})
 
 [Payments - Search for Payment Order](../api/?type=get&path=/bwa/pagamentos/resources/v1/transacoes/{inst}/{merchant}/{dataInicio}/{dataFim}/{ordemPagamento})
 
+[Payments - Search Suspended Payment for Order](../api/?type=get&path=/bwa/pagamentos/resources/v1/transacoes/suspenso/{inst}/{merchant}/{dataInicio}/{dataFim}/{ordemPagamento})
+
 [Payments - Search all Transactions for a period](../api/?type=get&path=/bwa/pagamentos/resources/v1/transacoes/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Payments - Search all Suspended Transactions for a period](../api/?type=get&path=/bwa/pagamentos/resources/v1/transacoes/suspenso/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Payments - Report of all Transactions for a period](../api/?type=get&path=/bwa/pagamentos/resources/v1/transacoes/relatorio/{inst}/{merchant}/{dataInicio}/{dataFim})
 
 [Payments - Get Payments](../api/?type=get&path=/sba/PagamentosRealizados/{inst}/{merchant}/{dataInicio}/{dataFim})
 
@@ -226,7 +240,7 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Receivable Units - Agenda Out V2](../api/?type=get&path=/bwa/recebiveis/v2/urs/agendaOut)
 
-[Receivable Units - Transactions](../api/?type=get&path=/bwa/unidade-recebiveis/resources/v1/transacoes)
+[Receivable Units - Transactions](../api/?type=get&path=/bwa/unidade-recebiveis/resources/v2/transacoes)
 
 ## Sales Information
 
@@ -240,6 +254,16 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Authorizations - Consult (Institute and marchant)](../api/?type=get&path=/bwa/autorizacoes/{inst}/{merchant})
 
+[Merchant Authorizations - Consult (Institute and marchant) V2](../api/?type=get&path=/bwa/autorizacoes/resources/v2/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Merchant Authorizations - Sales Report](../api/?type=get&path=/bwa/autorizacoes/resources/v2/relatorioVendas/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Merchant History Authorizations - Consult (Institute and marchant)](../api/?type=get&path=/bwa/autorizacoes-historico/resources/v2/{inst}/{merchant}/{dataInicio}/{dataFim})
+
+[Merchant History Authorizations - Consult (Institute and marchant) - Multiple Merchants](../api/?type=post&path=/bwa/autorizacoes-historico/resources/v2/multiplas/autorizacoes/{inst}/{dataInicio}/{dataFim})
+
+[Merchant History Authorizations - Sales Report](../api/?type=get&path=/bwa/autorizacoes-historico/resources/v2/relatorioVendas/{inst}/{merchant}/{dataInicio}/{dataFim})
+
 [Merchant Authorizations - Consult by Institution Number, Merchant Code and Terminal](../api/?type=get&path=/bwa/autorizacoes/{inst}/{merchant}/{terminals})
 
 [Merchant Sales - Paid or To Be Received - Consult](../api/?type=get&path=/bwa/vendas/resources/v1/receber/{inst}/{merchant}/{dataInicio}/{dataFim})
@@ -250,9 +274,13 @@ To access the APIs, start by acquiring an [Access Token](../api/?type=post&path=
 
 [Merchant Sales - To Be Received - Consult - It allows the selection of MULTIPLE association schema V2](../api/?type=get&path=/bwa/vendas/resources/v2/receber/{dataInicio}/{dataFim})
 
+[Merchant Sales - To Be Received - Consult - It allows the selection of MULTIPLE association schema and multiple merchants V3](../api/?type=post&path=/bwa/vendas/resources/v3/receber/{dataInicio}/{dataFim})
+
 [Merchant Sales - Canceled - Consult - It allows the selection of MULTIPLE association schema](../api/?type=get&path=/bwa/vendas/resources/v2/canceladas)
 
 [Merchant Sales - Paid - Consult - It allows the selection of MULTIPLE association schema - V2](../api/?type=get&path=/bwa/vendas/resources/v2/realizadas/transacao/{dataInicio}/{dataFim})
+
+[Merchant Sales - Paid - Consult - It allows the selection of MULTIPLE association schema and multiple merchants - V3](../api/?type=post&path=/bwa/vendas/resources/v3/realizadas/transacao/{dataInicio}/{dataFim})
 
 [Sales tracking](../api/?type=get&path=/bwa/acompanhamento-vendas/v1/acompanhamentoVendas)
 

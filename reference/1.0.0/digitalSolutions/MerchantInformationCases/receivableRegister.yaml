@@ -689,9 +689,9 @@ paths:
             type: string
         - name: codMovimentacao
           in: query
-          description: Código de movimentacao
           required: false
-          example: "002050000002"
+          description: Movimentation code "[002002000002 – Chargeback]","[002001000001/002001001002 – Cancelamento]","[002007000002 – Ajuste Negativo]","[002007000001 – Ajuste Positivo]","[002050000002 – Transacoes Diversas Negativo]","[002050000001 - Transacoes Diversas Positivo]"
+          example: "002001000002"
           schema:
             type: string
         - name: nsu
@@ -846,10 +846,17 @@ paths:
           example: "20201001"
           schema:
             type: string
+        - name: tipoSumarizacao
+          in: query
+          description: Agrupamento por tipo [A-arranjo / D-Data / R-Range]
+          required: false
+          example: "D"
+          schema:
+            type: string
         - name: tipoContrato
           in: query
           description: Initial Reference Date. Format YYYYMMDD
-          required: true
+          required: false
           example: "001-Cessão"
           schema:
             type: string
@@ -1550,11 +1557,7 @@ components:
           type: array
           description: This block will be returned when Summ Information is provided
           items:
-            oneOf:
-            - $ref: '#/components/schemas/UrSumarizacaoArranjo'
-            - $ref: '#/components/schemas/UrSumarizacaoData'
-            - $ref: '#/components/schemas/UrSumarizacaoRange'
-            
+            $ref: '#/components/schemas/UrSumarizacao'
         lastPage:
           description: Informs if it is the last page of the search
           example: true
@@ -1579,13 +1582,17 @@ components:
           example: 30
           type: integer
           format: int32
-    UrSumarizacaoArranjo:
+    UrSumarizacao:
       type: object
       properties:
         tipoSumarizacao:
           type: string
-          description: A - Arranjo
+          description: Arranjo, Data or Range
           example: "Arranjo"
+          enum:
+            - "Arranjo"
+            - "Data"
+            - "Range"
         arranjo:
           type: string
           description: Schema Payment
@@ -1616,104 +1623,10 @@ components:
             - "Mastercard Debito"
             - "Visa Credito"
             - "Visa Debito"
-        quantidade:
-          type: string
-          example: '15'
-        valorTotalBruto:
-          type: string
-          example: '1000.00'
-        valorTotalMDR:
-          type: string
-          example: '1000.00'
-        valorTotalDeducoes:
-          type: string
-          example: '1000.00'
-        valorTotalContrato:
-          type: string
-          example: '1000.00'
-        valorTotal:
-          type: string
-          example: '2000.00'
-        valorTotalLiquido:
-          type: string
-          example: '1000.00'
-        valorTotalAntecipacaoEventual:
-          type: string
-          example: '1000.00'
-        valorTotalAntecipacaoAutomatica:
-          type: string
-          example: '1000.00'
-        valoresPagos:
-          type: string
-          example: '1000.00'
-        valorTotalAjustesCredito:
-          type: string
-          example: '1000.00'
-        valorDescontoAntecipacao:
-          type: string
-          example: '1000.00'
-        valorTotalBloqueado:
-          type: string
-          example: '1000.00'
-      title: UrSumarizacaoArranjo
-    UrSumarizacaoData:
-      type: object
-      properties:
-        tipoSumarizacao:
-          type: string
-          description: D - Data
-          example: "Data"
         dataLiquidacao:
           type: string
           description: Data
           example: "20230101"
-        quantidade:
-          type: string
-          example: '15'
-        valorTotalBruto:
-          type: string
-          example: '1000.00'
-        valorTotalMDR:
-          type: string
-          example: '1000.00'
-        valorTotalDeducoes:
-          type: string
-          example: '1000.00'
-        valorTotalContrato:
-          type: string
-          example: '1000.00'
-        valorTotal:
-          type: string
-          example: '2000.00'
-        valorTotalLiquido:
-          type: string
-          example: '1000.00'
-        valorTotalAntecipacaoEventual:
-          type: string
-          example: '1000.00'
-        valorTotalAntecipacaoAutomatica:
-          type: string
-          example: '1000.00'
-        valoresPagos:
-          type: string
-          example: '1000.00'
-        valorTotalAjustesCredito:
-          type: string
-          example: '1000.00'
-        valorDescontoAntecipacao:
-          type: string
-          example: '1000.00'
-        valorTotalBloqueado:
-          type: string
-          example: '1000.00'
-      title: UrSumarizacaoData
-    UrSumarizacaoRange:
-      type: object
-      properties:
-        tipoSumarizacao:
-          type: string
-          description: R - Range
-          example: "Range"
         dataInicio:
           type: string
           description: Data
@@ -1721,7 +1634,7 @@ components:
         dataFim:
           type: string
           description: Data
-          example: "20230131"
+          example: "20230131"  
         quantidade:
           type: string
           example: '15'
@@ -1761,7 +1674,7 @@ components:
         valorTotalBloqueado:
           type: string
           example: '1000.00'
-      title: UrSumarizacaoRange
+      title: UrSumarizacao
     UrsMovimentacaoResponse:
       type: object
       properties:
@@ -1837,10 +1750,7 @@ components:
           type: array
           description: This block will be returned when Summ Information is provided
           items:
-            oneOf:
-            - $ref: '#/components/schemas/AgendaOutSumarizacaoArranjoResponse'
-            - $ref: '#/components/schemas/AgendaOutSumarizacaoRangeResponse'
-            - $ref: '#/components/schemas/AgendaOutSumarizacaoDiaResponse'
+            $ref: '#/components/schemas/AgendaOutSumarizacaoResponse'
         lastPage:
           description: Informs if it is the last page of the search
           example: true
@@ -1865,18 +1775,26 @@ components:
           example: 30
           type: integer
           format: int32
-    
+      title: AgendaOutV2Response
     UrsMovimentacaoSumarizacaoResponse:
       type: object
       properties:
-        codMovimentacao:
+        tipoSumarizacao:
           type: string
           description: codMovimentacao
-          example: "002002"
-        descCodMovimentacao:
+          example: "codMovimentacao"
+        codMovimentacao:
           type: string
-          description: codMovimentacao description
-          example: "Chargeback"
+          description: Movimentation code "[002002000002 – Chargeback]","[002001000001/002001001002 – Cancelamento]","[002007000002 – Ajuste Negativo]","[002007000001 – Ajuste Positivo]","[002050000002 – Transacoes Diversas Negativo]","[002050000001 - Transacoes Diversas Positivo]"
+          example: "002001000002"
+          enum:
+            - "002002000002"
+            - "002001000001"
+            - "002001001002"
+            - "002007000002"
+            - "002007000001"
+            - "002050000002"
+            - "002050000001"
         quantidade:
           type: string
           example: '120'
@@ -1886,7 +1804,7 @@ components:
         valorVendaUrLiquido:
           type: string
           example: '2500.00'
-        valorChargeback:
+        valorDeducaoUrLiquid:
           type: string
           example: '1000.00'
         valorDeducaoLiquido:
@@ -2163,24 +2081,27 @@ components:
           example: "Compra"
         codMovimentacao:
           type: string
-          description: Movimentation code "[1 – Chargeback]","[2 – Cancelamento]","[3 – Aluguel]","[4 – Ajuste negativo]","[5 – Ajuste positivo]"
+          description: Movimentation code "[002002000002 – Chargeback]","[002001000001/002001001002 – Cancelamento]","[002007000002 – Ajuste Negativo]","[002007000001 – Ajuste Positivo]","[002050000002 – Transacoes Diversas Negativo]","[002050000001 - Transacoes Diversas Positivo]"
           example: "002001000002"
           enum:
-            - "1"
-            - "2"
-            - "3"
-            - "4"
-            - "5"
+            - "002002000002"
+            - "002001000001"
+            - "002001001002"
+            - "002007000002"
+            - "002007000001"
+            - "002050000002"
+            - "002050000001"
         descMovimentacao:
           type: string
-          description: Movimentation code "[1 – Chargeback]","[2 – Cancelamento]","[3 – Aluguel]","[4 – Ajuste negativo]","[5 – Ajuste positivo]"
+          description: Movimentation code "[002002000002 – Chargeback]","[002001000001/002001001002 – Cancelamento]","[002007000002 – Ajuste Negativo]","[002007000001 – Ajuste Positivo]","[002050000002 – Transacoes Diversas Negativo]","[002050000001 - Transacoes Diversas Positivo]"
           example: "Chargeback"
           enum:
             - "Chargeback"
             - "Cancelamento"
-            - "Aluguel"
-            - "Ajuste negativo"
-            - "Ajuste positivo"
+            - "Ajuste Negativo"
+            - "Ajuste Positivo"
+            - "Transacoes Diversas Negativo"
+            - "Transacoes Diversas Positivo"
         dataEvento:
           type: string
           description: Event date
@@ -2349,77 +2270,37 @@ components:
           type: string
           description: Agency number
           example: "00001"
-          
-    AgendaOutSumarizacaoArranjoResponse:
+    AgendaOutSumarizacaoResponse:
       type: object
       properties:
         tipoSumarizacao:
           type: string
           description: Sumarized type
           example: "Arranjo"
+          enum:
+            - "Arranjo"
+            - "Data"
+            - "Range"
         arranjo:
           type: string
           example: "MCC"
-        quantidade:
+        dataLiquidacao:
           type: string
-          example: '12'
-        valorComprometido:
-          type: string
-          example: '$0'
-        valorPagamentoPrevisto:
-          type: string
-          example: '2500.00'
-        valorLiquidacaoEfetiva:
-          type: string
-          example: '1000.00'
-        valorAtingido:
-          type: string
-          example: '3500.00'
-      title: AgendaOutSumarizacaoArranjoResponse
-    AgendaOutSumarizacaoRangeResponse:
-      type: object
-      properties:
-        tipoSumarizacao:
-          type: string
-          description: Sumarized type
-          example: "Range"
+          description: codMovimentacao description
+          example: "20231220"  
         dataInicio:
           type: string
           example: "20240229"
         dataFim:
           type: string
-          example: "20240331"
+          example: "20240331"  
         quantidade:
           type: string
           example: '12'
         valorComprometido:
           type: string
-          example: '$0'
-        valorPagamentoPrevisto:
-          type: string
-          example: '2500.00'
-        valorLiquidacaoEfetiva:
-          type: string
-          example: '1000.00'
-        valorAtingido:
-          type: string
-          example: '3500.00'
-      title: AgendaOutSumarizacaoRangeResponse
-    AgendaOutSumarizacaoDiaResponse:
-      type: object
-      properties:
-        tipoSumarizacao:
-          type: string
-          description: Sumarized type
-          example: "Data"
-        dataLiquidacao:
-          type: string
-          description: codMovimentacao description
-          example: "20231220"
-        quantidade:
-          type: string
-          example: '5'
-        valorComprometido:
+          example: 'R$0'
+        valorComprometidoPercentual:
           type: string
           example: '%10'
         valorPagamentoPrevisto:
@@ -2431,4 +2312,4 @@ components:
         valorAtingido:
           type: string
           example: '3500.00'
-      title: AgendaOutSumarizacaoDiaResponse
+      title: AgendaOutSumarizacaoResponse
