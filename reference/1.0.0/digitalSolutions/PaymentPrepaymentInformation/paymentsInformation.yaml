@@ -3053,7 +3053,7 @@ components:
             - 250 – Pagamentos pelo EC (meaning payments done by Merchant)
             - 251 – Antecipação Manual  (meaning manual prepayment)
             - 252 – Antecipação Automatica (meaning auto prepayment)
-        situacaoPago:
+        situacaoPagto:
           type: string
           description: Situação complementar do Pagamento
           example: Pago (meaning Paid)
@@ -3244,7 +3244,7 @@ components:
             - 250 – Pagamentos pelo EC (meaning payments done by Merchant)
             - 251 – Antecipação Manual  (meaning manual prepayment)
             - 252 – Antecipação Automatica (meaning auto prepayment)
-        situacaoPago:
+        situacaoPagto:
           type: string
           description: Situação complementar do Pagamento
           example: Pago (meaning Paid)
