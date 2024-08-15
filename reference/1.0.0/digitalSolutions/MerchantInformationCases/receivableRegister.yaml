@@ -1557,10 +1557,7 @@ components:
           type: array
           description: This block will be returned when Summ Information is provided
           items:
-            anyOf:
-            - $ref: '#/components/schemas/UrSumarizacaoArranjo'
-            - $ref: '#/components/schemas/UrSumarizacaoData'
-            - $ref: '#/components/schemas/UrSumarizacaoRange'
+            $ref: '#/components/schemas/UrSumarizacao'
         lastPage:
           description: Informs if it is the last page of the search
           example: true
@@ -1585,13 +1582,17 @@ components:
           example: 30
           type: integer
           format: int32
-    UrSumarizacaoArranjo:
+    UrSumarizacao:
       type: object
       properties:
         tipoSumarizacao:
           type: string
-          description: A - Arranjo
+          description: Arranjo, Data or Range
           example: "Arranjo"
+          enum:
+            - "Arranjo"
+            - "Data"
+            - "Range"
         arranjo:
           type: string
           description: Schema Payment
@@ -1622,104 +1623,10 @@ components:
             - "Mastercard Debito"
             - "Visa Credito"
             - "Visa Debito"
-        quantidade:
-          type: string
-          example: '15'
-        valorTotalBruto:
-          type: string
-          example: '1000.00'
-        valorTotalMDR:
-          type: string
-          example: '1000.00'
-        valorTotalDeducoes:
-          type: string
-          example: '1000.00'
-        valorTotalContrato:
-          type: string
-          example: '1000.00'
-        valorTotal:
-          type: string
-          example: '2000.00'
-        valorTotalLiquido:
-          type: string
-          example: '1000.00'
-        valorTotalAntecipacaoEventual:
-          type: string
-          example: '1000.00'
-        valorTotalAntecipacaoAutomatica:
-          type: string
-          example: '1000.00'
-        valoresPagos:
-          type: string
-          example: '1000.00'
-        valorTotalAjustesCredito:
-          type: string
-          example: '1000.00'
-        valorDescontoAntecipacao:
-          type: string
-          example: '1000.00'
-        valorTotalBloqueado:
-          type: string
-          example: '1000.00'
-      title: UrSumarizacaoArranjo
-    UrSumarizacaoData:
-      type: object
-      properties:
-        tipoSumarizacao:
-          type: string
-          description: D - Data
-          example: "Data"
         dataLiquidacao:
           type: string
           description: Data
           example: "20230101"
-        quantidade:
-          type: string
-          example: '15'
-        valorTotalBruto:
-          type: string
-          example: '1000.00'
-        valorTotalMDR:
-          type: string
-          example: '1000.00'
-        valorTotalDeducoes:
-          type: string
-          example: '1000.00'
-        valorTotalContrato:
-          type: string
-          example: '1000.00'
-        valorTotal:
-          type: string
-          example: '2000.00'
-        valorTotalLiquido:
-          type: string
-          example: '1000.00'
-        valorTotalAntecipacaoEventual:
-          type: string
-          example: '1000.00'
-        valorTotalAntecipacaoAutomatica:
-          type: string
-          example: '1000.00'
-        valoresPagos:
-          type: string
-          example: '1000.00'
-        valorTotalAjustesCredito:
-          type: string
-          example: '1000.00'
-        valorDescontoAntecipacao:
-          type: string
-          example: '1000.00'
-        valorTotalBloqueado:
-          type: string
-          example: '1000.00'
-      title: UrSumarizacaoData
-    UrSumarizacaoRange:
-      type: object
-      properties:
-        tipoSumarizacao:
-          type: string
-          description: R - Range
-          example: "Range"
         dataInicio:
           type: string
           description: Data
@@ -1727,7 +1634,7 @@ components:
         dataFim:
           type: string
           description: Data
-          example: "20230131"
+          example: "20230131"  
         quantidade:
           type: string
           example: '15'
@@ -1767,7 +1674,7 @@ components:
         valorTotalBloqueado:
           type: string
           example: '1000.00'
-      title: UrSumarizacaoRange
+      title: UrSumarizacao
     UrsMovimentacaoResponse:
       type: object
       properties:
@@ -1843,10 +1750,7 @@ components:
           type: array
           description: This block will be returned when Summ Information is provided
           items:
-            anyOf:
-            - $ref: '#/components/schemas/AgendaOutSumarizacaoArranjoResponse'
-            - $ref: '#/components/schemas/AgendaOutSumarizacaoRangeResponse'
-            - $ref: '#/components/schemas/AgendaOutSumarizacaoDiaResponse'
+            $ref: '#/components/schemas/AgendaOutSumarizacaoResponse'
         lastPage:
           description: Informs if it is the last page of the search
           example: true
@@ -2366,16 +2270,30 @@ components:
           type: string
           description: Agency number
           example: "00001"
-    AgendaOutSumarizacaoArranjoResponse:
+    AgendaOutSumarizacaoResponse:
       type: object
       properties:
         tipoSumarizacao:
           type: string
           description: Sumarized type
           example: "Arranjo"
+          enum:
+            - "Arranjo"
+            - "Data"
+            - "Range"
         arranjo:
           type: string
           example: "MCC"
+        dataLiquidacao:
+          type: string
+          description: codMovimentacao description
+          example: "20231220"  
+        dataInicio:
+          type: string
+          example: "20240229"
+        dataFim:
+          type: string
+          example: "20240331"  
         quantidade:
           type: string
           example: '12'
@@ -2394,66 +2312,4 @@ components:
         valorAtingido:
           type: string
           example: '3500.00'
-      title: AgendaOutSumarizacaoArranjoResponse
-    AgendaOutSumarizacaoRangeResponse:
-      type: object
-      properties:
-        tipoSumarizacao:
-          type: string
-          description: Sumarized type
-          example: "Range"
-        dataInicio:
-          type: string
-          example: "20240229"
-        dataFim:
-          type: string
-          example: "20240331"
-        quantidade:
-          type: string
-          example: '12'
-        valorComprometido:
-          type: string
-          example: 'R$0'
-        valorComprometidoPercentual:
-          type: string
-          example: '%10'  
-        valorPagamentoPrevisto:
-          type: string
-          example: '2500.00'
-        valorLiquidacaoEfetiva:
-          type: string
-          example: '1000.00'
-        valorAtingido:
-          type: string
-          example: '3500.00'
-      title: AgendaOutSumarizacaoRangeResponse
-    AgendaOutSumarizacaoDiaResponse:
-      type: object
-      properties:
-        tipoSumarizacao:
-          type: string
-          description: Sumarized type
-          example: "Data"
-        dataLiquidacao:
-          type: string
-          description: codMovimentacao description
-          example: "20231220"
-        quantidade:
-          type: string
-          example: '5'
-        valorComprometido:
-          type: string
-          example: 'R$10'
-        valorComprometidoPercentual:
-          type: string
-          example: '%10'  
-        valorPagamentoPrevisto:
-          type: string
-          example: '2500.00'
-        valorLiquidacaoEfetiva:
-          type: string
-          example: '1000.00'
-        valorAtingido:
-          type: string
-          example: '3500.00'
-      title: AgendaOutSumarizacaoDiaResponse
+      title: AgendaOutSumarizacaoResponse
