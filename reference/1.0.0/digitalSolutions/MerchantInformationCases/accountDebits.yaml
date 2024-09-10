@@ -134,6 +134,41 @@ paths:
               - "060"
               - "061"
               - "063"
+        - name: status
+          in: query
+          description: "Status - Settled/Scheduled"
+          required: false
+          schema:
+            type: string
+          example: 'Settled'
+        - name: estabelecimentoAjustado
+          in: query
+          description: ajusted merchant
+          required: false
+          schema:
+            type: string
+          example: '00000000'
+        - name: valorMinimo
+          in: query
+          description: Minumun value
+          required: false
+          schema:
+            type: string
+          example: '-100'
+        - name: valorMaximo
+          in: query
+          description: Maximum value
+          required: false
+          schema:
+            type: string
+          example: '1000'
+        - name: tipoSumarizacao
+          in: query
+          description: Sum values
+          required: false
+          schema:
+            type: string
+          example: 'T'  
       responses:
         "206":
           description: Partial Content
