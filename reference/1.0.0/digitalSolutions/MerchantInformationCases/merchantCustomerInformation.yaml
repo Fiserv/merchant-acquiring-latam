@@ -787,7 +787,7 @@ components:
           enum:
             - "0"
             - "1"
-        descricaoRetorno:
+        mensagem:
           type: string
           description: Return Code Description
           enum:
@@ -804,7 +804,9 @@ components:
       type: object
       properties:
         estabelecimentos:
-          $ref: "#/components/schemas/MCC"
+          type: array
+          items:
+            $ref: "#/components/schemas/MCC"
       title: Partner
       xml:
         name: EstabelecimentoMCC
@@ -835,7 +837,7 @@ components:
           description: Merchant Trade Name
           maxLength: 40
           example: Estabelecimento OTPX
-        cpfCnpj:
+        cnae:
           type: string
           description: Document number
           example: "99999999999"
