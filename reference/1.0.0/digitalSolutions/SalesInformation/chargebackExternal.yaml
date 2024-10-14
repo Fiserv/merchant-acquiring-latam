@@ -28,6 +28,16 @@ paths:
       summary: Merchant Information & Cases
       operationId: SearchForChargebackInformationByTaxIDMerchantCodeAndInstituion
       parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: The number of page
+        - in: query
+          name: size
+          schema:
+            type: integer
+          description: Items per page
         - name: Message-Signature
           in: header
           description: HMAC
@@ -40,6 +50,12 @@ paths:
           description: APigee Key
           required: true
           example: X0GW3QGOYFn4r7DHcVC8KuatUnNs6MGB'
+          schema:
+            type: string
+        - name: auth
+          in: header
+          description: Oauth Key
+          required: true
           schema:
             type: string
         - name: Timestamp
@@ -80,7 +96,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/DChargebackFilterRequest"
+              $ref: "#/components/schemas/DChargebackByRequestDateFilterRequest"
         description: body
         required: true
       responses:
@@ -108,6 +124,16 @@ paths:
       operationId: SearchForChargebackInstallmentsInformationByTaxIDMerchantCodeInstituionAndActionDate
       description: Search for Chargeback installments Information by Tax ID, Merchant Code, Instituion and Action Date
       parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: The number of page
+        - in: query
+          name: size
+          schema:
+            type: integer
+          description: Items per page
         - name: Message-Signature
           in: header
           description: HMAC
@@ -190,7 +216,7 @@ components:
       name: Authorization
       in: header
   schemas:
-    DChargebackFilterRequest:
+    DChargebackByRequestDateFilterRequest:
       type: object
       properties:
         authCode:
@@ -222,7 +248,7 @@ components:
           format: date
           description:  Request Date End Information. Format YYYY-MM-DD. Max difference in days are 10.
           example: "2022-09-30"
-      title: DChargebackFilterRequest
+      title: DChargebackByRequestDateFilterRequest
       description: Filter object
     DChargebackByActionDateFilterRequest:
       type: object
@@ -407,15 +433,15 @@ components:
         chargebackValue:
           type: number
           description: Chargeback value
-          example: 78
+          example: 78.90
         originalInstallmentValue:
           type: number
           description: Installment original value
-          example: 41
+          example: 41.87
         netValue:
           type: number
           description: Net value
-          example: 36
+          example: 36.14
         installmentNumber:
           type: number
           description: Installment number
@@ -438,6 +464,10 @@ components:
           type: string
           description: Chargeback Action
           example: "Debit"
+        actionNotes:
+          type: string
+          description: Notes given when analyst performs an action
+          example: "Debit to E.C, cardholder does not recognize the transaction, fraud dispute."
         cancelSlip:
           type: string
           description: Cancel Slip
@@ -453,7 +483,7 @@ components:
         sourceValue:
           type: number
           description: Source value
-          example: 52
+          example: 52.99
         quotationCurrency:
           type: number
           description: Quototion currency
@@ -461,7 +491,7 @@ components:
         chargebackValueInDolar:
           type: number
           description: Chargeback value in dolar
-          example: 4578
+          example: 4578.65
         conversionFactor:
           type: number
           description: Conversion factor
