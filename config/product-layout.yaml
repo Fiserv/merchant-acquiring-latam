@@ -41,7 +41,7 @@ featuredFeatures:
   - title: Boarding
     groupName: Merchant Acquiring
     featured: true
-    description: Onboard merchants to start accepting payments online or in-store, and streamline your process for registering new terminals and equipment.
+    description: Onboard merchants to start accepting payments and streamline your process for registering new terminals and equipment.
     relatedDocs:
       - relatedDoc:
         title: Boarding
@@ -54,7 +54,7 @@ featuredFeatures:
   - title: Digital Solutions
     groupName: Merchant Acquiring
     featured: true
-    description: Provides support to Fiserv customers through APIs for managing sales, payments, cryptographic control, token generation, sending SMS and emails, as well as device control. More than 40 applications are coordinated for internal and external administration of services.
+    description: More than 40 applications are coordinated for internal and external administration of services.
     relatedDocs:
       - relatedDoc: 
         title: Home
@@ -67,7 +67,7 @@ featuredFeatures:
   - title: Logistics
     groupName: Merchant Acquiring
     featured: true
-    description: Request new terminals to expand merchant business, paper rolls to keep selling, terminal replacements, withdrawals and confirm status for your field services requests.
+    description: Request new terminals to expand merchant business
     relatedDocs:
       - relatedDoc: 
         title: Financial Institution
@@ -79,7 +79,7 @@ featuredFeatures:
         path: "/v1/cancel-order"
   - title: Payments
     groupName: Merchant Acquiring
-    description:  Create a seamless and secure purchase experience across all online and digital channels by leveraging our comprehensive set of features that will enable you to accept all major payment methods and enhance your customer's online shopping experience.
+    description:  Create a seamless and secure shopping experience across all online and digital channels. 
     relatedDocs:
       - relatedDoc: 
         title: Recurring Payments
