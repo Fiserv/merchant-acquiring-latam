@@ -668,14 +668,17 @@ components:
           enum:
             - "0"
             - "1"
-        descricaoRetorno:
+        mensagem:
           type: string
           description: Return Code Description
           enum:
             - "Successo"
             - "Erro"
         conteudo:
-          $ref: "#/components/schemas/EstabelecimentoMerchant"
+          type: array
+          description: content
+          items:
+            $ref: "#/components/schemas/EstabelecimentoMerchant"
       title: EstablishmentResponse
       xml:
         name: response
@@ -768,10 +771,6 @@ components:
           type: string
           description: Filiation date
           example: "20200612"
-        numeroMerchantPai:
-          type: string
-          description: Main's merchant number
-          example: "99999991"  
       title: EstabelecimentoMerchant
       xml:
         name: Establishment
@@ -787,7 +786,7 @@ components:
           enum:
             - "0"
             - "1"
-        descricaoRetorno:
+        mensagem:
           type: string
           description: Return Code Description
           enum:
@@ -804,7 +803,9 @@ components:
       type: object
       properties:
         estabelecimentos:
-          $ref: "#/components/schemas/MCC"
+          type: array
+          items:
+            $ref: "#/components/schemas/MCC"
       title: Partner
       xml:
         name: EstabelecimentoMCC
@@ -835,7 +836,7 @@ components:
           description: Merchant Trade Name
           maxLength: 40
           example: Estabelecimento OTPX
-        cpfCnpj:
+        cnae:
           type: string
           description: Document number
           example: "99999999999"
